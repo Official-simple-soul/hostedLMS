@@ -8,10 +8,10 @@ import { ToastContainer, toast } from 'react-toastify';
 const ForgetPassword = () => {
     
     const[form, setForm] = useState({
-        password: ''
+        password: ''  
     })
-    const[conFam, setConfam] = useState({
-        passy: ''
+    const[confirmPassword, setconfirmPassword] = useState({
+        passy : ''
     })
     const[modalOpen, setModalOpen] = useState(false)
 
@@ -23,30 +23,23 @@ const ForgetPassword = () => {
         sessionStorage.setItem('user', JSON.stringify(form))
     }
     console.log(form)
-
-    const confirmPassword =(e)=>{
-        setConfam({
-            ...conFam,
-            [e.target.name] : e.target.value
+    const handlePassword = (e)=>{
+        setconfirmPassword({
+            ...confirmPassword,
+            [e.target.name]: e.target.value
         })
-       
     }
-    console.log(conFam)
-    
+    console.log(confirmPassword)
     const handleSubmit = (e)=>{
         e.preventDefault()
         const user = JSON.parse(sessionStorage.getItem('user'))
-        if(conFam?.confirm === user?.password){
-            setModalOpen(true)  
-        }
-        else(    
-            toast.error('passwords do not correspond')
-        )        
+            setModalOpen(true) 
+             
     }
     return (
     <div className='wrapper flex'>
          <ToastContainer />
-        <div className='conic-bg'>
+        <div className='conic-bg '>
         <div className='bg-trans flex flex-col items-center justify-center text-center text-white'>
            <h1 className='text-4xl font-extrabold pb-4'>Kodecamp LMS</h1> 
            <p>Learning has been made simple, interactive and fun.</p>
@@ -69,7 +62,7 @@ const ForgetPassword = () => {
                     <div className='flex flex-col mt-3 relative'>
                         <label>Password</label>
                         <input placeholder='Type new password'style={{'border': '1px solid black'}}
-                        className='px-5'
+                        className='px-5 mt-2'
                         name='password' onChange={setNewPassword}
                         />
                         <AiFillEye className='absolute right-2 bottom-3' />
@@ -77,10 +70,10 @@ const ForgetPassword = () => {
                     <div className='flex flex-col mt-4 relative'>
                         <label>Confirm Password</label>
                         <input placeholder='Type your password again' 
-                        style={{'border': '1px solid black'}}
-                        className='px-5'/>
+                        style={{'border': '0.1px solid black'}}
+                        className='px-5 mt-2' name='passy' onChange={handlePassword}/>
                         <AiFillEye className='absolute right-2 bottom-3' 
-                        name='passy' onChange={confirmPassword}
+                       
                         />
                     </div> 
                     <button className='mt-4 bg-blue-500'
