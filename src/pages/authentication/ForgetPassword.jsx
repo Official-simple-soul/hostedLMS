@@ -37,7 +37,7 @@ const ForgetPassword = () => {
              
     }
     return (
-    <div className='wrapper flex'>
+    <div className='wrapper'>
          <ToastContainer />
         <div className='conic-bg '>
         <div className='bg-trans flex flex-col items-center justify-center text-center text-white'>
