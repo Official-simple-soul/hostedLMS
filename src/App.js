@@ -1,13 +1,12 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom"
-import VerifyEmail from "./pages/login/VerifyEmail";
+import VerifyEmail from "./pages/authentication/VerifyEmail";
+import "./App.css"
+
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<VerifyEmail />} />
-      </Routes>
+      <VerifyEmail />
     </div>
   );
 }
