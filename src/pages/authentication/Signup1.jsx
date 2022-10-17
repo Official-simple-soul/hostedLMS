@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '../../assets/images/logo.png'
-
+import { userInputs } from './FormInput'
 const SignUp = () => {
+const [data, setData]=useState({})
+
+            const handleInput =(e)=>{
+                    const id= e.target.id;
+                    const value= e.target.value;
+                    setData({...data,[id]:value})
+                }
+                console.log(data)
+            const handleSubmit =(e)=>{
+                e.preventDefault()
+                }
   return (
     <div className="flex w-[100%] ">
         <div 
@@ -77,8 +88,24 @@ const SignUp = () => {
                     <span className='w-[60px] h-[1px] bg-[#D9D9D9]'></span>
                     <span className='w-[30px] h-[30px] bg-[#808080] flex justify-center items-center rounded-[50%]'>2</span>
                   </div>
-                  <form action="" className="flex w-[80%] justify-center mt-[10px] items-center flex-col ">
-                        <label className='w-[100%]'>
+                  <form onSubmit={handleSubmit} className="flex w-[80%] justify-center mt-[10px] items-center flex-col ">
+                    {userInputs.map((input)=>{
+                        return (
+                            <div key={input.id} className='w-[100%]' >
+                                <label className='w-[100%]'>
+                                    <span className='block text-[#808080] mb-[8px] mt-[30px] text-[18px] font-[500] leading-[22px]'>{input.label}</span>
+                                    <input 
+                                        onChange={handleInput} 
+                                        className='outline-[0] border-[none] border-[#808080] border border-solid rounded-[8px] w-[100%] h-[56px] text-[#808080] pt-[16px] pb-[16px] pl-[17px] text-[18px] font-[400] leading-[24px]' 
+                                        type={input.type} id={input.id}  placeholder={input.placeholder} />
+                                    <span className="block text-[#808080] text-[14px] font-[400]">
+                                        {input.instruction}
+                                    </span>
+                                </label> 
+                            </div>
+                        )
+                    })}
+                        {/* <label className='w-[100%]'>
                              <span className='block text-[#808080] mb-[8px]  text-[18px] font-[500] leading-[22px]'>Full Name</span>
                             <input className='outline-[0] border-[none] border-[#808080] border border-solid rounded-[8px] w-[100%] h-[56px] text-[#808080] pt-[16px] pb-[16px] pl-[17px] text-[18px] font-[400] leading-[24px]' type="text" name="name" placeholder='Type your full name' />
                         </label>
@@ -103,8 +130,8 @@ const SignUp = () => {
                         <label className='w-[100%]'>
                              <span className='block text-[#808080] mb-[10px] mt-[30px] text-[18px] font-[500] leading-[22px]'>Confirm Password</span>
                             <input className='outline-[0] border-[none] border-[#808080] border border-solid rounded-[8px] w-[100%] h-[56px] text-[#808080] pt-[16px] pb-[16px] pl-[17px] text-[18px] font-[400] leading-[24px]' type="text" name="name" placeholder='Type your Password again' />
-                        </label>
-                        <button className="text-[18px] font-[500] leading-[22px] tracking-[0.1px] mt-[40px] w-[100%] outline-[0] border border-solid rounded-[8px] h-[56px] bg-[#0D6EFD] text-[#ffffff]">
+                        </label> */}
+                        <button type='submit' className="text-[18px] font-[500] leading-[22px] tracking-[0.1px] mt-[40px] w-[100%] outline-[0] border border-solid rounded-[8px] h-[56px] bg-[#0D6EFD] text-[#ffffff]">
                             Next
                         </button>
                         <p className='mb-[40px] mt-[24px]'>Already have an account? Log in <a className='text-[blue]' href="">Log In</a></p>
