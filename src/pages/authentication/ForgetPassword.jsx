@@ -33,7 +33,14 @@ const ForgetPassword = () => {
     const handleSubmit = (e)=>{
         e.preventDefault()
         const user = JSON.parse(sessionStorage.getItem('user'))
+        if(form?.password === confirmPassword?.passy) {
             setModalOpen(true) 
+        }  
+    else{
+        console.log('retry')
+        toast.error('Password do not match')
+    }
+        
              
     }
     return (
