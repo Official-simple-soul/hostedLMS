@@ -8,6 +8,6 @@ export { default as three } from './images/three.png';
 
 
 // ICONS
-export { default as Logo } from './icons/logo.svg'
+// export { default as Logo } from './icons/logo.svg'
 export { default as Tick } from './icons/tick.svg'
 export { default as Time } from './icons/time.svg'

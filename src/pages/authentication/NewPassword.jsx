@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import './ForgetPassword.css'
+import './NewPassword.css'
 import { AiFillEye } from 'react-icons/ai';
 import Modal from '../../components/authentication/Modal'
 import { Good, three, Logo } from "../../assets/index";
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const ForgetPassword = () => {
+const NewPassword = () => {
     
     const[form, setForm] = useState({
         password: ''  
@@ -99,4 +100,4 @@ const ForgetPassword = () => {
   )
 }
 
-export default ForgetPassword
+export default NewPassword
