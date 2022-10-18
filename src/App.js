@@ -1,6 +1,5 @@
 import React from "react";
 import { Image1 } from "./assets";
-import Form from "./pages/authentication/signup/Form";
 
 function App() {
   return (
