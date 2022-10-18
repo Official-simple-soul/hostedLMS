@@ -70,13 +70,13 @@ const VerifyEmail = () => {
               <p className="text-gray-600 text-lg mb-4">
                 It may take a minute to receive your code. Haven’t received it?{" "}
                 <br />{" "}
-                <span className="text-blue-600 cursor-pointer text-xl font-medium">
+                <span className="text-blue-600 cursor-pointer text-lg font-medium">
                   Resend a new code
                 </span>{" "}
               </p>
               <p className="text-gray-600 text-lg">
                 Remember Password?{" "}
-                <span className="text-blue-600 cursor-pointer text-xl font-semibold">
+                <span className="text-blue-600 cursor-pointer text-lg font-semibold">
                   Log in
                 </span>{" "}
               </p>
