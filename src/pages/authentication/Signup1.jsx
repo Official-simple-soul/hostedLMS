@@ -1,7 +1,7 @@
 import React from 'react'
-import Logo from '../../assets/images/logo.png'
+import { Logo } from '../../assets'
 
-const SignUp = () => {
+const SignUp1 = () => {
   return (
     <div className="flex w-[100%] ">
         <div 
@@ -116,4 +116,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default SignUp1
