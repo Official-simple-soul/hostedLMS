@@ -1,6 +1,5 @@
 import React from 'react'
 import "./Modal.css";
-import { Link } from "react-router-dom";
 import { Good } from "../../assets/index";
 
 const Modal = ({ setOpenModal }) => {
