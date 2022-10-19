@@ -5,13 +5,13 @@ import NewPassword from '../pages/authentication/NewPassword';
 import SignUp from '../pages/authentication/SignUp';
 import VerifyEmail from '../pages/authentication/VerifyEmail';
 
+
 const AllRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/sign-up' element={<SIgnUp />} />
-        <Route path='sign-up-1' element={<SignUp1 />} />
+        <Route path='/' element={<SignUp />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/verify-email' element={<VerifyEmail />} />
         <Route path='forgot-password/new-password' element={<NewPassword />} />
       </Routes>
