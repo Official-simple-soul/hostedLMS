@@ -4,10 +4,29 @@ import Otp from "../../components/login/Otp";
 
 const VerifyEmail = () => {
   const [otp, setOtp] = useState(new Array(4).fill(""));
-  const [dateState, setDateState] = useState(new Date());
+  const hoursMinSecs = { initialMinute: 2, initialSeconds: 0 };
+  const { initialMinute = 0, initialSeconds = 0 } = hoursMinSecs;
+  const [minutes, setMinutes] = useState(initialMinute);
+  const [seconds, setSeconds] = useState(initialSeconds);
   useEffect(() => {
-    setInterval(() => setDateState(new Date()), 30000);
-  }, []);
+    let myInterval = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds(seconds - 1);
+      }
+      if (seconds === 0) {
+        if (minutes === 0) {
+          clearInterval(myInterval);
+        } else {
+          setMinutes(minutes - 1);
+          setSeconds(59);
+        }
+      }
+    }, 1000);
+    return () => {
+      clearInterval(myInterval);
+    };
+  });
+
   return (
     <div className="min-h-screen max-w-screen flex">
       <div className="w-1/2 min-h-screen flex justify-center items-center bg-auth pl-10 py-20">
@@ -55,13 +74,14 @@ const VerifyEmail = () => {
             </div>
             <div className="mb-8 flex">
               <img src={Time} alt="time" />
-              <p className="text-sm ml-1">
-                {dateState.toLocaleString("en-US", {
-                  hour: "numeric",
-                  minute: "numeric",
-                  hour12: true,
-                })}
-              </p>
+              {minutes === 0 && seconds === 0 ? (
+                <p className="text-sm ml-1"> 2:00 </p>
+              ) : (
+                <p className="text-sm ml-1">
+                  {" "}
+                  {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+                </p>
+              )}
             </div>
             <button className="bg-blue-600 rounded-lg text-white py-4 px-6 w-full text-lg font-medium cursor-pointer">
               Submit
@@ -76,7 +96,7 @@ const VerifyEmail = () => {
               </p>
               <p className="text-gray-600 text-lg">
                 Remember Password?{" "}
-                <span className="text-blue-600 cursor-pointer text-lg font-semibold">
+                <span className="text-blue-600 cursor-pointer text-lg font-medium">
                   Log in
                 </span>{" "}
               </p>
