@@ -1,4 +1,4 @@
-import rightIcon from '../../assets/icons/right.svg'
+import rightIcon from '../../../assets/icons/right.svg'
 import './Signup2Modal.css';
 
 const Modal = props => {

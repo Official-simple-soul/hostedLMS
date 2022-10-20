@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from '../pages/authentication/Login';
 import NewPassword from '../pages/authentication/NewPassword';
 // import SignUp from '../pages/authentication/SIgnUp';
-import SignUp2 from '../pages/authentication/SignUp2';
+import SignUpTwo from '../pages/authentication/components/SignUpTwo';
 import VerifyEmail from '../pages/authentication/VerifyEmail';
 
 
@@ -12,7 +12,7 @@ const AllRoutes = () => {
     <BrowserRouter>
       <Routes>
         {/* <Route path='/' element={<SignUp />} /> */}
-        <Route path='/' element={<SignUp2/>} />
+        <Route path='/' element={<SignUpTwo/>} />
         <Route path='/login' element={<Login />} />
         <Route path='/verify-email' element={<VerifyEmail />} />
         <Route path='forgot-password/new-password' element={<NewPassword />} />
