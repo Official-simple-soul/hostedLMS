@@ -45,7 +45,7 @@ const SignUp = () => {
                         pl-[70px]
                         pb-[70px]
                         w-[50%]
-                        min-h-[1200px] 
+                        min-h-[1190px] 
                         bg-[white]
                         bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)]
                         flex
@@ -91,7 +91,7 @@ const SignUp = () => {
                         pr-[70px]
                         pb-[70px]
                         w-[50%] 
-                        min-h-[1200px] 
+                        min-h-[1190px] 
                         bg-[#ffffff] 
                         flex
                         justify-center
