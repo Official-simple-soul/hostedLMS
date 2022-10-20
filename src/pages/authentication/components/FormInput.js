@@ -1,8 +1,9 @@
 import Eye from '../../../assets/images/Vector.png'
+import {FaEye,FaEyeSlash} from 'react-icons/fa'
 
 import React from 'react'
 
-const FormInput = ({handleInput}) => {
+const FormInput = ({handleInput, eye,setEye,showPassword}) => {
   return (
     <div>
             <label className='w-[100%]'>
@@ -37,8 +38,10 @@ const FormInput = ({handleInput}) => {
                         <input 
                         onChange={handleInput} 
                         className='outline-[0]   w-[90%] h-[54px] border-[none]  pt-[16px] pb-[16px] pl-[17px] text-[18px] font-[400] leading-[24px]' 
-                        type='password' id={'password'}  placeholder={'Type your password'} />
-                        <img className='absolute right-[10px] top-[19px]' src={Eye} />
+                        type={!eye ? 'password' : 'text'} id={'password'}  placeholder={'Type your password'} />
+                        <div className='absolute  right-[10px] text-[22px] text-[#808080] top-[16px]'>
+                           {!eye ?  <FaEye onClick={showPassword} /> :  <FaEyeSlash onClick={showPassword} /> }
+                        </div>
                         </div> 
                 </label> 
             <label className='w-[100%]'>
@@ -47,8 +50,10 @@ const FormInput = ({handleInput}) => {
                         <input 
                         onChange={handleInput} 
                         className=' outline-[0]   w-[90%] h-[54px] border-[none]  pt-[16px] pb-[16px] pl-[17px] text-[18px] font-[400] leading-[24px]' 
-                        type='password' id={'cpassword'}  placeholder={'Type your password again'} />
-                        <img className='absolute right-[10px] top-[19px]' src={Eye} />
+                        type={!eye ? 'password' : 'text'} id={'cpassword'}  placeholder={'Type your password again'} />
+                        <div className='absolute  right-[10px] text-[22px] text-[#808080] top-[16px]'>
+                           {!eye ?  <FaEye onClick={showPassword} /> :  <FaEyeSlash onClick={showPassword} /> }
+                        </div>
                         </div>
                 </label> 
     </div>
