@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import FormInput, { userInputs } from './FormInput'
 
 
-const SignUpOne = ({}) => {
+const SignUpOne = ({eye,setEye,showPassword}) => {
     const [data, setData]=useState({})
 
             const handleInput =(e)=>{
@@ -16,7 +16,7 @@ const SignUpOne = ({}) => {
             //     }
   return (
     <div>
-        <FormInput handleInput={handleInput}/>   
+        <FormInput handleInput={handleInput} eye={eye} setEye={setEye} showPassword={showPassword}/>   
     </div>
   )
 }
