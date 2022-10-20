@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Logo from '../../assets/icons/logo.svg'
 import Good from '../../assets/images/good2.png'
 import SignUpOne from './components/SignUpOne'
@@ -26,18 +27,32 @@ const SignUp = () => {
   return (
     <div className="flex w-[100%] ">
         <div 
-            className=' 
+            className={page === 0 ?
+                `
                         pt-[70px]
                         pl-[70px]
                         pb-[70px]
                         w-[50%]
-                        h-[1170px] 
+                        min-h-[1170px] 
                         bg-[white]
                         bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)]
                         flex
                         items-center
                         justify-center
-                        '>
+                        ` :
+                        `
+                        pt-[70px]
+                        pl-[70px]
+                        pb-[70px]
+                        w-[50%]
+                        min-h-[1200px] 
+                        bg-[white]
+                        bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)]
+                        flex
+                        items-center
+                        justify-center
+                        ` 
+            }>
             <div 
                 className='
                         flex
@@ -57,9 +72,10 @@ const SignUp = () => {
                 <p className='text-[18px] font-[400] leading-[22px]'>Learning has been made simple, interactive and fun.</p>
             </div>
         </div>
-       
-        <div className='
-                        pt-[70px]
+
+
+        <div  className={page === 0 ?
+                        `pt-[70px]
                         pr-[70px]
                         pb-[70px]
                         w-[50%] 
@@ -69,7 +85,19 @@ const SignUp = () => {
                         justify-center
                         items-center
                         flex-col
-                        '>
+                        ` :
+                        `
+                        pt-[70px]
+                        pr-[70px]
+                        pb-[70px]
+                        w-[50%] 
+                        min-h-[1200px] 
+                        bg-[#ffffff] 
+                        flex
+                        justify-center
+                        items-center
+                        flex-col     
+                         ` }>
                 
             <div className='
                         flex
@@ -89,7 +117,8 @@ const SignUp = () => {
                 <div className='w-[595px] absolute top-[-2px] left-[0]'>
                     <div  className= { page === 0 ? `w-[50%] h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
                         rounded-l-[0px] bg-[#00BD56] text-left` :` w-[100%]  h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
-                        rounded-l-[0px]  bg-[#00BD56] text-left`}></div>
+                        rounded-l-[0px]  bg-[#00BD56] text-left`}>
+                    </div>
                 </div>
 
                 <div className="shadow-[0px_4px_8px_rgba(0,0,0,0.15)] mt-[40px] w-[80px] h-[80px] flex justify-center items-center">
@@ -99,7 +128,7 @@ const SignUp = () => {
                   <h2 className='text-[#303030] text-[28px] font-[500] leading-[36px] mt-[24px] tracking-[1px]'>Create account</h2>
 
                   <div className="flex justify-center items-center w-[120px] text-[#ffffff] text-[18px] font-[500] leading-[22px] mt-[38.5px]">
-                        <span className={ page === 0 ? `w-[30px] h-[30px] bg-[#0D6EFD] flex justify-center items-center  rounded-[50%]`:`w-[30px] h-[30px] bg-[#00BD56] flex justify-center items-center  rounded-[50%]`}>{page === 0 ? <>1</> : <img src={Good}/>}</span>
+                        <span className={ page === 0 ? `w-[30px] h-[30px] bg-[#0D6EFD] flex justify-center items-center  rounded-[50%]`:`w-[30px] h-[30px] bg-[#00BD56] flex justify-center items-center  rounded-[50%]`}>{page === 0 ? <>1</> : <img src={Good} alt='mark good'/>}</span>
                             <span className='w-[60px] h-[1px] bg-[#D9D9D9]'></span>
                         <span className={ page === 0 ? `w-[30px] h-[30px] bg-[#000000] flex justify-center items-center  rounded-[50%]`:`w-[30px] h-[30px] bg-[#0D6EFD] flex justify-center items-center  rounded-[50%]`}>2</span>
                   </div>
@@ -114,7 +143,7 @@ const SignUp = () => {
                                      {page === 0 ? <p>Next</p>: <p>Create Account</p>}
                                 </button>
                             </div>
-                        <p className='mb-[40px] mt-[24px]'>Already have an account? Log in <a className='text-[blue]' href="">Log In</a></p>
+                        <p className='mb-[40px] mt-[24px]'>Already have an account? <Link to={'login'} className='text-[blue]' href="">Log In</Link></p>
                   </form>
             </div>
         </div>
