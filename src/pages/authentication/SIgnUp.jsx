@@ -68,7 +68,7 @@ const SignUp = () => {
                         rounded-l-[24px]
                         text-[#fff]
                         '>
-                <h1 className='mt-[315px] mb-[8px]  font-bold  text-[45px] text-[#F5F5F5] font-[700] leading-[52px] ' >Kodecamp LMS</h1>
+                <h1 className='mt-[315px] mb-[8px]  font-bold  text-[45px] text-[#F5F5F5] leading-[52px] ' >Kodecamp LMS</h1>
                 <p className='text-[18px] font-[400] leading-[22px]'>Learning has been made simple, interactive and fun.</p>
             </div>
         </div>
