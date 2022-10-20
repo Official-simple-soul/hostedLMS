@@ -23,35 +23,38 @@
     box-shadow: 0px 10px 17px 5px rgba(0,0,0,0.51);
     
   }
-  .signup__leftcard{
+  /* .signup__leftcard{
     /* width: 50vw;
     height: 170vh; */
     /* color: #fff; */
     /* display: flex; */
     /* flex-direction: column; */
     /* align-items: center; */
-    margin-top: 10rem;
-  }
+    /* margin-top: 10rem; */
+  
+  */
   .signup__leftcard-h1{
-    font-size: 30px;
+    /* font-size: 30px; */
     font-weight: 800;
   }
   
-  .signup__rightcard{
+  /* .signup__rightcard{
     width: 50vw;
     height: 170vh;
     margin-top: 2rem;
-  }
-  .signup__form-container{
+  } */
+
+  /* .signup__form-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  .signup__form-label{
+  } */
+
+  /* .signup__form-label{
     display: block;
-  }
+  } */
   .signup__form-input {
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 2px solid rgba(0,0,0,0.2);
     border-radius: 6px;
     padding: 2px 4px;
     width: 400px;
