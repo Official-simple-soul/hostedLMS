@@ -1,4 +1,4 @@
-import Eye from '../../../assets/images/Vector.png'
+import { Eye } from '../../../assets'
 
 import React from 'react'
 

@@ -8,7 +8,7 @@ const SignUp = () => {
         
 
         const PageDisplay = ()=>{
-            if(page === 0){
+            if(page === 0){ 
                 return <SignUpOne/>;
             }
             if(page === 1){

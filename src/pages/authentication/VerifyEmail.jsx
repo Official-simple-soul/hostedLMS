@@ -7,7 +7,7 @@ const VerifyEmail = () => {
   const [dateState, setDateState] = useState(new Date());
   useEffect(() => {
     setInterval(() => setDateState(new Date()), 30000);
-  }, []);
+  }, []); 
   return (
     <div className="min-h-screen max-w-screen flex">
       <div className="w-1/2 min-h-screen flex justify-center items-center bg-auth pl-10 py-20">
