@@ -32,7 +32,7 @@ const Login = () => {
 
               <div className={`${Style.login_text} px-12`}>
                 <form action="">
-                  <div className='mb-4'>
+                  <div className='mb-4 flex flex-col gap-2'>
                     <label htmlFor="email">Email</label>
                     <div className='relative flex flex-row items-center'>
                       <span className='absolute left-3'><img src={Mail} alt="" /></span>
@@ -40,13 +40,13 @@ const Login = () => {
                     </div>
                   </div>
 
-                  <div className='mb-4'>
+                  <div className='mb-4 flex flex-col gap-2'>
                     <label htmlFor="email">Password</label>
                     <div className='relative flex flex-row items-center'>
                       <span className='absolute left-3'><img src={Lock} alt="lock" /></span>
                       <input type={(showpassword === false)? 'password' : 'text' }  name='password' placeholder='Type your password' className='border border-gray-400 rounded-lg py-4 outline-none pr-3 pl-10 w-full' required/>
                       {
-                        (showpassword === false)? <span><img src={Eye} alt="eye" className='absolute right-3 flex justify-center items-center bottom-5'  onClick={toggle}/></span> :
+                        (showpassword === false)? <span><img src={Eye} alt="eye" className='absolute right-3 flex justify-center items-center bottom-3'  onClick={toggle}/></span> :
                         <span  className='absolute right-4 flex justify-center items-center bottom-4'>
                           <svg  onClick={toggle} xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#808080" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
                             <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
@@ -58,7 +58,7 @@ const Login = () => {
                     </div>
                   </div>
 
-                  <div className='flex flex-row justify-between mb-8'>
+                  <div className='flex items-center justify-between mb-8'>
                     <div className='flex justify-center items-center'>
                       <input type="checkbox" name="" id=""  className='border border-gray-700'/>
                       <span className='pl-4'>Remember me</span>
