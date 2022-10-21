@@ -96,11 +96,11 @@
     background-color: rgba(21, 125, 243, 0.932);
     text-align: center;
     margin-top: 1rem;
-   padding-top: 0.7rem;
-   padding-bottom: 2rem;
-   border-radius: 10px;
-   font-weight: 800;
-   color: #fff;
+    padding-top: 0.7rem;
+    padding-bottom: 2rem;
+    border-radius: 10px;
+    font-weight: 800;
+    color: #fff;
   }
   .already{
     /* text-align: center; */
