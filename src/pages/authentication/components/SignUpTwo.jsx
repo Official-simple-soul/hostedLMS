@@ -21,7 +21,7 @@ function SignUpTwo() {
        <hr className='iconline text-red-500'/>
     <img src={twoIcon} alt="twoIcon" />
    </div>
-  <form action="" className='signup__form'>
+  {/* <form action="" className='signup__form'> */}
     <div className='signup__form-div'>
     <label className='signup__form-label block' htmlFor="">Age</label>
     <input className='signup__form-input border-2' type="text" placeholder='Type your age'/>
@@ -88,12 +88,12 @@ function SignUpTwo() {
         <option value="email">Email</option>
     </select>
     
-     <div className='signup__form-submit cursor-pointer' onClick={()=>setShow(true)}> Create Account </div>
+     {/* <div className='signup__form-submit cursor-pointer' onClick={()=>setShow(true)}> Create Account </div> */}
       <Signup2Modal show={show} handleClose={handleClose}/>
     
     </div>
-<div className='already'><p><span className='already-span'>Already have an account? </span><span className="login text-blue-600 font-semibold">Log in</span></p></div>
-  </form>
+{/* <div className='already'><p><span className='already-span'>Already have an account? </span><span className="login text-blue-600 font-semibold">Log in</span></p></div> */}
+  {/* </form> */}
 </div>
 </div>
 </div>
