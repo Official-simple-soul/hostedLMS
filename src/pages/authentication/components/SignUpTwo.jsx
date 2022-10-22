@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import './SignUp2.css';
-import KodeImg from '../../../assets/images/IMG-20210810-WA0038 3.svg';
-import rightIcon from '../../../assets/icons/right.svg';
-import twoIcon from '../../../assets/icons/frame.svg';
+//import KodeImg from '../../../assets/images/IMG-20210810-WA0038 3.svg';
+//import rightIcon from '../../../assets/icons/right.svg';
+//import twoIcon from '../../../assets/icons/frame.svg';
 import Signup2Modal from './Signup2Modal';
 
 function SignUpTwo() {
@@ -14,13 +14,13 @@ function SignUpTwo() {
       <div className="signup2-container screen">
   <div className='signup__rightcard w-[50vw] h-[200vh] mt-[2rem] mb-10 rounded-r-[20px]'>
 <div className='signup__form-container flex flex-col items-center'>
-  <img className='signup__img mt-[20px] p-4 rounded-md' src={KodeImg} alt="kodeImg" />
-  <h1 className='signup__form-h1'>Create account</h1>
-  <div className='signup__form-icons m-3 flex'>
+  {/* <img className='signup__img mt-[20px] p-4 rounded-md' src={KodeImg} alt="kodeImg" />
+  <h1 className='signup__form-h1'>Create account</h1> */}
+  {/* <div className='signup__form-icons m-3 flex'>
     <img src={rightIcon} alt="rightIcon" />
        <hr className='iconline text-red-500'/>
     <img src={twoIcon} alt="twoIcon" />
-   </div>
+   </div> */}
   {/* <form action="" className='signup__form'> */}
     <div className='signup__form-div'>
     <label className='signup__form-label block' htmlFor="">Age</label>
