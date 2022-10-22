@@ -4,19 +4,38 @@ import Otp from "../../components/login/Otp";
 
 const VerifyEmail = () => {
   const [otp, setOtp] = useState(new Array(4).fill(""));
-  const [dateState, setDateState] = useState(new Date());
+  const hoursMinSecs = { initialMinute: 2, initialSeconds: 0 };
+  const { initialMinute = 0, initialSeconds = 0 } = hoursMinSecs;
+  const [minutes, setMinutes] = useState(initialMinute);
+  const [seconds, setSeconds] = useState(initialSeconds);
   useEffect(() => {
-    setInterval(() => setDateState(new Date()), 30000);
-  }, []);
+    let myInterval = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds(seconds - 1);
+      }
+      if (seconds === 0) {
+        if (minutes === 0) {
+          clearInterval(myInterval);
+        } else {
+          setMinutes(minutes - 1);
+          setSeconds(59);
+        }
+      }
+    }, 1000);
+    return () => {
+      clearInterval(myInterval);
+    };
+  });
+
   return (
-    <div className="min-h-screen max-w-screen flex">
-      <div className="w-1/2 min-h-screen flex justify-center items-center bg-auth pl-10 py-20">
-        <div className="w-full xl:h-[687px] h-[720px] bg-transparent flex justify-center items-center rounded-l-3xl shadow-2xl">
+    <div className="h-screen max-w-screen flex">
+      <div className="w-1/2 h-screen flex justify-center items-center bg-auth pl-10 py-4">
+        <div className="w-full xl:h-[581px] h-[631px] bg-transparent flex justify-center items-center rounded-l-3xl shadow-2xl">
           <div className="text-center text-white">
-            <h2 className="text-[45px] font-bold text-white mb-4">
+            <h2 className="text-5xl font-bold text-white mb-2">
               Kodecamp LMS
             </h2>
-            <p className="text-lg text-white">
+            <p className="text-lg font-normal text-white">
               Learning has been made simple, interactive and fun.
             </p>
           </div>
@@ -24,13 +43,13 @@ const VerifyEmail = () => {
       </div>
       <div className="w-1/2 flex flex-col justify-center pr-10">
         <span className="w-2/3 h-[3px] bg-green-500 "></span>
-        <div className="w-full xl:h-[684px] h-[716px] flex flex-col rounded-r-3xl shadow-2xl px-6">
-          <div className="grid place-items-center mx-auto text-center my-10">
-            <div className="w-20 h-20 rounded-lg bg-transparent shadow-md mb-6 grid place-items-center">
+        <div className="w-full xl:h-[578px] h-[628px] flex flex-col rounded-r-3xl shadow-2xl px-6">
+          <div className="grid place-items-center mx-auto text-center my-6">
+            <div className="w-20 h-20 rounded-lg bg-transparent shadow-md mb-4 grid place-items-center">
               <img src={Logo} alt="kodecamp-logo" />
             </div>
-            <h2 className="text-2xl font-medium mb-3">Verify email</h2>
-            <div className="flex my-6 isolate">
+            <h2 className="text-[28px] font-medium mb-3">Verify email</h2>
+            <div className="flex my-4 isolate">
               <span className="w-8 h-8 rounded-full flex justify-center items-center bg-green-600">
                 <img src={Tick} alt="tick" />
               </span>
@@ -55,13 +74,14 @@ const VerifyEmail = () => {
             </div>
             <div className="mb-8 flex">
               <img src={Time} alt="time" />
-              <p className="text-sm ml-1">
-                {dateState.toLocaleString("en-US", {
-                  hour: "numeric",
-                  minute: "numeric",
-                  hour12: true,
-                })}
-              </p>
+              {minutes === 0 && seconds === 0 ? (
+                <p className="text-sm ml-1"> 2:00 </p>
+              ) : (
+                <p className="text-sm ml-1">
+                  {" "}
+                  {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+                </p>
+              )}
             </div>
             <button className="bg-blue-600 rounded-lg text-white py-4 px-6 w-full text-lg font-medium cursor-pointer">
               Submit
@@ -72,12 +92,6 @@ const VerifyEmail = () => {
                 <br />{" "}
                 <span className="text-blue-600 cursor-pointer text-lg font-medium">
                   Resend a new code
-                </span>{" "}
-              </p>
-              <p className="text-gray-600 text-lg">
-                Remember Password?{" "}
-                <span className="text-blue-600 cursor-pointer text-lg font-semibold">
-                  Log in
                 </span>{" "}
               </p>
             </div>
