@@ -6,18 +6,39 @@ import SignUpOne from './components/SignUpOne'
 import SignUpTwo from './components/SignUpTwo'
 
 const SignUp = () => {
+    const  userInput = [
+        {
+        fullname:'',
+        username:'',
+        email:'',
+        password:'',
+        cpassword:'',
+        }
+        ]
+
         const [page,setPage] =useState(0)
         const [eye,setEye] =useState(false)
+        const [formData,setFormData] =useState(userInput)
+
+        const handleInput =(e)=>{
+        
+             //get user inputs
+            const {name,value} = e.target
+            setFormData({...formData,[name] : value})  
+
+                }
+                console.log(formData)
+            
         
         const showPassword = ()=>{
             setEye(!eye)
         }
         const PageDisplay = ()=>{
             if(page === 0){
-                return <SignUpOne eye={eye} setEye={setEye} showPassword={showPassword}/>;
+                return <SignUpOne formData={formData} handleInput={handleInput} eye={eye} setEye={setEye} showPassword={showPassword}/>;
             }
             if(page === 1){
-                return <SignUpTwo/>;
+                return <SignUpTwo formData={formData} handleInput={handleInput}/>;
             }
         }
 
