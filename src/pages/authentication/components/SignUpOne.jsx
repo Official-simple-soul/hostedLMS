@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-import FormInput, { userInputs } from './FormInput'
+import FormInput, { userInputs } from './FormInput';
+
 
 
 const SignUpOne = ({eye,setEye,showPassword}) => {
     const [data, setData]=useState({})
+    
 
             const handleInput =(e)=>{
                     const id= e.target.id;

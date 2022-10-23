@@ -3,12 +3,19 @@ import { Link } from 'react-router-dom'
 import Logo from '../../assets/icons/logo.svg'
 import Good from '../../assets/images/good2.png'
 import SignUpOne from './components/SignUpOne'
-import SignUpTwo from './components/SignUpTwo'
+import SignUpTwo from './components/SignUpTwo';
+import Signup2Modal from './components/SignUpModal';
 
 const SignUp = () => {
         const [page,setPage] =useState(0)
         const [eye,setEye] =useState(false)
+        const [success,setSuccess]= useState(false);
+
         
+        //function to show modal
+        const showModal = ()=>{
+           setSuccess(true);
+        }
         const showPassword = ()=>{
             setEye(!eye)
         }
@@ -140,8 +147,11 @@ const SignUp = () => {
                                 <button
                                    type={page === 0 ? 'button': 'submit'} 
                                     onClick={()=>{setPage((currPage)=>currPage + 1) && setEye(!eye)}}  className="text-[18px] font-[500] leading-[22px] tracking-[0.1px] mt-[40px] w-[100%] outline-[0] border border-solid rounded-[8px] h-[56px] bg-[#0D6EFD] text-[#ffffff]">
-                                     {page === 0 ? <p>Next</p>: <p>Create Account</p>}
+                                        {/* set onclick on create account */}
+                                     {page === 0 ? <p>Next</p>: <p onClick={showModal}>Create Account</p>}
                                 </button>
+                                {/* show modal */}
+                                { success && <Signup2Modal/>}
                             </div>
                         <p className='mb-[40px] mt-[24px]'>Already have an account? <Link to={'login'} className='text-[blue]' href="">Log In</Link></p>
                   </form>
