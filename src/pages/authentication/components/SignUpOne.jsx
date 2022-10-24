@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import FormInput from './FormInput'
+import FormInput from './FormInput';
 
 
-const SignUpOne = ({eye,setEye,showPassword,handleInput,formData}) => {
-  
+
+const SignUpOne = ({eye,setEye,showPassword,formData,handleInput}) => {
+
   return (
     <div>
         <FormInput handleInput={handleInput} formData={formData} eye={eye} setEye={setEye} showPassword={showPassword}/>   
