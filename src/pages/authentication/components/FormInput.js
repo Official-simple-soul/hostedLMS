@@ -1,5 +1,5 @@
-import Eye from '../../../assets/images/Vector.png'
-import {FaEye,FaEyeSlash} from 'react-icons/fa'
+import { Eye } from '../../../assets'
+import {FaEye, FaEyeSlash} from 'react-icons/fa'
 
 import React from 'react'
 
@@ -10,7 +10,7 @@ const FormInput = ({handleInput, eye,setEye,showPassword,formData}) => {
                     <span className='block text-[#808080] mb-[8px] mt-[30px] text-[18px] font-[500] leading-[22px]'>Full Name</span>
                     <div>
                         <input 
-                        onChange={handleInput} 
+                        onChange={handleInput}       
                         className='outline-[0] border-[none] border-[#808080] border border-solid rounded-[8px] w-[100%] h-[56px] text-[#808080] pt-[16px] pb-[16px] pl-[17px] text-[18px] font-[400] leading-[24px]' 
                         type='text' value={formData.fullname} name='fullname' placeholder={'Type your full name'} required/>
                     </div>
@@ -21,7 +21,7 @@ const FormInput = ({handleInput, eye,setEye,showPassword,formData}) => {
                         onChange={handleInput} 
                         className='outline-[0] border-[none] border-[#808080] border border-solid rounded-[8px] w-[100%] h-[56px] text-[#808080] pt-[16px] pb-[16px] pl-[17px] text-[18px] font-[400] leading-[24px]' 
                         type='text' value={formData.username} name='username'  placeholder={'Type your username'} required/>
-                </label> 
+            </label> 
             <label className='w-[100%]'>
                     <span className='block text-[#808080] mb-[8px] mt-[30px] text-[18px] font-[500] leading-[22px]'>Email</span>
                         <input 

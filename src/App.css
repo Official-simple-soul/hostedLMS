@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap');
 .bg-auth{
-    background-image: url(./assets/images/auth-bg.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: conic-gradient(from 142.8deg at 58.75% 50%, #44BF93 -56.25deg,#4BCA84 
+    37.5deg, #0D6EFD 191.25deg,#44BF93 303.75deg, #4BCA84 397.5deg);
 }

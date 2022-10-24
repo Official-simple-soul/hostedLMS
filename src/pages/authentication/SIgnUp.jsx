@@ -13,6 +13,32 @@ const SignUp = () => {
         email:'',
         password:'',
         cpassword:'',
+        age:0,
+        male:'',
+        female:'',
+        frontend:'',
+        backend:'',
+        mobile:'',
+        newbi:'',
+        beginner:'',
+        intermediate:'',
+        advanced:'',
+        how:'',
+        senior:'',
+        student:'',
+        unemployed:'',
+        selfemployed:'',
+        fulltime:'',
+        parttime:'',
+        primary:'',
+        secondary:'',
+        undergraduate:'',
+        graduate:'',
+        postgrad:'',
+        twitter:'',
+        facebook:'',
+        insta:'',
+        email:'',
         }
         ]
 
@@ -75,7 +101,8 @@ const SignUp = () => {
                         ` 
             }>
             <div 
-                className='
+                className={page === 0 ?
+                        `
                         flex
                         flex-col
                         w-[100%]
@@ -88,8 +115,23 @@ const SignUp = () => {
                         rounded-b-[0px]
                         rounded-l-[24px]
                         text-[#fff]
-                        '>
-                <h1 className='mt-[315px] mb-[8px]  font-bold  text-[45px] text-[#F5F5F5] font-[700] leading-[52px] ' >Kodecamp LMS</h1>
+                        `:
+                        `
+                        flex
+                        flex-col
+                        w-[100%]
+                        min-h-[1300px]
+                        bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)] 
+                        items-center
+                        shadow-[-15px_15px_24px_rgba(22,51,102,0.25)]
+                         rounded-t-[24px]
+                        rounded-r-[0px]
+                        rounded-b-[0px]
+                        rounded-l-[24px]
+                        text-[#fff]
+                        `    
+                        }>
+                <h1 className='mt-[315px] mb-[8px]  font-bold  text-[45px] text-[#F5F5F5] leading-[52px] ' >Kodecamp LMS</h1>
                 <p className='text-[18px] font-[400] leading-[22px]'>Learning has been made simple, interactive and fun.</p>
             </div>
         </div>
@@ -120,7 +162,8 @@ const SignUp = () => {
                         flex-col     
                          ` }>
                 
-            <div className='
+            <div className={page === 0 ?
+                            `
                         flex
                         flex-col 
                         w-[100%]
@@ -133,7 +176,23 @@ const SignUp = () => {
                         rounded-b-[24px]
                         rounded-l-[0px]
                         relative
-                    '>
+                    `
+                    :
+                    `
+                        flex
+                        flex-col 
+                        w-[100%]
+                        h-[1300px]
+                        bg-[#ffffff]  
+                        items-center
+                        shadow-[15px_15px_24px_rgba(22,51,102,0.25)]
+                        rounded-t-[0px]
+                        rounded-r-[24px]
+                        rounded-b-[24px]
+                        rounded-l-[0px]
+                        relative
+                    `
+                            }>
                         {/* progress bar */}
                 <div className='w-[595px] absolute top-[-2px] left-[0]'>
                     <div  className= { page === 0 ? `w-[50%] h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
