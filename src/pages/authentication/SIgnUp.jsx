@@ -7,24 +7,67 @@ import SignUpTwo from './components/SignUpTwo';
 import Signup2Modal from './components/SignUpModal';
 
 const SignUp = () => {
+    const  userInput = [
+        {
+        fullname:'',
+        username:'',
+        email:'',
+        password:'',
+        cpassword:'',
+        age:0,
+        male:'',
+        female:'',
+        frontend:'',
+        backend:'',
+        mobile:'',
+        newbi:'',
+        beginner:'',
+        intermediate:'',
+        advanced:'',
+        how:'',
+        senior:'',
+        student:'',
+        unemployed:'',
+        selfemployed:'',
+        fulltime:'',
+        parttime:'',
+        primary:'',
+        secondary:'',
+        undergraduate:'',
+        graduate:'',
+        postgrad:'',
+        twitter:'',
+        facebook:'',
+        insta:'',
+
+        }
+        ]
+
         const [page,setPage] =useState(0)
         const [eye,setEye] =useState(false)
         const [success,setSuccess]= useState(false);
+        const [formData,setFormData]= useState(userInput);
 
-        
+const handleInput = (e)=>{
+  //get user inputs
+   const {name,value} = e.target
+    setFormData({...formData,[name]: value})  
+}
+ console.log(formData)
         //function to show modal
         const showModal = ()=>{
            setSuccess(true);
-        }
+        } //function to show password
         const showPassword = ()=>{
             setEye(!eye)
         }
+         //function to display form
         const PageDisplay = ()=>{
             if(page === 0){
-                return <SignUpOne eye={eye} setEye={setEye} showPassword={showPassword}/>;
+                return <SignUpOne formData={formData} handleInput={handleInput} eye={eye} setEye={setEye} showPassword={showPassword}/>;
             }
             if(page === 1){
-                return <SignUpTwo/>;
+                return <SignUpTwo formData={formData} handleInput={handleInput}/>;
             }
         }
 
@@ -34,8 +77,7 @@ const SignUp = () => {
   return (
     <div className="flex w-[100%] ">
         <div 
-            className={page === 0 ?
-                `
+            className='
                         pt-[70px]
                         pl-[70px]
                         pb-[70px]
@@ -46,20 +88,7 @@ const SignUp = () => {
                         flex
                         items-center
                         justify-center
-                        ` :
-                        `
-                        pt-[70px]
-                        pl-[70px]
-                        pb-[70px]
-                        w-[50%]
-                        min-h-[1190px] 
-                        bg-[white]
-                        bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)]
-                        flex
-                        items-center
-                        justify-center
-                        ` 
-            }>
+                        '>
             <div 
                 className='
                         flex
@@ -68,21 +97,21 @@ const SignUp = () => {
                         min-h-[1035px]
                         bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)] 
                         items-center
-                        shadow-[-15px_15px_24px_rgba(22,51,102,0.25)]
+                        shadow-[-15px_2px_24px_rgba(22,51,102,0.25)]
                          rounded-t-[24px]
                         rounded-r-[0px]
                         rounded-b-[0px]
                         rounded-l-[24px]
                         text-[#fff]
-                        '>
+                            '>
                 <h1 className='mt-[315px] mb-[8px]  font-bold  text-[45px] text-[#F5F5F5] leading-[52px] ' >Kodecamp LMS</h1>
                 <p className='text-[18px] font-[400] leading-[22px]'>Learning has been made simple, interactive and fun.</p>
             </div>
         </div>
 
 
-        <div  className={page === 0 ?
-                        `pt-[70px]
+        <div  className='
+                        pt-[70px]
                         pr-[70px]
                         pb-[70px]
                         w-[50%] 
@@ -92,38 +121,26 @@ const SignUp = () => {
                         justify-center
                         items-center
                         flex-col
-                        ` :
-                        `
-                        pt-[70px]
-                        pr-[70px]
-                        pb-[70px]
-                        w-[50%] 
-                        min-h-[1190px] 
-                        bg-[#ffffff] 
-                        flex
-                        justify-center
-                        items-center
-                        flex-col     
-                         ` }>
+                        '>
                 
-            <div className='
+            <div className='                        
                         flex
                         flex-col 
                         w-[100%]
                         h-[1035px]
                         bg-[#ffffff]  
                         items-center
-                        shadow-[15px_15px_24px_rgba(22,51,102,0.25)]
+                        shadow-[2px_15px_24px_rgba(22,51,102,0.25)]
                         rounded-t-[0px]
                         rounded-r-[24px]
                         rounded-b-[24px]
                         rounded-l-[0px]
-                        relative
-                    '>
+                        relative'
+                            >
                         {/* progress bar */}
                 <div className='w-[595px] absolute top-[-2px] left-[0]'>
                     <div  className= { page === 0 ? `w-[50%] h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
-                        rounded-l-[0px] bg-[#00BD56] text-left` :` w-[100%]  h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
+                        rounded-l-[0px] bg-[#00BD56] text-left` :` w-[99%]  h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
                         rounded-l-[0px]  bg-[#00BD56] text-left`}>
                     </div>
                 </div>
@@ -141,7 +158,7 @@ const SignUp = () => {
                   </div>
                   <form  onSubmit={handleSubmit} className="flex w-[80%] justify-center mt-[10px] items-center flex-col ">
                             <div className='w-[100%]'>
-                                {PageDisplay()}
+                                {!success ? PageDisplay() : <Signup2Modal/>}
                             </div>
                             <div className='w-[100%]' >
                                 <button
@@ -151,7 +168,7 @@ const SignUp = () => {
                                      {page === 0 ? <p>Next</p>: <p onClick={showModal}>Create Account</p>}
                                 </button>
                                 {/* show modal */}
-                                { success && <Signup2Modal/>}
+                                {/* { success && <Signup2Modal/>} */}
                             </div>
                         <p className='mb-[40px] mt-[24px]'>Already have an account? <Link to={'login'} className='text-[blue]' href="">Log In</Link></p>
                   </form>
