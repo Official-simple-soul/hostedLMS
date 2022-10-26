@@ -39,7 +39,7 @@ const SignUp = () => {
         twitter:'',
         facebook:'',
         insta:'',
-        email:'',
+
         }
         ]
 
@@ -97,7 +97,7 @@ const handleInput = (e)=>{
                         min-h-[1035px]
                         bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)] 
                         items-center
-                        shadow-[-15px_15px_24px_rgba(22,51,102,0.25)]
+                        shadow-[-15px_2px_24px_rgba(22,51,102,0.25)]
                          rounded-t-[24px]
                         rounded-r-[0px]
                         rounded-b-[0px]
@@ -130,7 +130,7 @@ const handleInput = (e)=>{
                         h-[1035px]
                         bg-[#ffffff]  
                         items-center
-                        shadow-[15px_15px_24px_rgba(22,51,102,0.25)]
+                        shadow-[2px_15px_24px_rgba(22,51,102,0.25)]
                         rounded-t-[0px]
                         rounded-r-[24px]
                         rounded-b-[24px]
@@ -140,7 +140,7 @@ const handleInput = (e)=>{
                         {/* progress bar */}
                 <div className='w-[595px] absolute top-[-2px] left-[0]'>
                     <div  className= { page === 0 ? `w-[50%] h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
-                        rounded-l-[0px] bg-[#00BD56] text-left` :` w-[100%]  h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
+                        rounded-l-[0px] bg-[#00BD56] text-left` :` w-[99%]  h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
                         rounded-l-[0px]  bg-[#00BD56] text-left`}>
                     </div>
                 </div>
@@ -158,7 +158,7 @@ const handleInput = (e)=>{
                   </div>
                   <form  onSubmit={handleSubmit} className="flex w-[80%] justify-center mt-[10px] items-center flex-col ">
                             <div className='w-[100%]'>
-                                {PageDisplay()}
+                                {!success ? PageDisplay() : <Signup2Modal/>}
                             </div>
                             <div className='w-[100%]' >
                                 <button
@@ -168,7 +168,7 @@ const handleInput = (e)=>{
                                      {page === 0 ? <p>Next</p>: <p onClick={showModal}>Create Account</p>}
                                 </button>
                                 {/* show modal */}
-                                { success && <Signup2Modal/>}
+                                {/* { success && <Signup2Modal/>} */}
                             </div>
                         <p className='mb-[40px] mt-[24px]'>Already have an account? <Link to={'login'} className='text-[blue]' href="">Log In</Link></p>
                   </form>
