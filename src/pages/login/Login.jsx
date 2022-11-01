@@ -58,10 +58,10 @@ const Login = () => {
                   </div>
 
                   <div className='flex flex-row justify-between mb-8'>
-                    <div className='flex justify-center items-center'>
-                      <input type="checkbox" name="" id=""  className='border border-gray-700'/>
-                      <span className='pl-4'>Remember me</span>
-                    </div>
+                    <label className='checkbox flex justify-center items-center'>
+                      <input type="checkbox" name="" id="check-box"  className= ''/>
+                      <span className='pl-3'>Remember me</span>
+                    </label>
                     <p className={`${Style.login_link}`}><Link to={'#'}>Forgot password?</Link></p>
                   </div>
 

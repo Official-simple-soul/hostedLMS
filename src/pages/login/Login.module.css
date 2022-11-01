@@ -82,3 +82,32 @@
     letter-spacing: 0.1px;
     color: #808080;
 }
+
+input[type="checkbox"] {
+    position: relative;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+    border: 2px solid #808080;
+    border-radius: 3px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    outline: none;
+    transition: 0.3s;
+    
+}
+
+input[type="checkbox"]:checked {
+   background-color: white;
+   
+}
+
+input[type="checkbox"]:checked + span::before{
+    content: "\2713";
+   display: inline-block;
+   text-align: center;
+   position: absolute;
+   left: 45.8rem;
+   color: #0D6EFD;
+ }
