@@ -1,7 +1,7 @@
 import React from "react";
 import { Logo } from "../../assets";
 
-const Forgotpsw = () => {
+const ForgotPassword = () => {
   return (
     <>
     {/* Forgot Password page */}
@@ -10,7 +10,7 @@ const Forgotpsw = () => {
           <div className="h-5/6 w-10/12 ml-auto flex items-center justify-center rounded-tl-3xl rounded-bl-3xl shadow-4xl bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)]">
             <div className="font-inter text-white text-center">
               <p className="font-bold text-5xl">Kodecamp LMS</p>
-              <p className="text-lg font-thin mt-3">
+              <p className="text-lg mt-3">
                 Learning has been made simple, interactive and fun.
               </p>
             </div>
@@ -84,4 +84,4 @@ const Forgotpsw = () => {
   );
 };
 
-export default Forgotpsw;
+export default ForgotPassword;
