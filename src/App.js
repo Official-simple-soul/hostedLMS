@@ -1,17 +1,15 @@
 import React from "react";
-import Login from "./pages/login/Login";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css"
+import Routes from "./routes/Routes";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Login/>} />
-        </Routes>
-      </BrowserRouter>
+      <Routes />
     </div>
   );
 }
 
 export default App;
+
+
