@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SignUpTwo = () => {
+const SignUpTwo = ({formData,handleInput}) => {
   return (
     <div className='signup2 flex flex-col gap-2'>
        <div className='signup__form-div'>
