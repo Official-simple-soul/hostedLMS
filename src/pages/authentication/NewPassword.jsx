@@ -46,54 +46,79 @@ const NewPassword = () => {
     }
     return (
     <div className='wrapper'>
-         <ToastContainer />
+        <ToastContainer />
+
         <div className='conic-bg '>
-        <div className='bg-trans flex flex-col items-center justify-center text-center text-white'>
-           <h1 className='text-4xl font-extrabold pb-4'>Kodecamp LMS</h1> 
-           <p>Learning has been made simple, interactive and fun.</p>
-        </div>
-        </div> 
-       <div className='ash-bg'>
-        <div className='bg-form '>
-            <div className='inner '>
-                <div className='text flex flex-col items-center justify-center'>
-                <img src={Logo} height = {50} width= {50} alt='logo' className='pt-3' />
-                    <h2 className='pt-5'>Create new password</h2>
-                    <div className='flex gap-5 flex-wrap pt-3  '>
-                        <img src={Good} alt='good' />
-                        <img src={Good} alt='good' />
-                        <img src={three} alt='three' />
-                    </div>
-                    <p className='pt-3'>Kindly set a new password and confirm the password</p>
-                </div>
-                <form onSubmit={handleSubmit}>
-                    <div className='flex flex-col mt-5 relative'>
-                        <label>Password</label>
-                        <input placeholder='Type new password'style={{'border': '1px solid black'}}
-                        className='px-5 mt-2'
-                        name='password' onChange={setNewPassword}
-                        />
-                        <AiFillEye className='absolute right-2 bottom-3' />
-                    </div> 
-                    <div className='flex flex-col mt-5 relative'>
-                        <label>Confirm Password</label>
-                        <input placeholder='Type your password again' 
-                        style={{'border': '0.1px solid black'}}
-                        className='px-5 mt-2' name='passy' onChange={handlePassword}/>
-                        <AiFillEye className='absolute right-2 bottom-3' 
-                       
-                        />
-                    </div> 
-                    <button className='mt-5 bg-blue-500'
-                        style={{'width' : '100%', 'color':'white'}}>
-                         Save Password</button>
-                        <div className='text-center pt-3'>
-                            <span>Remember Password?</span>
-                            <span className='text-blue-500'>Log in</span>
-                        </div>
-                </form>
+            <div className='bg-trans flex flex-col items-center justify-center text-center text-white'>
+                <h1 className='text-4xl font-extrabold pb-4'>Kodecamp LMS</h1> 
+                <p>Learning has been made simple, interactive and fun.</p>
             </div>
-        </div>
+        </div> 
+
+        <div className='ash-bg'>
+            <div className='bg-form '>
+                <div className='inner relative h-full flex flex-col justify-center items-center'>
+                    <span className="bg-green-600 absolute h-1 w-[98%] top-0 left-0 overflow-hidden"></span>
+
+                    <div className="py-6 w-11/12 flex flex-col gap-6">
+                        <div className='text w-full flex flex-col gap-6 items-center justify-center'>
+                            <div className="w-20 h-20 rounded-lg bg-transparent shadow-md grid place-items-center">
+                                <img src={Logo} alt="kodecamp-logo" />
+                            </div>
+
+                            <h2 className='text-[#303030] text-2xl font-semibold'>Create new password</h2>
+
+                            <div className="flex isolate">
+                                <span className="w-7 h-7 rounded-full flex justify-center items-center bg-green-600">
+                                    <img src={Good} alt="tick" />
+                                </span>
+                                <div className="flex justify-center items-center">
+                                    <hr className="w-14 h-px flex place-items-center text-center bg-gray-600" />
+                                </div>
+                                <span className="w-7 h-7 rounded-full flex justify-center items-center bg-green-600">
+                                    <img src={Good} alt="tick" />
+                                </span>
+                                <div className="flex justify-center items-center">
+                                    <hr className="w-14 h-px flex place-items-center text-center bg-gray-600" />
+                                </div>
+                                <span className="w-7 h-7 rounded-full flex justify-center items-center bg-[#585858]">
+                                    <p className="font-medium text-lg text-center text-white">3</p>
+                                </span>
+                            </div>
+
+                            <p className='text-lg'>Kindly set a new password and confirm the password</p>
+                        </div>
+
+                        <form onSubmit={handleSubmit} className='w-full flex flex-col gap-4'>
+                            <div className='flex flex-col gap-2 relative'>
+                                <label className='text-[#808080]'>New Password</label>
+                                <input 
+                                    placeholder='Type new password' 
+                                    className='px-5 h-[50px] border border-[#808080] outline-[#808080]'
+                                    name='password' 
+                                    onChange={setNewPassword}
+                                />
+                                <AiFillEye className='absolute text-[#808080] text-xl right-2 bottom-3' />
+                            </div> 
+
+                            <div className='flex flex-col gap-2 relative'>
+                                <label className='text-[#808080]'>Confirm Password</label>
+                                <input 
+                                    placeholder='Type your password again' 
+                                    className='px-5 h-[50px] border border-[#808080] outline-[#808080]' 
+                                    name='passy' o
+                                    nChange={handlePassword}
+                                />
+                                <AiFillEye className='absolute text-[#808080] text-xl right-2 bottom-3' />
+                            </div>
+
+                            <button className='bg-blue-500 h-[50px] bg-[#0D6EFD] text-white'>Save Password</button>
+                                
+                        </form>
+                    </div>
+
+                </div>
+            </div>
        </div>
        {modalOpen && <Modal setOpenModal={setModalOpen} />}
     </div>
