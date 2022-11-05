@@ -20,8 +20,8 @@ const ForgotPassword = () => {
         <div className="w-full bg-white flex items-center">
           <div className="relative h-5/6 w-10/12 mr-auto bg-inherit rounded-tr-3xl rounded-br-3xl shadow-3xl">
 
-            <div className=" w-full overflow-clip absolute bg-gray-100 rounded-full h-[3px]">
-              <div className="bg-green-500 h-[3px] rounded-tr-3xl rounded-br-3xl w-2/5"></div>
+            <div className=" w-full overflow-clip absolute bg-gray-100 rounded-full h-1 w-[98%]">
+              <div className="bg-green-500 h-1 rounded-tr-3xl rounded-br-3xl w-2/5"></div>
             </div>
 
             <div className="flex flex-col gap-2 items-center text-center my-7">
@@ -42,14 +42,14 @@ const ForgotPassword = () => {
                     </div>
 
                     <div className="flex w-full items-center">
-                        <p className="px-3 py-1 border-2 rounded-full bg-gray-500">
+                        <p className="px-3 py-1 rounded-full bg-[#808080]">
                             2
                         </p>
                         <hr className="w-full" />
                     </div>
 
                     <div className="flex items-center">
-                        <p className="px-3 py-1 border-2 rounded-full bg-gray-500">
+                        <p className="px-3 py-1 rounded-full bg-[#808080]">
                             3
                         </p>
                     </div>
