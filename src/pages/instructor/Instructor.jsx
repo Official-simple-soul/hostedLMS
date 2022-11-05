@@ -1,8 +1,11 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom';
 
 const Instructor = () => {
   return (
-    <div>Instructor</div>
+    <div>
+      <Outlet />
+    </div>
   )
 }
 
