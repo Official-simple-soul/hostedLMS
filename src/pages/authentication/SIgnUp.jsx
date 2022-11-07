@@ -9,7 +9,8 @@ import Signup2Modal from './components/SignUpModal';
 const SignUp = () => {
     const  userInput = [
         {
-        fullname:'',
+        firstname:'',
+        lastname:'',
         username:'',
         email:'',
         password:'',
@@ -74,6 +75,7 @@ const handleInput = (e)=>{
         const handleSubmit = (e)=>{
             e.preventDefault()
         }
+        
   return (
     <div className="flex w-[100%] ">
         <div 
@@ -94,7 +96,7 @@ const handleInput = (e)=>{
                         flex
                         flex-col
                         w-[100%]
-                        min-h-[1035px]
+                        min-h-[1160px]
                         bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)] 
                         items-center
                         shadow-[-15px_2px_24px_rgba(22,51,102,0.25)]
@@ -127,7 +129,7 @@ const handleInput = (e)=>{
                         flex
                         flex-col 
                         w-[100%]
-                        h-[1035px]
+                        min-h-[1160px]
                         bg-[#ffffff]  
                         items-center
                         shadow-[2px_15px_24px_rgba(22,51,102,0.25)]
@@ -145,17 +147,21 @@ const handleInput = (e)=>{
                     </div>
                 </div>
 
-                <div className="shadow-[0px_4px_8px_rgba(0,0,0,0.15)] mt-[40px] w-[80px] h-[80px] flex justify-center items-center">
-                     <img className=' w-[52px] h-[51px]' src={Logo} alt={'kodecamp'}/>
-                </div>
-                            {/* heading title */}
-                  <h2 className='text-[#303030] text-[28px] font-[500] leading-[36px] mt-[24px] tracking-[1px]'>Create account</h2>
+                <div className="flex flex-col gap-7 justify-center items-center">
+                    <div className="w-20 h-[80px] rounded-lg bg-transparent shadow-md mt-8  grid place-items-center">
+                        <img src={Logo} alt="kodecamp-logo" />
+                    </div>
+                                {/* heading title */}
+                    <h2 className='text-[#303030] text-[28px] font-[500] leading-[36px] tracking-[1px]'>Create account</h2>
 
-                  <div className="flex justify-center items-center w-[120px] text-[#ffffff] text-[18px] font-[500] leading-[22px] mt-[38.5px]">
-                        <span className={ page === 0 ? `w-[30px] h-[30px] bg-[#0D6EFD] flex justify-center items-center  rounded-[50%]`:`w-[30px] h-[30px] bg-[#00BD56] flex justify-center items-center  rounded-[50%]`}>{page === 0 ? <>1</> : <img src={Good} alt='mark good'/>}</span>
-                            <span className='w-[60px] h-[1px] bg-[#D9D9D9]'></span>
-                        <span className={ page === 0 ? `w-[30px] h-[30px] bg-[#000000] flex justify-center items-center  rounded-[50%]`:`w-[30px] h-[30px] bg-[#0D6EFD] flex justify-center items-center  rounded-[50%]`}>2</span>
-                  </div>
+                    <div className="flex justify-center items-center w-[120px] text-[#ffffff] text-[18px] font-[500] leading-[22px]">
+                            <span className={ page === 0 ? `w-[30px] h-[30px] bg-[#0D6EFD] flex justify-center items-center  rounded-[50%]`:`w-[30px] h-[30px] bg-[#00BD56] flex justify-center items-center  rounded-[50%]`}>{page === 0 ? <>1</> : <img src={Good} alt='mark good'/>}</span>
+                                <span className='w-[60px] h-[1px] bg-[#D9D9D9]'></span>
+                            <span className={ page === 0 ? `w-[30px] h-[30px] bg-[#000000] flex justify-center items-center  rounded-[50%]`:`w-[30px] h-[30px] bg-[#808080] flex justify-center items-center  rounded-[50%]`}>2</span>
+                    </div>
+                </div>
+
+
                   <form  onSubmit={handleSubmit} className="flex w-[80%] justify-center mt-[10px] items-center flex-col ">
                             <div className='w-[100%]'>
                                 {!success ? PageDisplay() : <Signup2Modal/>}
