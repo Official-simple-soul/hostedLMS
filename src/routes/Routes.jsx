@@ -16,7 +16,9 @@ import { StudentDashboard } from '../pages/student/components';
 
 // Instructor imports
 import Instructor from '../pages/instructor/Instructor';
-import { InstructorDashboard } from '../pages/instructor/components';
+import { InstructorDashboard, ClassroomTrainer } from '../pages/instructor/components';
+import SaveLesson from '../pages/instructor/components/SaveLesson';
+
 
 // Admin imports
 import Admin from '../pages/admin/Admin';
@@ -47,6 +49,7 @@ const AllRoutes = () => {
         <Route path="instructor" element={<Instructor />}>
           <Route path="" element={<Navigate replace to="/instructor/dashboard" />} />
           <Route path="dashboard" element={<InstructorDashboard />} />
+          <Route path="classroom" element={<ClassroomTrainer />}/>
         </Route>
 
         {/* Admin Routes => localhost:3000/admin/~ */}
