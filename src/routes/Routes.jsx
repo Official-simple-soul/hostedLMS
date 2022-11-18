@@ -13,6 +13,9 @@ import Error404 from '../pages/error/Error404';
 // Student imports
 import Student from '../pages/student/Student';
 import { StudentDashboard } from '../pages/student/components';
+// TODO add tasks import for routing
+import {StudentTasks} from '../pages/student/components';
+import {StudentTask} from '../pages/student/components';
 
 // Instructor imports
 import Instructor from '../pages/instructor/Instructor';
@@ -41,6 +44,10 @@ const AllRoutes = () => {
         <Route path="student" element={<Student />}>
           <Route path="" element={<Navigate replace to="/student/dashboard" />} />
           <Route path="dashboard" element={<StudentDashboard />} />
+          {/* TODO added task route */}
+          <Route path="tasks" element={<StudentTasks />} />
+          <Route path="tasks/task" element={<StudentTask />} />
+
         </Route>
 
         {/* Trainer Routes => localhost:3000/instructor/~ */}
