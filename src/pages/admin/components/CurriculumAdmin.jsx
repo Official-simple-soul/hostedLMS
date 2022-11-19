@@ -175,12 +175,12 @@ const CurriculumAdmin = () => {
           {WeeklyCurriculum.map((curi,index)=>{
               return(
             <li key={index}  className={`${show === index ? 'pb-[24px]' : 'pb-[0]'} mb-[24px] rounded-[12px] px-[24px]  w-[100%] bg-[#FFFFFF]`}>
-            <div  className="  flex justify-between items-center w-[100%] h-[72px] bg-[#FFFFFF]">
-              <p>{curi.week}</p>
-            <div className="flex items-center">
+            <div onClick={()=>showOption(index)} className="  flex justify-between items-center w-[100%] h-[72px] bg-[#FFFFFF]">
+              <p >{curi.week}</p>
+            <div  className="flex items-center">
               <button className="flex items-center border-[0] border-[0]">
                 <span className='pr-[14px] text-[#0D6EFD] text-[16px]'>{curi.weekTopic}</span>
-                <img onClick={()=>showOption(index)} className={`${show === index ? 'rotate-[175deg]' : 'rotate-[0deg]'} w-[12px] h-[7.41px]`} src={BlueDownArrow} alt="down arrow" />
+                <img  className={`${show === index ? 'rotate-[175deg]' : 'rotate-[0deg]'} w-[12px] h-[7.41px]`} src={BlueDownArrow} alt="down arrow" />
               </button>
               <div className="flex items-center justify-center relative">
                 <img onClick={()=>updateOptions(index)} className='pl-[32px]' src={MenuDots} alt="menu" />

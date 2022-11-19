@@ -13,8 +13,8 @@ const StudentPageWrapper = ({ children }) => {
           </div>
         </div>
 
-        <div className="main-content bg-[#F5F5F5] w-full h-screen">
-          <nav className='h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5'>
+        <div className="main-content bg-[#F5F5F5] w-full h-[120vh]">
+          <nav className='h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5 mt-1.5'>
             <div>Search bar if any</div>
 
             <div className="flex gap-4 items-center">
@@ -35,7 +35,7 @@ const StudentPageWrapper = ({ children }) => {
             </div>
           </nav>
 
-          <div>
+          <div className='m-6'>
             {children}
           </div>
         </div>

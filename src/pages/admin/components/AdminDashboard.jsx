@@ -12,6 +12,11 @@ const AdminDashboard = () => {
        <CurriculumAdmin/>
      </div>
     </div>
+// import AdminPageWrapper from '../../../layouts/admin/AdminPageWrapper'
+
+// const AdminDashboard = () => {
+//   return (
+//     <AdminPageWrapper>AdminDashboard</AdminPageWrapper>
   )
 }
 
