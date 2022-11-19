@@ -3,6 +3,8 @@ import DownArrow from '../../../assets/icons/down-arrow.svg'
 import Cross from '../../../assets/icons/cross.svg'
 import BlueDownArrow from '../../../assets/icons/arrow-down-blue.svg'
 import MenuDots from '../../../assets/icons/Dots.svg'
+import UpdateCurriculum from './UpdateCurriculum'
+import DeleteWeek from './DeleteWeek'
 
   const WeeklyCurriculum = [
         {
@@ -132,6 +134,7 @@ import MenuDots from '../../../assets/icons/Dots.svg'
 const CurriculumAdmin = () => {
 
   const [show,setShow] = useState(-1)
+  const [deletePop,setDeletePop] = useState(true)
 
   const showOption = (index)=>{
     if(index === show){
@@ -140,10 +143,22 @@ const CurriculumAdmin = () => {
     }
       setShow(index)
   }
+  const [update,setUpdate] = useState(-1)
+
+  const updateOptions = (index)=>{
+    if(index === update){
+      setUpdate(-1)
+      return
+    }
+      setUpdate(index)
+  }
   
   
   return (
-    <div onClick={()=>show && showOption()}  className='w-[100%] flex flex-col justify-center items-center mt-[54px]'>
+    <>
+    {
+      deletePop ?
+          <div onClick={()=>show && showOption()}  className='w-[100%] flex flex-col justify-center items-center mt-[54px]'>
       <div className="flex justify-between w-[100%] ">
         <h1>Curriculum</h1>
         <div className="flex items-center">
@@ -154,7 +169,7 @@ const CurriculumAdmin = () => {
           </div>
         </div>
       </div>
-
+         
       <ul className='w-[100%] mt-[28px]'>
         
           {WeeklyCurriculum.map((curi,index)=>{
@@ -167,8 +182,11 @@ const CurriculumAdmin = () => {
                 <span className='pr-[14px] text-[#0D6EFD] text-[16px]'>{curi.weekTopic}</span>
                 <img onClick={()=>showOption(index)} className={`${show === index ? 'rotate-[175deg]' : 'rotate-[0deg]'} w-[12px] h-[7.41px]`} src={BlueDownArrow} alt="down arrow" />
               </button>
-              <div className="flex items-center justify-center">
-                <img className='pl-[32px]' src={MenuDots} alt="menu" />
+              <div className="flex items-center justify-center relative">
+                <img onClick={()=>updateOptions(index)} className='pl-[32px]' src={MenuDots} alt="menu" />
+                  <div className={` ${update !== index ? "hidden" : "block"} absolute top-[20px] right-[-24px] `}>
+                     <UpdateCurriculum deletePop={deletePop} setDeletePop={setDeletePop}/>
+                  </div>
               </div>
             </div>
           </div>
@@ -193,6 +211,11 @@ const CurriculumAdmin = () => {
 
       </ul>
     </div>
+    :
+
+    <DeleteWeek/>
+    }
+    </>
   )
 }
 
