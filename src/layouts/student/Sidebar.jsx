@@ -1,5 +1,6 @@
 import React from 'react'
 import { Logo, Dashboard, Profile, Classroom, Task, Curriculum, Support, Settings } from '../../assets'
+import { NavLink } from 'react-router-dom'
 
 const Sidebar = () => {
   return (
@@ -13,72 +14,72 @@ const Sidebar = () => {
 
             <nav className="mt-[4rem]">
                 <div className='relative'>
-                    <a className="w-full font-thin uppercase text-[#0D6EFD] flex items-center p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD] dark:from-gray-700 dark:to-gray-800 border-r-8 border-[#0D6EFD]" href="#">
+                    <NavLink to='/student/dashboard' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD] dark:from-gray-700 dark:to-gray-800 border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] dark:text-gray-200 flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                         <span className="text-left">
-                            <img src={Dashboard} alt="" />
+                            <img src={Dashboard} alt="" className='w-[22px]' />
                         </span>
-                        <span className="mx-4 text-sm font-normal">
+                        <span className="text-lg font-normal">
                             Dashboard
                         </span>
-                    </a>
+                    </NavLink>
 
-                    <a className="w-full font-thin uppercase text-[#808080] dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500" href="#">
+                    <NavLink to='/student/profile' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD] dark:from-gray-700 dark:to-gray-800 border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] dark:text-gray-200 flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                         <span className="text-left">
-                            <img src={Profile} alt="" />
+                            <img src={Profile} alt="" className='w-[22px]' />
                         </span>
-                        <span className="mx-4 text-sm font-normal">
+                        <span className="text-lg font-normal">
                             Profile
                         </span>
-                    </a>
+                    </NavLink>
 
-                    <a className="w-full font-thin uppercase text-[#808080] dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500" href="#">
+                    <NavLink to='/student/profile' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD] dark:from-gray-700 dark:to-gray-800 border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] dark:text-gray-200 flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                         <span className="text-left">
-                            <img src={Classroom} alt="" />
+                            <img src={Classroom} alt="" className='w-[22px]' />
                         </span>
-                        <span className="mx-4 text-sm font-normal">
+                        <span className="text-lg font-normal">
                             My Classroom
                         </span>
-                    </a>
+                    </NavLink>
 
-                    <a className="w-full font-thin uppercase text-[#808080] dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500" href="#">
+                    <NavLink to='/student/profile' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD] dark:from-gray-700 dark:to-gray-800 border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] dark:text-gray-200 flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                         <span className="text-left">
-                            <img src={Task} alt="" />
+                            <img src={Task} alt="" className='w-[22px]' />
                         </span>
-                        <span className="mx-4 text-sm font-normal">
+                        <span className="text-lg font-normal">
                             Task
                         </span>
-                    </a>
+                    </NavLink>
 
-                    <a className="w-full font-thin uppercase text-[#808080] dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500" href="#">
+                    <NavLink to='/student/profile' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD] dark:from-gray-700 dark:to-gray-800 border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] dark:text-gray-200 flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                         <span className="text-left">
-                            <img src={Curriculum} alt="" />
+                            <img src={Curriculum} alt="" className='w-[22px]' />
                         </span>
-                        <span className="mx-4 text-sm font-normal">
+                        <span className="text-lg font-normal">
                             Curriculum
                         </span>
-                    </a>
+                    </NavLink>
 
-                    <a className="w-full font-thin uppercase text-[#808080] dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500" href="#">
+                    <NavLink to='/student/profile' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD] dark:from-gray-700 dark:to-gray-800 border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] dark:text-gray-200 flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                         <span className="text-left">
-                            <img src={Support} alt="" />
+                            <img src={Support} alt="" className='w-[22px]' />
                         </span>
-                        <span className="mx-4 text-sm font-normal">
+                        <span className="text-lg font-normal">
                             Support
                         </span>
-                    </a>
+                    </NavLink>
 
-                    <a className="w-full font-thin uppercase text-[#808080] dark:text-gray-200 flex items-center p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500" href="#">
+                    <NavLink to='/student/profile' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD] dark:from-gray-700 dark:to-gray-800 border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] dark:text-gray-200 flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                         <span className="text-left">
-                            <img src={Settings} alt="" />
+                            <img src={Settings} alt="" className='w-[22px]' />
                         </span>
-                        <span className="mx-4 text-sm font-normal">
+                        <span className="text-lg font-normal">
                             Settings
                         </span>
-                    </a>
+                    </NavLink>
                 </div>
             </nav>
 
-            <div className="absolute bottom-4 left-[30%] flex flex-col gap-1 items-center justify-center">
+            <div className="mt-5 pb-4 flex flex-col gap-1 items-center justify-center"> 
                 <p className="text-[#585858] text-[16px]">Student ID</p>
                 <p className="text-blue-ribbon-400 text-[16px]">KC0001</p>
             </div>

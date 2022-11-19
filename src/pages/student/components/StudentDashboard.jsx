@@ -4,7 +4,7 @@ import StudentPageWrapper from '../../../layouts/student/StudentPageWrapper'
 const StudentDashboard = () => {
   return (
     <StudentPageWrapper>
-      <h1 className='m-6'>StudentDashboard</h1>
+      <h1>StudentDashboard</h1>
     </StudentPageWrapper>
   )
 }
