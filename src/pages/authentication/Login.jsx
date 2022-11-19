@@ -19,24 +19,26 @@ const Login = () => {
       <div className=' flex flex-row shadow-xl rounded-xl'>
         
           <div className={`${Style.col1_bg} w-full h-screen `}>
-            <div className={`${Style.b_radLeft} ${Style.box_shadow} my-12 ml-12 h-5/6 flex flex-col justify-center`}>
+            <div className={`${Style.b_radLeft} ${Style.box_shadow} my-[20px] ml-12 h-[634px] flex flex-col justify-center`}>
               <h2 className={`${Style.col1_heading} text-center`}>Kodecamp LMS</h2>
               <p className={`${Style.col1_para}`}>Learning has been made simple, interactive and fun.</p>
             </div>
           </div>
           
           <div className={`${Style.col2_bg} w-full h-screen`}>
-            <div className={`${Style.b_radRight} ${Style.box_shadow} my-12 mr-12 bg-white pt-9 h-5/6`}>
-              <img src={Logo} alt="" className= {`${Style.logo_shadow} bg-white rounded-lg p-3 m-auto`} />
-              <h2 className={`${Style.col2_text} my-4 text-center`}>Log in to dashboard</h2>
+            <div className={`${Style.b_radRight} ${Style.box_shadow} my-[20px] mr-12 bg-white pt-9 h-[634px]`}>
+              <div className="flex flex-col gap-4 justify-center items-center">
+                <img src={Logo} alt="" className= {`${Style.logo_shadow} bg-white rounded-lg p-3 m-auto`} />
+                <h2 className={`${Style.col2_text} my-4 text-center`}>Log in to dashboard</h2>
+              </div>
 
-              <div className={`${Style.login_text} px-12`}>
+              <div className={`${Style.login_text} w-[90%] mx-auto mt-[1.4rem]`}>
                 <form action="">
                   <div className='mb-4 flex flex-col gap-2'>
                     <label htmlFor="email">Email</label>
                     <div className='relative flex flex-row items-center'>
                       <span className='absolute left-3'><img src={Mail} alt="" /></span>
-                      <input type="email"  name='email' placeholder='Type your email' className='border border-gray-400 rounded-lg py-4 outline-none pr-3 pl-10 w-full' required/>
+                      <input type="email"  name='email' placeholder='Type your email' className='border border-gray-400 rounded-lg h-[54px] outline-none pr-3 pl-10 w-full' required/>
                     </div>
                   </div>
 
@@ -44,7 +46,7 @@ const Login = () => {
                     <label htmlFor="email">Password</label>
                     <div className='relative flex flex-row items-center'>
                       <span className='absolute left-3'><img src={Lock} alt="lock" /></span>
-                      <input type={(showpassword === false)? 'password' : 'text' }  name='password' placeholder='Type your password' className='border border-gray-400 rounded-lg py-4 outline-none pr-3 pl-10 w-full' required/>
+                      <input type={(showpassword === false)? 'password' : 'text' }  name='password' placeholder='Type your password' className='border border-gray-400 rounded-lg h-[54px] outline-none pr-3 pl-10 w-full' required/>
                       {
                         (showpassword === false)? <span><img src={Eye} alt="eye" className='absolute right-3 flex justify-center items-center bottom-3'  onClick={toggle}/></span> :
                         <span  className='absolute right-4 flex justify-center items-center bottom-4'>
@@ -61,13 +63,13 @@ const Login = () => {
                   <div className='flex items-center justify-between mb-8'>
                     <div className='flex justify-center items-center'>
                       <input type="checkbox" name="" id=""  className='border border-gray-700'/>
-                      <span className='pl-4'>Remember me</span>
+                      <span className='pl-2'>Remember me</span>
                     </div>
                     <p className={`${Style.login_link}`}><Link to={'#'}>Forgot password?</Link></p>
                   </div>
 
                   <div>
-                    <input type="submit" value="Log In" className={`${Style.login_btn} w-full py-3 text-center cursor-pointer`} />
+                    <input type="submit" value="Log In" className={`${Style.login_btn} w-full h-[54px] text-center cursor-pointer`} />
                   </div>
 
                   <div className='pt-5 pb-12'>
@@ -77,6 +79,7 @@ const Login = () => {
                   </div>
                 </form>
               </div>
+              
             </div>
           </div>
         

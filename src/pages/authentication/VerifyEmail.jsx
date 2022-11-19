@@ -30,7 +30,7 @@ const VerifyEmail = () => {
   return (
     <div className="h-screen max-w-screen flex">
       <div className="w-1/2 h-screen flex justify-center items-center bg-auth pl-10 py-4">
-        <div className="w-full xl:h-[581px] h-[631px] bg-transparent flex justify-center items-center rounded-l-3xl shadow-2xl">
+        <div className="w-full xl:h-[581px] h-[635px] bg-transparent flex justify-center items-center rounded-l-3xl shadow-2xl">
           <div className="text-center text-white">
             <h2 className="text-5xl font-bold text-white mb-2">
               Kodecamp LMS
@@ -43,7 +43,7 @@ const VerifyEmail = () => {
       </div>
       <div className="w-1/2 flex flex-col justify-center pr-10">
         <span className="w-2/3 h-[3px] bg-green-500 "></span>
-        <div className="w-full xl:h-[578px] h-[628px] flex flex-col rounded-r-3xl shadow-2xl px-6">
+        <div className="w-full xl:h-[578px] h-[635px] flex flex-col rounded-r-3xl shadow-2xl px-6">
           <div className="grid place-items-center mx-auto text-center my-6">
             <div className="w-20 h-20 rounded-lg bg-transparent shadow-md mb-4 grid place-items-center">
               <img src={Logo} alt="kodecamp-logo" />
@@ -62,7 +62,7 @@ const VerifyEmail = () => {
               <div className="flex justify-center items-center">
                 <hr className="w-14 h-px flex place-items-center text-center bg-gray-600" />
               </div>
-              <span className="w-8 h-8 rounded-full flex justify-center items-center bg-gray-600">
+              <span className="w-8 h-8 rounded-full flex justify-center items-center bg-[#808080]">
                 <p className="font-medium text-lg text-center text-white">3</p>
               </span>
             </div>
@@ -83,7 +83,7 @@ const VerifyEmail = () => {
                 </p>
               )}
             </div>
-            <button className="bg-blue-600 rounded-lg text-white py-4 px-6 w-full text-lg font-medium cursor-pointer">
+            <button className="bg-blue-600 rounded-lg text-white h-[54px] px-6 w-full text-lg font-medium cursor-pointer">
               Submit
             </button>
             <div className="text-center mt-5">

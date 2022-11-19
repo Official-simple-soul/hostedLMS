@@ -12,18 +12,17 @@ import Error404 from '../pages/error/Error404';
 
 // Student imports
 import Student from '../pages/student/Student';
-import { StudentDashboard } from '../pages/student/components';
-// TODO add tasks import for routing
-import {StudentTasks} from '../pages/student/components';
-import {StudentTask} from '../pages/student/components';
+
+import { StudentProfile, StudentDashboard } from '../pages/student/components';
+
 
 // Instructor imports
 import Instructor from '../pages/instructor/Instructor';
-import { InstructorDashboard } from '../pages/instructor/components';
+import { InstructorDashboard, InstructorProfile } from '../pages/instructor/components';
 
 // Admin imports
 import Admin from '../pages/admin/Admin';
-import { AdminDashboard } from '../pages/admin/components';
+import { AdminDashboard, AdminProfile } from '../pages/admin/components';
 
 
 
@@ -43,10 +42,6 @@ const AllRoutes = () => {
         {/* Student Routes => localhost:3000/student/~ */}
         <Route path="student" element={<Student />}>
           <Route path="" element={<Navigate replace to="/student/dashboard" />} />
-          <Route path="dashboard" element={<StudentDashboard />} />
-          {/* TODO added task route */}
-          <Route path="tasks" element={<StudentTasks />} />
-          <Route path="tasks/task" element={<StudentTask />} />
 
         </Route>
 
@@ -54,12 +49,14 @@ const AllRoutes = () => {
         <Route path="instructor" element={<Instructor />}>
           <Route path="" element={<Navigate replace to="/instructor/dashboard" />} />
           <Route path="dashboard" element={<InstructorDashboard />} />
+          <Route path="profile" element={<InstructorProfile />} />
         </Route>
 
         {/* Admin Routes => localhost:3000/admin/~ */}
         <Route path="admin" element={<Admin />}>
           <Route path="" element={<Navigate replace to="/admin/dashboard" />} />
           <Route  path="dashboard" element={<AdminDashboard />} />
+          <Route  path="profile" element={<AdminProfile />} />
         </Route>
 
         {/* Error 404 Page */}
