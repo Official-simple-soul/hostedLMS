@@ -16,6 +16,8 @@ export { default as Mail } from './icons/mail.png';
 export { default as Lock } from './icons/login-lock.png';
 export { default as Dashboard } from './icons/dashboard.svg';
 export { default as Profile } from './icons/profile.svg';
+export { default as Student } from './icons/student.svg';
+export { default as Trainer } from './icons/trainer.svg';
 export { default as Classroom } from './icons/classroom.svg';
 export { default as Task } from './icons/task.svg';
 export { default as Curriculum } from './icons/curriculum.svg';

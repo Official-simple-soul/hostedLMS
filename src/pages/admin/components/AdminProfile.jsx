@@ -1,10 +1,10 @@
 import React from 'react'
 import AdminPageWrapper from '../../../layouts/admin/AdminPageWrapper'
 
-const AdminDashboard = () => {
+const AdminProfile = () => {
   return (
-    <AdminPageWrapper>AdminDashboard</AdminPageWrapper>
+    <AdminPageWrapper>AdminProfile</AdminPageWrapper>
   )
 }
 
-export default AdminDashboard
+export default AdminProfile
