@@ -6,7 +6,8 @@ const ClassroomTrainerHeader = ({showModal, setShowModal, lessonTitle}) => {
     const colors = {
         red: '#FF3F3F',
         ash: '#808080',
-        but: '#CEDEF6'
+        but: '#CEDEF6',
+        grin: '#00BD56'
     }
 
 

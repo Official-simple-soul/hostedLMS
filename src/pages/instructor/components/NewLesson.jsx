@@ -66,7 +66,8 @@ const NewLesson = () => {
     const colors = {
         red: '#FF3F3F',
         ash: '#808080',
-        but: '#CEDEF6'
+        but: '#CEDEF6',
+        grin: '#00BD56'
     }
     
   return (
@@ -144,7 +145,7 @@ const NewLesson = () => {
                             <input type="time"
                             style={{borderColor:colors.ash}}
                             className='w-full px-3 py-6 mt-2 mb-4 border border-blue-ribbon-1000 bg-transparent'
-                            placeholder='00:00                   PM'
+                            placeholder='00:00'
                             value={time}
                             onChange={(e)=>setTime(e.target.value)}
                             required
@@ -161,16 +162,16 @@ const NewLesson = () => {
             <div className="right p-6 bg-white m-4 rounded-xl">
                 <div className="head flex justify-between">
                     <h1>Live Class Link</h1>
-                    <h2 className='' style={{color:notAdded?colors.ash:colors.red}}>{notAdded?'Link Added':'Link Not Added'}</h2>
+                    <h2 className='' style={{color:notAdded?colors.grin:colors.red}}>{notAdded?'Link Added':'Link Not Added'}</h2>
                 </div>
-                <p style={{color:colors.ash}} className="time mt-8">{addTime}</p>
+                <p style={{color:colors.ash}} className="time mt-8">{addTime} {addTime[0]==='0'?'AM':Number(addTime[0])+Number(addTime[1])===3&&addTime[0]!=='0'&&Number(addTime[4])>0?'PM':Number(addTime[0])+Number(addTime[1])===3&&addTime[0]!=='0'?'Noon':Number(addTime[0])+Number(addTime[1])>3&&addTime[0]!=='0'?'PM':'Nill'}</p>
                 <p style={{color:colors.ash}} className='mt-2'>{addLinkToClass}</p>
             </div>
         </div>
         <div className="third-row p-6 bg-white m-4 rounded-xl">
             <div className="first flex justify-between items-center">
                 <h1>Add Cover Picture</h1>
-                <p style={{color:colors.red}}>{notAdded?'Picture Not Added':'Picture Added'}</p>
+                <p style={{color:notAdded?colors.grin:colors.red}}>{notAdded?'Picture Added':'Picture Not Added'}</p>
             </div>
             <p style={{color:colors.ash}} className='mt-3'>Uplaod your file</p>
             <div className="mt-3 rounded-lg upload border-dashed border-2 text-center py-10" style={{borderColor:colors.ash}}>
