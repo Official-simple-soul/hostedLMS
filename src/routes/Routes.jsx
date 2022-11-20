@@ -12,7 +12,9 @@ import Error404 from '../pages/error/Error404';
 
 // Student imports
 import Student from '../pages/student/Student';
+
 import { StudentProfile, StudentDashboard } from '../pages/student/components';
+
 
 // Instructor imports
 import Instructor from '../pages/instructor/Instructor';
@@ -40,8 +42,7 @@ const AllRoutes = () => {
         {/* Student Routes => localhost:3000/student/~ */}
         <Route path="student" element={<Student />}>
           <Route path="" element={<Navigate replace to="/student/dashboard" />} />
-          <Route path="dashboard" element={<StudentDashboard />} />
-          <Route path="profile" element={<StudentProfile />} />
+
         </Route>
 
         {/* Trainer Routes => localhost:3000/instructor/~ */}
