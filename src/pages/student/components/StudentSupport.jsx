@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Modal from './Modal'
-const StudentSupport = () => {
+const Support = () => {
     const [title, setTitle] = useState('')
     const [message, setMessage] = useState('')
     const [subject, setSubject] = useState('')
@@ -87,4 +87,4 @@ const StudentSupport = () => {
   )
 }
 
-export default StudentSupport
+export default Support
