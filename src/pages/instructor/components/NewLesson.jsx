@@ -11,6 +11,7 @@ const NewLesson = () => {
     const [addLinkToClass, setAddLinkToClass] = useState('Nill')
     const [addResources, setAddResources] = useState([])
     const [notAdded, setNotAdded] = useState(false)
+    const [pictureUpload, setPictureUpload] = useState(false)
     const [time, setTime] = useState('')
     const [addTime, setAddTime] = useState('')
     const [imageUpload, setImageUplaod] = useState()
@@ -22,6 +23,7 @@ const NewLesson = () => {
     const handleUpload =(e)=>{
         console.log(e.target.files[0].name)
         setImageUplaod(e.target.files[0].name)
+        setPictureUpload(true)
     }
     useEffect(()=> {
         imageFunct()
@@ -54,6 +56,12 @@ const NewLesson = () => {
             setNotAdded(true)
         }
     },[addLinkToClass])
+    // useEffect(()=>{
+    //     if(imageFunct==ImageUploadVector){
+    //         console.log(imageUpload)
+    //     }
+        
+    // })
 
 
     const loop = (num) => {
@@ -171,7 +179,7 @@ const NewLesson = () => {
         <div className="third-row p-6 bg-white m-4 rounded-xl">
             <div className="first flex justify-between items-center">
                 <h1>Add Cover Picture</h1>
-                <p style={{color:notAdded?colors.grin:colors.red}}>{notAdded?'Picture Added':'Picture Not Added'}</p>
+                <p style={{color:pictureUpload?colors.grin:colors.red}}>{pictureUpload?'Picture Added':'Picture Not Added'}</p>
             </div>
             <p style={{color:colors.ash}} className='mt-3'>Uplaod your file</p>
             <div className="mt-3 rounded-lg upload border-dashed border-2 text-center py-10" style={{borderColor:colors.ash}}>
