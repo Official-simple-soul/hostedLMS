@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Modal from './Modal'
+import Modal from './Modal';
 const Support = () => {
     const [title, setTitle] = useState('')
     const [message, setMessage] = useState('')
@@ -33,10 +33,11 @@ const Support = () => {
 
   return (
     <>
+
         <Modal 
         showModal={showModal}
         setShowModal={setShowModal}/>
-        <div className='px-8 py-8 h-screen w-full flex justify-center items-center' style={{backgroundColor:colors.arsh}}>
+        <div className='px-8 py-8 w-full flex justify-center items-center bg-[#F5F5F5]'>
         <div className="content w-full">
             <header className='text-2xl mb-6'>Support</header>
             <form action="" className='bg-white rounded-lg shadow px-8 py-8' onSubmit={handleSubmit}>
