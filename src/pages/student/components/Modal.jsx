@@ -1,4 +1,5 @@
 import settingsmodal from '../../../assets/icons/settingsmodal.png'
+import supportModal from '../../../assets/icons/supportmodal.png'
 
 
 const Modal = ({showModal, setShowModal}) => {

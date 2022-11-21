@@ -12,7 +12,7 @@ import Error404 from '../pages/error/Error404';
 
 // Student imports
 import Student from '../pages/student/Student';
-import { StudentProfile, StudentDashboard, Settings } from '../pages/student/components';
+import { StudentProfile, StudentDashboard, StudentSupport, Settings } from '../pages/student/components';
 
 // Instructor imports
 import Instructor from '../pages/instructor/Instructor';
@@ -43,6 +43,7 @@ const AllRoutes = () => {
           <Route path="dashboard" element={<StudentDashboard />} />
           <Route path="profile" element={<StudentProfile />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="studentsupport" element={<StudentSupport />} />
         </Route>
 
         {/* Trainer Routes => localhost:3000/instructor/~ */}
