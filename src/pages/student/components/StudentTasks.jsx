@@ -1,22 +1,21 @@
-import React from 'react';
-
-import StudentTaskHeader from './StudentTaskHeader';
-import StudentTaskTable from './StudentTaskTable';
-
-import './StudentTasks.css';
+import React from "react";
+import StudentTaskHeader from "./StudentTaskHeader";
+import StudentTaskTable from "./StudentTaskTable";
+import "./StudentTasks.css";
+import StudentPageWrapper from "../../../layouts/student/StudentPageWrapper";
 
 const StudentTasks = () => {
   return (
-    <div className='tasks bg-gray-100 w-[82vw] h-[100vh] ml-60 mr-4'>
-        
-        <StudentTaskHeader/>
-       
-       <div className="table">
-          <StudentTaskTable/>
-       </div>
+    <StudentPageWrapper>
+      <div className="tasks bg-gray-100 h-full mb-20 w-full">
+        <StudentTaskHeader />
 
-    </div>
-  )
-}
+        <div className="table w-full">
+          <StudentTaskTable />
+        </div>
+      </div>
+    </StudentPageWrapper>
+  );
+};
 
-export default StudentTasks
+export default StudentTasks;

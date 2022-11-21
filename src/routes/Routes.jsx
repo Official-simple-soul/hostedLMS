@@ -13,7 +13,7 @@ import Error404 from '../pages/error/Error404';
 // Student imports
 import Student from '../pages/student/Student';
 
-import { StudentProfile, StudentDashboard } from '../pages/student/components';
+import { StudentProfile, StudentDashboard, StudentTasks, StudentTask } from '../pages/student/components';
 
 
 // Instructor imports
@@ -22,7 +22,7 @@ import { InstructorDashboard, InstructorProfile } from '../pages/instructor/comp
 
 // Admin imports
 import Admin from '../pages/admin/Admin';
-import { AdminDashboard, AdminProfile } from '../pages/admin/components';
+import { AdminDashboard, AdminProfile, CurriculumAdmin } from '../pages/admin/components';
 
 
 
@@ -42,7 +42,10 @@ const AllRoutes = () => {
         {/* Student Routes => localhost:3000/student/~ */}
         <Route path="student" element={<Student />}>
           <Route path="" element={<Navigate replace to="/student/dashboard" />} />
-
+          <Route path="dashboard" element={<StudentDashboard />} />
+          <Route path="profile" element={<StudentProfile />} />
+          <Route path="tasks" element={<StudentTasks />} />
+          <Route path="task" element={<StudentTask />} />
         </Route>
 
         {/* Trainer Routes => localhost:3000/instructor/~ */}
@@ -57,6 +60,7 @@ const AllRoutes = () => {
           <Route path="" element={<Navigate replace to="/admin/dashboard" />} />
           <Route  path="dashboard" element={<AdminDashboard />} />
           <Route  path="profile" element={<AdminProfile />} />
+          <Route  path="curriculum" element={<CurriculumAdmin />} />
         </Route>
 
         {/* Error 404 Page */}

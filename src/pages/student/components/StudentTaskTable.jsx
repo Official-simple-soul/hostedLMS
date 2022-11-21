@@ -1,9 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 const StudentTaskTable = () => {
   return (
-    <table className='w-[80vw] h-screen mt-4 mx-1 opacity-70'>
+    <table className='w-[100%] h-screen mt-4 mx-1 opacity-70'>
          <thead>
             <tr className='titlebar  mx-4 mt-2 text-blue-600 h-10 py-2 px-2  bg-gray-200 rounded-md hover:drop-shadow-lg'>
               <th scope="col">Stage</th>
