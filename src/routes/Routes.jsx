@@ -13,16 +13,29 @@ import Error404 from '../pages/error/Error404';
 // Student imports
 import Student from '../pages/student/Student';
 
-import { StudentProfile, StudentDashboard, StudentTasks, StudentTask } from '../pages/student/components';
-
+import { 
+          StudentProfile,
+          StudentDashboard,
+          StudentTasks,
+          StudentTask,
+          StudentSupport,
+          Settings 
+        } from '../pages/student/components';
 
 // Instructor imports
 import Instructor from '../pages/instructor/Instructor';
-import { InstructorDashboard, InstructorProfile } from '../pages/instructor/components';
+import { 
+          InstructorDashboard,
+          InstructorProfile 
+        } from '../pages/instructor/components';
 
 // Admin imports
 import Admin from '../pages/admin/Admin';
-import { AdminDashboard, AdminProfile, CurriculumAdmin } from '../pages/admin/components';
+import { 
+        AdminDashboard, 
+        AdminProfile, 
+        CurriculumAdmin
+       } from '../pages/admin/components';
 
 
 
@@ -46,6 +59,8 @@ const AllRoutes = () => {
           <Route path="profile" element={<StudentProfile />} />
           <Route path="tasks" element={<StudentTasks />} />
           <Route path="task" element={<StudentTask />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="studentsupport" element={<StudentSupport />} />
         </Route>
 
         {/* Trainer Routes => localhost:3000/instructor/~ */}
