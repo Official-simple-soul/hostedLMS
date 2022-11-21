@@ -1,3 +1,4 @@
+import settingsmodal from '../../../assets/icons/settingsmodal.png'
 import supportModal from '../../../assets/icons/supportmodal.png'
 
 
@@ -15,13 +16,13 @@ const Modal = ({showModal, setShowModal}) => {
             className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
           >
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none p-4 px-16">
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none p-4 px-4">
                 <div className="flex items-center justify-center p-5 border-b border-solid border-slate-200 rounded-t">
-                    <img src={supportModal} alt="" />
+                    <img src={settingsmodal} alt="" />
                 </div>
                 <div className="text-center">
-                  <h1 className='text-2xl mb-2'>Message Sent!</h1>
-                  <p style={{color:colors.ash}}>Thank you for getting in touch</p>
+                  <h1 className='text-2xl mb-2'>Password reset successful</h1>
+                  <p style={{color:colors.ash}}>You can now use your new password to log in to your account.</p>
                 </div>
                 <div className="flex items-center justify-center p-6 border-t border-solid border-slate-200 rounded-b">
                   <button
