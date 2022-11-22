@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+
+import React, { useState, useEffect } from 'react'
 import {AiFillEye, AiFillEyeInvisible} from 'react-icons/ai';
 import PasswordChecklist from "react-password-checklist";
 import Modal from './Modal';
@@ -10,6 +11,8 @@ const Settings = () => {
   const [other, setOther] = useState(true)
   const [showModal, setShowModal] = useState(false)
   const [valid, setValid] = useState()
+  const [match, setMatch] = useState(true)
+  const [currentPassword, setCurrentPassword] = useState("")
   const [password, setPassword] = useState("")
   const [password1, setPassword1] = useState("")
   const handleSubmit=(e)=>{
@@ -21,13 +24,19 @@ const Settings = () => {
   }
 
   const handleChangePassword=()=> {
-    setOther(true)
+    setOther(!other)
   }
-
-  const clearInput=(e)=>{
-    e.preventDefault()
-    setPassword('');
-    setPassword1('');
+  useEffect(()=>{
+    if(currentPassword !== "" && currentPassword === password) {
+      setMatch(false)
+    }
+    else setMatch(true)
+  },[currentPassword, password])
+  
+  const clearInput=()=>{
+    setCurrentPassword("")
+    setPassword("");
+    setPassword1("");
   }
 
   return (
@@ -39,34 +48,38 @@ const Settings = () => {
       <div className="flex justify-center">
         <div className="content w-full">
             <h1 className='mb-4'>Settings</h1>
-            <main className='bg-white rounded-lg p-8 text-[#585858]'>
+            <main className='bg-white rounded-lg py-8 px-3 md:p-8 text-[#585858]'>
                 <div className="flex justify-start items-start">
                     <h1 className={`mb-4 ${!other?'text-[grey]':'text-blue-ribbon-500 border-b border-black pb-1 w-fit'}`} onClick={handleChangePassword}>Change Password</h1>
-                    <h1 className={`mb-4 ml-8 text-blue-ribbon-500 ${other?'text-[grey]':'text-blue-ribbon-500 border-b border-black pb-1 w-fit'}`} onClick={handleOther}>Other Settings</h1>
+                    <h1 className={`mb-4 ml-8 ${other?'text-[grey]':'text-blue-ribbon-500 border-b border-black pb-1 w-fit'}`} onClick={handleOther}>Other Settings</h1>
                 </div>
                 {
                   other? <form action="" onSubmit={handleSubmit}>
                   <div className="rows grid grid-cols-3">
-                    <div className="col col-span-2">
+                    <div className="col col-span-3 md:col-span-2">
                         <label htmlFor="" className='text-[#808080]'>Current Password</label>
                         <div className="current relative">
                           <input 
                           type={show?'text':'password'}
                           required
+                          value={currentPassword}
+                          onChange={(e)=>setCurrentPassword(e.target.value)}
                           placeholder='Type your current password'
-                          className='px-3 py-2 border border-[#808080] w-full mt-3 mb-4'/>
+                          className={`px-3 py-2 border ${match?'border-[#808080]':'border-[red] text-[red]'} w-full mt-3 mb-4`}/>
                           <div className="eye absolute text-3xl top-6 right-5 cursor-pointer" onClick={()=>setShow(!show)}>
                             {show?<AiFillEyeInvisible />:<AiFillEye />}
                           </div>
                         </div>
+                        <p className={`${match?'hidden':'block'} text-sm text-[red] mb-2`}>Current password cannot match new password</p>
                         <label htmlFor="" className='text-[#808080]'>New Password</label>
                           <div className="current relative">
                             <input 
                             type={show1?'text':'password'}
                             required
+                            value={password}
                             onChange={(e)=>setPassword(e.target.value)}
                             placeholder='Type your current password'
-                            className='px-3 py-2 border border-[#808080] w-full mt-3 mb-4'/>
+                            className={`px-3 py-2 border ${match?'border-[#808080]':'border-[red] text-[red]'} w-full mt-3 mb-4`}/>
                             <div className="eye absolute text-3xl top-6 right-5 cursor-pointer" onClick={()=>setShow1(!show1)}>
                               {show1?<AiFillEyeInvisible />:<AiFillEye />}
                             </div>
@@ -76,6 +89,7 @@ const Settings = () => {
                             <input 
                             type={show2?'text':'password'}
                             required
+                            value={password1}
                             onChange={(e)=>setPassword1(e.target.value)}
                             placeholder='Type your current password'
                             className='px-3 py-2 border border-[#808080] w-full mt-3 mb-4'/>
@@ -89,10 +103,7 @@ const Settings = () => {
                     <input 
                     type="button"
                     value='cancel'
-                    onClick={()=>{
-                      setPassword('');
-                      setPassword1('')
-                    }}
+                    onClick={clearInput}
                     className='px-8 border border-[#808080] mr-6'/>
                     <input 
                     type="submit"
@@ -127,7 +138,7 @@ const Settings = () => {
             </main>
         </div>
       </div>
-    </>
+      </>
   )
 }
 
