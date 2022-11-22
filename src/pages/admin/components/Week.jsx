@@ -18,6 +18,7 @@ const Admin = () => {
     })
   }
 
+  //fields to fill for different weeks
   return (
     <div className='hero-admin p-5 md:p-8 w-full'>Admin
       <form className='m-auto md:w-4/5 rounded-xl px-4 md:px-8 py-6 bg-white'>
