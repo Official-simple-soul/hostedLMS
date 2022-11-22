@@ -1,9 +1,9 @@
 import React from 'react'
-import StudentPageWrapper from '../../../layouts/student/StudentPageWrapper'
+// import StudentPageWrapper from '../../../layouts/student/StudentPageWrapper'
 
 const StudentProfile = () => {
   return (
-    <StudentPageWrapper>StudentProfile</StudentPageWrapper>
+    <>StudentProfile</>
   )
 }
 
