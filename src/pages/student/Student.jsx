@@ -1,10 +1,13 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom';
+import StudentPageWrapper from '../../layouts/student/StudentPageWrapper'
 
 const Student = () => {
   return (
     <div>
-      <Outlet />
+      <StudentPageWrapper>
+        <Outlet />
+      </StudentPageWrapper>
     </div>
   )
 }

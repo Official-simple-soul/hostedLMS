@@ -5,6 +5,7 @@ import Modal from '../../components/authentication/Modal'
 import { Good, three, Logo } from "../../assets/index";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 const NewPassword = () => {
     
@@ -56,17 +57,17 @@ const NewPassword = () => {
         </div> 
 
         <div className='ash-bg'>
-            <div className='bg-form '>
+            <div className='bg-form'>
                 <div className='inner relative h-full flex flex-col justify-center items-center'>
                     <span className="bg-green-600 absolute h-1 w-[98%] top-0 left-0 overflow-hidden"></span>
 
-                    <div className="py-6 w-11/12 flex flex-col gap-6">
+                    <div className="w-11/12 justify-center items-center flex flex-col gap-6">
                         <div className='text w-full flex flex-col gap-6 items-center justify-center'>
                             <div className="w-20 h-20 rounded-lg bg-transparent shadow-md grid place-items-center">
                                 <img src={Logo} alt="kodecamp-logo" />
                             </div>
 
-                            <h2 className='text-[#303030] text-2xl font-semibold'>Create new password</h2>
+                            <h2 className='text-[#303030] text-2xl font-medium'>Create new password</h2>
 
                             <div className="flex isolate">
                                 <span className="w-7 h-7 rounded-full flex justify-center items-center bg-green-600">
@@ -89,12 +90,12 @@ const NewPassword = () => {
                             <p className='text-lg'>Kindly set a new password and confirm the password</p>
                         </div>
 
-                        <form onSubmit={handleSubmit} className='w-full flex flex-col gap-4'>
+                        <form onSubmit={handleSubmit} className='w-full flex flex-col gap-7'>
                             <div className='flex flex-col gap-2 relative'>
                                 <label className='text-[#808080]'>New Password</label>
                                 <input 
                                     placeholder='Type new password' 
-                                    className='px-5 h-[50px] border border-[#808080] outline-[#808080]'
+                                    className='px-5 h-[54px] border border-[#808080] outline-[#808080]'
                                     name='password' 
                                     onChange={setNewPassword}
                                 />
@@ -105,16 +106,17 @@ const NewPassword = () => {
                                 <label className='text-[#808080]'>Confirm Password</label>
                                 <input 
                                     placeholder='Type your password again' 
-                                    className='px-5 h-[50px] border border-[#808080] outline-[#808080]' 
+                                    className='px-5 h-[54px] border border-[#808080] outline-[#808080]' 
                                     name='passy' o
                                     nChange={handlePassword}
                                 />
                                 <AiFillEye className='absolute text-[#808080] text-xl right-2 bottom-3' />
                             </div>
 
-                            <button className='bg-blue-500 h-[50px] bg-[#0D6EFD] text-white'>Save Password</button>
-                                
+                            <button className='h-[54px] mt-[1rem] bg-[#0D6EFD] text-white'>Save Password</button> 
                         </form>
+
+                        <p className='text-center '>Remember password? <Link to='/login' className='text-[#0D6EFD] font-semibold'>Log in</Link></p>
                     </div>
 
                 </div>
