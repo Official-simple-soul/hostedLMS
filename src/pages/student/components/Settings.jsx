@@ -23,7 +23,7 @@ const Settings = () => {
   }
 
   const handleChangePassword=()=> {
-    setOther(!match)
+    setOther(!other)
   }
   useEffect(()=>{
     if(currentPassword !== "" && currentPassword === password) {
