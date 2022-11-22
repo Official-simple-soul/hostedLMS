@@ -105,6 +105,7 @@ const Settings = () => {
                     value='cancel'
                     onClick={clearInput}
                     className='px-8 border border-[#808080] mr-6'/>
+                    
                     <input 
                     type="submit"
                     onClick={()=>setShowModal(!showModal)}
