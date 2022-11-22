@@ -173,7 +173,7 @@ const NewLesson = () => {
                     <h2 className='' style={{color:notAdded?colors.grin:colors.red}}>{notAdded?'Link Added':'Link Not Added'}</h2>
                 </div>
                 <p style={{color:colors.ash}} className="time mt-8">{addTime} {addTime[0]==='0'?'AM':Number(addTime[0])+Number(addTime[1])===3&&addTime[0]!=='0'&&Number(addTime[4])>0?'PM':Number(addTime[0])+Number(addTime[1])===3&&addTime[0]!=='0'?'Noon':Number(addTime[0])+Number(addTime[1])>3&&addTime[0]!=='0'?'PM':'Nill'}</p>
-                <p style={{color:colors.ash}} className='mt-2'>{addLinkToClass}</p>
+                <p style={{color:colors.ash}} className='mt-2 w-40'>{addLinkToClass}</p>
             </div>
         </div>
         <div className="third-row p-6 bg-white m-4 rounded-xl">
