@@ -27,6 +27,9 @@ const Support = () => {
     const handleSubmit =(e)=>{
         e.preventDefault()
         setShowModal(true)
+        setTitle('')
+        setMessage('')
+        setSubject('')
         console.log(title, message, subject)
     }
     
@@ -37,12 +40,12 @@ const Support = () => {
         <Modal 
         showModal={showModal}
         setShowModal={setShowModal}/>
-        <div className='px-8 py-8 w-full flex justify-center items-center bg-[#F5F5F5]'>
+        <div className='md:px-8 py-8 w-full flex justify-center items-center bg-[#F5F5F5]'>
         <div className="content w-full">
             <header className='text-2xl mb-6'>Support</header>
             <form action="" className='bg-white rounded-lg shadow px-8 py-8' onSubmit={handleSubmit}>
                 <h1 style={{color:colors.grey}}>Send us a message</h1>
-                <div className="grid grid-cols-2 gap-8 my-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-4">
                     <div className="left">
                         <label htmlFor="text" className='text-sm' style={{color:colors.grey}}>Title</label>
                         <input 
