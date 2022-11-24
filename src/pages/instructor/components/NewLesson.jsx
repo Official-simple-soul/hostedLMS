@@ -3,12 +3,17 @@ import ImageUploadVector from '../../../assets/icons/uplaodImageVector.png';
 import {v4 as uuidv4} from 'uuid'
 import ModalTrainer from './Modal'
 import ClassroomTrainerHeader from './ClassroomTrainerHeader';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+
 
 const NewLesson = () => {
 
     const [linkToClass, setLinkToClass] = useState('')
     const [resources, setResources] = useState('')
     const [addLinkToClass, setAddLinkToClass] = useState('Nill')
+    const [displayLinkToClass, setDisplayLinkToClass] = useState([])
     const [addResources, setAddResources] = useState([])
     const [notAdded, setNotAdded] = useState(false)
     const [pictureUpload, setPictureUpload] = useState(false)
@@ -21,8 +26,8 @@ const NewLesson = () => {
         setImageUplaod(ImageUploadVector)
     }
     const handleUpload =(e)=>{
-        console.log(e.target.files[0].name)
-        setImageUplaod(e.target.files[0].name)
+        console.log(e.target.files[0])
+        setImageUplaod(e.target.files[0])
         setPictureUpload(true)
     }
     useEffect(()=> {
@@ -35,6 +40,7 @@ const NewLesson = () => {
         setTime('')
         setLinkToClass('')
     }
+    console.log(addLinkToClass)
         const handleResources =(event)=>{
             setResources(event.target.value)
         }
@@ -49,19 +55,28 @@ const NewLesson = () => {
         setAddResources(addResources.filter(item=>item.id!==id));
     }
 
-
+    
+    useEffect(()=>{
+            axios.get(`https://api.linkpreview.net/?key=9bb525045561f833c7254362017f7c5b&q=${addLinkToClass}`)
+            .then((data)=> setDisplayLinkToClass(data.data))
+            .catch((err)=>console.log(err))
+    },[addLinkToClass])
 
     useEffect(()=> {
         if(addLinkToClass !== 'Nill'){
             setNotAdded(true)
         }
     },[addLinkToClass])
-    // useEffect(()=>{
-    //     if(imageFunct==ImageUploadVector){
-    //         console.log(imageUpload)
-    //     }
+
+    const goTo =()=> {
+            window.location.href = `${displayLinkToClass.url}`
+    }
+
+    const clearInputs =()=>{
+        window.location.href = '/instructor/dashboard'
+    }
+    
         
-    // })
 
 
     const loop = (num) => {
@@ -83,9 +98,10 @@ const NewLesson = () => {
         <ClassroomTrainerHeader 
         showModal={showModal}
         setShowModal={setShowModal}
-        lessonTitle={lessonTitle}/>
+        lessonTitle={lessonTitle}
+        clearInputs={clearInputs}/>
         <div className="first-row grid grid-cols-1 md:grid-cols-3">
-            <div className="left p-6 bg-white m-4 rounded-xl col-span-2">
+            <div className="left p-6 bg-white my-4 md:m-4 rounded-xl col-span-2">
                 <form action="" className=''>
                     <label className='' style={{color:colors.ash}}>Lesson Title</label><br></br>
                     <input type="text"
@@ -104,7 +120,7 @@ const NewLesson = () => {
                     ></textarea>
                 </form>
             </div>
-            <div className="right p-6 bg-white m-4 rounded-xl">
+            <div className="right p-6 bg-white md:m-4 rounded-xl">
                 <form action="">
                     <label className='' style={{color:colors.ash}}>Stage</label><br></br>
                     <select name="" style={{borderColor:colors.ash}} className='mb-4 mt-2 w-full border bg-transparent py-4 px-3 rounded-lg' required>
@@ -130,7 +146,7 @@ const NewLesson = () => {
             </div>
         </div>
         <div className="second-row grid grid-cols-1 md:grid-cols-3">
-            <div className="left p-6 bg-white m-4 rounded-xl col-span-2">
+            <div className="left p-6 bg-white md:m-4 rounded-xl col-span-2">
                 <form action="">
                     <select name="" className='bg-transparent mb-4'>
                         <option value="">Live Class</option>
@@ -167,34 +183,42 @@ const NewLesson = () => {
                     />
                 </form>
             </div>
-            <div className="right p-6 bg-white m-4 rounded-xl">
+            <div className="right p-2 bg-white my-4 md:m-4 rounded-xl">
                 <div className="head flex justify-between">
                     <h1>Live Class Link</h1>
                     <h2 className='' style={{color:notAdded?colors.grin:colors.red}}>{notAdded?'Link Added':'Link Not Added'}</h2>
                 </div>
                 <p style={{color:colors.ash}} className="time mt-8">{addTime} {addTime[0]==='0'?'AM':Number(addTime[0])+Number(addTime[1])===3&&addTime[0]!=='0'&&Number(addTime[4])>0?'PM':Number(addTime[0])+Number(addTime[1])===3&&addTime[0]!=='0'?'Noon':Number(addTime[0])+Number(addTime[1])>3&&addTime[0]!=='0'?'PM':'Nill'}</p>
-                <p style={{color:colors.ash}} className='mt-2 w-40'>{addLinkToClass}</p>
+                <div onClick={goTo} className="linkdetails border p-2 rounded-lg flex space-x-2">
+                    <img src={displayLinkToClass.image} alt="" width='50px'/>
+                    <div className="right overflow-hidden">
+                        <h1 className=''>{displayLinkToClass.title}</h1>
+                        <h1 className='text-sm mt-2'>{displayLinkToClass.url}</h1>
+                    </div>
+                </div>
             </div>
         </div>
-        <div className="third-row p-6 bg-white m-4 rounded-xl">
+        <div className="third-row p-6 bg-white md:m-4 rounded-xl">
             <div className="first flex justify-between items-center">
                 <h1>Add Cover Picture</h1>
                 <p style={{color:pictureUpload?colors.grin:colors.red}}>{pictureUpload?'Picture Added':'Picture Not Added'}</p>
             </div>
             <p style={{color:colors.ash}} className='mt-3'>Uplaod your file</p>
             <div className="mt-3 rounded-lg upload border-dashed border-2 text-center py-10" style={{borderColor:colors.ash}}>
-                <div className="imageUpload flex justify-center items-center ">
-                    <img src={imageUpload} alt="" />
+                <div className="imageUpload flex justify-center items-center">
+                    <img src={imageUpload} alt="" className=''/>
                 </div>
-                <p style={{color:colors.ash}} className='my-4'>Drag and drop your image here</p>
-                <p style={{color:colors.ash}} className='mb-6'>or</p>
-                <input type="file" className='hidden' id='img' onChange={handleUpload}/>
-                <label htmlFor="img" className='my-4 border border-blue-ribbon-500 px-5 py-2 rounded-lg text-blue-ribbon-500'>Browse File</label>
-                <p style={{color:colors.ash}} className='mt-6'>Supports JPEG, JPG, PNG <br></br>Max file size 2MB</p>
+                <div className="content">
+                    <p style={{color:colors.ash}} className='my-4 z-20'>Drag and drop your image here</p>
+                    <p style={{color:colors.ash}} className='mb-6 z-20'>or</p>
+                    <input type="file" className='hidden' id='img' onChange={handleUpload}/>
+                    <label htmlFor="img" className='my-4 border z-20 border-blue-ribbon-500 px-5 py-2 rounded-lg text-blue-ribbon-500'>Browse File</label>
+                    <p style={{color:colors.ash}} className='mt-6'>Supports JPEG, JPG, PNG <br></br>Max file size 2MB</p>
+                </div>
             </div>
         </div>
         <div className="fourth-row grid grid-cols-1 md:grid-cols-3">
-            <div className="left p-6 bg-white m-4 rounded-xl col-span-2">
+            <div className="left p-6 bg-white my-4 md:m-4 rounded-xl col-span-2">
                 <h1 className='mb-2'>Add Resources</h1>
                 <form action="" onSubmit={onFrormSubmit}>
                     <div className="left">
@@ -214,7 +238,7 @@ const NewLesson = () => {
                     />
                 </form>
             </div>
-            <div className="right p-6 bg-white m-4 rounded-xl">
+            <div className="right p-6 bg-white md:m-4 rounded-xl">
                 <div className="head flex justify-between">
                     <h1>Added Resources</h1>
                 </div>
@@ -235,6 +259,7 @@ const NewLesson = () => {
         setShowModal = {setShowModal}
         lessonTitle = {lessonTitle}
         />
+        <img src='' alt="" />
     </div>
   )
 }

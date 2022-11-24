@@ -1,10 +1,13 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom';
+import InstructorPageWrapper from '../../layouts/instructor/InstructorPageWrapper';
 
 const Instructor = () => {
   return (
     <div>
-      <Outlet />
+      <InstructorPageWrapper>
+        <Outlet />
+      </InstructorPageWrapper>
     </div>
   )
 }

@@ -70,6 +70,7 @@ const AllRoutes = () => {
           <Route path="" element={<Navigate replace to="/instructor/dashboard" />} />
           <Route path="dashboard" element={<InstructorDashboard />} />
           <Route path="profile" element={<InstructorProfile />} />
+          <Route path="classroom" element={<ClassroomTrainer />} />
         </Route>
 
         {/* Admin Routes => localhost:3000/admin/~ */}
