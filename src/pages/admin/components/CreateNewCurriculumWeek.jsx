@@ -2,7 +2,7 @@ import React from 'react'
 import "./../../../App.css"
 import { useState } from 'react'
 
-const Admin = () => {
+const CreateNewCurriculumWeek = () => {
   const [user,setUser] = useState({
     weekTitle:"",
     weekNumber:"",
@@ -75,4 +75,4 @@ const Admin = () => {
   )
 }
 
-export default Admin
+export default CreateNewCurriculumWeek
