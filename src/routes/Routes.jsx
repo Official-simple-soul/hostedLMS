@@ -28,6 +28,9 @@ import {
           InstructorDashboard,
           InstructorProfile 
         } from '../pages/instructor/components';
+import InstructorClassroom from '../pages/instructor/components/InstructorClassroom';
+import Stage1Trainer from '../pages/instructor/components/Stage1Trainer';
+import AboutTrainer from '../pages/instructor/components/AboutTrainer';
 
 // Admin imports
 import Admin from '../pages/admin/Admin';
@@ -36,7 +39,9 @@ import {
         AdminProfile, 
         CurriculumAdmin
        } from '../pages/admin/components';
-
+import ResourcesTrainer from '../pages/instructor/components/ResourcesTrainer';
+import LiveclassAboutTrainer from '../pages/instructor/components/LiveclassAboutTrainer';
+import LiveclassResourceTrainer from '../pages/instructor/components/LiveclassResourceTrainer';
 
 
 
@@ -69,6 +74,12 @@ const AllRoutes = () => {
           <Route path="dashboard" element={<InstructorDashboard />} />
           <Route path="profile" element={<InstructorProfile />} />
         </Route>
+        <Route path="classroom" element={<InstructorClassroom />} /> 
+        <Route path="Stage1Trainer" element={<Stage1Trainer />} />
+        <Route path="/AboutTrainer" element={<AboutTrainer />} />
+        <Route path="/ResourcesTrainer" element={<ResourcesTrainer />} />
+        <Route path="/LiveclassAboutTrainer" element={<LiveclassAboutTrainer />} />
+        <Route path="/LiveclassResourceTrainer" element={<LiveclassResourceTrainer/>} />
 
         {/* Admin Routes => localhost:3000/admin/~ */}
         <Route path="admin" element={<Admin />}>

@@ -65,7 +65,7 @@ const Login = () => {
                       <input type="checkbox" name="" id=""  className='border border-gray-700'/>
                       <span className='pl-2'>Remember me</span>
                     </div>
-                    <p className={`${Style.login_link}`}><Link to={'#'}>Forgot password?</Link></p>
+                    <p className={`${Style.login_link}`}><Link to={''}>Forgot password?</Link></p>
                   </div>
 
                   <div>
