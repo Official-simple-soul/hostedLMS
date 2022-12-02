@@ -17,9 +17,11 @@ import {
           StudentProfile,
           StudentDashboard,
           StudentTasks,
-          StudentTask,
+          // StudentTask,
+          Task,
           StudentSupport,
-          Settings 
+          Settings, 
+          TaskDetails
         } from '../pages/student/components';
 
 // Instructor imports
@@ -58,7 +60,8 @@ const AllRoutes = () => {
           <Route path="dashboard" element={<StudentDashboard />} />
           <Route path="profile" element={<StudentProfile />} />
           <Route path="tasks" element={<StudentTasks />} />
-          <Route path="task" element={<StudentTask />} />
+          <Route path="task" element={<Task />} />
+          <Route path="task/:id" element={<TaskDetails />} />
           <Route path="settings" element={<Settings />} />
           <Route path="studentsupport" element={<StudentSupport />} />
         </Route>
