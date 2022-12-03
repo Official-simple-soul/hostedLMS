@@ -28,8 +28,10 @@ import {
           InstructorDashboard,
           InstructorProfile 
        , ClassroomTrainer } from '../pages/instructor/components';
-import SaveLesson from '../pages/instructor/components/SaveLesson';
-
+import NewLesson from '../pages/instructor/components/NewLesson';
+import InstructorClassroom from '../pages/instructor/components/InstructorClassroom';
+import Stage1Trainer from '../pages/instructor/components/Stage1Trainer';
+import AboutTrainer from '../pages/instructor/components/AboutTrainer';
 
 // Admin imports
 import Admin from '../pages/admin/Admin';
@@ -38,7 +40,8 @@ import {
         AdminProfile, 
         CurriculumAdmin
        } from '../pages/admin/components';
-
+import LiveclassAboutTrainer from '../pages/instructor/components/LiveclassAboutTrainer';
+import LiveclassResourceTrainer from '../pages/instructor/components/LiveclassResourceTrainer';
 
 
 
@@ -71,6 +74,8 @@ const AllRoutes = () => {
           <Route path="dashboard" element={<InstructorDashboard />} />
           <Route path="profile" element={<InstructorProfile />} />
           <Route path="classroom" element={<ClassroomTrainer />} />
+          <Route path="newlesson/:id" element={<NewLesson />} />
+          <Route path="abouttrainer/:id" element={<AboutTrainer />} />
         </Route>
 
         {/* Admin Routes => localhost:3000/admin/~ */}

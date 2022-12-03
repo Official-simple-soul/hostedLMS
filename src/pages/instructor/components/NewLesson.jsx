@@ -4,12 +4,17 @@ import {v4 as uuidv4} from 'uuid'
 import ModalTrainer from './Modal'
 import ClassroomTrainerHeader from './ClassroomTrainerHeader';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-
+import { Link, useParams } from 'react-router-dom';
+import LessonLogo from '../../../assets/images/Rectangle.png';
+import LessonLogo1 from '../../../assets/images/Rectangle1.png';
+import LessonLogo2 from '../../../assets/images/Rectangle2.png';
+import LessonLogo3 from '../../../assets/images/Rectangle3.png';
+import LessonLogo4 from '../../../assets/images/Rectangle4.png';
+import LessonLogo5 from '../../../assets/images/Rectangle5.png';
 
 
 const NewLesson = () => {
-
+    const {id} = useParams()
     const [linkToClass, setLinkToClass] = useState('')
     const [resources, setResources] = useState('')
     const [addLinkToClass, setAddLinkToClass] = useState('Nill')
@@ -22,11 +27,102 @@ const NewLesson = () => {
     const [imageUpload, setImageUplaod] = useState()
     const [showModal, setShowModal] = useState(false)
     const [lessonTitle, setLessonTitle] = useState('')
+    const [lessonDesc, setLessonDescr] = useState('')
     const imageFunct = () => {
         setImageUplaod(ImageUploadVector)
     }
+    
+    const status = ['LIVE IN 2 HOURS', 'RECORDING NOT ADDED', 'RECORDING ADDED'];
+
+    const lessonData = [
+      {
+        title: 'Design Principle',
+        status: status[0],
+        img: LessonLogo,
+        date: '22-09-22',
+        id: '1',
+        about:
+          'Design Principles are a set of considerations that form the basis of any good product. Design Principles help teams with decision making. A few simple principles or constructive questions will guide your team towards making appropriate decisions',
+        link: 'meet.google.now',
+        resources: [
+          'DP 101',
+          'Days of the Design',
+          'Ux and considerations',
+          'Basic Designing',
+          'Principles of Design',
+        ],
+      },
+      {
+        title: 'Intro to UI/UX',
+        status: status[1],
+        img: LessonLogo1,
+        date: '25-09-22',
+        id: '2',
+        about:
+          'Introduction to user interface and user experience in design and its fundamentals',
+        link: 'meet.google.now',
+        resources: [
+          'UI/UX part 1',
+          'UI/UX part 2',
+          'Using Figma 1',
+          'Using Figma 2',
+        ],
+      },
+      {
+        title: 'Front-End Basics',
+        status: status[2],
+        img: LessonLogo2,
+        date: '12-09-22',
+        id: '3',
+        about:
+          'Using Html, Css and javascript. How and when to add sythax and elements to a page',
+        link: 'meet.google.now',
+        resources: ['Front End', 'Who is a developer'],
+      },
+      {
+        title: 'Intro to DevOps',
+        status: status[2],
+        img: LessonLogo3,
+        date: '02-09-22',
+        id: '4',
+        about:
+          'and introduction to development operations, working with team and using code writing best practices',
+        link: 'meet.google.now',
+        resources: ['DevOps to Master', 'Zero to Hero'],
+      },
+      {
+        title: 'Master of Css',
+        status: status[2],
+        img: LessonLogo4,
+        date: '04-09-22',
+        id: '5',
+        about:
+          'The basic application of css is never enough. Thus, the introduction of master of css. This should take you through that aspect',
+        link: 'meet.google.now',
+        resources: [
+          'Css and Variables',
+          'Getting started with Css',
+          'Css with Simple-Soul',
+        ],
+      },
+      {
+        title: 'Javascript Loop',
+        status: status[2],
+        img: LessonLogo5,
+        date: '11-09-22',
+        id: '6',
+        about:
+          'one of the common function used in javascript is the loop, while loop, for loop, for each, map, reduce, for of, for in, filter, and many more',
+        link: 'meet.google.now',
+        resources: [
+          'Eloquent Javascript',
+          'Javascript 101',
+          'One Time Javascript developer',
+        ],
+      },
+    ];
+    
     const handleUpload =(e)=>{
-        console.log(e.target.files[0])
         setImageUplaod(e.target.files[0])
         setPictureUpload(true)
     }
@@ -40,7 +136,6 @@ const NewLesson = () => {
         setTime('')
         setLinkToClass('')
     }
-    console.log(addLinkToClass)
         const handleResources =(event)=>{
             setResources(event.target.value)
         }
@@ -54,7 +149,6 @@ const NewLesson = () => {
     const removeResources =({id})=>{
         setAddResources(addResources.filter(item=>item.id!==id));
     }
-
     
     useEffect(()=>{
             axios.get(`https://api.linkpreview.net/?key=9bb525045561f833c7254362017f7c5b&q=${addLinkToClass}`)
@@ -76,7 +170,15 @@ const NewLesson = () => {
         window.location.href = '/instructor/dashboard'
     }
     
-        
+    const filteredData = lessonData.filter(item=>item.id === id)
+        useEffect(()=> {
+            if(id>0){
+                
+                setLessonTitle(filteredData[0].title)
+                setLessonDescr(filteredData[0].about)
+                setLinkToClass(filteredData[0].link)
+            }
+        }, [])
 
 
     const loop = (num) => {
@@ -115,6 +217,7 @@ const NewLesson = () => {
                     <label htmlFor="" className='' style={{color:colors.ash}}>Lesson Description</label><br></br>
                     <textarea required rows="6"
                     style={{borderColor:colors.ash}}
+                    value={lessonDesc}
                     placeholder='Whats the lesson about'
                     className='p-3 border w-full mt-2 rounded-lg bg-transparent'
                     ></textarea>

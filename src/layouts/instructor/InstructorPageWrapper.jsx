@@ -14,7 +14,9 @@ const InstructorPageWrapper = ({children}) => {
 
             <div className="main-content bg-[#F5F5F5] w-full h-full">
             <nav className='h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5 mt-1.5'>
-                <div>Search bar if any</div>
+                <div>
+                {/* <p>Search bar if any</p> */}
+                </div>
 
                 <div className="flex gap-4 items-center">
                 <div className="relative bg-white h-[48px] w-[48px] rounded-lg flex justify-center">
