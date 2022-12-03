@@ -1,0 +1,14 @@
+.hero-admin{
+    background-color:  #F5F5F5;
+    color: #808080;
+}
+.input-admin,.select-admin{
+    border-color: #808080;
+}
+.lesson h2{
+    color:#1C1C1C;
+}
+.btn-admin{
+    color:#0D6EFD;
+    border: 1px solid #0D6EFD;
+}

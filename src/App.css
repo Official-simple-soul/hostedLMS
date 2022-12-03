@@ -8,103 +8,17 @@
     background: conic-gradient(from 142.8deg at 58.75% 50%, #44BF93 -56.25deg,#4BCA84 
     37.5deg, #0D6EFD 191.25deg,#44BF93 303.75deg, #4BCA84 397.5deg);
 }
-
-
-html{
-    background-color:#F5F5F5;
+.hero-admin{
+    background-color:  #F5F5F5;
+    color: #808080;
 }
-
-.arr {
-    padding-top: 9px;
-    padding-bottom: 9px;
-    margin-left: 0.5px;
+.input-admin,.select-admin{
+    border-color: #808080;
 }
-
-.classroom{
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 32px;
-    color: #585858;
+.lesson h2{
+    color:#1C1C1C;
 }
-
-.filter{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.1px;
-    color: #585858;
-}
-
-.select_btn{
-    width: 160px;
-    height: 40px;
-    background: #FFFFFF;
-    border: 1px solid #808080;
-    border-radius: 8px;
-
-}
-
-.select_options{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.1px;
-    color: #303030;
-    width: 136px;
-    height: 24px;
-}
-
-.createnewimg{
-    background-color: #0D6EFD;
-}
-
-.createnewtext{
-    letter-spacing: 0.1px;
-    color: #FFFFFF;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    background-color: #0D6EFD;
-    border-radius: 8px;
-}
-
-.stage1{
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    letter-spacing: 0.1px;
-    color: #1C1C1C;
-    background-color: #FFFFFF;
-}
-
-.lesson1{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: right;
-    letter-spacing: 0.1px;
-    color: #0D6EFD;
-    background-color: #FFFFFF;
-}
-
-.stage3{
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    letter-spacing: 0.1px;
-    color: #FFFFFF;
-
-}
-
-.nolesson{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: right;
-    letter-spacing: 0.1px;
-    color: #FFFFFF;
-}
-
-.stage3bg{
-    background: #E4E4E4;
+.btn-admin{
+    color:#0D6EFD;
+    border: 1px solid #0D6EFD;
 }
