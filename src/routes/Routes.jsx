@@ -65,7 +65,7 @@ const AllRoutes = () => {
           <Route path="tasks" element={<StudentTasks />} />
           <Route path="task" element={<StudentTask />} />
           <Route path="settings" element={<Settings />} />
-          <Route path="studentsupport" element={<StudentSupport />} />
+          <Route path="support" element={<StudentSupport />} />
         </Route>
 
         {/* Trainer Routes => localhost:3000/instructor/~ */}
@@ -76,6 +76,8 @@ const AllRoutes = () => {
           <Route path="classroom" element={<ClassroomTrainer />} />
           <Route path="newlesson/:id" element={<NewLesson />} />
           <Route path="abouttrainer/:id" element={<AboutTrainer />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="support" element={<StudentSupport />} />
         </Route>
 
         {/* Admin Routes => localhost:3000/admin/~ */}
