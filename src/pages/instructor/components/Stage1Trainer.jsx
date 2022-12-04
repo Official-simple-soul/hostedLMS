@@ -3,7 +3,6 @@ import Stylest1 from '../components/Stage1Trainer.module.css';
 import more from '../../../assets//icons/3dots.svg';
 import profile_img from '../../../assets/images/stage1_profile_img.svg';
 import { useState } from 'react';
-import { DeleteLesson } from '../components/ClassroomTrainerModal';
 import LessonLogo from '../../../assets/images/Rectangle.png';
 import LessonLogo1 from '../../../assets/images/Rectangle1.png';
 import LessonLogo2 from '../../../assets/images/Rectangle2.png';
