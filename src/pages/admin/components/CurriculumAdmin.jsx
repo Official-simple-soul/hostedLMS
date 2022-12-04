@@ -154,7 +154,9 @@ const CurriculumAdmin = () => {
       setUpdate(index)
   }
   
-  
+  const CreateNew =()=>{
+    console.log(123)
+  }
   return (
     <>
     <AdminPageWrapper>
@@ -166,17 +168,142 @@ const CurriculumAdmin = () => {
           <div className="flex items-center">
             <div className='flex items-center gap-[16px]'>
               <p className='text-[16px] text-[#585858]'>Filter</p>
-              <div className='flex justify-between items-center border-[1px] border-[#808080] rounded-[8px] w-[160px] h-[40px] bg-[#FFFFFF] px-[12px] py-[8px]'><p className='text-[#808080] text-[16px]'>All</p><img className='w-[12px] h-[7.41px]' src={DownArrow} alt="down arrow" /></div>
-              <button className='w-[203px] h-[40px] bg-[#0D6EFD] border-[0] border-[0] rounded-[8px] text-[#FFFFFF] flex items-center px-[21px] py-[13px]'><img className='w-[13px] h-[13px] mr-[10px] ' src={Cross} alt="cross" /> <span>Create New Week</span></button>
+              <div className='flex justify-between items-center border-[1px] border-[#808080] rounded-[8px] w-[160px] h-[40px] bg-[#FFFFFF] px-[12px] py-[8px]'><p className='text-[#808080] text-[16px]'>Beginner</p><img className='w-[12px] h-[7.41px]' src={DownArrow} alt="down arrow" /></div>
+              <button onClick={CreateNew} className='w-[203px] h-[40px] bg-[#0D6EFD] border-[0] border-[0] rounded-[8px] text-[#FFFFFF] flex items-center px-[21px] py-[13px]'><img className='w-[13px] h-[13px] mr-[10px] ' src={Cross} alt="cross" /> <span>Create New Week</span></button>
             </div>
           </div>
         </div>
-         
+         <div className='flex w-[100%]  gap-[24px] justify-[flex-start] mt-[32px] mb-[26px]'>
+          <p className='
+              relative
+              text-[#808080]
+              text-[16px]
+              font-[400]
+              font-[Inter]
+              hover:text-[#0D6EFD]  
+              hover:cursor-pointer
+              hover:before:absolute 
+              hover:before:content-[""] 
+              hover:before:bg-[#0D6EFD]
+              hover:before:w-[100%] 
+              hover:before:h-[3px] 
+              hover:before:bottom-[-3px] 
+              hover:before:left-[0px]
+              '>UI/UX</p>
+          <p
+              className='
+              relative
+              text-[#808080]
+              text-[16px]
+              font-[400]
+              font-[Inter]
+              hover:text-[#0D6EFD]  
+              hover:cursor-pointer
+              hover:before:absolute 
+              hover:before:content-[""] 
+              hover:before:bg-[#0D6EFD]
+              hover:before:w-[100%] 
+              hover:before:h-[3px] 
+              hover:before:bottom-[-3px] 
+              hover:before:left-[0px]
+              '
+          >Frontend</p>
+          <p
+              className='
+              relative
+              text-[#808080]
+              text-[16px]
+              font-[400]
+              font-[Inter]
+              hover:text-[#0D6EFD]  
+              hover:cursor-pointer
+              hover:before:absolute 
+              hover:before:content-[""] 
+              hover:before:bg-[#0D6EFD]
+              hover:before:w-[100%] 
+              hover:before:h-[3px] 
+              hover:before:bottom-[-3px] 
+              hover:before:left-[0px]
+              '
+          >Backend</p>
+          <p
+              className='
+              relative
+              text-[#808080]
+              text-[16px]
+              font-[400]
+              font-[Inter]
+              hover:text-[#0D6EFD]  
+              hover:cursor-pointer
+              hover:before:absolute 
+              hover:before:content-[""] 
+              hover:before:bg-[#0D6EFD]
+              hover:before:w-[100%] 
+              hover:before:h-[3px] 
+              hover:before:bottom-[-3px] 
+              hover:before:left-[0px]
+              '
+          >Android</p>
+          <p
+              className='
+              relative
+              text-[#808080]
+              text-[16px]
+              font-[400]
+              font-[Inter]
+              hover:text-[#0D6EFD]  
+              hover:cursor-pointer
+              hover:before:absolute 
+              hover:before:content-[""] 
+              hover:before:bg-[#0D6EFD]
+              hover:before:w-[100%] 
+              hover:before:h-[3px] 
+              hover:before:bottom-[-3px] 
+              hover:before:left-[0px]
+              '
+          >Project Management</p>
+          <p
+              className='
+              relative
+              text-[#808080]
+              text-[16px]
+              font-[400]
+              font-[Inter]
+              hover:text-[#0D6EFD]  
+              hover:cursor-pointer
+              hover:before:absolute 
+              hover:before:content-[""] 
+              hover:before:bg-[#0D6EFD]
+              hover:before:w-[100%] 
+              hover:before:h-[3px] 
+              hover:before:bottom-[-3px] 
+              hover:before:left-[0px]
+              '
+          >CAD</p>
+          <p
+              className='
+              relative
+              text-[#808080]
+              text-[16px]
+              font-[400]
+              font-[Inter]
+              hover:text-[#0D6EFD]  
+              hover:cursor-pointer
+              hover:before:absolute 
+              hover:before:content-[""] 
+              hover:before:bg-[#0D6EFD]
+              hover:before:w-[100%] 
+              hover:before:h-[3px] 
+              hover:before:bottom-[-3px] 
+              hover:before:left-[0px]
+              '
+          >Digital Marketing</p>
+         </div>
         <ul className='w-[100%] mt-[28px]'>
           
             {WeeklyCurriculum.map((curi,index)=>{
                 return(
-              <li key={index}  className={`${show === index ? 'pb-[24px]' : 'pb-[0]'} mb-[24px] rounded-[12px] px-[24px]  w-[100%] bg-[#FFFFFF]`}>
+              <li key={index}  className={`${show === index ? 'pb-[24px]' : 'pb-[0]'} hover:shadow-[5px_5px_5px_5px_rgba(0.1,_0.1,_0.1,_0.1)] cursor-pointer mb-[24px] rounded-[12px] px-[24px]  w-[100%] bg-[#FFFFFF]`}>
               <div onClick={()=>showOption(index)} className="  flex justify-between items-center w-[100%] h-[72px] bg-[#FFFFFF]">
                 <p >{curi.week}</p>
               <div  className="flex items-center">
