@@ -195,7 +195,6 @@ const NewLesson = () => {
         but: '#CEDEF6',
         grin: '#00BD56'
     }
-    console.log(liveLesson)
   return (
     <div className=''>
         <ClassroomTrainerHeader 

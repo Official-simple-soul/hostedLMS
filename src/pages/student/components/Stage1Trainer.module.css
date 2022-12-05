@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+
+*{
+    font-family: 'Inter', sans-serif;
+}
+
+html{
+    background-color:#F5F5F5;
+}
+
+.stage1_bg{
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../../assets/images/stage1-bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: auto;
+    height: 221px;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.stage1_heading{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: #585858;
+}
+
+.stage1_text{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    color: #00BD56;
+}
+
+.profile_text{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #808080;
+}
+
+.more_dropdownContainer{
+    width: 74px;
+    height: 108px;
+    background: #FFFFFF;
+    border: 1px solid #808080;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.dropdown_edit{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #303030;
+    cursor: pointer;
+}
+
+.dropdown_delete{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #F41717;
+    cursor: pointer;
+}

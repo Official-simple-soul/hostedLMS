@@ -19,7 +19,9 @@ import {
           StudentTasks,
           StudentTask,
           StudentSupport,
-          Settings 
+          Settings,
+          StudentClassroom,
+          SavedBookmarks
         } from '../pages/student/components';
 
 // Instructor imports
@@ -66,6 +68,8 @@ const AllRoutes = () => {
           <Route path="task" element={<StudentTask />} />
           <Route path="settings" element={<Settings />} />
           <Route path="support" element={<StudentSupport />} />
+          <Route path="studentclassroom" element={<StudentClassroom />} />
+          <Route path="savedbookmarks" element={<SavedBookmarks />} />
         </Route>
 
         {/* Trainer Routes => localhost:3000/instructor/~ */}
