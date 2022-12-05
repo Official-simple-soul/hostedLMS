@@ -1,5 +1,5 @@
 import React from 'react'
-import Good from '../../../assets/images/Good.png'
+import Good from '../../../../assets/images/Good.png'
 
 const ConfirmDelete = () => {
   return (
