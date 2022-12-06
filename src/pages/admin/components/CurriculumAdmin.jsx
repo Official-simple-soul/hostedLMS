@@ -4,7 +4,8 @@ import Cross from '../../../assets/icons/cross.svg'
 import BlueDownArrow from '../../../assets/icons/arrow-down-blue.svg'
 import MenuDots from '../../../assets/icons/Dots.svg'
 import AdminPageWrapper from '../../../layouts/admin/AdminPageWrapper'
-import { DeleteWeek, UpdateCurriculum } from './curr-admin-components'
+import { DeleteWeek, FilterLevel, UpdateCurriculum } from './curr-admin-components'
+import CreateNewCurriculumWeek from './CreateNewCurriculumWeek'
 // import UpdateCurriculum from './UpdateCurriculum'
 // import DeleteWeek from './DeleteWeek'
 // import AdminPageWrapper from '../../../layouts/admin/AdminPageWrapper'
@@ -155,13 +156,22 @@ const CurriculumAdmin = () => {
     }
       setUpdate(index)
   }
-  
+  const [newWeek,setNewWeek]= useState(true)
   const CreateNew =()=>{
-    console.log(123)
+    setNewWeek(!newWeek)
+  }
+  const [level,setLevel]= useState(true)
+  const showLevel =()=>{
+    setLevel(!level)
   }
   return (
     <>
     <AdminPageWrapper>
+    {
+  // if create new week is not clicked then we have the below ui
+      newWeek ? 
+  //  Curriculum Admin section 
+    <div>
     {
       deletePop ?
       <div onClick={()=>show && showOption()}  className='w-[100%] h-full flex flex-col justify-center items-center mt-[54px]'>
@@ -170,7 +180,14 @@ const CurriculumAdmin = () => {
           <div className="flex items-center">
             <div className='flex items-center gap-[16px]'>
               <p className='text-[16px] text-[#585858]'>Filter</p>
-              <div className='flex justify-between items-center border-[1px] border-[#808080] rounded-[8px] w-[160px] h-[40px] bg-[#FFFFFF] px-[12px] py-[8px]'><p className='text-[#808080] text-[16px]'>Beginner</p><img className='w-[12px] h-[7.41px]' src={DownArrow} alt="down arrow" /></div>
+            <div onClick={showLevel} className='relative cursor-pointer flex justify-between items-center border-[1px] border-[#808080] rounded-[8px] w-[160px] h-[40px] bg-[#FFFFFF] px-[12px] py-[8px]'>
+                <p className='text-[#808080] text-[16px]'>
+                  Beginner
+                </p><img className='w-[12px] h-[7.41px]' src={DownArrow} alt="down arrow" />
+                <div className={`absolute left-0 top-[40px] ${level ? 'hidden' : 'block'}`} >
+                  <FilterLevel/>
+                </div>
+            </div>
               <button onClick={CreateNew} className='w-[203px] h-[40px] bg-[#0D6EFD] border-[0] border-[0] rounded-[8px] text-[#FFFFFF] flex items-center px-[21px] py-[13px]'><img className='w-[13px] h-[13px] mr-[10px] ' src={Cross} alt="cross" /> <span>Create New Week</span></button>
             </div>
           </div>
@@ -337,20 +354,21 @@ const CurriculumAdmin = () => {
                 </div>
               )
             })}
-          </div>
-
+              </div>
             </li>
                 )
             })}
-
         </ul>
     </div>
-    :
-
-    <DeleteWeek/>
+    : <DeleteWeek/>
     }
-    </AdminPageWrapper>
-    </>
+    </div>
+    :
+    // Create new week component here
+      <CreateNewCurriculumWeek/>
+    }
+  </AdminPageWrapper>
+</>
   )
 }
 
