@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 import cancelIcon from "../../../assets/icons/cancel2025.svg";
 import fileIcon from "../../../assets/icons/file2024.svg";
+import { Avatar, DueDate, Calender } from "../../../assets";
 
 // json-server --watch data/db.json --port 8000
 
@@ -53,20 +54,20 @@ const TaskDetails = () => {
                 </div>
                 <div className="flex gap-4 items-items">
                   <div className="flex gap-2 items-center">
-                    <div className="w-5 h-5 bg-gray-200 rounded-full"></div>
+                    <div className="w-5 h-5 bg-gray-200 rounded-full"><img src={Avatar} alt="" /></div>
                     <p className="text-sm text-[#808080]">Believe</p>
                   </div>
                   <div className="flex gap-2 items-center">
-                    <div className="w-5 h-5 bg-gray-200 rounded-full"></div>
+                    <img src={Calender} alt="" />
                     <p className="text-sm text-[#808080]">October 5</p>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="flex gap-2 items-center">
-                    <div className="w-5 h-5 bg-gray-200 rounded-full"></div>
+                    <img src={DueDate} alt="" />
                     <p className="text-sm text-[#808080]">Due in 2 days</p>
                   </div>
-                  <p className="text-sm text-[#808080]">{task.points}</p>
+                  <p className="text-sm text-[#808080]">{task.points} points</p>
                 </div>
               </div>
 

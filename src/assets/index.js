@@ -25,3 +25,5 @@ export { default as Support } from './icons/support.svg';
 export { default as Settings } from './icons/settings.svg';
 export { default as Notification } from './icons/notification-bell.svg';
 export { default as ArrowDown } from './icons/arrow-down.svg';
+export { default as Calender } from './icons/calendar.svg';
+export { default as DueDate } from './icons/due-date.svg';
