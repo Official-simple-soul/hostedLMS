@@ -21,7 +21,8 @@ import {
           StudentSupport,
           Settings,
           StudentClassroom,
-          SavedBookmarks
+          SavedBookmarks,
+          AboutStudent
         } from '../pages/student/components';
 
 // Instructor imports
@@ -31,8 +32,6 @@ import {
           InstructorProfile 
        , ClassroomTrainer } from '../pages/instructor/components';
 import NewLesson from '../pages/instructor/components/NewLesson';
-import InstructorClassroom from '../pages/instructor/components/InstructorClassroom';
-import Stage1Trainer from '../pages/instructor/components/Stage1Trainer';
 import AboutTrainer from '../pages/instructor/components/AboutTrainer';
 
 // Admin imports
@@ -40,10 +39,11 @@ import Admin from '../pages/admin/Admin';
 import { 
         AdminDashboard, 
         AdminProfile, 
-        CurriculumAdmin
+        CurriculumAdmin,
+        AdminClassroom,
+        AdminNewLesson,
+        AboutAdmin
        } from '../pages/admin/components';
-import LiveclassAboutTrainer from '../pages/instructor/components/LiveclassAboutTrainer';
-import LiveclassResourceTrainer from '../pages/instructor/components/LiveclassResourceTrainer';
 
 
 
@@ -70,6 +70,7 @@ const AllRoutes = () => {
           <Route path="support" element={<StudentSupport />} />
           <Route path="studentclassroom" element={<StudentClassroom />} />
           <Route path="savedbookmarks" element={<SavedBookmarks />} />
+          <Route path="aboutstudent/:id" element={<AboutStudent />} />
         </Route>
 
         {/* Trainer Routes => localhost:3000/instructor/~ */}
@@ -90,6 +91,9 @@ const AllRoutes = () => {
           <Route  path="dashboard" element={<AdminDashboard />} />
           <Route  path="profile" element={<AdminProfile />} />
           <Route  path="curriculum" element={<CurriculumAdmin />} />
+          <Route  path="adminclassroom" element={<AdminClassroom />} />
+          <Route  path="adminnewlesson/:id" element={<AdminNewLesson />} />
+          <Route path="aboutadmin/:id" element={<AboutAdmin />} />
         </Route>
 
         {/* Error 404 Page */}

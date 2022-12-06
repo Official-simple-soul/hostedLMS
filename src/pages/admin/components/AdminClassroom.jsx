@@ -1,23 +1,66 @@
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import Style from '../components/ClassroomTrainer.module.css';
+import add from '../../../assets/icons/plus-sign.svg';
+// import { Link } from 'react-router-dom';
 import Stages from './Stages';
 
-const StudentClassroom = () => {
+const AdminClassroom = () => {
   const [stage1dropdown, setStage1dropdown] = useState(false);
-  const [bookmarked, setBookmarked] = useState([])
 
-  const handleSavedBookmarks =()=> {
-    localStorage.setItem('savedBookmarks', JSON.stringify(bookmarked))
-    window.location.href = '/student/savedbookmarks'
-  }
+  const id = 0;
 
   return (
     <div className="pt-3">
       <div className="flex flex-row justify-between">
         <div className={`${Style.classroom}`}>
-          <h5>My Classroom</h5>
+          <h5>Classroom</h5>
         </div>
-        <button onClick={handleSavedBookmarks} className='border px-4 py-1 border-[grey] rounded-md'><i class="fa-solid fa-bookmark text-[#00BD56] mr-3"></i>Saved</button>
+        <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center">
+            <p className={`${Style.filter} pr-4`}>Filter</p>
+            <select
+              name=""
+              id=""
+              className={`${Style.select_btn} outline-none p-2`}
+            >
+              <option
+                value="All"
+                className={`${Style.select_options} `}
+                selected
+              >
+                All
+              </option>
+              <option value="Created by you">Created by you</option>
+            </select>
+          </div>
+          <div
+            className={`${Style.createnew} ml-7 flex flex-row relative items-center cursor-pointer`}
+          >
+            <img
+              src={add}
+              alt="add new"
+              className={`${Style.createnewimg} absolute mx-5`}
+            />
+            <Link to={`/admin/adminnewlesson/${id}`}>
+              <p className={`${Style.createnewtext} py-2 pr-4 pl-12`}>
+                {' '}
+                Create New Lesson
+              </p>{' '}
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="tracks">
+        <ul className='flex justify-start items-center space-x-4 text-sm my-4'>
+            <li>UI/UX</li>
+            <li>Frontend</li>
+            <li>Backend</li>
+            <li>Project Management</li>
+            <li>CAD</li>
+            <li>Andriod</li>
+            <li>Digital Marketing</li>
+        </ul>
       </div>
 
       <div className=" bg-white mt-5 p-5 rounded-xl">
@@ -49,9 +92,7 @@ const StudentClassroom = () => {
             </p>
           </div>
         </div>
-        {stage1dropdown && <Stages 
-        bookmarked={bookmarked}
-        setBookmarked={setBookmarked}/>}
+        {stage1dropdown && <Stages />}
       </div>
 
       <div className="flex flex-row items-center justify-between bg-white mt-5 p-5 rounded-xl">
@@ -237,4 +278,4 @@ const StudentClassroom = () => {
   );
 };
 
-export default StudentClassroom;
+export default AdminClassroom;

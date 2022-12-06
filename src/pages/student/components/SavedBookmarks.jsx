@@ -7,10 +7,9 @@ export default function SavedBookmarks() {
     const savedData = localStorage.getItem('savedBookmarks')
     const bookmarkArr = JSON.parse(savedData)
     const searchBookmarks = bookmarkArr.filter(item=> item.title.toLowerCase().indexOf(searchInput) !== -1)
-    console.log(searchBookmarks)
   return (
     <div>
-        <div className="searchbar flex w-80 border px-3 bg-white py-1 absolute top-6 left-64 rounded-md">
+        <div className="searchbar flex w-40 md:w-80 border px-3 bg-white py-1 absolute top-6 md:top-6 left-4 md:left-64 rounded-md">
             <i class="fa-solid fa-magnifying-glass text-sm"></i>
             <input 
             type="text" 
@@ -31,14 +30,14 @@ export default function SavedBookmarks() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {
             searchBookmarks.length>0?
-            searchBookmarks && searchBookmarks.map((item) => {
+            searchBookmarks.map((item) => {
                 let {id, title, status, img, date} = item
               return (
                   <div
                     className="group/item border rounded-xl relative"
                     key={id}
                   >
-                    <Link to={`/instructor/abouttrainer/${id}`}>
+                    <Link to={`/instructor/aboutstudent/${id}`}>
                         <div className="invisible group-hover/item:visible enter flex items-center space-x-4 absolute top-14 left-28 text-white font-light">
                         <i class="fa-solid fa-right-to-bracket"></i>
                         <p className="">Enter</p>
@@ -79,7 +78,7 @@ export default function SavedBookmarks() {
                     className="group/item border rounded-xl relative"
                     key={id}
                   >
-                    <Link to={`/instructor/abouttrainer/${id}`}>
+                    <Link to={`/instructor/aboutstudent/${id}`}>
                         <div className="invisible group-hover/item:visible enter flex items-center space-x-4 absolute top-14 left-28 text-white font-light">
                         <i class="fa-solid fa-right-to-bracket"></i>
                         <p className="">Enter</p>
