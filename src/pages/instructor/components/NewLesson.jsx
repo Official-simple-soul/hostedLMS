@@ -26,11 +26,12 @@ const NewLesson = () => {
     const [addTime, setAddTime] = useState('')
     const [imageUpload, setImageUplaod] = useState()
     const [showModal, setShowModal] = useState(false)
+    const [saveModal, setSaveModal] = useState(false)
     const [lessonTitle, setLessonTitle] = useState('')
     const [lessonDesc, setLessonDescr] = useState('')
-    const imageFunct = () => {
-        setImageUplaod(ImageUploadVector)
-    }
+    const [liveLesson, setLivelesson] = useState('Live Class')
+    const [lessonRecording, setLessonRecording] = useState('')
+    // console.log(id)
     
     const status = ['LIVE IN 2 HOURS', 'RECORDING NOT ADDED', 'RECORDING ADDED'];
 
@@ -126,9 +127,6 @@ const NewLesson = () => {
         setImageUplaod(e.target.files[0])
         setPictureUpload(true)
     }
-    useEffect(()=> {
-        imageFunct()
-    },[])
     const addLink = (e) => {
         e.preventDefault()
         setAddLinkToClass(linkToClass)
@@ -177,6 +175,9 @@ const NewLesson = () => {
                 setLessonTitle(filteredData[0].title)
                 setLessonDescr(filteredData[0].about)
                 setLinkToClass(filteredData[0].link)
+                setImageUplaod(filteredData[0].img)
+                setAddResources(filteredData[0].resources)
+                setLivelesson('Lesson Recording')
             }
         }, [])
 
@@ -194,12 +195,13 @@ const NewLesson = () => {
         but: '#CEDEF6',
         grin: '#00BD56'
     }
-    
   return (
     <div className=''>
         <ClassroomTrainerHeader 
         showModal={showModal}
         setShowModal={setShowModal}
+        saveModal={saveModal}
+        setSaveModal={setSaveModal}
         lessonTitle={lessonTitle}
         clearInputs={clearInputs}/>
         <div className="first-row grid grid-cols-1 md:grid-cols-3">
@@ -251,11 +253,14 @@ const NewLesson = () => {
         <div className="second-row grid grid-cols-1 md:grid-cols-3">
             <div className="left p-6 bg-white md:m-4 rounded-xl col-span-2">
                 <form action="">
-                    <select name="" className='bg-transparent mb-4'>
-                        <option value="">Live Class</option>
-                        <option value="">Lesson Recording</option>
+                    <select name="" defaultValue={liveLesson} onChange={(e)=> setLivelesson(e.target.value)} className='bg-transparent mb-4'>
+                        <option selected={liveLesson === 'Live Class'} value="Live Class">Live Class</option>
+                        <option selected={liveLesson === 'Lesson Recording'} value="Lesson Recording">Lesson Recording</option>
                     </select><br></br>
-                    <div className="grid grid-cols-4 gap-4">
+                    {
+                        liveLesson === 'Live Class'?
+                    <>
+                        <div className="grid grid-cols-4 gap-4">
                         <div className="left col-span-3">
                             <label htmlFor="">Live Class Link</label>
                             <input type="text"
@@ -284,21 +289,76 @@ const NewLesson = () => {
                     value='Add Link'
                     onClick={addLink}
                     />
+                    </>
+                    :
+                    <>
+                    <div className="grid grid-cols-4 gap-4">
+                        <div className="left col-span-3">
+                            <label htmlFor="">Add lesson recording</label>
+                            <input type="text"
+                            style={{borderColor:colors.ash}}
+                            className='w-full px-3 py-6 mt-2 mb-4 border border-blue-ribbon-1000 bg-transparent'
+                            placeholder='Enter youtube embed link'
+                            value={lessonRecording}
+                            onChange={(e)=>setLessonRecording(e.target.value)}
+                            required
+                            />
+                        </div>
+                        <div className="right">
+                            <label htmlFor="">Duration</label>
+                            <input type="time"
+                            style={{borderColor:colors.ash}}
+                            className='w-full px-3 py-6 mt-2 mb-4 border border-blue-ribbon-1000 bg-transparent'
+                            placeholder='00:00'
+                            value={time}
+                            onChange={(e)=>setTime(e.target.value)}
+                            required
+                            />
+                        </div>
+                    </div>
+                    <input type="submit" 
+                    className='px-4 py-1 bg-blue-ribbon-500 text-white'
+                    value='Add Recording'
+                    onClick={addLink}
+                    />
+                    </>
+                    }
+                    
                 </form>
             </div>
             <div className="right p-2 bg-white my-4 md:m-4 rounded-xl">
-                <div className="head flex justify-between">
+                {
+                    liveLesson === 'Live Class'?
+                    <>
+                    <div className="head flex justify-between p-2">
                     <h1>Live Class Link</h1>
                     <h2 className='' style={{color:notAdded?colors.grin:colors.red}}>{notAdded?'Link Added':'Link Not Added'}</h2>
-                </div>
-                <p style={{color:colors.ash}} className="time mt-8">{addTime} {addTime[0]==='0'?'AM':Number(addTime[0])+Number(addTime[1])===3&&addTime[0]!=='0'&&Number(addTime[4])>0?'PM':Number(addTime[0])+Number(addTime[1])===3&&addTime[0]!=='0'?'Noon':Number(addTime[0])+Number(addTime[1])>3&&addTime[0]!=='0'?'PM':'Nill'}</p>
-                <div onClick={goTo} className="linkdetails border p-2 rounded-lg flex space-x-2">
-                    <img src={displayLinkToClass.image} alt="" width='50px'/>
-                    <div className="right overflow-hidden">
-                        <h1 className=''>{displayLinkToClass.title}</h1>
-                        <h1 className='text-sm mt-2'>{displayLinkToClass.url}</h1>
                     </div>
-                </div>
+                    <p style={{color:colors.ash}} className="time mt-8">{addTime} {addTime[0]==='0'?'AM':Number(addTime[0])+Number(addTime[1])===3&&addTime[0]!=='0'&&Number(addTime[4])>0?'PM':Number(addTime[0])+Number(addTime[1])===3&&addTime[0]!=='0'?'Noon':Number(addTime[0])+Number(addTime[1])>3&&addTime[0]!=='0'?'PM':'Nill'}</p>
+                    <div onClick={goTo} className="linkdetails border p-2 rounded-lg flex space-x-2">
+                        <img src={displayLinkToClass.image} alt="" width='50px'/>
+                        <div className="right overflow-hidden">
+                            <h1 className=''>{displayLinkToClass.title}</h1>
+                            <h1 className='text-sm mt-2'>{displayLinkToClass.url}</h1>
+                        </div>
+                    </div>
+                    </>
+                    :
+                    <>
+                    <div className="head flex justify-between p-2 mb-6">
+                    <h1 className='text-sm'>Lesson Recording Link</h1>
+                    <h2 className='text-sm' style={{color:notAdded?colors.grin:colors.red}}>{notAdded?'Link Added':'Link Not Added'}</h2>
+                    </div>
+                    <div onClick={goTo} className="linkdetails border p-2 rounded-lg flex space-x-2">
+                        <img src={displayLinkToClass.image} alt="" width='50px'/>
+                        <div className="right overflow-hidden">
+                            <h1 className=''>{displayLinkToClass.title}</h1>
+                            <h1 className='text-sm mt-2'>{displayLinkToClass.url}</h1>
+                        </div>
+                    </div>
+                    </>
+                }
+                
             </div>
         </div>
         <div className="third-row p-6 bg-white md:m-4 rounded-xl">
@@ -307,16 +367,17 @@ const NewLesson = () => {
                 <p style={{color:pictureUpload?colors.grin:colors.red}}>{pictureUpload?'Picture Added':'Picture Not Added'}</p>
             </div>
             <p style={{color:colors.ash}} className='mt-3'>Uplaod your file</p>
-            <div className="mt-3 rounded-lg upload border-dashed border-2 text-center py-10" style={{borderColor:colors.ash}}>
-                <div className="imageUpload flex justify-center items-center">
-                    <img src={imageUpload} alt="" className=''/>
+            <div className="mt-3 rounded-lg upload border-dashed border-2 text-center py-10 relative z-50" style={{borderColor:colors.ash}}>
+                <img src={ImageUploadVector} alt="" className='absolute right-[50%] top-4'/>
+                <div className="imageUpload flex justify-center items-center absolute left-0 top-0 bottom-0 right-0 -z-20">
+                    <img src={imageUpload} alt="" className='w-full h-[278px] object-cover' width=''/>
                 </div>
                 <div className="content">
-                    <p style={{color:colors.ash}} className='my-4 z-20'>Drag and drop your image here</p>
-                    <p style={{color:colors.ash}} className='mb-6 z-20'>or</p>
+                    <p style={{color:imageUpload?'white':colors.ash}} className='my-4 z-20'>Drag and drop your image here</p>
+                    <p style={{color:imageUpload?'white':colors.ash}} className='mb-6 z-20'>or</p>
                     <input type="file" className='hidden' id='img' onChange={handleUpload}/>
-                    <label htmlFor="img" className='my-4 border z-20 border-blue-ribbon-500 px-5 py-2 rounded-lg text-blue-ribbon-500'>Browse File</label>
-                    <p style={{color:colors.ash}} className='mt-6'>Supports JPEG, JPG, PNG <br></br>Max file size 2MB</p>
+                    <label htmlFor="img" className={`my-4 border z-20 border-blue-ribbon-500 px-5 py-2 rounded-lg text-blue-ribbon-500 ${imageUpload?'bg-white':'bg-transparent'}`}>Browse File</label>
+                    <p style={{color:imageUpload?'white':colors.ash}} className='mt-6'>Supports JPEG, JPG, PNG <br></br>Max file size 2MB</p>
                 </div>
             </div>
         </div>
@@ -359,6 +420,8 @@ const NewLesson = () => {
         </div>
         <ModalTrainer 
         showModal = {showModal}
+        saveModal= {saveModal}
+        setSaveModal = {setSaveModal}
         setShowModal = {setShowModal}
         lessonTitle = {lessonTitle}
         />

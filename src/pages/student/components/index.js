@@ -6,3 +6,5 @@ export { default as Task } from './Task';
 export { default as TaskDetails } from './TaskDetails';
 export { default as Settings } from './Settings';
 export { default as StudentSupport } from './StudentSupport';
+export { default as StudentClassroom } from './StudentClassroom';
+export { default as SavedBookmarks } from './SavedBookmarks';
