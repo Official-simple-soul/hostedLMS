@@ -17,8 +17,9 @@ import {
           StudentProfile,
           StudentDashboard,
           StudentTasks,
-          StudentTask,
+          Task,
           StudentSupport,
+          TaskDetails
           Settings,
           StudentClassroom,
           SavedBookmarks
@@ -65,7 +66,8 @@ const AllRoutes = () => {
           <Route path="dashboard" element={<StudentDashboard />} />
           <Route path="profile" element={<StudentProfile />} />
           <Route path="tasks" element={<StudentTasks />} />
-          <Route path="task" element={<StudentTask />} />
+          <Route path="task" element={<Task />} />
+          <Route path="task/:id" element={<TaskDetails />} />
           <Route path="settings" element={<Settings />} />
           <Route path="support" element={<StudentSupport />} />
           <Route path="studentclassroom" element={<StudentClassroom />} />
