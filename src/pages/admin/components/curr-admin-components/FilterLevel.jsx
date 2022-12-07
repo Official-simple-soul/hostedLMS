@@ -2,9 +2,9 @@ import React from 'react'
 
 const FilterLevel = () => {
   return (
-        <div className='w-[160px] h-[160px]  rounded-[20px] bg-[#FFFFFF] flex justify-center items-center flex-col px-[60px] pb-[40px] pt-[36.5px]'>
-            <div className="flex flex-col mb-[40px] gap-[12px]">
-                <button className='outline-[0] border-[0] border-[1px] text-start border-[#0D6EFD]  rounded-[8px]'>Beginer</button>
+        <div className='shadow-[0px_4px_20px_rgba(0,_0,_0,_0.1)] absolute z-[1] w-[160px] h-[108px] border-[1px] border-[#808080] rounded-[8px] bg-[#FFFFFF] flex  items-center justify-center flex-col  '>
+            <div className="text-[#303030] font-[400] px-[12px] py-[16px]">
+                <button className='outline-[0] border-[0] mb-[28px] border-[1px] text-start border-[#0D6EFD]  rounded-[8px]'>Beginer</button>
                 <button className='outline-[0] border-[0] rounded-[8px] text-start'>Intermediate</button>
             </div>
         </div>

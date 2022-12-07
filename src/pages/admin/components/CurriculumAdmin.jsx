@@ -337,7 +337,7 @@ const CurriculumAdmin = () => {
                 <div className="flex items-center justify-center relative">
                   <img onClick={()=>updateOptions(index)} className='pl-[32px]' src={MenuDots} alt="menu" />
                     <div className={` ${update !== index ? "hidden" : "block"} absolute top-[20px] right-[-24px] `}>
-                      <UpdateCurriculum deletePop={deletePop} setDeletePop={setDeletePop}/>
+                      <UpdateCurriculum updateOptions={updateOptions} index={index} deletePop={deletePop} setDeletePop={setDeletePop}/>
                     </div>
                 </div>
             </div>
@@ -360,7 +360,8 @@ const CurriculumAdmin = () => {
             })}
         </ul>
     </div>
-    : <DeleteWeek/>
+    // deletePop useState is passed as prop to DeleteWeek to be able to navigate back
+    : <DeleteWeek deletePop={deletePop} setDeletePop={setDeletePop}/>
     }
     </div>
     :

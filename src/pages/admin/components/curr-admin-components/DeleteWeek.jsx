@@ -3,7 +3,7 @@ import DeleteIcon from '../../../../assets/icons/delete-icon.svg'
 import ConfirmDelete from './ConfirmDelete'
 
 
-const DeleteWeek = ({deletePop}) => {
+const DeleteWeek = ({deletePop,setDeletePop}) => {
   const [dele,setDele] = useState(false)
 
   const confirmDelete = () =>{
@@ -25,8 +25,8 @@ const DeleteWeek = ({deletePop}) => {
             </div>
         </div>
     </div> :
-
-    <ConfirmDelete/>
+// deletePop useState is passed as prop to ConfirmDelete {from DeleteWeek}  to be able to navigate back
+    <ConfirmDelete deletePop={deletePop} setDeletePop={setDeletePop}/>
     }
     </>
   )
