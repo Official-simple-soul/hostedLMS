@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import DeleteIcon from '../../../../assets/icons/delete-icon.svg'
+import DeleteIcon from '../../../assets/icons/delete-icon.svg'
 import ConfirmDelete from './ConfirmDelete'
 
 

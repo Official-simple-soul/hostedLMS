@@ -1,5 +1,5 @@
 import React from 'react'
-import Good from '../../../../assets/images/Good.png'
+import Good from '../../../assets/images/Good.png'
 import { NavLink } from 'react-router-dom'
 
 const ConfirmDelete = ({deletePop,setDeletePop}) => {

@@ -19,7 +19,7 @@ import {
           StudentTasks,
           Task,
           StudentSupport,
-          TaskDetails
+          TaskDetails,
           Settings,
           StudentClassroom,
           SavedBookmarks
