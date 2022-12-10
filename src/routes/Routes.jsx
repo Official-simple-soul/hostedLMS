@@ -19,7 +19,7 @@ import {
           StudentTasks,
           Task,
           StudentSupport,
-          TaskDetails
+          TaskDetails,
           Settings,
           StudentClassroom,
           SavedBookmarks
@@ -31,6 +31,7 @@ import {
           InstructorDashboard,
           InstructorProfile 
        , ClassroomTrainer } from '../pages/instructor/components';
+
 import NewLesson from '../pages/instructor/components/NewLesson';
 import InstructorClassroom from '../pages/instructor/components/InstructorClassroom';
 import Stage1Trainer from '../pages/instructor/components/Stage1Trainer';
