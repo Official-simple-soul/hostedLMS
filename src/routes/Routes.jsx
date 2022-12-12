@@ -19,7 +19,7 @@ import {
           StudentTasks,
           Task,
           StudentSupport,
-          TaskDetails
+          TaskDetails,
           Settings,
           StudentClassroom,
           SavedBookmarks,
@@ -54,8 +54,8 @@ const AllRoutes = () => {
       <Routes>
 
         {/* Onboarding and Authentication Routes => localhost:3000/~ */}
-        <Route path='/' element={<SignUp />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
         <Route path='/verify-email' element={<VerifyEmail />} />
         <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='forgot-password/new-password' element={<NewPassword />} />
