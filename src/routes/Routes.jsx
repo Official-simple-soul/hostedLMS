@@ -30,10 +30,13 @@ import {
 import Instructor from '../pages/instructor/Instructor';
 import { 
           InstructorDashboard,
-          InstructorProfile 
-       , ClassroomTrainer } from '../pages/instructor/components';
+          InstructorProfile, 
+           ClassroomTrainer,
+           CurriculumTrainer } from '../pages/instructor/components';
+
 import NewLesson from '../pages/instructor/components/NewLesson';
 import AboutTrainer from '../pages/instructor/components/AboutTrainer';
+
 
 // Admin imports
 import Admin from '../pages/admin/Admin';
@@ -83,6 +86,7 @@ const AllRoutes = () => {
           <Route path="classroom" element={<ClassroomTrainer />} />
           <Route path="newlesson/:id" element={<NewLesson />} />
           <Route path="abouttrainer/:id" element={<AboutTrainer />} />
+          <Route path='curriculum' element={<CurriculumTrainer />} />
           <Route path="settings" element={<Settings />} />
           <Route path="support" element={<StudentSupport />} />
         </Route>
