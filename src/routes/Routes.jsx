@@ -17,26 +17,37 @@ import {
           StudentProfile,
           StudentDashboard,
           StudentTasks,
-          StudentTask,
+          Task,
           StudentSupport,
-          Settings 
+          TaskDetails,
+          Settings,
+          StudentClassroom,
+          SavedBookmarks,
+          AboutStudent
         } from '../pages/student/components';
 
 // Instructor imports
 import Instructor from '../pages/instructor/Instructor';
 import { 
           InstructorDashboard,
-          InstructorProfile 
-        } from '../pages/instructor/components';
+          InstructorProfile, 
+           ClassroomTrainer,
+           CurriculumTrainer } from '../pages/instructor/components';
+
+import NewLesson from '../pages/instructor/components/NewLesson';
+import AboutTrainer from '../pages/instructor/components/AboutTrainer';
+
 
 // Admin imports
 import Admin from '../pages/admin/Admin';
 import { 
         AdminDashboard, 
         AdminProfile, 
-        CurriculumAdmin
+        CurriculumAdmin,
+        AdminClassroom,
+        AdminNewLesson,
+        AboutAdmin
        } from '../pages/admin/components';
-
 
 
 
@@ -46,8 +57,8 @@ const AllRoutes = () => {
       <Routes>
 
         {/* Onboarding and Authentication Routes => localhost:3000/~ */}
-        <Route path='/' element={<SignUp />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
         <Route path='/verify-email' element={<VerifyEmail />} />
         <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='forgot-password/new-password' element={<NewPassword />} />
@@ -58,9 +69,13 @@ const AllRoutes = () => {
           <Route path="dashboard" element={<StudentDashboard />} />
           <Route path="profile" element={<StudentProfile />} />
           <Route path="tasks" element={<StudentTasks />} />
-          <Route path="task" element={<StudentTask />} />
+          <Route path="task" element={<Task />} />
+          <Route path="task/:id" element={<TaskDetails />} />
           <Route path="settings" element={<Settings />} />
-          <Route path="studentsupport" element={<StudentSupport />} />
+          <Route path="support" element={<StudentSupport />} />
+          <Route path="studentclassroom" element={<StudentClassroom />} />
+          <Route path="savedbookmarks" element={<SavedBookmarks />} />
+          <Route path="aboutstudent/:id" element={<AboutStudent />} />
         </Route>
 
         {/* Trainer Routes => localhost:3000/instructor/~ */}
@@ -68,6 +83,12 @@ const AllRoutes = () => {
           <Route path="" element={<Navigate replace to="/instructor/dashboard" />} />
           <Route path="dashboard" element={<InstructorDashboard />} />
           <Route path="profile" element={<InstructorProfile />} />
+          <Route path="classroom" element={<ClassroomTrainer />} />
+          <Route path="newlesson/:id" element={<NewLesson />} />
+          <Route path="abouttrainer/:id" element={<AboutTrainer />} />
+          <Route path='curriculum' element={<CurriculumTrainer />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="support" element={<StudentSupport />} />
         </Route>
 
         {/* Admin Routes => localhost:3000/admin/~ */}
@@ -76,6 +97,9 @@ const AllRoutes = () => {
           <Route  path="dashboard" element={<AdminDashboard />} />
           <Route  path="profile" element={<AdminProfile />} />
           <Route  path="curriculum" element={<CurriculumAdmin />} />
+          <Route  path="adminclassroom" element={<AdminClassroom />} />
+          <Route  path="adminnewlesson/:id" element={<AdminNewLesson />} />
+          <Route path="aboutadmin/:id" element={<AboutAdmin />} />
         </Route>
 
         {/* Error 404 Page */}
