@@ -11,6 +11,7 @@ const ConfirmDelete = ({deletePop,setDeletePop}) => {
             <p className='text-[18px] text-[#585858] mb-[24px] text-center'>The week “Introduction to UI, UX & Design Thinking” has been deleted</p>
             <div className="flex mb-[40px] gap-[12px]">
               {/*  deletePop useState is passed as prop to ConfirmDelete {from DeleteWeek}  to be able to navigate back */}
+                <button onClick={()=>{setDeletePop(!deletePop)}} className='w-[114px] h-[54px] bg-[#FFFFFF] text-[#0D6EFD]  outline-[0] border-[1px] border-[#0D6EFD] rounded-[8px]'>Undo</button>
                 <button onClick={()=>{setDeletePop(!deletePop)}} className='w-[234px] h-[54px] bg-[#0D6EFD] text-[#FFFFFF]  outline-[0] border-[0] rounded-[8px]'>Okay</button>
             </div>
         </div>
