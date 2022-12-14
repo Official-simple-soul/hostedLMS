@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sidebar from './Sidebar'
 import { Notification, Avatar, ArrowDown } from '../../assets'
+import ProfileDropdown from '../../components/student/ProfileDropdown'
 
 const StudentPageWrapper = ({ children }) => {
+  const [ profileModal, setProfileModal] = useState(false)
+
   return (
     <>
 
@@ -27,13 +30,18 @@ const StudentPageWrapper = ({ children }) => {
                 </div>
               </div>
 
-              <div className="relative bg-white h-[48px] w-[88px] rounded-[24px] flex gap-2 px-3">
+              <div 
+                className="relative bg-white h-[48px] w-[88px] rounded-[24px] flex gap-2 px-3"
+                onClick={ () => setProfileModal(!profileModal)}
+              >
                 <img src={Avatar} alt="" className='absolute top-0 left-0' />
                 <img src={ArrowDown} alt="" className='w-[12px] absolute top-[40%] right-3' />
               </div>
 
             </div>
           </nav>
+
+          {profileModal ? <ProfileDropdown /> : null}
 
           <div className='m-6'>
             {children}
