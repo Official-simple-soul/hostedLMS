@@ -71,7 +71,7 @@ const Login = () => {
 
                   <div className='pt-5 pb-12'>
                     <p className='text-center'>Don't have an account? 
-                    <span className={`${Style.login_link} pl-2`}><Link to={'#'}>Create account</Link></span>
+                    <span className={`${Style.login_link} pl-2`}><Link to={'/signup'}>Create account</Link></span>
                     </p>
                   </div>
                 </form>

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import Stylest1 from '../components/Stage1Trainer.module.css';
-import more from '../../../assets//icons/3dots.svg';
+import Stylest1 from '../components/Stage.module.css';
 import profile_img from '../../../assets/images/stage1_profile_img.svg';
 import { useState } from 'react';
 import LessonLogo from '../../../assets/images/Rectangle.png';
@@ -10,10 +9,17 @@ import LessonLogo3 from '../../../assets/images/Rectangle3.png';
 import LessonLogo4 from '../../../assets/images/Rectangle4.png';
 import LessonLogo5 from '../../../assets/images/Rectangle5.png';
 import { Link } from 'react-router-dom';
+import { DeletedConfirmation } from './ClassroomTrainerModal2';
+import { CSSTransition } from 'react-transition-group';
+import Style from '../components/ClassroomTrainerModal.module.css';
+import delete_icon from  '../../../assets/icons/modal-delete-icon.svg';
 
-const Stages = ({lengths, bookmarked, setBookmarked}) => {
+const Stage1Trainer = ({lengths}) => {
+  const [dropNumber, setDropNumber] = useState(0);
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [isDelete, setIsDelete] = useState(false);
   const [lessonData, setLessonData] = useState([]);
- 
+  const [getId, setGetId] = useState([])
 
   const statusText = ['LIVE IN 2 HOURS', 'RECORDING NOT ADDED', 'RECORDING ADDED'];
 
@@ -67,25 +73,15 @@ const Stages = ({lengths, bookmarked, setBookmarked}) => {
       about: 'one of the common function used in javascript is the loop, while loop, for loop, for each, map, reduce, for of, for in, filter, and many more'
     },
   ];
-  lengths = lessonData1.length
+
   useEffect(()=>{
     setLessonData(lessonData1)
   },[])
 
-  const handleBookmark = ({title, id, img, status, date})=> {
-    setBookmarked([...bookmarked, {title: title, id: id, img: img, status: status, date: date}])
+  const handleConfirmDelete=({id})=>{
+    setLessonData(lessonData.filter(item=>item.id!==id))
+    setIsDelete(false)
   }
-
-  useEffect(()=> {
-    const pickBookmark = document.querySelectorAll('.fa-bookmark')
-    pickBookmark.forEach(item=> {
-      item.addEventListener('click', ()=> {
-          item.classList.toggle('bg-[green]')
-      })
-  })
-  })
-  
-  
 
   return (
     <>
@@ -102,7 +98,7 @@ const Stages = ({lengths, bookmarked, setBookmarked}) => {
                     className="group/item border rounded-xl relative"
                     key={id}
                   >
-                    <Link to={`/student/aboutstudent/${id}`}>
+                    <Link to={`/admin/aboutadmin/${id}`}>
                         <div className="invisible group-hover/item:visible enter flex items-center space-x-4 absolute top-14 left-28 text-white font-light">
                         <i class="fa-solid fa-right-to-bracket"></i>
                         <p className="">Enter</p>
@@ -114,7 +110,17 @@ const Stages = ({lengths, bookmarked, setBookmarked}) => {
                         <h4 className={`${Stylest1.stage1_heading}`}>
                           {title}
                         </h4>
-                        <i class={`fa-regular fa-bookmark text-[#00BD56] cursor-pointer`} onClick={()=>handleBookmark(item)}></i>
+                        <div className="menu-icon text-lg text-black" onClick={()=>setDropNumber(id+=50)}>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <div className={`${dropNumber===id+50?'block':'hidden'} editDelete absolute border space-y-4 py-2 bg-white rounded right-4 bottom-2`}>
+                            <Link to={`/admin/adminnewlesson/${id}`}><p className='hover:bg-blue-ribbon-500 hover:text-white px-3 py-1'>Edit</p></Link>
+                            <p className='text-[red] hover:bg-blue-ribbon-500 px-3 py-1' onClick={()=>{
+                                setGetId(item)
+                                setIsDelete(true)
+                            }
+                            }>Delete</p>
+                        </div>
                       </div>
                       <p
                         className={`${
@@ -144,8 +150,36 @@ const Stages = ({lengths, bookmarked, setBookmarked}) => {
           </div>
         </div>
       </div>
+      <CSSTransition in={isDelete} unmountOnExit timeout={{ enter: 0, exit: 300 }}>
+        <div className={`${Style.darkBG} `}>
+           <div className={`${Style.centered} drop-shadow-xl `}>
+                <div>
+                    <div className=''>
+                        <div className={`${Style.deletelesson_container} border mx-auto px-14 py-10 `}>
+                            <div >
+                                <img src={delete_icon} alt="Delete Icon" className='mx-auto' />
+                            </div>
+                            <h5 className={`${Style.modal_heading} text-center pt-6`}>Delete this lesson?</h5>
+                            <p className={`${Style.modal_text} pt-4`}>Are you sure you want to delete the lesson <span>“Design Principles”</span>?</p>
+                            <div className='flex flex-row justify-between items-center pt-5'>
+                                <button className={`${Style.cancel_btn}`} onClick={() => {setIsDelete(!isDelete)}}>Cancel</button>
+                                <button className={`${Style.delete_btn}`} onClick={()=>{
+                                    handleConfirmDelete(getId)
+                                    setConfirmDelete(true)
+                                }}>Yes, delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+            
+        </div>
+      </CSSTransition>
+      <DeletedConfirmation 
+      confirmDelete={confirmDelete}
+      setConfirmDelete={setConfirmDelete}/>
     </>
   );
 };
 
-export default Stages;
+export default Stage1Trainer;

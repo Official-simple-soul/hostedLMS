@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+
+*{
+    font-family: 'Inter', sans-serif;
+}
+
+.darkBG {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 170vmax;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  
+  .centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.deletelesson_container{
+    width: 480px;
+    height: 362px;
+    background: #FFFFFF;
+    border-radius: 20px;
+
+}
+
+.modal_heading{
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+    color: #171717;
+}
+
+.modal_text{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: #585858;
+}
+
+.cancel_btn{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: #585858;
+    width: 114px;
+    height: 54px;
+    background: #FFFFFF;
+    border: 1px solid #585858;
+    border-radius: 8px;
+}
+
+.delete_btn{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+    width: 234px;
+    height: 54px;
+    background: #F41717;
+    border-radius: 8px;
+}
+
+.undo_btn{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: #0D6EFD;
+    width: 114px;
+    height: 54px;
+    background: #FFFFFF;
+    border: 1px solid #0D6EFD;
+    border-radius: 8px;
+}
+
+.okay_btn{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+    width: 234px;
+    height: 54px;
+    background: #0D6EFD;
+    border-radius: 8px;
+}

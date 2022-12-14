@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+*{
+    font-family: 'Inter', sans-serif;
+}
+
+html{
+    background-color:#F5F5F5;
+}
+
+.classroom{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    
+    letter-spacing: 0.1px;
+    color: #0D6EFD;
+}
+
+.classroomspan{
+    color:  #808080;
+}
+
+.desinprinciples{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #303030;
+}
+
+.editlessoncontainer{
+    background: #0D6EFD;
+    border-radius: 8px;
+}
+
+.editlesson{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+}
+
+.editimg{
+    background-color: #0D6EFD;
+    color: #FFFFFF;
+}
+
+.about_bg{
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../../assets/images/stage1-bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: auto;
+    height: 410px;
+    border-radius: 12px;
+}
+
+.aboutcontainer{
+    background: #FFFFFF;
+    border-radius: 12px;
+}
+
+.aboutheading{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #585858;
+}
+
+.aboutheadingline{
+    border: 1px solid #585858;
+}
+
+.aboutresourceheading{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #0D6EFD;
+}
+
+.abouttext{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: #585858;
+}
+
+.resourceaboutheading{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #0D6EFD;
+}
+
+.resourceresourceheading{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #585858;
+}
+
+.resourcelink{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #303030;
+}
+
+.classtarts{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: #585858;
+}
+
+.classtartspan{
+    color:#00BD56;
+}
+
+.joinliveclasscontainer{
+    background: #0D6EFD;
+    border-radius: 8px;
+    width: 210px;
+    height: 56px;
+}
+
+.joinliveclass{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+}
+
+.joinliveclassimg{
+    background-color: #0D6EFD;
+    color: #FFFFFF;
+    height: 20px;
+    width: 20px;
+}
+
+.liveclasseditlessoncontainer{
+    border: 1px solid #0D6EFD;
+    border-radius: 8px;
+    background: #FFFFFF;
+   color: #0D6EFD;
+   padding: 8px 16px;
+}
+
+.liveclasseditlesson{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #0D6EFD;
+}
+
+
