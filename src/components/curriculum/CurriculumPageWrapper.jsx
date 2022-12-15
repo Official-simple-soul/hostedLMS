@@ -20,11 +20,11 @@ const [show,setShow] = useState(-1)
     }
       setShow(index)
   }
-  const [update,setUpdate] = useState(-1)
+  const [update,setUpdate] = useState(null)
 
   const updateOptions = (index)=>{
     if(index === update){
-      setUpdate(-1)
+      setUpdate(null)
       return
     }
       setUpdate(index)
@@ -33,11 +33,14 @@ const [show,setShow] = useState(-1)
   const CreateNew =()=>{
     setNewWeek(!newWeek)
   }
+  // To create list of items to select for level of experience
   const [level,setLevel]= useState(true)
   const showLevel =()=>{
     setLevel(!level)
   }
 
+  const options = ["Beginner", "Intermediate"]
+  const [selected,setSelected]= useState("Beginner")
 
   return (
     <>
@@ -56,10 +59,10 @@ const [show,setShow] = useState(-1)
               <p className='text-[16px] text-[#585858]'>Filter</p>
             <div onClick={showLevel} className='relative cursor-pointer flex justify-between items-center border-[1px] border-[#808080] rounded-[8px] w-[160px] h-[40px] bg-[#FFFFFF] px-[12px] py-[8px]'>
                 <p className='text-[#808080] text-[16px]'>
-                  Beginner
+                 {selected}
                 </p><img className='w-[12px] h-[7.41px]' src={DownArrow} alt="down arrow" />
                 <div className={`absolute left-0 top-[40px] ${level ? 'hidden' : 'block'}`} >
-                  <FilterLevel/>
+                  <FilterLevel  options={options} selected={selected} setSelected={setSelected} />
                 </div>
             </div>
               <button onClick={CreateNew} className='w-[203px] h-[40px] bg-[#0D6EFD] border-[0] border-[0] rounded-[8px] text-[#FFFFFF] flex items-center px-[21px] py-[13px]'><img className='w-[13px] h-[13px] mr-[10px] ' src={Cross} alt="cross" /> <span>Create New Week</span></button>

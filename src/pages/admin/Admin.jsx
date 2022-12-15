@@ -5,9 +5,9 @@ import AdminPageWrapper from '../../layouts/admin/AdminPageWrapper';
 const Admin = () => {
   return (
     <div>
-      <AdminPageWrapper>
+      {/* <AdminPageWrapper> */}
         <Outlet />
-      </AdminPageWrapper>
+      {/* </AdminPageWrapper> */}
     </div>
   )
 }
