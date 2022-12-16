@@ -1,11 +1,11 @@
 import React from 'react'
-import InstructorPageWrapper from '../../../layouts/instructor/InstructorPageWrapper'
+// import InstructorPageWrapper from '../../../layouts/instructor/InstructorPageWrapper'
 
 const InstructorDashboard = () => {
   return (
-    <InstructorPageWrapper>
+    <div>
       <h1>InstructorDashboard</h1>
-    </InstructorPageWrapper>
+    </div>
   )
 }
 

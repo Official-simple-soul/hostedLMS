@@ -5,9 +5,9 @@ import InstructorPageWrapper from '../../layouts/instructor/InstructorPageWrappe
 const Instructor = () => {
   return (
     <div>
-      {/* <InstructorPageWrapper> */}
+      <InstructorPageWrapper>
         <Outlet />
-      {/* </InstructorPageWrapper> */}
+      </InstructorPageWrapper>
     </div>
   )
 }
