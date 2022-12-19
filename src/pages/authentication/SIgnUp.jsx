@@ -176,7 +176,7 @@ const handleInput = (e)=>{
                                 {/* show modal */}
                                 {/* { success && <Signup2Modal/>} */}
                             </div>
-                        <p className='mb-[40px] mt-[24px]'>Already have an account? <Link to={'login'} className='text-[blue]' href="">Log In</Link></p>
+                        <p className='mb-[40px] mt-[24px]'>Already have an account? <Link to={'/'} className='text-[blue]' href="">Log In</Link></p>
                   </form>
             </div>
         </div>

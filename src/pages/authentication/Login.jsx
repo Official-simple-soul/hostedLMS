@@ -14,6 +14,11 @@ const Login = () => {
   setShowpassword(!showpassword);
  }
 
+ const handleLogin =(e)=> {
+  e.preventDefault()
+  window.location.href = '/student/dashboard'
+ }
+
   return (
     <div className=' ' >
       <div className=' flex flex-row shadow-xl rounded-xl'>
@@ -33,7 +38,7 @@ const Login = () => {
               </div>
 
               <div className={`${Style.login_text} w-[90%] mx-auto mt-[1.4rem]`}>
-                <form action="">
+                <form action="" onSubmit={handleLogin}>
                   <div className='mb-4 flex flex-col gap-2'>
                     <label htmlFor="email">Email</label>
                     <div className='relative flex flex-row items-center'>
@@ -74,7 +79,7 @@ const Login = () => {
 
                   <div className='pt-5 pb-12'>
                     <p className='text-center'>Don't have an account? 
-                    <span className={`${Style.login_link} pl-2`}><Link to={'/'}>Create account</Link></span>  
+                    <span className={`${Style.login_link} pl-2`}><Link to={'/signup'}>Create account</Link></span>  
                     </p>
                   </div>
                 </form>

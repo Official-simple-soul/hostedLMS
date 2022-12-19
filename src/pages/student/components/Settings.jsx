@@ -50,8 +50,8 @@ const Settings = () => {
             <h1 className='mb-4'>Settings</h1>
             <main className='bg-white rounded-lg py-8 px-3 md:p-8 text-[#585858]'>
                 <div className="flex justify-start items-start">
-                    <h1 className={`mb-4 ${!other?'text-[grey]':'text-blue-ribbon-500 border-b border-black pb-1 w-fit'}`} onClick={handleChangePassword}>Change Password</h1>
-                    <h1 className={`mb-4 ml-8 ${other?'text-[grey]':'text-blue-ribbon-500 border-b border-black pb-1 w-fit'}`} onClick={handleOther}>Other Settings</h1>
+                    <h1 className={`mb-4 cursor-pointer ${!other?'text-blue-ribbon-500':' text-[grey] border-b border-black pb-1 w-fit'}`} onClick={handleChangePassword}>Change Password</h1>
+                    <h1 className={`mb-4 cursor-pointer ml-8 ${other?'text-blue-ribbon-500':'text-[grey] border-b border-black pb-1 w-fit'}`} onClick={handleOther}>Other Settings</h1>
                 </div>
                 {
                   other? <form action="" onSubmit={handleSubmit}>

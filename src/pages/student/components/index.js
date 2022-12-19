@@ -8,3 +8,4 @@ export { default as Settings } from './Settings';
 export { default as StudentSupport } from './StudentSupport';
 export { default as StudentClassroom } from './StudentClassroom';
 export { default as SavedBookmarks } from './SavedBookmarks';
+export { default as AboutStudent } from './AboutStudent';

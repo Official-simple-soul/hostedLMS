@@ -1,4 +1,5 @@
 import React from 'react'
+// import InstructorPageWrapper from '../../../layouts/instructor/InstructorPageWrapper'
 
 const InstructorDashboard = () => {
   return (

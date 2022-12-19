@@ -22,7 +22,8 @@ import {
           TaskDetails,
           Settings,
           StudentClassroom,
-          SavedBookmarks
+          SavedBookmarks,
+          AboutStudent
         } from '../pages/student/components';
 
 // Instructor imports
@@ -33,23 +34,24 @@ import {
           ClassroomTrainer,
           TaskTrainer,
           TaskDetailsTrainer, 
-          CreateNewTask
+          CreateNewTask,
+          CurriculumTrainer
         } from '../pages/instructor/components';
 
 import NewLesson from '../pages/instructor/components/NewLesson';
-import InstructorClassroom from '../pages/instructor/components/InstructorClassroom';
-import Stage1Trainer from '../pages/instructor/components/Stage1Trainer';
 import AboutTrainer from '../pages/instructor/components/AboutTrainer';
+
 
 // Admin imports
 import Admin from '../pages/admin/Admin';
 import { 
         AdminDashboard, 
         AdminProfile, 
-        CurriculumAdmin
+        CurriculumAdmin,
+        AdminClassroom,
+        AdminNewLesson,
+        AboutAdmin
        } from '../pages/admin/components';
-import LiveclassAboutTrainer from '../pages/instructor/components/LiveclassAboutTrainer';
-import LiveclassResourceTrainer from '../pages/instructor/components/LiveclassResourceTrainer';
 
 
 
@@ -59,8 +61,8 @@ const AllRoutes = () => {
       <Routes>
 
         {/* Onboarding and Authentication Routes => localhost:3000/~ */}
-        <Route path='/' element={<SignUp />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
         <Route path='/verify-email' element={<VerifyEmail />} />
         <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='forgot-password/new-password' element={<NewPassword />} />
@@ -77,6 +79,7 @@ const AllRoutes = () => {
           <Route path="support" element={<StudentSupport />} />
           <Route path="studentclassroom" element={<StudentClassroom />} />
           <Route path="savedbookmarks" element={<SavedBookmarks />} />
+          <Route path="aboutstudent/:id" element={<AboutStudent />} />
         </Route>
 
         {/* Trainer Routes => localhost:3000/instructor/~ */}
@@ -90,6 +93,7 @@ const AllRoutes = () => {
           <Route path="task" element={<TaskTrainer />} />
           <Route path="task/:id" element={<TaskDetailsTrainer />} />
           <Route path="task/create-new-task/:id" element={<CreateNewTask />} />
+          <Route path='curriculum' element={<CurriculumTrainer />} />
           <Route path="settings" element={<Settings />} />
           <Route path="support" element={<StudentSupport />} />
         </Route>
@@ -100,6 +104,9 @@ const AllRoutes = () => {
           <Route  path="dashboard" element={<AdminDashboard />} />
           <Route  path="profile" element={<AdminProfile />} />
           <Route  path="curriculum" element={<CurriculumAdmin />} />
+          <Route  path="adminclassroom" element={<AdminClassroom />} />
+          <Route  path="adminnewlesson/:id" element={<AdminNewLesson />} />
+          <Route path="aboutadmin/:id" element={<AboutAdmin />} />
         </Route>
 
         {/* Error 404 Page */}

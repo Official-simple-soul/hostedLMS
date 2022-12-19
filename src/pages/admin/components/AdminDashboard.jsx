@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminPageWrapper from '../../../layouts/admin/AdminPageWrapper'
+// import AdminPageWrapper from '../../../layouts/admin/AdminPageWrapper'
 // import CurriculumAdmin from './CurriculumAdmin'
 
 // const AdminDashboard = () => {
@@ -12,7 +12,9 @@ import AdminPageWrapper from '../../../layouts/admin/AdminPageWrapper'
 
 const AdminDashboard = () => {
   return (
-    <AdminPageWrapper>AdminDashboard</AdminPageWrapper>
+    <div>
+      AdminDashboard
+    </div>
   )
 }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ImageUploadVector from '../../../assets/icons/uplaodImageVector.png';
 import {v4 as uuidv4} from 'uuid'
 import ModalTrainer from './Modal'
-import ClassroomTrainerHeader from './ClassroomTrainerHeader';
+import ClassroomHeader from './ClassroomHeader';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import LessonLogo from '../../../assets/images/Rectangle.png';
@@ -197,7 +197,7 @@ const NewLesson = () => {
     }
   return (
     <div className=''>
-        <ClassroomTrainerHeader 
+        <ClassroomHeader 
         showModal={showModal}
         setShowModal={setShowModal}
         saveModal={saveModal}
@@ -250,7 +250,6 @@ const NewLesson = () => {
                 </form>
             </div>
         </div>
-
         <div className="second-row grid grid-cols-1 md:grid-cols-3">
             <div className="left p-6 bg-white md:m-4 rounded-xl col-span-2">
                 <form action="">
@@ -362,7 +361,6 @@ const NewLesson = () => {
                 
             </div>
         </div>
-
         <div className="third-row p-6 bg-white md:m-4 rounded-xl">
             <div className="first flex justify-between items-center">
                 <h1>Add Cover Picture</h1>
@@ -383,7 +381,6 @@ const NewLesson = () => {
                 </div>
             </div>
         </div>
-
         <div className="fourth-row grid grid-cols-1 md:grid-cols-3">
             <div className="left p-6 bg-white my-4 md:m-4 rounded-xl col-span-2">
                 <h1 className='mb-2'>Add Resources</h1>
@@ -410,14 +407,14 @@ const NewLesson = () => {
                     <h1>Added Resources</h1>
                 </div>
                 <div className="addresource">
-                    {
-                    addResources.map((item)=>{
-                        return <li className='my-3 border border-2 py-2 px-2 list-none flex justify-between items-center' style={{color:colors.ash}} key={item.id}>
-                                <p>{item.title}</p>
-                                <button className="text-[red] font-bold" onClick={()=>removeResources(item)}>x</button>
-                        </li>
-                    })
-                    }
+                {
+                addResources.map((item)=>{
+                    return <li className='my-3 border border-2 py-2 px-2 list-none flex justify-between items-center' style={{color:colors.ash}} key={item.id}>
+                            <p>{item.title}</p>
+                            <button className="text-[red] font-bold" onClick={()=>removeResources(item)}>x</button>
+                    </li>
+                })
+                }
                 </div>
             </div>
         </div>

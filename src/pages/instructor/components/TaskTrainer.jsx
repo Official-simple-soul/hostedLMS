@@ -17,9 +17,9 @@ const TaskTrainer = () => {
         <h2 className='text-xl font-medium text-[#303030]'>Tasks</h2>
         <Link 
           to={`/instructor/task/create-new-task/${id}`}
-          className="flex items-center gap-2 bg-blue-ribbon-400 text-white px-6 py-3 rounded-xl text-[18px]"
+          className="flex items-center gap-2 bg-blue-ribbon-400 text-white px-4 py-2 rounded-xl text-base"
         >
-          <AiOutlinePlus className='text-[24px]' />
+          <AiOutlinePlus className='text-lg' />
           <p>Add New Task</p>
         </Link>
       </div>
