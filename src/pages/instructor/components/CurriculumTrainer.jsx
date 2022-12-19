@@ -9,10 +9,8 @@ const CurriculumTrainer = () => {
 
    return (
     <>
-    <AdminPageWrapper>
       <CurriculumPageWrapper></CurriculumPageWrapper>
-  </AdminPageWrapper>
-</>
+    </>
   )
 }
 

@@ -3,9 +3,7 @@ import InstructorPageWrapper from '../../../layouts/instructor/InstructorPageWra
 
 const InstructorDashboard = () => {
   return (
-    <InstructorPageWrapper>
       <h1>InstructorDashboard</h1>
-    </InstructorPageWrapper>
   )
 }
 
