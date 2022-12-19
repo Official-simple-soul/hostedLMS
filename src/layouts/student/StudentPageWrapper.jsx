@@ -1,21 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Sidebar from './Sidebar'
 import { Notification, Avatar, ArrowDown } from '../../assets'
 
 const StudentPageWrapper = ({ children }) => {
+  const [menu, setMenu] = useState(false)
   return (
     <>
+      <div className={`${!menu? 'hidden': 'block'} opacity-50 absolute top-0 bottom-0 left-0 right-0 bg-black z-20`}></div>
 
       <div className="flex items-stretch mt-0">
         <div>
           <div id="sidebar">
-            <Sidebar />
+            <Sidebar
+            menu={menu}
+            setMenu={setMenu}
+            />
           </div>
         </div>
-
-        <div className="main-content bg-[#F5F5F5] w-full h-full">
-          <nav className='h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5 mt-1.5'>
-            <div>Search bar if any</div>
+        <div className="md:hidden absolute top-5 left-5 z-50" onClick={()=>setMenu(!menu)}>
+          <i class={`fa-solid ${menu?'fa-times': 'fa-bars'} text-2xl opacity-80`}></i>
+        </div>
+        <div className="main-content bg-[#F5F5F5] w-full">
+          <nav className='h-[72px] bg-[#F5F5F5] shadow-xl md:shadow flex items-center justify-between px-5 mt-1.5'>
+            <div></div>
 
             <div className="flex gap-4 items-center">
               <div className="relative bg-white h-[48px] w-[48px] rounded-lg flex justify-center">

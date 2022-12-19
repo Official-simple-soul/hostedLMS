@@ -90,6 +90,8 @@ const handleInput = (e)=>{
                         flex
                         items-center
                         justify-center
+                        hidden
+                        md:block
                         '>
             <div 
                 className='
@@ -113,36 +115,36 @@ const handleInput = (e)=>{
 
 
         <div  className='
-                        pt-[70px]
-                        pr-[70px]
-                        pb-[70px]
-                        w-[50%] 
-                        min-h-[1170px] 
+                        md:pt-[70px]
+                        md:pr-[70px]
+                        md:pb-[70px]
+                        md:w-[50%]
                         bg-[#ffffff] 
-                        flex
-                        justify-center
-                        items-center
-                        flex-col
+                        md:flex
+                        md:justify-center
+                        md:items-center
+                        md:flex-col
+                        w-full
                         '>
                 
             <div className='                        
                         flex
                         flex-col 
-                        w-[100%]
-                        min-h-[1160px]
-                        bg-[#ffffff]  
+                        w-full
+                        bg-[#ffffff]
+                        px-2
                         items-center
                         shadow-[2px_15px_24px_rgba(22,51,102,0.25)]
-                        rounded-t-[0px]
-                        rounded-r-[24px]
-                        rounded-b-[24px]
-                        rounded-l-[0px]
+                        md:rounded-t-[0px]
+                        md:rounded-r-[24px]
+                        md:rounded-b-[24px]
+                        md:rounded-l-[0px]
                         relative'
                             >
                         {/* progress bar */}
-                <div className='w-[595px] absolute top-[-2px] left-[0]'>
+                <div className='w-[395px] md:w-[595px] fixed md:top-[-2px] left-[0] z-20'>
                     <div  className= { page === 0 ? `w-[50%] h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
-                        rounded-l-[0px] bg-[#00BD56] text-left` :` w-[99%]  h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
+                        rounded-l-[0px] bg-[#00BD56] text-left` :`transition-all duration-500 ease-in-out w-[99%]  h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
                         rounded-l-[0px]  bg-[#00BD56] text-left`}>
                     </div>
                 </div>
@@ -162,8 +164,8 @@ const handleInput = (e)=>{
                 </div>
 
 
-                  <form  onSubmit={handleSubmit} className="flex w-[80%] justify-center mt-[10px] items-center flex-col ">
-                            <div className='w-[100%]'>
+                  <form  onSubmit={handleSubmit} className="flex w-full md:w-[80%] justify-center mt-[10px] items-center flex-col">
+                            <div className='w-full md:w-[100%]'>
                                 {!success ? PageDisplay() : <Signup2Modal/>}
                             </div>
                             <div className='w-[100%]' >
