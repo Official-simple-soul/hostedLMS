@@ -4,7 +4,30 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'blue-ribbon': {
+          DEFAULT: '#0D6EFD',
+          '50': '#C3DBFF',
+          '100': '#AFCFFE',
+          '200': '#86B7FE',
+          '300': '#5E9EFE',
+          '400': '#3586FD',
+          '500': '#0D6EFD',
+          '600': '#0255D0',
+          '700': '#013E99',
+          '800': '#012861',
+          '900': '#001129',
+        },
+        'grey': {
+          '500': '#808080',
+        },
+      },
+      boxShadow: {
+        '3xl': '-15px 15px 24px rgba(22, 51, 102, 0.25)',
+        '4xl': '15px 15px 24px rgba(22, 51, 102, 0.25)',
+      },
+    },
   },
   plugins: [],
 }

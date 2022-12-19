@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+.bg-auth{
+    background: conic-gradient(from 142.8deg at 58.75% 50%, #44BF93 -56.25deg,#4BCA84 
+    37.5deg, #0D6EFD 191.25deg,#44BF93 303.75deg, #4BCA84 397.5deg);
+}
 .hero-admin{
     background-color:  #F5F5F5;
     color: #808080;
@@ -11,4 +21,9 @@
 .btn-admin{
     color:#0D6EFD;
     border: 1px solid #0D6EFD;
+}
+.notranslate .public-DraftEditor-content {
+    height: 208px !important;
+    border-radius: 8px;
+    border: 1px solid #F1F1F1 !important;
 }

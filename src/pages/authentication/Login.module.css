@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+*{
+    font-family: 'Inter', sans-serif;
+}
+
+.col1_bg{
+    background: conic-gradient(from 142.8deg at 58.75% 50%, #44BF93 -56.25deg, #4BCA84 37.5deg, #0D6EFD 191.25deg, #44BF93 303.75deg, #4BCA84 397.5deg);
+    color: #F5F5F5;
+}
+
+.col2_bg{
+    background: #E5E5E5;
+}
+
+.logo_shadow{
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.box_shadow{
+    box-shadow: 15px 15px 24px rgba(22, 51, 102, 0.25);
+}
+
+.b_radRight{
+    border-radius: 0px 24px 24px 0px;
+}
+
+.b_radLeft{
+    border-radius: 24px 0px 0px 24px;
+}
+
+.col1_heading{
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 52px;
+}
+
+.col1_para{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+}
+
+.col2_text{
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    color: #303030;
+}
+
+.login_btn{
+    background: #0D6EFD;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+}
+
+.login_link{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: #0D6EFD;
+}
+
+.login_text{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: #808080;
+}
+
+::placeholder{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #808080;
+}
+
