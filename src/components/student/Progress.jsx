@@ -6,7 +6,7 @@ const Progress = (props) => {
     <div className='bg-white py-4 px-3 rounded-xl'>
         <p className='text-lg'>{props.title}</p>
         <div className="flex flex-col gap-4 justify-center mt-4">
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1"> 
                 <div className="flex justify-between items-center">
                     <p className='text-[15px] text-[#585858]'>{props.trackWeek}</p>
                     <p className='text-[15px] text-[#585858] font-semibold'>{props.percentage}</p>

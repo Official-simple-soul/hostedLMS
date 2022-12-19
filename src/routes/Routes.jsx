@@ -31,8 +31,12 @@ import Instructor from '../pages/instructor/Instructor';
 import { 
           InstructorDashboard,
           InstructorProfile, 
-           ClassroomTrainer,
-           CurriculumTrainer } from '../pages/instructor/components';
+          ClassroomTrainer,
+          TaskTrainer,
+          TaskDetailsTrainer, 
+          CreateNewTask,
+          CurriculumTrainer
+        } from '../pages/instructor/components';
 
 import NewLesson from '../pages/instructor/components/NewLesson';
 import AboutTrainer from '../pages/instructor/components/AboutTrainer';
@@ -86,6 +90,9 @@ const AllRoutes = () => {
           <Route path="classroom" element={<ClassroomTrainer />} />
           <Route path="newlesson/:id" element={<NewLesson />} />
           <Route path="abouttrainer/:id" element={<AboutTrainer />} />
+          <Route path="task" element={<TaskTrainer />} />
+          <Route path="task/:id" element={<TaskDetailsTrainer />} />
+          <Route path="task/create-new-task/:id" element={<CreateNewTask />} />
           <Route path='curriculum' element={<CurriculumTrainer />} />
           <Route path="settings" element={<Settings />} />
           <Route path="support" element={<StudentSupport />} />
