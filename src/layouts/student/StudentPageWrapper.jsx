@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {useState} from 'react'
 import Sidebar from './Sidebar'
 import { Notification, Avatar, ArrowDown } from '../../assets'
@@ -12,6 +13,16 @@ const StudentPageWrapper = ({ children }) => {
   const handleNotification = () => {
     setNotification(!notification)
   }
+=======
+import React, { useState } from 'react'
+import Sidebar from './Sidebar'
+import { Notification, Avatar, ArrowDown } from '../../assets'
+import ProfileDropdown from '../../components/student/ProfileDropdown'
+
+const StudentPageWrapper = ({ children }) => {
+  const [ profileModal, setProfileModal] = useState(false)
+
+>>>>>>> 26ed6f296fc48671c2f5ca1df01e6a6dec421783
   return (
     <>
       
@@ -43,13 +54,22 @@ const StudentPageWrapper = ({ children }) => {
                 </div>
               </div>
 
+<<<<<<< HEAD
               <div className="relative bg-white h-[48px] w-[88px] rounded-[24px] flex gap-2 px-3 cursor-pointer" onClick={()=> setProfileDropDown(!profileDropDown)}>
+=======
+              <div 
+                className="relative bg-white h-[48px] w-[88px] rounded-[24px] flex gap-2 px-3"
+                onClick={ () => setProfileModal(!profileModal)}
+              >
+>>>>>>> 26ed6f296fc48671c2f5ca1df01e6a6dec421783
                 <img src={Avatar} alt="" className='absolute top-0 left-0' />
                 <img src={ArrowDown} alt="" className='w-[12px] absolute top-[40%] right-3' />
               </div>
 
             </div>
           </nav>
+
+          {profileModal ? <ProfileDropdown /> : null}
 
           <div className='m-6'>
             {children}
