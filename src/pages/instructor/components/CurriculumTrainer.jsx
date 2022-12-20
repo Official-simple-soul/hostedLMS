@@ -1,5 +1,4 @@
 import React from 'react'
-import AdminPageWrapper from '../../../layouts/admin/AdminPageWrapper'
 import CurriculumPageWrapper from '../../../components/curriculum/CurriculumPageWrapper'
 
 
