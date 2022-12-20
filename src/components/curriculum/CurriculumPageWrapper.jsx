@@ -8,6 +8,7 @@ import DeleteWeek from './curriculum-components/DeleteWeek'
 import FilterLevel from './curriculum-components/FilterLevel'
 import UpdateCurriculum from './curriculum-components/UpdateCurriculum'
 import { WeeklyCurriculum } from './curriculumData'
+import CreateCurriculumWeek from '../createcurriculumweek/CreateCurriculumWeek'
 
 const CurriculumPageWrapper = ({children}) => {
 const [show,setShow] = useState(-1)
@@ -122,8 +123,7 @@ const [show,setShow] = useState(-1)
     </div>
     :
     // Create new week component here
-      // <CreateNewCurriculumWeek/>
-      ""
+      <CreateCurriculumWeek/>
     }
 
     </>
