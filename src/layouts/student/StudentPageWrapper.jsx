@@ -2,11 +2,12 @@ import React, {useState} from 'react'
 import Sidebar from './Sidebar'
 import { Notification, Avatar, ArrowDown } from '../../assets'
 import Notifications from '../../pages/student/components/Notification'
-
+import StudentProfileDropDown from '../../pages/student/components/StudentProfileDropDown'
 
 const StudentPageWrapper = ({ children }) => {
   const [menu, setMenu] = useState(false)
   const [notification, setNotification] = useState(false)
+  const [profileDropDown, setProfileDropDown] = useState(false)
 
   const handleNotification = () => {
     setNotification(!notification)
@@ -42,7 +43,7 @@ const StudentPageWrapper = ({ children }) => {
                 </div>
               </div>
 
-              <div className="relative bg-white h-[48px] w-[88px] rounded-[24px] flex gap-2 px-3">
+              <div className="relative bg-white h-[48px] w-[88px] rounded-[24px] flex gap-2 px-3 cursor-pointer" onClick={()=> setProfileDropDown(!profileDropDown)}>
                 <img src={Avatar} alt="" className='absolute top-0 left-0' />
                 <img src={ArrowDown} alt="" className='w-[12px] absolute top-[40%] right-3' />
               </div>
@@ -57,6 +58,9 @@ const StudentPageWrapper = ({ children }) => {
       </div>
       <Notifications 
       notification={notification}/>
+      <StudentProfileDropDown
+      profileDropDown={profileDropDown}
+      />
     </>
   )
 }
