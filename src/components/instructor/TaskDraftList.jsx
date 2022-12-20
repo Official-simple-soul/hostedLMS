@@ -2,9 +2,9 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch';
 
-const TaskListTrainer = () => {
+const TaskDraftList = () => {
     let navigate =useNavigate();
-    const { data: tasks, isPending, error } = useFetch("http://localhost:8000/tasks")
+    const { data: tasks, isPending, error } = useFetch("http://localhost:8000/drafts")
 
   return (
     <div>
@@ -42,4 +42,4 @@ const TaskListTrainer = () => {
   )
 }
 
-export default TaskListTrainer
+export default TaskDraftList
