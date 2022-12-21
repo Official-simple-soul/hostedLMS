@@ -20,18 +20,18 @@ const Login = () => {
  }
 
   return (
-    <div className=' ' >
-      <div className=' flex flex-row shadow-xl rounded-xl'>
+    <div className='' >
+      <div className=' flex flex-row shadow-xl md:rounded-xl'>
         
-          <div className={`${Style.col1_bg} w-full h-screen `}>
+          <div className={`${Style.col1_bg} w-full h-screen pt-8 hidden md:block`}>
             <div className={`${Style.b_radLeft} ${Style.box_shadow} my-[20px] ml-12 h-[634px] flex flex-col justify-center`}>
               <h2 className={`${Style.col1_heading} text-center`}>Kodecamp LMS</h2>
               <p className={`${Style.col1_para}`}>Learning has been made simple, interactive and fun.</p>
             </div>
           </div>
           
-          <div className={`${Style.col2_bg} w-full h-screen`}>
-            <div className={`${Style.b_radRight} ${Style.box_shadow} my-[20px] mr-12 bg-white pt-9 h-[634px]`}>
+          <div className={`${Style.col2_bg} w-full h-screen md:pt-8`}>
+            <div className={`rounded-r-[24px] md:${Style.b_radRight} ${Style.box_shadow} border-lg md:my-[20px] md:mr-12 pt-9 h-screen bg-white md:h-[634px]`}>
               <div className="flex flex-col gap-4 justify-center items-center">
                 <img src={Logo} alt="" className= {`${Style.logo_shadow} bg-white rounded-lg p-3 m-auto`} />
                 <h2 className={`${Style.col2_text} my-4 text-center`}>Log in to dashboard</h2>
@@ -70,7 +70,7 @@ const Login = () => {
                       <input type="checkbox" name="" id=""  className='border border-gray-700'/>
                       <span className='pl-2'>Remember me</span>
                     </div>
-                    <p className={`${Style.login_link}`}><Link to={''}>Forgot password?</Link></p>
+                    <p className={`${Style.login_link}`}><Link to={'/forgot-password'}>Forgot password?</Link></p>
                   </div>
 
                   <div>

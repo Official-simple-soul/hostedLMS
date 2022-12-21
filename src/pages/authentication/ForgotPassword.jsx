@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Logo } from "../../assets";
+import ForgotPasswordModal from "./components/ForgotPasswordModal";
 
 const ForgotPassword = () => {
+  const [showModal, setShowModal] = useState(false)
+  const [email, setEmail] = useState('')
+  const handleForgotPassword = (e) => {
+    e.preventDefault()
+    setShowModal(true)
+  }
+
   return (
     <>
+    <ForgotPasswordModal 
+    showModal={showModal}
+    setShowModal={setShowModal}
+    title={'Check your email'}
+    body={`A 4-digit code has been sent to`}
+    emails={`${email}`}
+    button={'Open Mail'}
+    font={<i class="fa-solid fa-envelope text-[#00BD56]"></i>}
+    />
     {/* Forgot Password page */}
       <main className="w-full h-screen flex bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)]">
         <div className="w-full flex items-center hero">
@@ -61,7 +78,7 @@ const ForgotPassword = () => {
                 Please enter your email address below for verification. A 4-digit code will be sent to your johndoe@gmail.com
               </p>
 
-              <form className="pt-6 flex flex-col gap-10">
+              <form onSubmit={handleForgotPassword} className="pt-6 flex flex-col gap-10">
                 <div>
                   <label htmlFor="email" className="text-[#808080] text-[16px]">Email</label>
                   <br />
@@ -69,6 +86,8 @@ const ForgotPassword = () => {
                     type="email"
                     name="email"
                     id="email"
+                    value={email}
+                    onChange={(e)=>setEmail(e.target.value)}
                     placeholder="Type your email address"
                     className="w-full px-3 h-[54px] border-[1.5px] rounded-lg mt-1 border-[#808080]"
                   />

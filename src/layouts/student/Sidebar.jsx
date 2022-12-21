@@ -2,17 +2,17 @@ import React from 'react'
 import { Logo, Dashboard, Profile, Classroom, Task, Curriculum, Support, Settings } from '../../assets'
 import { NavLink } from 'react-router-dom'
 
-const Sidebar = () => {
+const Sidebar = ({menu}) => {
   return (
     <>
-    <div className="h-screen hidden lg:block relative w-[236px]">
-        <div className="bg-white h-full">
+    <div className={`h-screen ${!menu? 'left-[-100%]':'left-0'} transition-all ease-in-out duration-500 top-14 lg:block absolute lg:static z-50 w-[236px]`}>
+        <div className="bg-white h-full md:static">
             <div className="flex items-center justify-center gap-4 pt-6">
                 <img src={Logo} alt="kodecamp-logo" className='w-[36.71px] h-[36px]' />
                 <p className="font-bold text-xl text-[#0D6EFD]">Kodecamp LMS</p>
             </div>
 
-            <nav className="mt-[4rem]">
+            <nav className="md:mt-[4rem]">
                 <div className='relative'>
                     <NavLink to='/student/dashboard' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                         <span className="text-left">
@@ -50,7 +50,7 @@ const Sidebar = () => {
                         </span>
                     </NavLink>
 
-                    <NavLink to='/student/profile' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
+                    <NavLink to='/student/curriculum' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                         <span className="text-left">
                             <img src={Curriculum} alt="" className='w-[22px]' />
                         </span>

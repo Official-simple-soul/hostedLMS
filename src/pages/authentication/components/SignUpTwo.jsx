@@ -5,13 +5,13 @@ const SignUpTwo = ({formData,handleInput}) => {
     <div className='signup2 flex flex-col gap-4'>
        <div className='signup__form-div'>
           <label className='signup__form-label block opacity-70 m-2' htmlFor="">Age</label>
-          <input className='signup__form-input border w-[500px] h-[50px] p-2 border-gray-300' type="text" placeholder='Type your age'/>
+          <input className='signup__form-input border w-full h-[50px] p-2 border-gray-300' type="text" placeholder='Type your age'/>
        </div>
 
         <div className='signup__form-div'>
           <label className='signup__form-label block opacity-70 m-2' htmlFor="">Gender</label>
           <select className='signup__form-input select 
-          w-[500px] h-[50px] rounded-lg p-2 border border-gray-300 bg-white opacity-60' 
+          w-full h-[50px] rounded-lg p-2 border border-gray-300 bg-white opacity-60' 
           name="gender" id="gender-select">
               <option value="">Select your gender</option>
               <option value="male">Male</option>
@@ -22,7 +22,7 @@ const SignUpTwo = ({formData,handleInput}) => {
         <div className='signup__form-div'>
           <label className='signup__form-label block opacity-70 m-2' htmlFor="">Track</label>
           <select className='signup__form-input select
-          w-[500px] h-[50px] rounded-lg p-2 border border-gray-300 bg-white opacity-60' name="track" id="track-select">
+          w-full h-[50px] rounded-lg p-2 border border-gray-300 bg-white opacity-60' name="track" id="track-select">
               <option value="">Select track</option>
               <option value="frontend">Frontend</option>
               <option value="backend">Backend</option>
@@ -32,7 +32,7 @@ const SignUpTwo = ({formData,handleInput}) => {
 
         <div className='signup__form-div'>
           <label className='signup__form-label block opacity-70 m-2' htmlFor="">Experience level</label>
-          <select className='signup__form-input select w-[500px] h-[50px] rounded-lg p-2 border border-gray-300 bg-white opacity-60' name="experience" id="experience-select">
+          <select className='signup__form-input select w-full h-[50px] rounded-lg p-2 border border-gray-300 bg-white opacity-60' name="experience" id="experience-select">
               <option value="">Select your level of experience</option>
               <option value="newbie">Newbie</option>
               <option value="beginner">Beginner</option>
@@ -44,7 +44,7 @@ const SignUpTwo = ({formData,handleInput}) => {
 
         <div className='signup__form-div'>
           <label className='signup__form-label block opacity-70 m-2' htmlFor="">Employment status</label>
-          <select className='signup__form-input select w-[500px] h-[50px] rounded-lg p-2 border border-gray-300 bg-white opacity-60' name="education" id="employment-select">
+          <select className='signup__form-input select w-full h-[50px] rounded-lg p-2 border border-gray-300 bg-white opacity-60' name="education" id="employment-select">
             <option value="">Select employment status</option>
             <option value="student">Student</option>
             <option value="unemployed">Unemployed</option>
@@ -56,7 +56,7 @@ const SignUpTwo = ({formData,handleInput}) => {
 
         <div className='signup__form-div'>
           <label className='signup__form-label block opacity-70 m-2' htmlFor="">Educational qualification</label>
-          <select className='signup__form-input select w-[500px] h-[50px] rounded-lg p-2 border border-gray-300 bg-white opacity-60' name="education" id="education-select">
+          <select className='signup__form-input select w-full h-[50px] rounded-lg p-2 border border-gray-300 bg-white opacity-60' name="education" id="education-select">
               <option value="">Select your highest level of education</option>
               <option value="primary">Primary</option>
               <option value="secondary">Secondary</option>
@@ -68,7 +68,7 @@ const SignUpTwo = ({formData,handleInput}) => {
 
         <div className='signup__form-div'>
           <label className='signup__form-label block opacity-70 m-2' htmlFor="">How did you hear about us?</label>
-          <select className='signup__form-input select w-[500px] h-[50px] rounded-lg p-2 border border-gray-300 bg-white opacity-60' name="how" id="how-select">
+          <select className='signup__form-input select w-full h-[50px] rounded-lg p-2 border border-gray-300 bg-white opacity-60' name="how" id="how-select">
               <option value="">Select one</option>
               <option value="twitter">Twitter</option>
               <option value="facebook">Facebook</option>
