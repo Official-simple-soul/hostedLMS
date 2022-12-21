@@ -5,14 +5,16 @@ import ProfilePic from '../../../assets/images/Male 01.png'
 const StudentProfile = () => {
   const [uploadOption, setUploadOption] = useState(false)
   const newD = JSON.parse(localStorage.getItem('userinfo'))
- 
-  const [value, setValue] = useState({
-    fullname: newD.fullname,
-    email: newD.email,
-    username: newD.username,
 
-  })
+    const [value, setValue] = useState({
+      fullname: newD? newD.fullname:'Default Name',
+      email: newD? newD.email: 'defaultemail@gmail.com',
+      username: newD? newD.username: 'DefaultUsername',
+    })
+
   const {fullname, email, username} = value
+
+ 
   return (
     <>
     <div className="flex justify-between items-center">
