@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/icons/logo.svg'
 import Good from '../../assets/images/good2.png'
@@ -54,7 +54,10 @@ const handleInput = (e)=>{
    const {name,value} = e.target
     setFormData({...formData,[name]: value})  
 }
- console.log(formData)
+//  console.log(formData)
+    localStorage.setItem('userinfo', JSON.stringify(formData))
+  
+ 
         //function to show modal
         const showModal = ()=>{
            setSuccess(true);
