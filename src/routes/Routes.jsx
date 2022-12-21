@@ -23,7 +23,8 @@ import {
           Settings,
           StudentClassroom,
           SavedBookmarks,
-          AboutStudent
+          AboutStudent,
+          Calender
         } from '../pages/student/components';
 
 // Instructor imports
@@ -77,6 +78,7 @@ const AllRoutes = () => {
           <Route path="task/:id" element={<TaskDetails />} />
           <Route path="settings" element={<Settings />} />
           <Route path="support" element={<StudentSupport />} />
+          <Route path="calender" element={<Calender />} />
           <Route path="studentclassroom" element={<StudentClassroom />} />
           <Route path="savedbookmarks" element={<SavedBookmarks />} />
           <Route path="aboutstudent/:id" element={<AboutStudent />} />
