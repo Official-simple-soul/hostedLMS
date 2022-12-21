@@ -37,7 +37,7 @@ export default function SavedBookmarks() {
                     className="group/item border rounded-xl relative"
                     key={id}
                   >
-                    <Link to={`/instructor/aboutstudent/${id}`}>
+                    <Link to={`/student/aboutstudent/${id}`}>
                         <div className="invisible group-hover/item:visible enter flex items-center space-x-4 absolute top-14 left-28 text-white font-light">
                         <i class="fa-solid fa-right-to-bracket"></i>
                         <p className="">Enter</p>
