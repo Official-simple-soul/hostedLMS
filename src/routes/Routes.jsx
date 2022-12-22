@@ -37,7 +37,9 @@ import {
           CreateNewTask,
           CurriculumTrainer,
           TaskDraftList,
-          TaskListTrainer
+          TaskListTrainer,
+          TaskDetailsTrainerTask,
+          TaskSubmissionLink
         } from '../pages/instructor/components';
 
 import NewLesson from '../pages/instructor/components/NewLesson';
@@ -97,7 +99,11 @@ const AllRoutes = () => {
             <Route path="tasks" element={<TaskListTrainer />} />
             <Route path="draft" element={<TaskDraftList />} />
           </Route>
-          <Route path="task/:id" element={<TaskDetailsTrainer />} />
+          <Route path="task/:id" element={<TaskDetailsTrainer />}>
+            <Route path="" element={<Navigate replace to="tasks" />} />
+            <Route path="tasks" element={<TaskDetailsTrainerTask />} />
+            <Route path="submissions" element={<TaskSubmissionLink />} />
+          </Route>
           <Route path="task/create-new-task/:id" element={<CreateNewTask />} />
           <Route path='curriculum' element={<CurriculumTrainer />} />
           <Route path="settings" element={<Settings />} />
