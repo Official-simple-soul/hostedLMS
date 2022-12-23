@@ -8,8 +8,9 @@ import DeleteWeek from './curriculum-components/DeleteWeek'
 import FilterLevel from './curriculum-components/FilterLevel'
 import UpdateCurriculum from './curriculum-components/UpdateCurriculum'
 import { WeeklyCurriculum } from './curriculumData'
+import CreateCurriculumWeek from '../createcurriculumweek/CreateCurriculumWeek'
 
-const CurriculumPageWrapper = ({children}) => {
+const CurriculumPageWrapper = ({children,newWeek,newWeekAdmin,studentCurr}) => {
 const [show,setShow] = useState(-1)
   const [deletePop,setDeletePop] = useState(true)
 
@@ -29,33 +30,33 @@ const [show,setShow] = useState(-1)
     }
       setUpdate(index)
   }
-  const [newWeek,setNewWeek]= useState(true)
-  const CreateNew =()=>{
-    setNewWeek(!newWeek)
-  }
-  // To create list of items to select for level of experience
-  const [level,setLevel]= useState(true)
-  const showLevel =()=>{
-    setLevel(!level)
-  }
+  // const [newWeek,setNewWeek]= useState(true)
+  // const CreateNew =()=>{
+  //   setNewWeek(!newWeek)
+  // }
+  // // To create list of items to select for level of experience
+  // const [level,setLevel]= useState(true)
+  // const showLevel =()=>{
+  //   setLevel(!level)
+  // }
 
-  const options = ["Beginner", "Intermediate"]
-  const [selected,setSelected]= useState("Beginner")
+  // const options = ["Beginner", "Intermediate"]
+  // const [selected,setSelected]= useState("Beginner")
 
   return (
     <>
     {
   // if create new week is not clicked then we have the below ui
-      newWeek ? 
+      newWeek || newWeekAdmin || studentCurr? 
   //  Curriculum Admin section 
     <div>
     {
       deletePop ?
       <div onClick={()=>show && showOption()}  className='w-[100%] h-full flex flex-col justify-center items-center mt-[54px]'>
-        <div className="flex justify-between w-[100%] ">
+        {/* <div className="flex justify-between w-[100%] ">
           <h1>Curriculum</h1>
-          <div className="flex items-center">
-            <div className='flex items-center gap-[16px]'>
+          <div className="flex items-center"> */}
+            {/* <div className='flex items-center gap-[16px]'>
               <p className='text-[16px] text-[#585858]'>Filter</p>
             <div onClick={showLevel} className='relative cursor-pointer flex justify-between items-center border-[1px] border-[#808080] rounded-[8px] w-[160px] h-[40px] bg-[#FFFFFF] px-[12px] py-[8px]'>
                 <p className='text-[#808080] text-[16px]'>
@@ -66,14 +67,14 @@ const [show,setShow] = useState(-1)
                 </div>
             </div>
               <button onClick={CreateNew} className='w-[203px] h-[40px] bg-[#0D6EFD] border-[0] border-[0] rounded-[8px] text-[#FFFFFF] flex items-center px-[21px] py-[13px]'><img className='w-[13px] h-[13px] mr-[10px] ' src={Cross} alt="cross" /> <span>Create New Week</span></button>
-            </div>
-          </div>
-        </div>
-          {/* children */}
+            </div> */}
             <div className='w-[100%]'>
                 {children}
             </div>
           {/*  */}
+          {/* </div>
+        </div> */}
+          {/* children */}
         <ul className='w-[100%] mt-[28px]'>
           
             {WeeklyCurriculum.map((curi,index)=>{
@@ -122,8 +123,7 @@ const [show,setShow] = useState(-1)
     </div>
     :
     // Create new week component here
-      // <CreateNewCurriculumWeek/>
-      ""
+      <CreateCurriculumWeek/>
     }
 
     </>

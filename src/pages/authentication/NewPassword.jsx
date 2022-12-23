@@ -6,7 +6,7 @@ import { Good, three, Logo } from "../../assets/index";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
-
+import ForgotPasswordModal from './components/ForgotPasswordModal';
 const NewPassword = () => {
     
     const[form, setForm] = useState({
@@ -113,16 +113,22 @@ const NewPassword = () => {
                                 <AiFillEye className='absolute text-[#808080] text-xl right-2 bottom-3' />
                             </div>
 
-                            <button className='h-[54px] mt-[1rem] bg-[#0D6EFD] text-white'>Save Password</button> 
+                            <button className='h-[54px] mt-[1rem] bg-[#0D6EFD] text-white' onClick={()=>setModalOpen(true)}>Save Password</button> 
                         </form>
 
-                        <p className='text-center '>Remember password? <Link to='/login' className='text-[#0D6EFD] font-semibold'>Log in</Link></p>
+                        <p className='text-center '>Remember password? <Link to='/' className='text-[#0D6EFD] font-semibold'>Log in</Link></p>
                     </div>
 
                 </div>
             </div>
        </div>
-       {modalOpen && <Modal setOpenModal={setModalOpen} />}
+       {modalOpen && <ForgotPasswordModal 
+       showModal={setModalOpen}
+       font=''
+       title={'Password reset successfull'}
+       body={'You can now use your new password to log into your account'}
+       button={'Login'}
+       />}
     </div>
   )
 }

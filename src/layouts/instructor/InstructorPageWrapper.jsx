@@ -1,15 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Sidebar from './Sidebar'
 import { Notification, Avatar, ArrowDown } from '../../assets'
 
 const InstructorPageWrapper = ({children}) => {
+    const [menu, setMenu] = useState(false)
   return (
     <>
         <div className="flex items-stretch mt-0">
+        <div className={`${!menu? 'hidden': 'block'} opacity-50 fixed top-0 bottom-0 left-0 right-0 bg-black z-20`}></div>
             <div>
-            <div id="sidebar">
-                <Sidebar />
+                <div id="sidebar">
+                    <Sidebar 
+                    menu={menu}
+                    setMenu={setMenu}
+                    />
+                </div>
             </div>
+            <div className="md:hidden absolute top-5 left-5 z-50" onClick={()=>setMenu(!menu)}>
+                <i class={`fa-solid ${menu?'fa-times': 'fa-bars'} text-2xl opacity-80`}></i>
             </div>
 
             <div className="main-content bg-[#F5F5F5] w-full h-full">

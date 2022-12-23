@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Logo, Tick, Time } from "../../assets";
 import Otp from "../../components/login/Otp";
-
+import { Link } from "react-router-dom";
 const VerifyEmail = () => {
   const [otp, setOtp] = useState(new Array(4).fill(""));
   const hoursMinSecs = { initialMinute: 2, initialSeconds: 0 };
@@ -83,9 +83,10 @@ const VerifyEmail = () => {
                 </p>
               )}
             </div>
-            <button className="bg-blue-600 rounded-lg text-white h-[54px] px-6 w-full text-lg font-medium cursor-pointer">
+            <Link to={'/forgot-password/new-password'}><button className="bg-blue-600 rounded-lg text-white h-[54px] px-6 w-full text-lg font-medium cursor-pointer">
               Submit
             </button>
+            </Link>
             <div className="text-center mt-5">
               <p className="text-gray-600 text-lg mb-4">
                 It may take a minute to receive your code. Haven’t received it?{" "}

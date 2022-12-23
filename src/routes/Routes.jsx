@@ -23,7 +23,9 @@ import {
           Settings,
           StudentClassroom,
           SavedBookmarks,
-          AboutStudent
+          AboutStudent,
+          Calender,
+          StudentCurriculum
         } from '../pages/student/components';
 
 // Instructor imports
@@ -35,7 +37,11 @@ import {
           TaskTrainer,
           TaskDetailsTrainer, 
           CreateNewTask,
-          CurriculumTrainer
+          CurriculumTrainer,
+          TaskDraftList,
+          TaskListTrainer,
+          TaskDetailsTrainerTask,
+          TaskSubmissionLink
         } from '../pages/instructor/components';
 
 import NewLesson from '../pages/instructor/components/NewLesson';
@@ -77,9 +83,11 @@ const AllRoutes = () => {
           <Route path="task/:id" element={<TaskDetails />} />
           <Route path="settings" element={<Settings />} />
           <Route path="support" element={<StudentSupport />} />
+          <Route path="calender" element={<Calender />} />
           <Route path="studentclassroom" element={<StudentClassroom />} />
           <Route path="savedbookmarks" element={<SavedBookmarks />} />
           <Route path="aboutstudent/:id" element={<AboutStudent />} />
+          <Route path="studentcurriculum" element={<StudentCurriculum />} />
         </Route>
 
         {/* Trainer Routes => localhost:3000/instructor/~ */}
@@ -90,8 +98,16 @@ const AllRoutes = () => {
           <Route path="classroom" element={<ClassroomTrainer />} />
           <Route path="newlesson/:id" element={<NewLesson />} />
           <Route path="abouttrainer/:id" element={<AboutTrainer />} />
-          <Route path="task" element={<TaskTrainer />} />
-          <Route path="task/:id" element={<TaskDetailsTrainer />} />
+          <Route path="task" element={<TaskTrainer />} >
+            <Route path="" element={<Navigate replace to="tasks" />} />
+            <Route path="tasks" element={<TaskListTrainer />} />
+            <Route path="draft" element={<TaskDraftList />} />
+          </Route>
+          <Route path="task/:id" element={<TaskDetailsTrainer />}>
+            <Route path="" element={<Navigate replace to="tasks" />} />
+            <Route path="tasks" element={<TaskDetailsTrainerTask />} />
+            <Route path="submissions" element={<TaskSubmissionLink />} />
+          </Route>
           <Route path="task/create-new-task/:id" element={<CreateNewTask />} />
           <Route path='curriculum' element={<CurriculumTrainer />} />
           <Route path="settings" element={<Settings />} />

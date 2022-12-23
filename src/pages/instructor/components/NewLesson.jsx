@@ -4,7 +4,7 @@ import {v4 as uuidv4} from 'uuid'
 import ModalTrainer from './Modal'
 import ClassroomTrainerHeader from './ClassroomTrainerHeader';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import LessonLogo from '../../../assets/images/Rectangle.png';
 import LessonLogo1 from '../../../assets/images/Rectangle1.png';
 import LessonLogo2 from '../../../assets/images/Rectangle2.png';
@@ -179,7 +179,7 @@ const NewLesson = () => {
                 setAddResources(filteredData[0].resources)
                 setLivelesson('Lesson Recording')
             }
-        }, [])
+        }, [id])
 
 
     const loop = (num) => {
