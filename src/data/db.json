@@ -168,5 +168,56 @@
             "points": 32,
             "status": "Not posted"
         }
+    ],
+    "submissions": [
+        {
+            "id": 1,
+            "name": "Ayo Ismail",
+            "avatar": "/static/media/male-avatar.77f8a812ef0bc39831f2df37c403a534.svg",
+            "url": "https://google.com",
+            "grade": "100"
+        },
+        {
+            "id": 2,
+            "name": "Mueez Simple",
+            "avatar": "/static/media/male-avatar.77f8a812ef0bc39831f2df37c403a534.svg",
+            "url": "https://google.com",
+            "grade": ""
+        },
+        {
+            "id": 3,
+            "name": "Roheem Raji",
+            "avatar": "/static/media/male-avatar.77f8a812ef0bc39831f2df37c403a534.svg",
+            "url": "https://google.com",
+            "grade": ""
+        },
+        {
+            "id": 4,
+            "name": "Jacklyn Jane",
+            "avatar": "/static/media/male-avatar.77f8a812ef0bc39831f2df37c403a534.svg",
+            "url": "https://google.com",
+            "grade": ""
+        },
+        {
+            "id": 5,
+            "name": "Jacklyn Jane",
+            "avatar": "/static/media/male-avatar.77f8a812ef0bc39831f2df37c403a534.svg",
+            "url": "https://google.com",
+            "grade": ""
+        },
+        {
+            "id": 6,
+            "name": "Jacklyn Jane",
+            "avatar": "/static/media/male-avatar.77f8a812ef0bc39831f2df37c403a534.svg",
+            "url": "https://google.com",
+            "grade": ""
+        },
+        {
+            "id": 7,
+            "name": "Jacklyn Jane",
+            "avatar": "/static/media/male-avatar.77f8a812ef0bc39831f2df37c403a534.svg",
+            "url": "https://google.com",
+            "grade": ""
+        }
     ]
   }
