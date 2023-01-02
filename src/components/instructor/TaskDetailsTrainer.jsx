@@ -1,7 +1,7 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
-import { Avatar, DueDate, Calender } from '../../assets'
+// import { Avatar, DueDate, Calender } from '../../assets'
 import { NavLink, Link, Outlet } from "react-router-dom";
 import { AiOutlinePlus } from 'react-icons/ai'
 // import fileIcon from '../../assets/icons/file2024.svg'
@@ -14,11 +14,12 @@ const TaskDetailsTrainer = () => {
         isPending,
         error,
     } = useFetch("http://localhost:8000/tasks/" + id);
+    const { data: submissions } = useFetch("http://localhost:8000/submissions")
     // const [selectedFile, setSelectedFile] = useState();
     // const [isFilePicked, setIsFilePicked] = useState(false);
     // //   const [dd, setDd] = useState(task.taskDesc)
     // const [isSubmitted, setIsSubmitted] = useState(false);
-    const ref = useRef(null);
+    // const ref = useRef(null);
 
     //   console.log(task.taskDesc)
 
@@ -38,9 +39,16 @@ const TaskDetailsTrainer = () => {
           </p>
 
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-9">
-              <NavLink to={`/instructor/task/${task.id}/tasks`} className={( {isActive} ) => isActive ? 'text-xl font-medium text-[#303030] border-b border-[#303030]' : "text-blue-ribbon-500" }>Task</NavLink>
-              <NavLink to={`/instructor/task/${task.id}/submissions`} className={( {isActive} ) => isActive ? 'text-xl font-medium text-[#303030] border-b border-[#303030]' : "text-blue-ribbon-500" }>Submissions</NavLink>
+            <div className="flex items-center gap-9 mt-3">
+              <NavLink to={`/instructor/task/${task.id}/tasks`} className={( {isActive} ) => isActive ? 'text-2xl font-medium text-[#303030] border-b border-[#303030]' : "text-blue-ribbon-500 text-xl" }>Task</NavLink>
+              <div className="flex items-center gap-5">
+                <NavLink to={`/instructor/task/${task.id}/submissions`} className={( {isActive} ) => isActive ? 'text-2xl font-medium text-[#303030] border-b border-[#303030] flex items-center gap-2' : "text-blue-ribbon-500 flex items-center gap-2 text-xl" }>
+                  <span>Submissions</span>
+                  <span className="bg-blue-ribbon px-1 py-[2px] rounded-xl flex justify-center items-center right-[-15px] top-[-7px]">
+                    <p className="text-white font-medium text-sm">{submissions.length}</p>
+                  </span>
+                </NavLink>
+              </div>
             </div>
             <Link 
               to={`/instructor/task/create-new-task/${id}`}

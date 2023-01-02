@@ -12,7 +12,7 @@ const Pagination = ({ totalPosts, postsPerPage, setCurrentPage, currentPage }) =
     <div className='flex items-center justify-end mt-14'>
         <div className='flex gap-8 items-center'>
             <p 
-                className={currentPage <= 1 ? "hidden" : "block text-xs text-[#585858]"}
+                className={currentPage <= 1 ? "hidden" : "block text-xs text-[#585858] cursor-pointer"}
                 onClick={() => setCurrentPage(currentPage - 1) }
             >
                 Prev
@@ -23,14 +23,14 @@ const Pagination = ({ totalPosts, postsPerPage, setCurrentPage, currentPage }) =
                         return <p 
                                     key={index} 
                                     onClick={() => setCurrentPage(page)}
-                                    className={currentPage === page ? "text-xs bg-[#0D6EFD] rounded py-4 px-5 text-center text-white" : "text-xs"}
+                                    className={currentPage === page ? "text-xs bg-[#0D6EFD] rounded py-4 px-5 text-center text-white" : "text-xs cursor-pointer"}
                                 >
                                     {page}
                                 </p>
                     })}
                
             <p 
-                className={currentPage === pages[pages.length - 1] ? "hidden" : "block text-xs text-[#585858]"}
+                className={currentPage === pages[pages.length - 1] ? "hidden" : "block text-xs text-[#585858] cursor-pointer"}
                 onClick={() => setCurrentPage(currentPage + 1) }
             >
                 Next
