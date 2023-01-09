@@ -1,14 +1,15 @@
-import React from 'react'
-// import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
+import React from 'react' 
 
 const Pagination = ({ totalPosts, postsPerPage, setCurrentPage, currentPage }) => {
     const pages = [];
+    // setPages(pages)
+
 
     for(let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
         pages.push(i)
     }
 
-  return ( 
+  return (  
     <div className='flex items-center justify-end mt-14'>
         <div className='flex gap-8 items-center'>
             <p 
@@ -18,7 +19,6 @@ const Pagination = ({ totalPosts, postsPerPage, setCurrentPage, currentPage }) =
                 Prev
             </p>
                 
-                    {console.log(pages)}
                     {pages && pages.map((page, index) =>{
                         return <p 
                                     key={index} 

@@ -22,8 +22,14 @@
     color:#0D6EFD;
     border: 1px solid #0D6EFD;
 }
-.notranslate .public-DraftEditor-content {
-    height: 208px !important;
-    border-radius: 8px;
-    border: 1px solid #F1F1F1 !important;
+.rdw-editor-main {
+    height: 280px !important;
 }
+
+/* .DraftEditor-editorContainer {
+    background-color: transparent !important;
+    border: 0.1px solid #e0e0e0 !important;
+    position: relative;
+    z-index: 1;
+    padding: 0.5rem;
+} */

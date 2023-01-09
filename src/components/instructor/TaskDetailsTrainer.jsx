@@ -45,7 +45,7 @@ const TaskDetailsTrainer = () => {
                 <NavLink to={`/instructor/task/${task.id}/submissions`} className={( {isActive} ) => isActive ? 'text-2xl font-medium text-[#303030] border-b border-[#303030] flex items-center gap-2' : "text-blue-ribbon-500 flex items-center gap-2 text-xl" }>
                   <span>Submissions</span>
                   <span className="bg-blue-ribbon px-1 py-[2px] rounded-xl flex justify-center items-center right-[-15px] top-[-7px]">
-                    <p className="text-white font-medium text-sm">{submissions.length}</p>
+                    <p className="text-white font-medium text-sm">{submissions && submissions.length}</p>
                   </span>
                 </NavLink>
               </div>

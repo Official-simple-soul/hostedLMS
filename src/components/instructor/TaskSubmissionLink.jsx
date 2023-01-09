@@ -5,6 +5,7 @@ import Pagination from './Pagination';
 
 const TaskSubmissionLink = () => {
     const [ showModal, setShowModal ] = useState(false)
+    // const [ pages, setPages ] = useState([])
     const [ currentPage, setCurrentPage ] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(3);
     const { data: tasks, isPending, error } = useFetch("http://localhost:8000/submissions")
@@ -24,7 +25,7 @@ const TaskSubmissionLink = () => {
                 <p className="text-grey-500 text-sm">Select all students</p> 
             </div>
 
-            <p className='text-base font-normal'>Showing 1-10 of 78 submissions</p>
+            <p className='text-base font-normal'>Showing {currentPage}-{lastPostIndex} of {tasks && tasks.length} submissions</p>
         </div>
 
         {isPending && <div className='text-sm'>Loading.....</div>}
