@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import EditorConvertToHTML from './EditorConvertToHTML'
 import '../../App.css'
+import CkEditor from '../ckEditor/CkEditor'
 
 const CreateNewTask = () => {
     // const { id } = useParams()
@@ -88,6 +89,11 @@ const CreateNewTask = () => {
                             onChange={ (e) => setTaskDesc(e.target.value) }
                         />
                         {console.log(taskDesc)}
+                    </div>
+
+                    <div className="flex flex-col gap-1">
+                        <label className='text-base text-grey-500'>Task Description</label>
+                        <CkEditor />
                     </div>
                 </div>
 

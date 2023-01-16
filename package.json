@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^35.4.0",
+    "@ckeditor/ckeditor5-image": "^35.4.0",
+    "@ckeditor/ckeditor5-react": "^5.0.6",
     "@dhaiwat10/react-link-preview": "^1.14.2",
     "axios": "^1.2.0",
+    "ckeditor5-custom-build": "file:ckeditor5",
     "cra-template": "1.2.0",
     "draft-js": "^0.11.7",
     "link-preview-js": "^3.0.4",
