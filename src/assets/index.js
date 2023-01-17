@@ -30,3 +30,4 @@ export { default as DueDate } from './icons/due-date.svg';
 export { default as Ban } from './icons/ban.svg'
 export { default as BanBlack } from './icons/ban-black.svg'
 export { default as BigTick } from './icons/big-tick.svg'
+export { default as Filter } from './icons/Filter.svg'
