@@ -22,9 +22,19 @@
     color:#0D6EFD;
     border: 1px solid #0D6EFD;
 }
-.rdw-editor-main {
-    height: 280px !important;
+
+/* .ck .ck-editor__main {
+    border-radius: 30px !important;
+} */
+
+.ck .ck-editor__main .ck-editor__editable {
+    height: 350px !important;
+    border-radius: 8px;
 }
+
+/* .ck-reset_all :not(.ck-reset_all-excluded *), .ck.ck-reset, .ck.ck-reset_all {
+    border-radius: 30px;
+} */
 
 /* .DraftEditor-editorContainer {
     background-color: transparent !important;

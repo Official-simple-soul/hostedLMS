@@ -6,11 +6,13 @@
     "@ckeditor/ckeditor5-build-classic": "^35.4.0",
     "@ckeditor/ckeditor5-image": "^35.4.0",
     "@ckeditor/ckeditor5-react": "^5.0.6",
+    "@ckeditor/ckeditor5-upload": "^35.4.0",
     "@dhaiwat10/react-link-preview": "^1.14.2",
     "axios": "^1.2.0",
     "ckeditor5-custom-build": "file:ckeditor5",
     "cra-template": "1.2.0",
     "draft-js": "^0.11.7",
+    "interweave": "^13.0.0",
     "link-preview-js": "^3.0.4",
     "react": "^18.2.0",
     "react-big-calendar": "^1.5.2",
@@ -25,6 +27,7 @@
     "react-toastify": "^9.0.8",
     "react-transition-group": "^4.4.5",
     "react-webpage-thumbnail": "^0.0.6",
+    "util": "^0.12.5",
     "uuid": "^9.0.0"
   },
   "scripts": {

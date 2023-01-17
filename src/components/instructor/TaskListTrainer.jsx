@@ -10,7 +10,7 @@ const TaskListTrainer = () => {
     <div>
       <div className="grid grid-cols-8 items-center bg-blue-ribbon-50 py-4 px-5 rounded-xl my-4">
         <p className="text-base text-[#0D6EFD]">Stage</p>
-        <p className="text-base text-[#0D6EFD] col-span-2">Task</p>
+        <p className="text-base text-[#0D6EFD] col-span-2">Task</p> 
         <p className="text-base text-[#0D6EFD]">Track</p>
         <p className="text-base text-[#0D6EFD] col-span-2">Due Date</p>
         <p className="text-base text-[#0D6EFD]">Status</p>
