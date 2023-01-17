@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router';
 import useFetch from '../../hooks/useFetch';
 import { Avatar, DueDate, Calender } from '../../assets'
+import { Markup } from 'interweave';
 
 const TaskDetailsTrainerTask = () => {
     const { id } = useParams();
@@ -24,6 +25,12 @@ const TaskDetailsTrainerTask = () => {
     const handleSubmission = () => {
         setIsSubmitted(true);
     };
+
+    function getText(html){
+        var divContainer= document.createElement("div");
+        divContainer.innerHTML = html;
+        return divContainer.textContent || divContainer.innerText || "";
+    }
 
   return (
     <div>
@@ -53,7 +60,7 @@ const TaskDetailsTrainerTask = () => {
                 </div>
                 <div className="flex justify-between items-center">
                 <div className="flex gap-2 items-center">
-                    <img src={DueDate} alt="" />
+                    <img src={DueDate} alt="" /> 
                     <p className="text-sm text-[#808080]">Due in 2 days</p>
                 </div>
                 <p className="text-sm text-[#808080]">{task.points} points</p>
@@ -63,7 +70,10 @@ const TaskDetailsTrainerTask = () => {
             <div className="w-[97%] mx-auto border-b border-grey-400 py-3 flex flex-col gap-2">
                 <p className="text-sm"></p>
                 <p className="font-medium text-sm">Deliverables</p>
-                <p className="text-sm">{task.taskDesc}</p>
+                    <Markup
+                        className="text-sm"
+                        content={task.taskDesc} 
+                    />
                 <p className="text-sm">
                 Use the websites below as source of inspiration
                 </p>

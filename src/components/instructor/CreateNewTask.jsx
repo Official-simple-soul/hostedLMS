@@ -1,12 +1,21 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router'
-import EditorConvertToHTML from './EditorConvertToHTML'
+// import { useParams } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import '../../App.css'
+import Editor from 'ckeditor5-custom-build/build/ckeditor';
+import { CKEditor } from '@ckeditor/ckeditor5-react'
 
 const CreateNewTask = () => {
-    const { id } = useParams()
+    // const { id } = useParams()
     const [resources, setResources] = useState('')
     const [addResources, setAddResources] = useState([])
+    const [taskTitle, setTaskTitle] = useState('')
+    const [taskDesc, setTaskDesc] = useState('')
+    const [stage, setStage] = useState('')
+    const [dueDate, setDueDate] = useState('')
+    const [isPending, setIsPending] = useState(false)
+    const [ on, seOn ] = useState()
+    const navigate = useNavigate()
 
     const handleResources =(event)=>{
         setResources(event.target.value)
@@ -22,49 +31,113 @@ const CreateNewTask = () => {
         setAddResources(addResources.filter(item=>item.id!==id));
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const task = { taskTitle, taskDesc, stage, dueDate}
+
+        setIsPending(true)
+
+        fetch('http://localhost:8000/tasks', {
+            method: 'POST',
+            headers: { 'content-Type': "application/json"},
+            body: JSON.stringify(task)
+        }).then ( () => {
+            console.log("new task addeed");
+            setIsPending(false);
+            navigate('/instructor/task')
+        })
+    }
+
   return (
     <div>
         <p className="text-sm text-blue-ribbon-500">Tasks <span className='text-grey-500'>/ New Task</span></p>
 
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className="flex items-center justify-between mt-2">
                 <h2 className="text-2xl">New Task</h2>
                 <div className="flex items-center gap-2">
                     <button className='border border-[#585858] bg-white px-4 py-2 rounded-lg text-base'>Cancel</button>
-                    <button className='bg-blue-ribbon-500 px-4 py-2 rounded-lg text-white text-base'>Create Task</button>
+                    { !isPending && <button 
+                        className='bg-blue-ribbon-500 px-4 py-2 rounded-lg text-white text-base'
+                    >
+                        Create Task
+                    </button>}
+
+                    { isPending && <button
+                        disabled
+                        className='bg-blue-ribbon-500 px-4 py-2 rounded-lg text-white text-base'
+                    >
+                        Creating Task...
+                    </button>}
                 </div>
             </div>
 
-            <div className="grid grid-cols-5 gap-6 mt-6">
-                <div className="col-span-3 bg-white p-6 rounded-xl flex flex-col gap-3">
+            <div className="grid md:grid-cols-5 gap-6 mt-6">
+                <div className="md:col-span-3 bg-white p-6 rounded-xl flex flex-col gap-3">
                     <div className="flex flex-col gap-1">
                         <label className='text-base text-grey-500'>Task Title</label>
                         <input 
                             type="text" 
                             placeholder='Give your task a name'
                             className='border border-grey-500 px-4 py-3'
+                            value={taskTitle}
+                            onChange={ (e) => setTaskTitle(e.target.value) }
                         />
                     </div>
 
                     <div className="flex flex-col gap-1">
                         <label className='text-base text-grey-500'>Task Description</label>
-                        <EditorConvertToHTML />
-                    </div>
+                        <div className="CkEditor">
+                            <CKEditor
+                                className='h-full'
+                                editor={Editor}
+                                //   config={editorConfiguration
+                                data={taskDesc}
+                                onReady={(editor) => {
+                                    // You can store the "editor" and use when it is needed.
+                                    // console.log("Editor is ready to use!", editor);
+                                }}
+                                onChange={(event, editor) => {
+                                    setTaskDesc(editor.getData())
+                                    // console.log({ event, editor, data });
+                                    console.log(taskDesc);
+                                }}
+                                onBlur={(event, editor) => {
+                                    console.log("Blur.", editor);
+                                }}
+                                onFocus={(event, editor) => {
+                                    console.log("Focus.", editor);
+                                }}
+                            />
+                        </div>
+                    </div> 
+
+                    {/* <div className="flex flex-col gap-1">
+                        <label className='text-base text-grey-500'>Task Description</label>
+                            <EditorConvertToHTML
+                                value={taskDesc}
+                                onChange={ (e) => setTaskDesc(e.target.value) }
+                            />
+                        {console.log(taskDesc)}
+                    </div> */}
                 </div>
 
-                <div className="col-span-2 bg-white p-6 rounded-xl flex flex-col gap-3">
+                <div className="md:col-span-2 bg-white p-6 rounded-xl flex flex-col gap-3">
                     <div className="flex flex-col gap-1">
                         <label className='text-base text-grey-500'>Stage</label>
-                        <select className='border border-grey-500 px-2 py-3 rounded-lg'>
+                        <select 
+                            className='border border-grey-500 px-2 py-3 rounded-lg'
+                            onChange={(e) => setStage(e.value.target)}
+                        >
                             <option value="">What stage is this task for?</option>
-                            <option value='Stage 1'>Stage 1</option>
-                            <option value='Stage 2'>Stage 2</option>
-                            <option value='Stage 3'>Stage 3</option>
-                            <option value='Stage 4'>Stage 4</option>
-                            <option value='Stage 5'>Stage 5</option>
-                            <option value='Stage 6'>Stage 6</option>
-                            <option value='Stage 7'>Stage 7</option>
-                            <option value='Stage 8'>Stage 8</option>
+                            <option value='1'>Stage 1</option>
+                            <option value='2'>Stage 2</option>
+                            <option value='3'>Stage 3</option>
+                            <option value='4'>Stage 4</option>
+                            <option value='5'>Stage 5</option>
+                            <option value='6'>Stage 6</option>
+                            <option value='7'>Stage 7</option>
+                            <option value='8'>Stage 8</option>
                         </select>
                     </div>
 
@@ -86,10 +159,11 @@ const CreateNewTask = () => {
 
                     <div className="flex flex-col gap-1">
                         <label className='text-base text-grey-500'>Due date</label>
-                        <select className='border border-grey-500 px-2 py-3 rounded-lg'>
-                            <option value="">When is the deadline for this task?</option>
-                            <option value='Stage 1'>Stage 1</option>
-                        </select>
+                        <input 
+                            type='date' 
+                            className='border border-grey-500 px-2 py-3 rounded-lg'
+                            onChange={(e) => setDueDate(e.target.value)}
+                        />
                     </div>
 
                     <div className="flex flex-col gap-1">
@@ -111,8 +185,8 @@ const CreateNewTask = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-5 gap-6 mt-6">
-                <div className="col-span-3 bg-white p-6 rounded-xl">
+            <div className="grid md:grid-cols-5 gap-6 mt-6">
+                <div className="md:col-span-3 bg-white p-6 rounded-xl">
                     <h1 className='text-xl'>Add Resources</h1>
                     <form action="" onSubmit={onFrormSubmit}>
                         <div className="flex flex-col gap-1 mt-2 mb-4">
@@ -134,7 +208,7 @@ const CreateNewTask = () => {
                     </form>
                 </div>
 
-                <div className="col-span-2 bg-white p-6 rounded-xl">
+                <div className="md:col-span-2 bg-white p-6 rounded-xl">
                     <h1 className='text-xl'>Added Resources</h1>
                     <div>
                         { addResources ? <p className='text-sm text-[#585858] mt-4'>Nil</p> :
