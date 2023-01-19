@@ -20,17 +20,18 @@ const StudentPageWrapper = ({ children }) => {
 
       <div className="flex items-stretch mt-0">
         <div>
-          <div id="sidebar">
+          <div id="sidebar" className='h-full fixed'>
             <Sidebar
-            menu={menu}
-            setMenu={setMenu}
+              menu={menu}
+              setMenu={setMenu}
             />
           </div>
         </div>
+
         <div className="md:hidden absolute top-5 left-5 z-50" onClick={()=>setMenu(!menu)}>
           <i class={`fa-solid ${menu?'fa-times': 'fa-bars'} text-2xl opacity-80`}></i>
         </div>
-        <div className="main-content bg-[#F5F5F5] w-full">
+        <div className="main-content bg-[#F5F5F5] w-full ml-[237px]">
           <nav className='h-[72px] bg-[#F5F5F5] shadow-xl md:shadow-none flex items-center justify-between px-5 mt-1.5'>
             <div></div>
 

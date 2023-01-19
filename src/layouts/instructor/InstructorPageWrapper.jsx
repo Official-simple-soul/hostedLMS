@@ -17,7 +17,7 @@ const InstructorPageWrapper = ({children}) => {
                 </div>
             </div>
             <div className="md:hidden absolute top-5 left-5 z-50" onClick={()=>setMenu(!menu)}>
-                <i class={`fa-solid ${menu?'fa-times': 'fa-bars'} text-2xl opacity-80`}></i>
+                <i className={`fa-solid ${menu?'fa-times': 'fa-bars'} text-2xl opacity-80`}></i>
             </div>
 
             <div className="main-content bg-[#F5F5F5] w-full h-full">
