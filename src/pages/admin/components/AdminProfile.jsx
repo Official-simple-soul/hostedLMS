@@ -1,9 +1,11 @@
 import React from 'react'
+import AdminProfileMain from '../components/AdminProfile/AdminProfile'
+
 
 const AdminProfile = () => {
   return (
     <>
-    <h1>AdminProfile</h1>
+    <AdminProfileMain />
     </>
     
   )

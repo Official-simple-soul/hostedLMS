@@ -6,7 +6,7 @@ import FormInput from './FormInput';
 const SignUpOne = ({eye,setEye,showPassword,formData,handleInput}) => {
 
   return (
-    <div>
+    <div className=''>
         <FormInput handleInput={handleInput} formData={formData} eye={eye} setEye={setEye} showPassword={showPassword}/>   
     </div>
   )

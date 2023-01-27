@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom'
 const Sidebar = ({menu}) => {
   return (
     <>
-    <div className={`h-screen ${!menu? 'left-[-100%]':'left-0'} transition-all ease-in-out duration-500 top-14 lg:block absolute lg:static z-50 w-[236px]`}>
-        <div className="bg-white h-full md:static">
+    <div className={`h-screen ${!menu? '-left-[2000px]':'left-0'} transition-all ease-in-out duration-500 top-14 lg:block absolute lg:static z-20 w-[236px]`}>
+        <div className="h-full md:static bg-white">
             <div className="flex items-center justify-center gap-4 pt-6">
                 <img src={Logo} alt="kodecamp-logo" className='w-[36.71px] h-[36px]' />
                 <p className="font-bold text-xl text-[#0D6EFD]">Kodecamp LMS</p>

@@ -13,10 +13,11 @@ const StudentPageWrapper = ({ children }) => {
   const handleNotification = () => {
     setNotification(!notification)
   }
+  
   return (
     <>
       
-      <div className={`${!menu? 'hidden': 'block'} opacity-50 fixed top-0 bottom-0 left-0 right-0 bg-black z-20`}></div>
+      <div className={`${!menu? 'hidden': 'block'} opacity-50 fixed top-0 bottom-0 left-0 right-0 bg-black z-10`}></div>
 
       <div className="flex items-stretch mt-0">
         <div>
