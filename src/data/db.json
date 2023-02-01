@@ -137,114 +137,6 @@
       "id": 11
     }
   ],
-
-  "drafts": [
-    {
-      "id": 1,
-      "stage": 1,
-      "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
-      "resources": [
-        {
-          "url": "https://google.com"
-        }
-      ],
-      "track": "UI/UX",
-      "dueDate": "8th Oct, 2022. 11:59PM",
-      "points": 49,
-      "status": "Not submitted"
-    },
-    {
-      "id": 3,
-      "stage": 3,
-      "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
-      "resources": [
-        {
-          "url": "https://google.com"
-        }
-      ],
-      "track": "UI/UX",
-      "dueDate": "8th Oct, 2022. 11:59PM",
-      "points": 50,
-      "status": "Graded"
-    },
-    {
-      "id": 4,
-      "stage": 4,
-      "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
-      "resources": [
-        {
-          "url": "https://google.com"
-        }
-      ],
-      "track": "UI/UX",
-      "dueDate": "8th Oct, 2022. 11:59PM",
-      "points": 100,
-      "status": "Graded"
-    },
-    {
-      "id": 5,
-      "stage": 5,
-      "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
-      "resources": [
-        {
-          "url": "https://google.com"
-        }
-      ],
-      "track": "UI/UX",
-      "dueDate": "8th Oct, 2022. 11:59PM",
-      "points": 100,
-      "status": "Graded"
-    },
-    {
-      "id": 6,
-      "stage": 6,
-      "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
-      "resources": [
-        {
-          "url": "https://google.com"
-        }
-      ],
-      "track": "UI/UX",
-      "dueDate": "8th Oct, 2022. 11:59PM",
-      "points": 78,
-      "status": "Submitted"
-    },
-    {
-      "id": 7,
-      "stage": 7,
-      "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
-      "resources": [
-        {
-          "url": "https://google.com"
-        }
-      ],
-      "track": "UI/UX",
-      "dueDate": "8th Oct, 2022. 11:59PM",
-      "points": 100,
-      "status": "Graded"
-    },
-    {
-      "id": 8,
-      "stage": 8,
-      "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
-      "resources": [
-        {
-          "url": "https://google.com"
-        }
-      ],
-      "track": "UI/UX",
-      "dueDate": "8th Oct, 2022. 11:59PM",
-      "points": 32,
-      "status": "Not submitted"
-    }
-  ],
   "drafts": [
     {
       "id": 1,
@@ -292,6 +184,7 @@
       "status": "Not posted"
     }
   ],
+  
   "students": [
     {
       "id": "0001",
@@ -546,7 +439,6 @@
       "img": "https://i.ibb.co/SJ2GPxC/Ellipse-47-4.png"
     }
   ],
-  
   "submissions": [
     {
       "id": 1,

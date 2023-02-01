@@ -36,12 +36,12 @@ const AdminProfile = () => {
 
         {!editOption?
           <>
-            <div className="md:flex items-center md:space-x-12">
+            <div className="flex items-center justify-between md:justify-start md:space-x-12">
               <div
                 className="img relative cursor-pointer"
                 onClick={() => setUploadOption(!uploadOption)}
               >
-                <div className="border w-48 h-48 rounded-full bg-white">
+                <div className="border w-[100px] h-[100px] md:w-48 md:h-48 rounded-full bg-white">
                   <img src={profilePic} alt="" />
                 </div>
                 <i class="fa-solid fa-camera absolute right-16 bottom-6 md:right-4 text-blue-ribbon-500 md:bottom-4 bg-white p-3 rounded-full"></i>
@@ -86,7 +86,7 @@ const AdminProfile = () => {
               <div className="right md:col-span-3">
                 <ul className="space-y-4">
                   <li className="border-b pb-1 pl-5">{username}</li>
-                  <li className="border-b pb-1 pl-5 overflow-auto">
+                  <li className="border-b pb-1 pl-5 overflow-hidden">
                     {email}
                   </li>
                   <li className="border-b pb-1 pl-5">08057483726</li>

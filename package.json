@@ -13,6 +13,7 @@
     "cra-template": "1.2.0",
     "draft-js": "^0.11.7",
     "interweave": "^13.0.0",
+    "js-file-download": "^0.4.12",
     "link-preview-js": "^3.0.4",
     "react": "^18.2.0",
     "react-big-calendar": "^1.5.2",
