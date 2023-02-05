@@ -60,7 +60,8 @@ import {
         AdminStudentList,
         AdminTrainerList,
         TrainerProfile,
-        AdminSupport
+        AdminSupport,
+        AdminSettings
        } from '../pages/admin/components';
 
 
@@ -132,6 +133,7 @@ const AllRoutes = () => {
           <Route path="admin-trainer" element={<AdminTrainerList />} />
           <Route path="admin-trainer/:id" element={<TrainerProfile />} />
           <Route path="admin-support" element={<AdminSupport />} />
+          <Route path="admin-settings" element={<AdminSettings />} />
         </Route>
 
         {/* Error 404 Page */}
