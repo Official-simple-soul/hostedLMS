@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 
 const DropdownFilter = ({ setFilter, setDropDownFilter, dropDownFilter }) => {
-  const [level, setLevel] = useState('Both');
+  const [status, setStatus] = useState('Both');
   const [order, setOrder] = useState('');
  
 
   const handleOrder = (e) => setOrder(e.target.value);
-  const handleLevel = (e) => setLevel(e.target.value);
+  const handleStatus = (e) => setStatus(e.target.value);
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFilter({
-      level: level,
+      status: status,
       order: order,
     });
     setDropDownFilter(!dropDownFilter);
@@ -26,26 +26,26 @@ const DropdownFilter = ({ setFilter, setDropDownFilter, dropDownFilter }) => {
       <div className="checkbox-1">
         <p className="text-[#808080] text-sm my-2">Level</p>
         <div className="flex items-center">
-          <input type="radio" value="Both" name="level" onClick={handleLevel} />
+          <input type="radio" value="Both" name="level" onClick={handleStatus} />
           <p className="ml-2">Both</p>
         </div>
         <div className="flex items-center">
           <input
             type="radio"
-            value="Beginner"
+            value="unresolved"
             name="level"
-            onClick={handleLevel}
+            onClick={handleStatus}
           />
-          <p className="ml-2">Beginner</p>
+          <p className="ml-2">Unresolved</p>
         </div>
         <div className="flex items-center">
           <input
             type="radio"
-            value="Intermidiate"
+            value="resolved"
             name="level"
-            onClick={handleLevel}
+            onClick={handleStatus}
           />
-          <p className="ml-2">Intermediate</p>
+          <p className="ml-2">Resolved</p>
         </div>
       </div>
       <hr />

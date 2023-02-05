@@ -21,20 +21,19 @@ function AdminTrainer() {
   const [filter, setFilter] = useState({
     level: 'Both',
     order: '',
-    see_first: ''
 })
-const {level, order, see_first} = filter
+const {level, order} = filter
   useEffect(() => {
     const fetchData = async () => {
       const data = await axios.get('http://localhost:8000/students');
       level==='Intermidiate' || level ==='Beginner'? setTrainerData(data.data.filter(e=>e.level===level))
       :order==='Decreasing'?setTrainerData(data.data.reverse())
-   
+      :(level==='Intermidiate' && order === 'Decreasing') || (level==='Beginner' && order === 'Decreasing')?setTrainerData(data.data.filter(e=>e.level===level).reverse())
       :setTrainerData(data.data);
     };
     fetchData();
   }, [val, level, order]);
-
+console.log(filter)
 
   const handleNext = () => {
     val === trainerData.length ? setVal(7) : setVal(val + 7);
