@@ -61,7 +61,8 @@ import {
         AdminTrainerList,
         TrainerProfile,
         AdminSupport,
-        AdminSettings
+        AdminSettings,
+        MoreCalendar
        } from '../pages/admin/components';
 
 
@@ -124,6 +125,7 @@ const AllRoutes = () => {
         <Route path="admin" element={<Admin />}>
           <Route path="" element={<Navigate replace to="/admin/dashboard" />} />
           <Route  path="dashboard" element={<AdminDashboard />} />
+          <Route  path="dashboard/morecalendar" element={<MoreCalendar />} />
           <Route  path="profile" element={<AdminProfile />} />
           <Route  path="curriculum" element={<CurriculumAdmin />} />
           <Route  path="adminclassroom" element={<AdminClassroom />} />
