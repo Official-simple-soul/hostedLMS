@@ -19,7 +19,7 @@ export default function Pagination({
             className="relative z-0 flex gap-x-4 text-[#585858]"
             aria-label="Pagination"
           >
-            {currentPage == 1 ? (
+            {currentPage === 1 ? (
               <p></p>
             ) : (
               <a

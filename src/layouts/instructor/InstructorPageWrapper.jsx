@@ -1,10 +1,19 @@
 import React, {useState} from 'react'
 import Sidebar from './Sidebar'
+import Notifications from '../../pages/student/components/Notification'
+import InstructorProfileDropDown from '../../pages/instructor/components/InstructorProfileDropDown'
 import { Notification, Avatar, ArrowDown } from '../../assets'
 
 const InstructorPageWrapper = ({children}) => {
     const [menu, setMenu] = useState(false)
-  return (
+    const [notification, setNotification] = useState(false)
+    const [profileDropDown, setProfileDropDown] = useState(false)
+  
+    const handleNotification = () => {
+        setNotification(!notification)
+      }
+  
+    return (
     <>
         <div className="flex items-stretch mt-0">
         <div className={`${!menu? 'hidden': 'block'} opacity-50 fixed top-0 bottom-0 left-0 right-0 bg-black z-20`}></div>
@@ -27,7 +36,7 @@ const InstructorPageWrapper = ({children}) => {
                 </div>
 
                 <div className="flex gap-4 items-center">
-                <div className="relative bg-white h-[48px] w-[48px] rounded-lg flex justify-center">
+                <div className="relative bg-white h-[48px] w-[48px] rounded-lg flex justify-center" onClick={handleNotification}>
                     <img src={Notification} alt="" className='w-[18px]' />
                     <div className="absolute top-[-10px] right-[-10px] w-[24px]">
                     <p className='bg-[#FF3F3F] p-1 text-white rounded-full text-xs font-bold flex justify-center'>
@@ -36,7 +45,7 @@ const InstructorPageWrapper = ({children}) => {
                     </div>
                 </div>
 
-                <div className="relative bg-white h-[48px] w-[88px] rounded-[24px] flex gap-2 px-3">
+                <div className="relative bg-white h-[48px] w-[88px] rounded-[24px] flex gap-2 px-3" onClick={()=> setProfileDropDown(!profileDropDown)}>
                     <img src={Avatar} alt="" className='absolute top-0 left-0' />
                     <img src={ArrowDown} alt="" className='w-[12px] absolute top-[40%] right-3' />
                 </div>
@@ -48,6 +57,11 @@ const InstructorPageWrapper = ({children}) => {
                 {children}
             </div>
             </div>
+            <Notifications 
+      notification={notification}/>
+      <InstructorProfileDropDown
+      profileDropDown={profileDropDown}
+      />
         </div>
     </>
   )

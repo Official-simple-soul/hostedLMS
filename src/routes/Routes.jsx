@@ -57,7 +57,12 @@ import {
         AdminClassroom,
         AdminNewLesson,
         AboutAdmin,
-        AdminStudentList
+        AdminStudentList,
+        AdminTrainerList,
+        TrainerProfile,
+        AdminSupport,
+        AdminSettings,
+        MoreCalendar
        } from '../pages/admin/components';
 
 
@@ -120,12 +125,17 @@ const AllRoutes = () => {
         <Route path="admin" element={<Admin />}>
           <Route path="" element={<Navigate replace to="/admin/dashboard" />} />
           <Route  path="dashboard" element={<AdminDashboard />} />
+          <Route  path="dashboard/morecalendar" element={<MoreCalendar />} />
           <Route  path="profile" element={<AdminProfile />} />
           <Route  path="curriculum" element={<CurriculumAdmin />} />
           <Route  path="adminclassroom" element={<AdminClassroom />} />
           <Route  path="adminnewlesson/:id" element={<AdminNewLesson />} />
           <Route path="aboutadmin/:id" element={<AboutAdmin />} />
           <Route path="student-list" element={<AdminStudentList />} />
+          <Route path="admin-trainer" element={<AdminTrainerList />} />
+          <Route path="admin-trainer/:id" element={<TrainerProfile />} />
+          <Route path="admin-support" element={<AdminSupport />} />
+          <Route path="admin-settings" element={<AdminSettings />} />
         </Route>
 
         {/* Error 404 Page */}

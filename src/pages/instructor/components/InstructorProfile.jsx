@@ -1,10 +1,10 @@
 import React from 'react'
-// import InstructorPageWrapper from '../../../layouts/instructor/InstructorPageWrapper'
+import InstructorProfileMain from '../components/InstructorProfile/instructorProfile'
 
 const InstructorProfile = () => {
   return (
     <div>
-      InstructorProfile
+      <InstructorProfileMain />
     </div>
   )
 }

@@ -74,6 +74,7 @@ const StudentList = () => {
     };
     fetchList();
   }, []);
+  
   useEffect(() => {
     FilterByAllData();
   }, [allFilters]);
@@ -187,7 +188,7 @@ const StudentList = () => {
               <p
                 key={index}
                 className={`cursor-pointer ${
-                  data == filter
+                  data === filter
                     ? "text-black border-b-2 border-black"
                     : "text-[#0D6EFD]"
                 } `}
