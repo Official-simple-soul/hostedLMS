@@ -35,7 +35,14 @@ const Sidebar = ({showSide, setShowSide}) => {
                                 Profile
                             </span>
                         </NavLink>
-
+                        <NavLink to='/admin/student-list' onClick={handleNavSide} className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
+                            <span className="text-left">
+                                <img src={Trainer} alt="" className='w-[22px]' />
+                            </span>
+                            <span className="text-lg font-normal">
+                                Student
+                            </span>
+                        </NavLink>
                         <NavLink to='/admin/admin-trainer' onClick={handleNavSide} className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                             <span className="text-left">
                                 <img src={Trainer} alt="" className='w-[22px]' />
