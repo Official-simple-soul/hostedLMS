@@ -51,31 +51,45 @@ function AdminSupport() {
     val === 7 ? setVal(trainerData.length) : setVal(val - 7);
   };
 
-  const handleCheck = (position) => {
-    const updatedChecked = checkArr.map((item, idx) =>
-      idx + 1 === Number(position.slice(-1)) ? !item : item
-    );
-    setCheckArr(updatedChecked);
+  // const handleCheck = (position) => {
+  //   const updatedChecked = checkArr.map((item, idx) =>
+  //     idx + 1 === Number(position.slice(-1)) ? !item : item
+  //   );
+  //   setCheckArr(updatedChecked);
+  // };
+
+  const handleCheckClick = (e) => {
+    const { name, checked } = e.target;
+    if (name === 'checkResolveAll') {
+      const tmUser = trainerData.map((e) => {
+        return { ...e, isChecked: checked };
+      });
+      setTrainerData(tmUser);
+    } else {
+      const tmUser = trainerData.map((e) =>
+        e.id === name ? { ...e, isChecked: checked } : e
+      );
+      setTrainerData(tmUser);
+    }
   };
+
   const handleTimes = () => {
+    const tmUser = trainerData.map((e) => {
+      return { ...e, isChecked: false };
+    });
     setResolveArr([]);
+    setTrainerData(tmUser);
   };
-
-  useEffect(() => {
-    const resolved = checkArr.flatMap((item, idx) =>
-      item === true ? trainerData[idx].id : []
-    );
-
-    setResolveArr(resolved);
-  }, [trainerData, checkArr]);
 
   const handleResolved = () => {
-    resolveArr.flatMap((item) =>
-      trainerData.map((e) => (item === e.id ? console.log(e.id) : []))
-    );
-  };
+    const tmUser = trainerData.map(e=>{return {...e, status: 'resolved', isChecked: false} })
+    setTrainerData(tmUser)
+  }
 
-  // console.log(check)
+  useEffect(() => {
+    setResolveArr(trainerData.filter((e) => e?.isChecked).length);
+  }, [trainerData, checkArr]);
+
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -100,16 +114,12 @@ function AdminSupport() {
               )}
             </div>
           </div>
-          <h1
-            className={`${
-              resolveArr.length > 0 ? 'block' : 'hidden'
-            } text-[grey]`}
-          >
+          <h1 className={`${resolveArr > 0 ? 'block' : 'hidden'} text-[grey]`}>
             <FaTimes
               className="inline mr-2 text-sm cursor-pointer"
               onClick={handleTimes}
             />
-            ({resolveArr.length}) selected
+            ({resolveArr}) selected
           </h1>
           <button
             className="bg-blue-ribbon-500 text-white flex items-center px-3 py-[9px] rounded-md"
@@ -131,8 +141,11 @@ function AdminSupport() {
           <div className="flex items-center space-x-10 md:col-span-2">
             <input
               type="checkbox"
-              name="checkResolve"
-              // onChange={() => setCheck(!check)}
+              name="checkResolveAll"
+              onChange={handleCheckClick}
+              checked={
+                trainerData.filter((e) => e?.isChecked !== true).length < 1
+              }
             />
             <h1 className="">ID</h1>
             <div className="flex items-center space-x-6">
@@ -159,9 +172,10 @@ function AdminSupport() {
                   item={item}
                   // check={check}
                   // setCheck={setCheck}
-                  handleCheck={handleCheck}
+                  // handleCheck={handleCheck}
                   checkArr={checkArr}
                   setCheckArr={setCheckArr}
+                  handleCheckClick={handleCheckClick}
                 />
               </div>
             );

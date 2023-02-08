@@ -8,16 +8,16 @@ function AdminTrainerRow({ item }) {
   return (
     <div>
         <li
-          className={`flex space-x-20 md:space-x-0 items-center md:grid grid-cols-5 py-4 mb-6 px-4 bg-white shadow-lg rounded-md`}
+          className={`items-center grid grid-cols-5 w-[1000px] md:w-full py-4 mb-6 px-4 bg-white shadow-lg rounded-md`}
         >
-          <div className="flex items-center space-x-10 md:col-span-2">
+          <div className="flex items-center space-x-10 col-span-2">
             <h1 className="">{item.id}</h1>
             <div className="flex items-center space-x-6">
               <img src={item.img} alt={item.name} />
               <p>{item.name}</p>
             </div>
           </div>
-          <div className="md:grid md:grid-cols-2 flex space-x-8 md:space-x-0">
+          <div className="grid grid-cols-2">
             <h1>
               {item.gender.slice(0, 1).toUpperCase() + item.gender.slice(1)}
             </h1>

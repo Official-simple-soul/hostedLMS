@@ -50,6 +50,7 @@ export default function Modal({showModal, setShowModal, item}) {
                   <button
                     className={`${item.status==='resolved'?'opacity-20':'opacity-100'} bg-blue-ribbon-500 px-4 py-1 text-white rounded-lg`}
                     type="button"
+                    disabled={item.status==='resolved'}
                     onClick={handleResolve}
                   >
                     <AiFillCheckCircle className="inline mr-2"/>{item.status==='unresolved'?'Resolved':'Unresolved'}

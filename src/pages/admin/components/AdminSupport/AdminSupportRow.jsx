@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import AdminSupportModal from './AdminSupportModal';
 
-function AdminSupportRow({ item, handleCheck }) {
+function AdminSupportRow({ item, handleCheck, handleCheckClick }) {
   const [drop, setDrop] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [check, setCheck] = useState(false);
@@ -13,22 +13,22 @@ function AdminSupportRow({ item, handleCheck }) {
     setDrop(!drop);
   };
 
-  const handleCheckClick = () => {
-    setCheck(!check);
-  };
+  // const handleCheckClick = () => {
+  //   setCheck(!check);
+  // };
 
   return (
     <div>
       <li key={item.id}
-        className={`${check && 'border-l-4 border-r-4 border-blue-ribbon-500'} flex space-x-20 md:space-x-0 items-center md:grid grid-cols-6 py-4 mb-6 px-4 bg-white shadow-lg rounded-lg`}
+        className={`${item?.isChecked && 'border-l-4 border-r-4 border-blue-ribbon-500'} flex space-x-20 md:space-x-0 items-center md:grid grid-cols-6 py-4 mb-6 px-4 bg-white shadow-lg rounded-lg`}
       >
         <div className="flex items-center md:col-span-2">
           <input
             type="checkbox"
-            name="checkResolve"
-            onChange={()=>handleCheck(item.id)}
-            onClick={handleCheckClick}
-            checked={check}
+            name={item.id}
+            // onClick={()=>handleCheck(item.id)}
+            onChange={handleCheckClick}
+            checked={item?.isChecked || false}
             id='checked-checkbox'
             className=''
           />

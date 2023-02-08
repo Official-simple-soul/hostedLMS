@@ -3,7 +3,7 @@ import AdminTrainerRow from './AdminTrainerRow';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { useState } from 'react';
 import axios from 'axios';
-import {FaAngleDown} from 'react-icons/fa'
+import { FaAngleDown } from 'react-icons/fa';
 import DropdownFilter from '../../../../components/admin/Trainer/DropdownFilter';
 
 const pages = (num) => {
@@ -21,19 +21,23 @@ function AdminTrainer() {
   const [filter, setFilter] = useState({
     level: 'Both',
     order: '',
-})
-const {level, order} = filter
+  });
+  const { level, order } = filter;
   useEffect(() => {
     const fetchData = async () => {
       const data = await axios.get('http://localhost:8000/students');
-      level==='Intermidiate' || level ==='Beginner'? setTrainerData(data.data.filter(e=>e.level===level))
-      :order==='Decreasing'?setTrainerData(data.data.reverse())
-      :(level==='Intermidiate' && order === 'Decreasing') || (level==='Beginner' && order === 'Decreasing')?setTrainerData(data.data.filter(e=>e.level===level).reverse())
-      :setTrainerData(data.data);
+      level === 'Intermidiate' || level === 'Beginner'
+        ? setTrainerData(data.data.filter((e) => e.level === level))
+        : order === 'Decreasing'
+        ? setTrainerData(data.data.reverse())
+        : (level === 'Intermidiate' && order === 'Decreasing') ||
+          (level === 'Beginner' && order === 'Decreasing')
+        ? setTrainerData(data.data.filter((e) => e.level === level).reverse())
+        : setTrainerData(data.data);
     };
     fetchData();
   }, [val, level, order]);
-console.log(filter)
+  console.log(filter);
 
   const handleNext = () => {
     val === trainerData.length ? setVal(7) : setVal(val + 7);
@@ -45,38 +49,39 @@ console.log(filter)
   return (
     <div>
       <div className="flex justify-between items-center">
-      <h1 className="text-lg">Trainers</h1>
-      <div>
-              <button
-                className="rounded-lg  text-[#808080] py-2 pl-3 bg-white border border-black lg:flex hidden"
-                onClick={() => setDropDownFilter(!dropDownFilter)}
-              >
-                {level} Trainer...
-                <FaAngleDown />
-              </button>
-              {dropDownFilter && (
-                <DropdownFilter
-                setFilter={setFilter}
-                dropDownFilter={dropDownFilter}
-                setDropDownFilter={setDropDownFilter}
-                />
-              )}
-            </div>
+        <h1 className="text-lg">Trainers</h1>
+        <div>
+          <button
+            className="rounded-lg  text-[#808080] py-2 pl-3 bg-white border border-black flex text-[12px] md:text-lg"
+            onClick={() => setDropDownFilter(!dropDownFilter)}
+          >
+            {level} Trainer...
+            <FaAngleDown />
+          </button>
+          {dropDownFilter && (
+            <DropdownFilter
+              setFilter={setFilter}
+              dropDownFilter={dropDownFilter}
+              setDropDownFilter={setDropDownFilter}
+            />
+          )}
+        </div>
       </div>
       <h1 className="text-center text-sm my-3">
         Showing {val - 6} - {val} of {trainerData.length} trainers
       </h1>
-      <ul className="overflow-auto">
+      <ul className="overflow-x-auto relative h-[400px] md:h-full mb-4">
         <li
-          className={`flex space-x-20 md:space-x-0 items-center md:grid grid-cols-5 py-4 mb-6 px-4 bg-blue-ribbon-50`}
+          className={`absolute -top-1 sticky shadow items-center grid grid-cols-5 w-[1000px] md:w-full overflow-x-auto py-4 mb-6 px-4 bg-blue-ribbon-50`}
         >
-          <div className="flex items-center space-x-10 md:col-span-2">
-            <h1 className="">ID</h1>
+          <div className="flex items-center space-x-10 col-span-2">
+            <h1 className="mr-5">ID</h1>
             <div className="flex items-center space-x-6">
+              <p>Image</p>
               <p>Name</p>
             </div>
           </div>
-          <div className="md:grid md:grid-cols-2 flex space-x-8 md:space-x-0">
+          <div className="grid grid-cols-2">
             <h1>Gender</h1>
             <h1>Email</h1>
           </div>
@@ -88,14 +93,16 @@ console.log(filter)
             </div>
           </div>
         </li>
-        {trainerData &&
-          trainerData.slice(val - 7, val).map((item) => {
-            return (
-              <div key={item.id}>
-                <AdminTrainerRow item={item} />
-              </div>
-            );
-          })}
+        <li className="">
+          {trainerData &&
+            trainerData.slice(val - 7, val).map((item) => {
+              return (
+                <div key={item.id}>
+                  <AdminTrainerRow item={item} />
+                </div>
+              );
+            })}
+        </li>
       </ul>
       <div className="flex justify-end items-center space-x-4">
         <h1 onClick={handlePrev} className="cursor-pointer">

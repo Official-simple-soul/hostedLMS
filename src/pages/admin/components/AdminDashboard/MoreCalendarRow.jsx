@@ -1,8 +1,8 @@
 import React from 'react';
 
-function MoreCalendarRow({ e, idx, act, calMonth, handleViewTask }) {
+function MoreCalendarRow({ e, idx, act, calMonth, handleViewTask, currentDate, currentMonth }) {
   return (
-    <div key={idx} className={`${e.type==='current'?'text-gray-500': 'text-gray-300'} text-center h-32 pt-3 border`}>
+    <div key={idx} className={`${e.type==='current'?'text-gray-500': 'text-gray-300'} ${e.date===currentDate&&currentMonth===calMonth&&e.type==='current'?'bg-purple-300': ''} text-center h-32 pt-3 border`}>
       <h1 className="mb-6">{e.date}</h1>
       <div
         className={`${
@@ -27,6 +27,7 @@ function MoreCalendarRow({ e, idx, act, calMonth, handleViewTask }) {
       >
         <h1 className="text-[12px]">{act(e.date)?.task}</h1>
       </div>
+      <h1 className={`${e.date===currentDate&&currentMonth===calMonth&&e.type==='current'?'block': 'hidden'} font-bold`}>Today</h1>
     </div>
   );
 }
