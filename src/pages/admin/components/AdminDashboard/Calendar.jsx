@@ -85,9 +85,10 @@ function Calendar() {
   const [modalObj, setModalObj] = useState({});
   const [showModal, setShowModal] = useState(false);
 
-  const may2018 = new Date(2023, mv);
+  
   
   useEffect(() => {
+    const may2018 = new Date(2023, mv);
     const mainAsync = async () => {
       const mayDates = await calendarDates.getDates(may2018);
       const mayMatrix = await calendarDates.getMatrix(may2018);
@@ -97,14 +98,12 @@ function Calendar() {
     mainAsync();
   }, []);
 
-  useEffect(() => {
-    val === 38 && setMV(mv + 1);
-  }, [val, mv]);
+ 
 
   const handleNext = () => {
-    setval(val + 7);
+    val===36?setval(8):setval(val + 7);
   };
-
+  
   const handlePrev = () => {
     setval(val - 7);
   };
@@ -113,7 +112,7 @@ function Calendar() {
     setModalObj(act(date));
     setShowModal(true);
   };
-  
+
   return (
     <div>
       <div className="relative grid grid-cols-7 gap-1 mt-10">

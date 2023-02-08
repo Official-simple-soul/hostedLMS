@@ -2,10 +2,14 @@ import React from 'react'
 import { Logo, Dashboard, Profile, Trainer, Classroom, Task, Curriculum, Support, Settings } from '../../assets'
 import { NavLink } from 'react-router-dom'
 
-const Sidebar = () => {
-  return (
+const Sidebar = ({showSide, setShowSide}) => {
+    const handleNavSide = () => {
+        setShowSide(false)
+    }
+    
+    return (
     <>
-        <div className="h-[100%] hidden lg:block w-[236px]">
+        <div className={`${showSide?'w-[236px]':'h-[100%] w-0'} overflow-hidden md:w-[236px] transition-all ease-in-out duration-500 absolute top-16 z-40 md:sticky`}>
             <div className="bg-white h-full">
                 <div className="flex items-center justify-center gap-4 pt-6">
                     <img src={Logo} alt="kodecamp-logo" className='w-[36.71px] h-[36px]' />
@@ -14,7 +18,7 @@ const Sidebar = () => {
 
                 <nav className="mt-[4rem]">
                     <div className='relative'>
-                        <NavLink to='/admin/dashboard' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 px-4 py-2 my-2 transition-colors duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
+                        <NavLink to='/admin/dashboard' onClick={handleNavSide} className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 px-4 py-2 my-2 transition-colors duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                             <span className="text-left">
                                 <img src={Dashboard} alt="" className='w-[22px]' />
                             </span>
@@ -23,7 +27,7 @@ const Sidebar = () => {
                             </span>
                         </NavLink>
 
-                        <NavLink to='/admin/profile' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
+                        <NavLink to='/admin/profile' onClick={handleNavSide} className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                             <span className="text-left">
                                 <img src={Profile} alt="" className='w-[22px]' />
                             </span>
@@ -32,7 +36,7 @@ const Sidebar = () => {
                             </span>
                         </NavLink>
 
-                        <NavLink to='/admin/admin-trainer' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
+                        <NavLink to='/admin/admin-trainer' onClick={handleNavSide} className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                             <span className="text-left">
                                 <img src={Trainer} alt="" className='w-[22px]' />
                             </span>
@@ -41,7 +45,7 @@ const Sidebar = () => {
                             </span>
                         </NavLink>
 
-                        <NavLink to='/admin/adminclassroom' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
+                        <NavLink to='/admin/adminclassroom' onClick={handleNavSide} className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                             <span className="text-left">
                                 <img src={Classroom} alt="" className='w-[22px]' />
                             </span>
@@ -50,7 +54,7 @@ const Sidebar = () => {
                             </span>
                         </NavLink>
 
-                        <NavLink to='/admin/tasks' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
+                        <NavLink to='/admin/tasks' onClick={handleNavSide} className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                             <span className="text-left">
                                 <img src={Task} alt="" className='w-[22px]' />
                             </span>
@@ -59,7 +63,7 @@ const Sidebar = () => {
                             </span>
                         </NavLink>
 
-                        <NavLink to='/admin/curriculum' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
+                        <NavLink to='/admin/curriculum' onClick={handleNavSide} className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                             <span className="text-left">
                                 <img src={Curriculum} alt="" className='w-[22px]' />
                             </span>
@@ -68,7 +72,7 @@ const Sidebar = () => {
                             </span>
                         </NavLink>
 
-                        <NavLink to='/admin/admin-support' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
+                        <NavLink to='/admin/admin-support' onClick={handleNavSide} className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                             <span className="text-left">
                                 <img src={Support} alt="" className='w-[22px]' />
                             </span>
@@ -77,7 +81,7 @@ const Sidebar = () => {
                             </span>
                         </NavLink>
 
-                        <NavLink to='/admin/admin-settings' className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
+                        <NavLink to='/admin/admin-settings' onClick={handleNavSide} className={({ isActive }) => isActive ? "w-full font-thin text-[#0D6EFD] flex items-center gap-3 p-4 my-2 transition-colors duration-200 justify-start bg-[#0d6efd08] border-r-8 border-[#0D6EFD]" : "w-full font-thin text-[#808080] flex items-center gap-3 p-4 my-2 transition-colorxs  py-2duration-200 justify-start hover:text-blue-500 hover:bg-[#0d6efd08]"}>
                             <span className="text-left">
                                 <img src={Settings} alt="" className='w-[22px]' />
                             </span>

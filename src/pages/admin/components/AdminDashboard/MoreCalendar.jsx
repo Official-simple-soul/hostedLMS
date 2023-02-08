@@ -117,6 +117,9 @@ function MoreCalendar() {
     mainAsync();
   }, [mv]);
 
+  const currentDate = new Date().getDate();
+  const currentMonth = month[new Date().getMonth()];
+
   useEffect(() => {
     const monthNum = new Date(2023, mv);
     setCalMonth(month[monthNum.getMonth()]);
@@ -137,8 +140,13 @@ function MoreCalendar() {
   };
 
   const handleCreateTask = () => {
-    setModalObj({})
-    setShowModal(true)
+    setModalObj({});
+    setShowModal(true);
+  };
+
+  const handleToday = () => {
+    const today = new Date().getMonth()
+    setMV(today)
   }
 
   return (
@@ -157,7 +165,7 @@ function MoreCalendar() {
       </div>
       <div className="mt-5 mb-4 flex justify-between items-center">
         <div className="flex items-center space-x-5">
-          <p className="border border-gray-500 text-gray-500 px-2 py-1 rounded-md">
+          <p className="cursor-pointer border border-gray-500 text-gray-500 px-2 py-1 rounded-md" onClick={handleToday}>
             Today
           </p>
           <div className="flex">
@@ -175,14 +183,14 @@ function MoreCalendar() {
           </h1>
         </div>
         <div className="flex items-center space-x-2">
-          <div className="flex items-center px-2 py-1 bg-white rounded">
+          {/* <div className="flex items-center px-2 py-1 bg-white rounded">
             <FaSearch className="text-sm text-gray-500" />
             <input
               type="text"
               placeholder="Search"
               className="ml-2 focus:outline-none"
             />
-          </div>
+          </div> */}
           <select
             name=""
             id=""
@@ -194,25 +202,29 @@ function MoreCalendar() {
           </select>
         </div>
       </div>
-      <div className="grid grid-cols-7">
-        {week.map((e) => (
-          <h1 className="text-sm text-center border py-1 shadow">{e}</h1>
-        ))}
-      </div>
-      <div className="grid grid-cols-7 bg-white">
-        {arr.map((e, idx) => {
-          return (
-            <>
-              <MoreCalendarRow
-                e={e}
-                idx={idx}
-                calMonth={calMonth}
-                act={act}
-                handleViewTask={handleViewTask}
-              />
-            </>
-          );
-        })}
+      <div className="overflow-auto h-[400px] md:h-full">
+        <div className="grid grid-cols-7 w-[850px] md:w-full">
+          {week.map((e) => (
+            <h1 className="text-sm text-center border py-1 shadow">{e}</h1>
+          ))}
+        </div>
+        <div className="grid grid-cols-7 bg-white w-[850px] md:w-full">
+          {arr.map((e, idx) => {
+            return (
+              <>
+                <MoreCalendarRow
+                  e={e}
+                  idx={idx}
+                  calMonth={calMonth}
+                  act={act}
+                  handleViewTask={handleViewTask}
+                  currentDate={currentDate}
+                  currentMonth={currentMonth}
+                />
+              </>
+            );
+          })}
+        </div>
       </div>
       <Modal
         modalObj={modalObj}
