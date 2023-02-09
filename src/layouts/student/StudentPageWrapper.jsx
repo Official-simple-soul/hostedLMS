@@ -30,11 +30,11 @@ const StudentPageWrapper = ({ children }) => {
           </div>
         </div>
         <div className="main-content bg-[#F5F5F5] w-full h-full">
-          <nav className="h-[72px] bg-[#F5F5F5] shadow-xl md:shadow-none flex items-center justify-between px-5 mt-1.5">
+          <nav className="h-[72px] bg-[#F5F5F5] shadow-md flex items-center justify-between px-5 fixed w-full z-50">
             <div className="flex items-center space-x-4">
               {showSide ? (
                 <FaTimes
-                  className="md:hidden z-40 bg-white text-lg cursor-pointer"
+                  className="md:hidden z-40 text-lg cursor-pointer"
                   onClick={() => setShowSide(!showSide)}
                 />
               ) : (
@@ -80,7 +80,7 @@ const StudentPageWrapper = ({ children }) => {
 
           {/* {profileModal ? <ProfileDropdown /> : null} */}
 
-          <div className="m-6">{children}</div>
+          <div className="m-6 pt-20 md:pl-60">{children}</div>
         </div>
       </div>
       <Notifications notification={notification} />

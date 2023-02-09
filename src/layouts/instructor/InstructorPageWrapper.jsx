@@ -4,9 +4,11 @@ import Notifications from '../../components/global/Notification';
 import InstructorProfileDropDown from '../../pages/instructor/components/InstructorProfileDropDown';
 import { Notification, Avatar, ArrowDown } from '../../assets';
 import data from '../../data/data';
+import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
+
 
 const InstructorPageWrapper = ({ children }) => {
-  const [menu, setMenu] = useState(false);
+  const [showSide, setShowSide] = useState(false);
   const [notification, setNotification] = useState(false);
   const [profileDropDown, setProfileDropDown] = useState(false);
 
@@ -19,29 +21,36 @@ const InstructorPageWrapper = ({ children }) => {
       <div className="flex items-stretch mt-0">
         <div
           className={`${
-            !menu ? 'hidden' : 'block'
+            !showSide ? 'hidden' : 'block'
           } opacity-50 fixed top-0 bottom-0 left-0 right-0 bg-black z-20`}
         ></div>
         <div>
           <div id="sidebar">
-            <Sidebar menu={menu} setMenu={setMenu} />
+            <Sidebar showSide={showSide} setShowMenu={setShowSide} />
           </div>
         </div>
-        <div
-          className="md:hidden absolute top-5 left-5 z-50"
-          onClick={() => setMenu(!menu)}
-        >
-          <i
-            className={`fa-solid ${
-              menu ? 'fa-times' : 'fa-bars'
-            } text-2xl opacity-80`}
-          ></i>
-        </div>
-
         <div className="main-content bg-[#F5F5F5] w-full h-full">
-          <nav className="h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5 mt-1.5">
-            <div>{/* <p>Search bar if any</p> */}</div>
-
+          <nav className="shadow-md h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5 z-50 fixed w-full">
+          <div className="flex items-center space-x-4">
+              {showSide ? (
+                <FaTimes
+                  className="md:hidden z-40 text-lg cursor-pointer"
+                  onClick={() => setShowSide(!showSide)}
+                />
+              ) : (
+                <FaBars
+                  className="md:hidden z-40 text-lg cursor-pointer"
+                  onClick={() => setShowSide(!showSide)}
+                />
+              )}
+              <div className="flex space-x-1 md:justify-start bg-white px-1 items-center rounded-md">
+                <FaSearch className="text-gray-500 text-[12px] md:text-lg" />
+                <input
+                  type="text"
+                  className={`w-20 focus:outline-none p-1 text-[12px] md:text-md md:w-36 md:h-8`}
+                />
+              </div>
+            </div>
             <div className="flex gap-4 items-center">
               <div
                 className="cursor-pointer relative bg-white h-[48px] w-[48px] rounded-lg flex justify-center"
@@ -69,7 +78,7 @@ const InstructorPageWrapper = ({ children }) => {
             </div>
           </nav>
 
-          <div className="m-6">{children}</div>
+          <div className="m-6 pt-20 md:pl-60">{children}</div>
         </div>
         <Notifications notification={notification} />
         <InstructorProfileDropDown profileDropDown={profileDropDown} />

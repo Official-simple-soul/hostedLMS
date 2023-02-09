@@ -32,11 +32,11 @@ const AdminPageWrapper = ({ children }) => {
         </div>
 
         <div className="main-content bg-[#F5F5F5] w-full h-full">
-          <nav className="h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5 mt-1.5">
+          <nav className="shadow-md h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5 fixed w-full z-50">
             <div className="flex items-center space-x-4">
               {showSide ? (
                 <FaTimes
-                  className="md:hidden z-40 bg-white text-lg cursor-pointer"
+                  className="md:hidden z-40 text-lg cursor-pointer"
                   onClick={() => setShowSide(!showSide)}
                 />
               ) : (
@@ -49,7 +49,7 @@ const AdminPageWrapper = ({ children }) => {
                 <FaSearch className="text-gray-500 text-[12px] md:text-lg" />
                 <input
                   type="text"
-                  className={`w-20 focus:outline-none text-[12px] md:text-md md:w-36 md:h-8`}
+                  className={`w-20 focus:outline-none p-1 text-[12px] md:text-md md:w-36 md:h-8`}
                 />
               </div>
             </div>
@@ -81,7 +81,7 @@ const AdminPageWrapper = ({ children }) => {
             </div>
           </nav>
 
-          <div className="m-6">{children}</div>
+          <div className="m-6 pt-20 md:pl-60">{children}</div>
         </div>
       </div>
       <StudentProfileDropDown profileDropDown={profileDropDown} />
