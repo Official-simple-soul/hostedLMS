@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProfilePic from '../../../../assets/images/Male 01.png';
 import { ProfileEdit } from './ProfileEdit';
 
@@ -9,19 +9,35 @@ const StudentProfile = () => {
   const newD = JSON.parse(localStorage.getItem('userinfo'));
 
   const [value, setValue] = useState({
-    fullname: newD ? newD.fullname : 'Default Name',
-    email: newD ? newD.email : 'defaultemail@gmail.com',
-    username: newD ? newD.username : 'DefaultUsername',
+    fullname: '',
+    email: '',
+    username: '',
   });
+
+  useEffect(() => {
+    setValue({
+      fullname:
+        newD.map((e) => e.lastname + ' ' + e.firstname).toString() !== ' '
+          ? newD.map((e) => e.lastname + ' ' + e.firstname)
+          : 'Default Name',
+      email: newD.map((e) => e.email).toString()
+        ? newD.map((e) => e.email)
+        : 'defaultmail@gmail.com',
+      username:
+        newD.map((e) => e.username).toString() !== ''
+          ? newD.map((e) => e.username)
+          : 'DefaultUsername',
+    });
+  }, []);
 
   const { fullname, email, username } = value;
   const handleProfileEdit = () => {
-    setEditOption(true)
+    setEditOption(true);
   };
   return (
     <>
       <div className="flex justify-between items-center">
-        <h1>{editOption?'Edit Profile': 'Profile'}</h1>
+        <h1>{editOption ? 'Edit Profile' : 'Profile'}</h1>
         <button
           className="px-4 py-2 bg-blue-ribbon-500 text-white rounded-lg"
           onClick={handleProfileEdit}
@@ -30,7 +46,7 @@ const StudentProfile = () => {
         </button>
       </div>
       <div className="bg-white rounded-lg px-8 py-4 mt-6">
-        {!editOption?
+        {!editOption ? (
           <>
             <div className="md:flex items-center md:space-x-12">
               <div
@@ -75,49 +91,51 @@ const StudentProfile = () => {
             <div className="mt-6">
               <h1 className="">Personal Details</h1>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 mt-8">
-              <div className="left">
-                <ul className="space-y-4">
-                  <li className="border-b pb-1">Username</li>
-                  <li className="border-b pb-1">Email Address</li>
-                  <li className="border-b pb-1">Date of Birth</li>
-                  <li className="border-b pb-1">Gender</li>
-                  <li className="border-b pb-1">Phone Number</li>
-                </ul>
+            <div className="overflow-auto">
+              <div className="grid grid-cols-2 md:grid-cols-4 mt-8 w-[400px]">
+                <div className="left">
+                  <ul className="space-y-4">
+                    <li className="border-b pb-1">Username</li>
+                    <li className="border-b pb-1">Email Address</li>
+                    <li className="border-b pb-1">Date of Birth</li>
+                    <li className="border-b pb-1">Gender</li>
+                    <li className="border-b pb-1">Phone Number</li>
+                  </ul>
+                </div>
+                <div className="right md:col-span-3">
+                  <ul className="space-y-4">
+                    <li className="border-b pb-1 pl-5">{username}</li>
+                    <li className="border-b pb-1 pl-5 ">{email}</li>
+                    <li className="border-b pb-1 pl-5">01/01/2001</li>
+                    <li className="border-b pb-1 pl-5">Male</li>
+                    <li className="border-b pb-1 pl-5">08057483726</li>
+                  </ul>
+                </div>
               </div>
-              <div className="right md:col-span-3">
-                <ul className="space-y-4">
-                  <li className="border-b pb-1 pl-5">{username}</li>
-                  <li className="border-b pb-1 pl-5 overflow-auto">
-                    {email}
-                  </li>
-                  <li className="border-b pb-1 pl-5">01/01/2001</li>
-                  <li className="border-b pb-1 pl-5">Male</li>
-                  <li className="border-b pb-1 pl-5">08057483726</li>
-                </ul>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 mt-4">
-              <div className="left">
-                <ul className="space-y-4">
-                  <li className="border-b pb-1">Employement Status</li>
-                  <li className="border-b pb-1">Education Qualification</li>
-                </ul>
-              </div>
-              <div className="right md:col-span-3">
-                <ul className="space-y-4">
-                  <li className="border-b pb-1 pl-5 font-bold">Employed</li>
-                  <li className="border-b pb-1 pl-5 font-bold">PhD</li>
-                </ul>
+              <div className="grid grid-cols-2 md:grid-cols-4 mt-4 w-[400px]">
+                <div className="left">
+                  <ul className="space-y-4">
+                    <li className="border-b pb-1">Employement Status</li>
+                    <li className="border-b pb-1">Education Qualification</li>
+                  </ul>
+                </div>
+                <div className="right md:col-span-3">
+                  <ul className="space-y-4">
+                    <li className="border-b pb-1 pl-5 font-bold">Employed</li>
+                    <li className="border-b pb-1 pl-5 font-bold">PhD</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </>
-          :
-          <ProfileEdit setEditOption={setEditOption}/>
-        }
+        ) : (
+          <ProfileEdit setEditOption={setEditOption} />
+        )}
 
         <button
-          className={`${editOption && 'hidden'} text-sm text-white bg-blue-ribbon-500 px-4 py-2 rounded-lg mt-4`}
+          className={`${
+            editOption && 'hidden'
+          } text-sm text-white bg-blue-ribbon-500 px-4 py-2 rounded-lg mt-4`}
           type="button"
         >
           <i class="fa-solid fa-certificate mr-2"></i>My CV

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import ProfilePic from '../../../../assets/images/Male 01.png';
 import { ProfileEdit } from './ProfileEdit';
 
@@ -9,12 +10,23 @@ const AdminProfile = () => {
   const newD = JSON.parse(localStorage.getItem('userinfo'));
 
   const [value, setValue] = useState({
-    fullname: newD ? newD.fullname : 'Default Name',
-    email: newD ? newD.email : 'defaultemail@gmail.com',
-    username: newD ? newD.username : 'DefaultUsername',
+    fullname: '',
+    email: '',
+    username: ''
   });
 
+
+
+ useEffect(()=> {
+  setValue({
+    fullname: newD.map(e=>e.lastname + ' ' + e.firstname).toString() !== ' '? newD.map(e=>e.lastname + ' ' + e.firstname) : 'Default Name',
+    email: newD.map(e=>e.email).toString() ? newD.map(e=>e.email) : 'defaultmail@gmail.com',
+    username: newD.map(e=>e.username).toString() !=='' ? newD.map(e=>e.username) : 'DefaultUsername',
+  })
+ }, [])
+
   const { fullname, email, username } = value;
+
   const handleProfileEdit = () => {
     setEditOption(true)
   };
@@ -75,7 +87,7 @@ const AdminProfile = () => {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 mt-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 mt-8 overflow-auto">
               <div className="left">
                 <ul className="space-y-4">
                   <li className="border-b pb-1">Username</li>
@@ -86,7 +98,7 @@ const AdminProfile = () => {
               <div className="right md:col-span-3">
                 <ul className="space-y-4">
                   <li className="border-b pb-1 pl-5">{username}</li>
-                  <li className="border-b pb-1 pl-5 overflow-hidden">
+                  <li className="border-b pb-1 pl-5">
                     {email}
                   </li>
                   <li className="border-b pb-1 pl-5">08057483726</li>

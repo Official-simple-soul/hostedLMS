@@ -41,7 +41,8 @@ import {
           TaskDraftList,
           TaskListTrainer,
           TaskDetailsTrainerTask,
-          TaskSubmissionLink
+          TaskSubmissionLink,
+          InstructorStudent
         } from '../pages/instructor/components';
 
 import NewLesson from '../pages/instructor/components/NewLesson';
@@ -119,6 +120,7 @@ const AllRoutes = () => {
           <Route path='curriculum' element={<CurriculumTrainer />} />
           <Route path="settings" element={<Settings />} />
           <Route path="support" element={<StudentSupport />} />
+          <Route path="student" element={<InstructorStudent />} />
         </Route>
 
         {/* Admin Routes => localhost:3000/admin/~ */}

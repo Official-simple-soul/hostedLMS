@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProfilePic from '../../../assets/images/Male 01.png';
 import { ProfileEdit } from './ProfileEdit';
 import { ProfileEdittwo } from './ProfileEdit';
@@ -11,10 +11,26 @@ const StudentProfile = () => {
   const newD = JSON.parse(localStorage.getItem('userinfo'));
 
   const [value, setValue] = useState({
-    fullname: newD ? newD.fullname : 'Default Name',
-    email: newD ? newD.email : 'defaultemail@gmail.com',
-    username: newD ? newD.username : 'DefaultUsername',
+    fullname: '',
+    email: '',
+    username: '',
   });
+
+  useEffect(() => {
+    setValue({
+      fullname:
+        newD.map((e) => e.lastname + ' ' + e.firstname).toString() !== ' '
+          ? newD.map((e) => e.lastname + ' ' + e.firstname)
+          : 'Default Name',
+      email: newD.map((e) => e.email).toString()
+        ? newD.map((e) => e.email)
+        : 'defaultmail@gmail.com',
+      username:
+        newD.map((e) => e.username).toString() !== ''
+          ? newD.map((e) => e.username)
+          : 'DefaultUsername',
+    });
+  }, []);
 
   const { fullname, email, username } = value;
   const handleProfileEdit = () => {
@@ -56,14 +72,11 @@ const StudentProfile = () => {
             Professional details
           </h1>
         </div>
-        {
-        editOption === 'editPersonal'?
-        <ProfileEdit />
-        :
-        editOption === 'editProfessional'?
-        <ProfileEdittwo />
-        :
-        profileOption === 'Personal details' ? (
+        {editOption === 'editPersonal' ? (
+          <ProfileEdit />
+        ) : editOption === 'editProfessional' ? (
+          <ProfileEdittwo />
+        ) : profileOption === 'Personal details' ? (
           <>
             <div className="md:flex items-center md:space-x-12 mt-8">
               <div

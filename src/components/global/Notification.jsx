@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import data from '../../../data/data';
-import Boma from '../../../assets/images/Boma.png';
+import data from '../../data/data';
+import Boma from '../../../src/assets/images/Boma.png';
+
+
+
 export default function Notification({ notification }) {
 
   const [allArchive, setAllArchive] = useState('All');
@@ -9,10 +12,10 @@ export default function Notification({ notification }) {
     <div
       className={`${
         notification ? 'block' : 'hidden'
-      } bg-white h-[350px] absolute top-24 right-[7%] rounded-lg`}
+      } bg-white h-[350px] absolute top-24 md:right-[7%] rounded-lg`}
     >
-      <div className="content h-[100%] overflow-scroll">
-        <div className="absolute bg-white h-8 w-8 rotate-45 right-10 -top-4"></div>
+      <div className="content h-[100%] overflow-auto">
+        <div className="absolute bg-white h-8 w-8 rotate-45 right-32 md:right-10 -top-4"></div>
         <h1 className="px-5">Notifications</h1>
         <div className="flex justify-start items-center px-5  mt-4 space-x-8">
           <h2 className={`${allArchive.includes('All')?'border-b-2 border-black':'border-none text-blue-ribbon-400'} cursor-pointer`} onClick={(e)=> setAllArchive(e.currentTarget.innerHTML)}>All <span className={`${allArchive==='Archive'? 'rounded-full bg-blue-ribbon-500 px-2 py-1 text-white text-sm':'rounded-full bg-black px-2 py-1 text-white text-sm'}`}>{allArchive==='Archive'?'3':'3 new'}</span></h2>

@@ -2,18 +2,32 @@ import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import { Notification, Avatar, ArrowDown } from '../../assets';
 import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
+import Notifications from '../../components/global/Notification';
+import StudentProfileDropDown from '../../components/global/StudentProfileDropDown';
+import data from '../../data/data';
 
 const AdminPageWrapper = ({ children }) => {
-  
   const [showSide, setShowSide] = useState(false);
+  const [notification, setNotification] = useState(false);
+  const [profileDropDown, setProfileDropDown] = useState(false);
+
+  const handleNotification = ({ target }) => {
+    if (target) {
+      setNotification(!notification);
+    }
+  };
 
   return (
     <>
       <div className="flex items-stretch mt-0">
         <div>
           <div id="sidebar">
-            <div className={`${showSide?'block':'hidden'} fixed top-0 right-0 left-0 bottom-0 bg-black opacity-80 z-20`}></div>
-            <Sidebar showSide={showSide} setShowSide={setShowSide}/>
+            <div
+              className={`${
+                showSide ? 'block' : 'hidden'
+              } fixed top-0 right-0 left-0 bottom-0 bg-black opacity-80 z-20`}
+            ></div>
+            <Sidebar showSide={showSide} setShowSide={setShowSide} />
           </div>
         </div>
 
@@ -41,16 +55,22 @@ const AdminPageWrapper = ({ children }) => {
             </div>
 
             <div className="flex gap-4 items-center">
-              <div className="relative bg-white h-[48px] w-[48px] rounded-lg flex justify-center">
+              <div
+                className="cursor-pointer relative bg-white h-[48px] w-[48px] rounded-lg flex justify-center"
+                onClick={handleNotification}
+              >
                 <img src={Notification} alt="" className="w-[18px]" />
                 <div className="absolute top-[-10px] right-[-10px] w-[24px]">
                   <p className="bg-[#FF3F3F] p-1 text-white rounded-full text-xs font-bold flex justify-center">
-                    <span>6</span>
+                    <span>{data.length}</span>
                   </p>
                 </div>
               </div>
 
-              <div className="relative bg-white h-[48px] w-[88px] rounded-[24px] flex gap-2 px-3">
+              <div
+                className="cursor-pointer relative bg-white h-[48px] w-[88px] rounded-[24px] flex gap-2 px-3"
+                onClick={() => setProfileDropDown(!profileDropDown)}
+              >
                 <img src={Avatar} alt="" className="absolute top-0 left-0" />
                 <img
                   src={ArrowDown}
@@ -64,6 +84,8 @@ const AdminPageWrapper = ({ children }) => {
           <div className="m-6">{children}</div>
         </div>
       </div>
+      <StudentProfileDropDown profileDropDown={profileDropDown} />
+      <Notifications notification={notification} />
     </>
   );
 };

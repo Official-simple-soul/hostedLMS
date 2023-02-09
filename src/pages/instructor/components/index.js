@@ -9,3 +9,4 @@ export { default as TaskDraftList } from '../../../components/instructor/TaskDra
 export { default as TaskDetailsTrainerTask } from '../../../components/instructor/TaskDetailsTrainerTask'
 export { default as TaskSubmissionLink } from '../../../components/instructor/TaskSubmissionLink'
 export { default as CurriculumTrainer } from './CurriculumTrainer'
+export {default as InstructorStudent} from '../components/InstructorStudent/InstructorStudent'
