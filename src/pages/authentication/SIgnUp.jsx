@@ -147,7 +147,7 @@ const SignUp = () => {
                         flex
                         flex-col 
                         w-full
-                        h-[80vh]
+                        md:h-[80vh]
                         overflow-auto
                         bg-white
                         px-2

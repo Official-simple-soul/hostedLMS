@@ -11,7 +11,7 @@ const StudentDashboard = () => {
     let monthName= ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     let day= new Date().getDay()
     const five = [1,1,1,1,1]
-    console.log(day)
+
   return (
     <> 
       <h1 className='font-medium text-2xl'>Dashboard</h1>

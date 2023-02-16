@@ -30,7 +30,7 @@ const StudentProfile = () => {
           ? newD.map((e) => e.username)
           : 'DefaultUsername',
     });
-  }, []);
+  }, [newD]);
 
   const { fullname, email, username } = value;
   const handleProfileEdit = () => {
@@ -122,7 +122,7 @@ const StudentProfile = () => {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 mt-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 mt-8 overflow-auto">
               <div className="left">
                 <ul className="space-y-4">
                   <li className="border-b pb-1">Username</li>
@@ -135,7 +135,7 @@ const StudentProfile = () => {
               <div className="right md:col-span-3">
                 <ul className="space-y-4">
                   <li className="border-b pb-1 pl-5">{username}</li>
-                  <li className="border-b pb-1 pl-5 overflow-scroll md:overflow-hidden">
+                  <li className="border-b pb-1 pl-5">
                     {email}
                   </li>
                   <li className="border-b pb-1 pl-5">01/01/2001</li>

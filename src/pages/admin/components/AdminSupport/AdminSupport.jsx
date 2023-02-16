@@ -158,7 +158,7 @@ function AdminSupport() {
           <div className="flex items-center">Subject</div>
           <div className="flex justify-between items-center col-span-2">
             <div className="">Date</div>
-            Status
+            <h1 className='ml-10'>Status</h1>
             <div className="menu relative">
               <BsThreeDotsVertical className="text-2xl" />
             </div>

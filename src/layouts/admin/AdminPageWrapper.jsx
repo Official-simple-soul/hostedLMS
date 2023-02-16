@@ -32,7 +32,7 @@ const AdminPageWrapper = ({ children }) => {
         </div>
 
         <div className="main-content bg-[#F5F5F5] w-full h-full">
-          <nav className="shadow-md h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5 fixed w-full z-50">
+          <nav className="shadow-md h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5 fixed w-full z-50 md:z-30 md:pl-60">
             <div className="flex items-center space-x-4">
               {showSide ? (
                 <FaTimes
@@ -49,7 +49,7 @@ const AdminPageWrapper = ({ children }) => {
                 <FaSearch className="text-gray-500 text-[12px] md:text-lg" />
                 <input
                   type="text"
-                  className={`w-20 focus:outline-none p-1 text-[12px] md:text-md md:w-36 md:h-8`}
+                  className={`p-1 w-20 focus:outline-none p-1 text-[12px] md:text-md md:w-36 md:h-8`}
                 />
               </div>
             </div>

@@ -5,16 +5,21 @@ import Notifications from '../../components/global/Notification';
 import StudentProfileDropDown from '../../components/global/StudentProfileDropDown';
 import data from '../../data/data';
 import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
+import { useGlobalContext } from '../../context/context';
 
 const StudentPageWrapper = ({ children }) => {
   const [showSide, setShowSide] = useState(false);
   const [notification, setNotification] = useState(false);
   const [profileDropDown, setProfileDropDown] = useState(false);
-  // const [ profileModal, setProfileModal] = useState(false)
+  const {setStudentSearchInput} = useGlobalContext()
 
   const handleNotification = () => {
     setNotification(!notification);
   };
+
+  const handleChange = (e) => {
+   setStudentSearchInput(e.target.value)
+  }
 
   return (
     <>
@@ -30,7 +35,7 @@ const StudentPageWrapper = ({ children }) => {
           </div>
         </div>
         <div className="main-content bg-[#F5F5F5] w-full h-full">
-          <nav className="h-[72px] bg-[#F5F5F5] shadow-md flex items-center justify-between px-5 fixed w-full z-50">
+          <nav className="h-[72px] bg-[#F5F5F5] shadow-md flex items-center justify-between px-5 fixed w-full z-50 md:z-30 md:pl-60">
             <div className="flex items-center space-x-4">
               {showSide ? (
                 <FaTimes
@@ -47,7 +52,8 @@ const StudentPageWrapper = ({ children }) => {
                 <FaSearch className="text-gray-500 text-[12px] md:text-lg" />
                 <input
                   type="text"
-                  className={`w-20 focus:outline-none text-[12px] md:text-md md:w-36 md:h-8`}
+                  onChange={handleChange}
+                  className={`p-1 w-20 focus:outline-none text-[12px] md:text-md md:w-36 md:h-8`}
                 />
               </div>
             </div>

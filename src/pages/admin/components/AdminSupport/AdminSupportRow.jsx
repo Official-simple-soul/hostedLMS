@@ -13,9 +13,6 @@ function AdminSupportRow({ item, handleCheck, handleCheckClick }) {
     setDrop(!drop);
   };
 
-  // const handleCheckClick = () => {
-  //   setCheck(!check);
-  // };
 
   return (
     <div>
@@ -26,7 +23,6 @@ function AdminSupportRow({ item, handleCheck, handleCheckClick }) {
           <input
             type="checkbox"
             name={item.id}
-            // onClick={()=>handleCheck(item.id)}
             onChange={handleCheckClick}
             checked={item?.isChecked || false}
             id='checked-checkbox'

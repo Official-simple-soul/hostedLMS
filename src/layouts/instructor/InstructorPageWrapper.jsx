@@ -30,7 +30,7 @@ const InstructorPageWrapper = ({ children }) => {
           </div>
         </div>
         <div className="main-content bg-[#F5F5F5] w-full h-full">
-          <nav className="shadow-md h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5 z-50 fixed w-full">
+          <nav className="shadow-md h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5 md:pl-60 z-50 md:z-30 fixed w-full">
           <div className="flex items-center space-x-4">
               {showSide ? (
                 <FaTimes

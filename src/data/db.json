@@ -184,7 +184,6 @@
       "status": "Not posted"
     }
   ],
-  
   "students": [
     {
       "id": "0001",
@@ -231,7 +230,7 @@
       "stage": 5,
       "grade": "400/600",
       "certificate": "Not uploaded",
-      "banned": "No",
+      "banned": "Yes",
       "img": "https://i.ibb.co/6RNhQgK/Ellipse-47-3.png"
     },
     {

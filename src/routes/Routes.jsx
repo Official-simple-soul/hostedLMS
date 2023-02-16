@@ -93,7 +93,7 @@ const AllRoutes = () => {
           <Route path="support" element={<StudentSupport />} />
           <Route path="calender" element={<Calender />} />
           <Route path="studentclassroom" element={<StudentClassroom />} />
-          <Route path="savedbookmarks" element={<SavedBookmarks />} />
+          <Route path="studentclassroom/savedbookmarks" element={<SavedBookmarks />} />
           <Route path="aboutstudent/:id" element={<AboutStudent />} />
           <Route path="studentcurriculum" element={<StudentCurriculum />} />
         </Route>

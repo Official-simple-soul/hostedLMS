@@ -88,10 +88,10 @@ function Calendar() {
   
   
   useEffect(() => {
-    const may2018 = new Date(2023, mv);
+    const getDate = new Date(2023, mv);
     const mainAsync = async () => {
-      const mayDates = await calendarDates.getDates(may2018);
-      const mayMatrix = await calendarDates.getMatrix(may2018);
+      const mayDates = await calendarDates.getDates(getDate);
+      const mayMatrix = await calendarDates.getMatrix(getDate);
 
       setArr(mayDates);
     };
