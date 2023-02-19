@@ -106,6 +106,7 @@ function MoreCalendar() {
   const [showModal, setShowModal] = useState(false);
   const [showViewModal, setShowViewModal] = useState(false);
   const [modalObj, setModalObj] = useState({});
+const [weekIdx, setWeekIdx] = useState(0)
 
   useEffect(() => {
     const may2018 = new Date(2023, mv);
@@ -124,8 +125,9 @@ function MoreCalendar() {
     const monthNum = new Date(2023, mv);
     setCalMonth(month[monthNum.getMonth()]);
     setCalYear(monthNum.getFullYear());
-  }, [mv]);
-
+    weekIdx>6?setWeekIdx(weekIdx-7):weekIdx>13?setWeekIdx(weekIdx-14):setWeekIdx(weekIdx)
+  }, [mv, weekIdx]);
+  
   const handleNext = () => {
     setMV(mv + 1);
   };
@@ -220,6 +222,7 @@ function MoreCalendar() {
                   handleViewTask={handleViewTask}
                   currentDate={currentDate}
                   currentMonth={currentMonth}
+                  setWeekIdx={setWeekIdx}
                 />
               </>
             );
@@ -235,6 +238,9 @@ function MoreCalendar() {
         modalObj={modalObj}
         showModal={showViewModal}
         setShowModal={setShowViewModal}
+        week={week}
+        idx={weekIdx}
+        monthVal={calMonth}
       />
     </div>
   );

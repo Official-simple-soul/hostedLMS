@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import Modal from './AdminViewTaskModal';
 import CalenderRow from './CalenderRow';
 
@@ -13,6 +12,7 @@ const act = (n) => {
   const num = [
     {
       num: 3,
+      month: 1,
       type: 'class',
       task: 'Arrays in C progamming',
       time: '9:35am',
@@ -22,6 +22,7 @@ const act = (n) => {
     },
     {
       num: 8,
+      month: 1,
       type: 'task',
       task: 'Using Mongo DB',
       time: '10:10am',
@@ -31,6 +32,7 @@ const act = (n) => {
     },
     {
       num: 10,
+      month: 1,
       type: 'class',
       task: 'Build kodecamp website',
       time: '10:30am',
@@ -40,6 +42,7 @@ const act = (n) => {
     },
     {
       num: 12,
+      month: 1,
       type: 'meeting',
       task: 'Meeting with data scinece Trainers',
       time: '11:15am',
@@ -49,6 +52,7 @@ const act = (n) => {
     },
     {
       num: 18,
+      month: 1,
       type: 'class',
       task: 'Javascript Objects',
       time: '11:30am',
@@ -58,6 +62,7 @@ const act = (n) => {
     },
     {
       num: 22,
+      month: 1,
       type: 'task',
       task: 'Intro to PM',
       time: '9:45am',
@@ -67,6 +72,27 @@ const act = (n) => {
     },
     {
       num: 27,
+      month: 1,
+      type: 'meeting',
+      task: 'Build kodecamp website',
+      time: '10:30am',
+      repeat: 'never',
+      track: 'UI/UX',
+      tutor: 'Ikeys Stephen',
+    },
+    {
+      num: 16,
+      month: 2,
+      type: 'task',
+      task: 'Intro to PM',
+      time: '9:45am',
+      repeat: 'never',
+      track: 'Project Management',
+      tutor: 'Emmanuel Jackson',
+    },
+    {
+      num: 21,
+      month: 2,
       type: 'meeting',
       task: 'Build kodecamp website',
       time: '10:30am',
@@ -78,38 +104,34 @@ const act = (n) => {
   return num.find((e) => e.num === n);
 };
 
-function Calendar({mv, setMV}) {
+function Calendar({ mv, setMV, monthVal }) {
   const [arr, setArr] = useState([]);
   const [val, setval] = useState(0);
-
+  const [weekIdx, setWeekIdx] = useState(0);
   const [modalObj, setModalObj] = useState({});
   const [showModal, setShowModal] = useState(false);
 
-  
-  
   useEffect(() => {
     const getDate = new Date(2023, mv);
     const mainAsync = async () => {
-      const mayDates = await calendarDates.getDates(getDate);
       const mayMatrix = await calendarDates.getMatrix(getDate);
-console.log(mayMatrix)
+
       setArr(mayMatrix[val]);
     };
     mainAsync();
   }, [mv, val]);
 
- 
-// console.log(val)
+  // console.log(val)
   const handleNext = () => {
-    val===4?setval(1):setval(val + 1);
-    val===4&&setMV(mv+1)
-    mv===11&&val===4&&setMV(0)
+    val === 4 ? setval(1) : setval(val + 1);
+    val === 4 && setMV(mv + 1);
+    mv === 11 && val === 4 && setMV(0);
   };
-  
+
   const handlePrev = () => {
-    val===1?setval(4):setval(val - 1);
-    val===1&&setMV(mv-1)
-    mv===0&&val===1&&setMV(11)
+    val === 0 ? setval(4) : setval(val - 1);
+    val === 0 && setMV(mv - 1);
+    mv === 0 && val === 1 && setMV(11);
   };
 
   const handleViewTask = ({ date }) => {
@@ -128,7 +150,15 @@ console.log(mayMatrix)
           return (
             <>
               <div key={idx}>
-            <CalenderRow handleViewTask={handleViewTask} e={e} week={week} idx={idx} act={act}/>
+                <CalenderRow
+                  handleViewTask={handleViewTask}
+                  e={e}
+                  week={week}
+                  idx={idx}
+                  setWeekIdx={setWeekIdx}
+                  act={act}
+                  mv={mv}
+                />
               </div>
             </>
           );
@@ -142,6 +172,9 @@ console.log(mayMatrix)
         modalObj={modalObj}
         showModal={showModal}
         setShowModal={setShowModal}
+        week={week}
+        idx={weekIdx}
+        monthVal={monthVal}
       />
     </div>
   );

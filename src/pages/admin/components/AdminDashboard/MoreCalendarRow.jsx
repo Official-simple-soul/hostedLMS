@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MoreCalendarRow({ e, idx, act, calMonth, handleViewTask, currentDate, currentMonth }) {
+function MoreCalendarRow({ setWeekIdx, e, idx, act, calMonth, handleViewTask, currentDate, currentMonth }) {
   return (
     <div key={idx} className={`${e.type==='current'?'text-gray-500': 'text-gray-300'} ${e.date===currentDate&&currentMonth===calMonth&&e.type==='current'?'bg-purple-300': ''} text-center h-32 pt-3 border`}>
       <h1 className="mb-6">{e.date}</h1>
@@ -23,7 +23,10 @@ function MoreCalendarRow({ e, idx, act, calMonth, handleViewTask, currentDate, c
             ? 'block bg-yellow-400'
             : 'hidden'
         } w-full rounded-md py-1 cursor-pointer`}
-        onClick={()=>handleViewTask(e)}
+        onClick={()=>{
+          handleViewTask(e)
+          setWeekIdx(idx)
+        }}
       >
         <h1 className="text-[12px]">{act(e.date)?.task}</h1>
       </div>

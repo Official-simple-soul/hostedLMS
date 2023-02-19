@@ -56,7 +56,7 @@ function InternshipProgress({ modalObj }) {
             <AiFillCalendar className="text-lg text-blue-ribbon-500" />
           </div>
         </div>
-        <Calendar modalObj={modalObj} mv={mv} setMV={setMV}/>
+        <Calendar monthVal={monthVal} modalObj={modalObj} mv={mv} setMV={setMV}/>
         <div className="flex justify-between items-center mt-8 w-[90%] mx-auto">
           <div className="flex items-center">
             <div className="h-4 w-4 bg-blue-ribbon-400 rounded-full mr-1"></div>

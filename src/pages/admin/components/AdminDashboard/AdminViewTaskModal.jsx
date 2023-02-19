@@ -7,7 +7,7 @@ import { AiFillCalendar, AiOutlineLink } from 'react-icons/ai';
 import { useState } from 'react';
 import EditModal from './AdminAddEditTaskModal'
 
-export default function Modal({ modalObj, showModal, setShowModal }) {
+export default function Modal({ monthVal, week, idx, modalObj, showModal, setShowModal }) {
   const [editEvent, setEditEvent] = useState({})
     const [editShowModal, setEditShowModal] = useState(false)
   const handleEditEvent = (modalObj) => {
@@ -39,7 +39,7 @@ export default function Modal({ modalObj, showModal, setShowModal }) {
                   </div>
                   <div className="text-sm text-black-200 flex items-center">
                     <AiFillCalendar />
-                    <p className="ml-2">Monday {modalObj.num}, February 2023 </p>
+                    <p className="ml-2">{week[idx]} {modalObj.num}, {monthVal} 2023 </p>
                   </div>
                   <div className="grid justify-items-stretch w-[70%]">
                     <p className="justify-self-end">
