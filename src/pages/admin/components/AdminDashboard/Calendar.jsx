@@ -7,7 +7,7 @@ import CalenderRow from './CalenderRow';
 const CalendarDates = require('calendar-dates');
 const calendarDates = new CalendarDates();
 
-const week = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+const week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
 const act = (n) => {
   const num = [
@@ -78,10 +78,10 @@ const act = (n) => {
   return num.find((e) => e.num === n);
 };
 
-function Calendar() {
+function Calendar({mv, setMV}) {
   const [arr, setArr] = useState([]);
-  const [val, setval] = useState(8);
-  const [mv, setMV] = useState(1);
+  const [val, setval] = useState(0);
+
   const [modalObj, setModalObj] = useState({});
   const [showModal, setShowModal] = useState(false);
 
@@ -92,20 +92,24 @@ function Calendar() {
     const mainAsync = async () => {
       const mayDates = await calendarDates.getDates(getDate);
       const mayMatrix = await calendarDates.getMatrix(getDate);
-
-      setArr(mayDates);
+console.log(mayMatrix)
+      setArr(mayMatrix[val]);
     };
     mainAsync();
-  }, []);
+  }, [mv, val]);
 
  
-
+// console.log(val)
   const handleNext = () => {
-    val===36?setval(8):setval(val + 7);
+    val===4?setval(1):setval(val + 1);
+    val===4&&setMV(mv+1)
+    mv===11&&val===4&&setMV(0)
   };
   
   const handlePrev = () => {
-    setval(val - 7);
+    val===1?setval(4):setval(val - 1);
+    val===1&&setMV(mv-1)
+    mv===0&&val===1&&setMV(11)
   };
 
   const handleViewTask = ({ date }) => {
@@ -120,7 +124,7 @@ function Calendar() {
           className="cursor-pointer absolute text-2xl -left-5 top-5"
           onClick={handlePrev}
         />
-        {arr.slice(val, val + 7).map((e, idx) => {
+        {arr.map((e, idx) => {
           return (
             <>
               <div key={idx}>
