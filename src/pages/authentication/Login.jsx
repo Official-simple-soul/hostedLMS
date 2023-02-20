@@ -31,7 +31,7 @@ const Login = () => {
           </div>
           
           <div className={`${Style.col2_bg} w-full h-screen md:pt-8`}>
-            <div className={`rounded-r-[24px] md:${Style.b_radRight} ${Style.box_shadow} border-lg md:my-[20px] md:mr-12 pt-9 h-screen bg-white md:h-[634px]`}>
+            <div className={`md:rounded-r-[24px] md:${Style.b_radRight} ${Style.box_shadow} border-lg md:my-[20px] md:mr-12 pt-9 h-screen bg-white md:h-[634px]`}>
               <div className="flex flex-col gap-4 justify-center items-center">
                 <img src={Logo} alt="" className= {`${Style.logo_shadow} bg-white rounded-lg p-3 m-auto`} />
                 <h2 className={`${Style.col2_text} my-4 text-center`}>Log in to dashboard</h2>

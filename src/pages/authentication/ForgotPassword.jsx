@@ -22,8 +22,8 @@ const ForgotPassword = () => {
     font={<i class="fa-solid fa-envelope text-[#00BD56]"></i>}
     />
     {/* Forgot Password page */}
-      <main className="w-full h-screen flex bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)]">
-        <div className="w-full flex items-center hero">
+      <main className="w-full h-screen md:flex bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)]">
+        <div className="hidden md:block w-full md:flex items-center hero">
           <div className="h-[582px] w-[92%] ml-auto flex items-center justify-center rounded-tl-3xl rounded-bl-3xl shadow-4xl bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)]">
             <div className="font-inter text-white text-center">
               <p className="font-bold text-5xl">Kodecamp LMS</p>
@@ -34,8 +34,8 @@ const ForgotPassword = () => {
           </div>
         </div>
 
-        <div className="w-full bg-white flex items-center">
-          <div className="relative h-[582px] w-[92%] mr-auto bg-inherit rounded-tr-3xl rounded-br-3xl shadow-3xl">
+        <div className="h-screen w-full bg-white flex items-center">
+          <div className="relative md:h-[582px] md:w-[92%] mr-auto bg-inherit md:rounded-tr-3xl md:rounded-br-3xl md:shadow-3xl">
 
             <div className=" w-full overflow-clip absolute bg-gray-100 rounded-full h-1 w-[98%]">
               <div className="bg-green-500 h-1 rounded-tr-3xl rounded-br-3xl w-2/5"></div>
