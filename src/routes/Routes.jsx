@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom"; 
 
 // Auth imports
 import ForgotPassword from '../pages/authentication/ForgotPassword';
@@ -42,7 +42,8 @@ import {
           TaskListTrainer,
           TaskDetailsTrainerTask,
           TaskSubmissionLink,
-          InstructorStudent
+          InstructorStudent,
+          EditTask
         } from '../pages/instructor/components';
 
 import NewLesson from '../pages/instructor/components/NewLesson';
@@ -63,7 +64,14 @@ import {
         TrainerProfile,
         AdminSupport,
         AdminSettings,
-        MoreCalendar
+        MoreCalendar,
+        AdminTask,
+        TaskListAdmin,
+        TaskDraftListAdmin,
+        TaskDetailsAdmin,
+        TaskDetailsAdminTask,
+        CreateNewTaskAdmin,
+        EditTaskAdmin
        } from '../pages/admin/components';
 
 
@@ -117,6 +125,7 @@ const AllRoutes = () => {
             <Route path="submissions" element={<TaskSubmissionLink />} />
           </Route>
           <Route path="task/create-new-task/:id" element={<CreateNewTask />} />
+          <Route path="task/edit-task/:id" element={<EditTask />} />
           <Route path='curriculum' element={<CurriculumTrainer />} />
           <Route path="settings" element={<Settings />} />
           <Route path="support" element={<StudentSupport />} />
@@ -136,6 +145,18 @@ const AllRoutes = () => {
           <Route path="student-list" element={<AdminStudentList />} />
           <Route path="admin-trainer" element={<AdminTrainerList />} />
           <Route path="admin-trainer/:id" element={<TrainerProfile />} />
+          <Route path="task" element={<AdminTask />}>
+            <Route path="" element={<Navigate replace to="tasks" />} />
+            <Route path="tasks" element={<TaskListAdmin />} />
+            <Route path="draft" element={<TaskDraftListAdmin />} />
+          </Route>
+          <Route path="task/:id" element={<TaskDetailsAdmin />}>
+            <Route path="" element={<Navigate replace to="tasks" />} />
+            <Route path="tasks" element={<TaskDetailsAdminTask />} />
+            <Route path="submissions" element={<TaskSubmissionLink />} />
+          </Route>
+          <Route path="task/create-new-task/:id" element={<CreateNewTaskAdmin />} />
+          <Route path="task/edit-task/:id" element={<EditTaskAdmin />} />
           <Route path="admin-support" element={<AdminSupport />} />
           <Route path="admin-settings" element={<AdminSettings />} />
         </Route>
