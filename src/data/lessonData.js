@@ -352,5 +352,15 @@ export const lessonData = [
     about:
       'one of the common function used in javascript is the loop, while loop, for loop, for each, map, reduce, for of, for in, filter, and many more',
   },
+  {
+    title: 'Javascript Loop',
+    status: statusText[2],
+    img: LessonLogo5,
+    date: '11-09-22',
+    id: 34,
+    stage: 5,
+    about:
+      'one of the common function used in javascript is the loop, while loop, for loop, for each, map, reduce, for of, for in, filter, and many more',
+  },
 ];
 
