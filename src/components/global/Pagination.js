@@ -29,7 +29,7 @@ export default function Pagination({
                 href="#"
                 className="relative inline-flex items-center text-xs font-medium"
               >
-                <span>Prev</span>
+                <span>Prev</span> 
               </a>
             )}
             <ul className="flex pl-0 rounded list-none">

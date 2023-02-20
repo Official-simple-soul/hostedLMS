@@ -6,6 +6,7 @@ export { default as TaskDetailsTrainer } from '../../../components/instructor/Ta
 export { default as CreateNewTask } from '../../../components/instructor/CreateNewTask'
 export { default as TaskListTrainer } from '../../../components/instructor/TaskListTrainer'
 export { default as TaskDraftList } from '../../../components/instructor/TaskDraftList'
+export { default as EditTask } from '../../../components/instructor/Task/EditTask'
 export { default as TaskDetailsTrainerTask } from '../../../components/instructor/TaskDetailsTrainerTask'
 export { default as TaskSubmissionLink } from '../../../components/instructor/TaskSubmissionLink'
 export { default as CurriculumTrainer } from './CurriculumTrainer'
