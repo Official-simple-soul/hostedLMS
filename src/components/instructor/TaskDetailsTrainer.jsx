@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 // import { Avatar, DueDate, Calender } from '../../assets'
-import { NavLink, Link, Outlet } from "react-router-dom";
-import { AiOutlinePlus } from "react-icons/ai";
+import { NavLink, Link, Outlet, useLocation } from "react-router-dom";
+import { AiOutlinePlus  } from "react-icons/ai";
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 import { RiPencilFill } from "react-icons/ri";
 // import fileIcon from '../../assets/icons/file2024.svg'
 // import cancelIcon from '../../assets/icons/cancel2025.svg'
 
 const TaskDetailsTrainer = () => {
   const { id } = useParams();
+  const location = useLocation();
   const {
     data: task,
     isPending,
     error,
   } = useFetch("http://localhost:8000/tasks/" + id);
   const { data: submissions } = useFetch("http://localhost:8000/submissions");
-  // const [edit, setEdit] = useState();
+  const [ changesDd, setChangesDd ] = useState();
   // const [isFilePicked, setIsFilePicked] = useState(false);
   // //   const [dd, setDd] = useState(task.taskDesc)
   // const [isSubmitted, setIsSubmitted] = useState(false);
@@ -85,7 +87,8 @@ const TaskDetailsTrainer = () => {
 
             </div>
 
-            <Link
+            {location.pathname === "/instructor/task/" + id + "/tasks" ? (
+              <Link
               to={`/instructor/task/edit-task/${task.id}`}
               className="flex items-center w-[135px] gap-2 bg-white text-blue-ribbon border border-blue-ribbon px-4 py-2 rounded-xl text-base"
               onClick={() => setData(task)}
@@ -93,6 +96,48 @@ const TaskDetailsTrainer = () => {
               <RiPencilFill className="text-lg" />
               <p>Edit Task</p>
             </Link>
+            ) : (
+              <div className=" relative flex items-center gap-6">
+                <div className="flex items-center gap-3">
+                  <p className="text-base font-light text-gray-500">Accepting submissions</p>
+                  <div className="relative w-[48px] h-[24px] bg-blue-ribbon-200 rounded-xl">
+                    <div className="absolute right-0 h-full w-6/12 bg-blue-ribbon-500 rounded-xl overflow-hidden"></div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <p className="text-base font-light text-gray-500">Filter</p>
+                  <div className="border border-gray-400 bg-white px-4 py-1.5 flex items-center gap-4 justify-between rounded-lg">
+                    <p className="font-light text-base text-gray-400">Not graded</p>
+                    <IoIosArrowDown />
+                  </div>
+                </div>
+
+                <div className="flex items-center text-white text-base">
+                    <div className='bg-blue-ribbon-500 px-4 py-2 rounded-l-lg text-base'>Submit Grade</div>
+
+                    <div 
+                        className='bg-blue-ribbon-500 px-3 py-2 rounded-r-lg border-l border-grey-100'
+                        onClick={() => setChangesDd(!changesDd)}
+                    >
+                        {!changesDd ? <IoIosArrowDown className='text-[1.5rem]' /> : <IoIosArrowUp className='text-[1.5rem]' />}
+                    </div>
+                </div>
+
+                { changesDd ? (
+                  <div className='absolute right-0 top-11 bg-white px-3.5 py-4 rounded-lg text-base text-[#303030] flex flex-col gap-3 shadow'>
+                      <div className='flex flex-col gap-3'>
+                          <p className="cursor-pointer">Submit grade</p>
+                          <p className="cursor-pointer">Submit all graded tasks</p>
+                      </div>
+                  </div>
+              )
+              : null
+          }
+
+              </div>
+            )}
+           
           </div>
 
           <Outlet />
