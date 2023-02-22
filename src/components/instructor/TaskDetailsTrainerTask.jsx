@@ -80,10 +80,10 @@ const TaskDetailsTrainerTask = () => {
             <div className="md:col-span-1 text-2xl bg-white rounded-xl p-5 self-start w-full">
                 <div className="flex items-center justify-between">
                     <p className="text-lg">Status</p>
-                    {isSubmitted ? (
-                    <p className="text-sm text-green-500">Submitted</p>
-                    ) : (
-                    <p className="text-sm text-red-500">Not Submitted</p>
+                    {task.status === "Submitted" ? (
+                        <p className="text-sm text-green-500">Submitted</p>
+                        ) : (
+                        <p className="text-sm text-red-500">Not Submitted</p>
                     )}
                 </div>
 

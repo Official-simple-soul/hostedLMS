@@ -30,7 +30,7 @@ const InstructorPageWrapper = ({ children }) => {
           </div>
         </div>
         <div className="main-content bg-[#F5F5F5] w-full h-full">
-          <nav className="shadow-md h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5 md:pl-60 z-50 md:z-30 fixed w-full">
+          <nav className="shadow-md md:shadow-none h-[72px] bg-[#F5F5F5] flex items-center justify-between px-5 md:pl-60 z-50 md:z-30 fixed w-full">
           <div className="flex items-center space-x-4">
               {showSide ? (
                 <FaTimes
@@ -43,11 +43,12 @@ const InstructorPageWrapper = ({ children }) => {
                   onClick={() => setShowSide(!showSide)}
                 />
               )}
-              <div className="flex space-x-1 md:justify-start bg-white px-1 items-center rounded-md">
-                <FaSearch className="text-gray-500 text-[12px] md:text-lg" />
+              <div className="hidden md:flex w-[400px] h-[48px] rounded-lg space-x-1 md:justify-start bg-white px-3 items-center rounded-md">
+                <FaSearch className="text-gray-100 text-[12px] md:text-lg" />
                 <input
                   type="text"
-                  className={`w-20 focus:outline-none p-1 text-[12px] md:text-md md:w-36 md:h-8`}
+                  placeholder='Search'
+                  className={`p-1 placeholder-gray-200 w-20 focus:outline-none text-[12px] md:text-md md:w-36 md:h-8`}
                 />
               </div>
             </div>

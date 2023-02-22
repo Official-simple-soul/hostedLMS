@@ -21,6 +21,7 @@ const EditTask = () => {
     const [dueDate, setDueDate] = useState('')
     const [points, setPoints] = useState('')
     const [submission, setSubmission] = useState('')
+    const [status, setStatus] = useState('')
     const [isPending, setIsPending] = useState(false)
     const [changesDd, setChangesDd] = useState(false)
     const navigate = useNavigate()
@@ -41,7 +42,7 @@ const EditTask = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const task = { taskTitle, taskDesc, stage, dueDate, track, points, level }
+        const task = { taskTitle, taskDesc, stage, dueDate, track, points, level, status: "Not submitted" }
 
         setIsPending(true)
 
@@ -74,6 +75,7 @@ const EditTask = () => {
         setDueDate(localStorage.getItem('dueDate'))
         setPoints(localStorage.getItem('points'))
         setSubmission(localStorage.getItem('submission'))
+        setStatus(localStorage.getItem('status'))
     }, []);
 
 

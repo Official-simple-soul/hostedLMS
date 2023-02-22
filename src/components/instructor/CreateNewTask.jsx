@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // import { useParams } from 'react-router'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import '../../App.css'
 import Editor from 'ckeditor5-custom-build/build/ckeditor';
 import { CKEditor } from '@ckeditor/ckeditor5-react'
@@ -19,7 +19,7 @@ const CreateNewTask = () => {
     const [points, setPoints] = useState('')
     const [submission, setSubmission] = useState('')
     const [isPending, setIsPending] = useState(false)
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     const handleResources =(event)=>{
         setResources(event.target.value)
@@ -37,7 +37,7 @@ const CreateNewTask = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const task = { taskTitle, taskDesc, stage, dueDate, track, points, level }
+        const task = { taskTitle, taskDesc, stage, dueDate, track, points, level, status: "Not submitted" }
 
         setIsPending(true)
 
@@ -74,10 +74,10 @@ const CreateNewTask = () => {
                         Create Task
                     </button>}
                 </div>
-            </div>
+            </div> 
 
             <div className="grid md:grid-cols-5 gap-6 mt-6">
-                <div className="w-full md:col-span-3 bg-white p-6 rounded-xl">
+                <div className="md:col-span-3 bg-white p-6 rounded-xl">
                     <div className='flex flex-col gap-3'>
                         <div className="flex flex-col gap-1">
                             <label className='text-base text-grey-500'>Task Title</label>
@@ -94,7 +94,7 @@ const CreateNewTask = () => {
                             <label className='text-base text-grey-500'>Task Description</label>
                             <div className="CkEditor">
                                 <CKEditor
-                                    className='h-full'
+                                    className='h-full w-[300px]'
                                     editor={Editor}
                                     //   config={editorConfiguration
                                     data={taskDesc}
@@ -115,11 +115,11 @@ const CreateNewTask = () => {
                                     }}
                                 />
                             </div>
-                        </div> 
+                        </div>
                     </div>
                 </div>
 
-                <div className="w-full md:col-span-2 bg-white p-6 rounded-xl">
+                <div className="md:col-span-2 bg-white p-6 rounded-xl">
                     <div className='flex flex-col gap-3'>
                         <div className="flex flex-col gap-1">
                             <label className='text-base text-grey-500'>Stage</label>

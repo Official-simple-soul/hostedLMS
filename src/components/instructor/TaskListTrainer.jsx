@@ -7,8 +7,8 @@ const TaskListTrainer = () => {
     const { data: tasks, isPending, error } = useFetch("http://localhost:8000/tasks")
 
   return (
-    <div>
-      <div className="grid grid-cols-8 items-center bg-blue-ribbon-50 py-4 px-5 rounded-xl my-4">
+    <div className='overflow-x-scroll md:overflow-x-hidden'>
+      <div className="w-[1050px] overflow-x-scroll md:w-full md:overflow-x-hidden grid grid-cols-8 items-center bg-blue-ribbon-50 py-4 px-5 rounded-xl my-4">
         <p className="text-base text-[#0D6EFD]">Stage</p>
         <p className="text-base text-[#0D6EFD] col-span-2">Task</p> 
         <p className="text-base text-[#0D6EFD]">Track</p>
@@ -23,17 +23,15 @@ const TaskListTrainer = () => {
       <div className="flex flex-col gap-4">
         {tasks && tasks.map((data) => (
             <div
-              className="grid grid-cols-8 items-center bg-white py-4 px-5 rounded-xl mt-4"
+              className="w-[1050px] overflow-x-scroll md:w-full md:overflow-x-hidden grid grid-cols-8 items-center bg-white py-4 px-5 rounded-xl mt-4"
               onClick={() => navigate(`/instructor/task/${data.id}`)}
               key={data.id}
             >
               <p className="text-base text-[#808080]">{data.stage}</p>
               <p className="text-base text-[#808080] col-span-2">{data.taskTitle}</p>
               <p className="text-base text-[#808080]">{data.track}</p>
-              <p className="text-base text-[#808080] col-span-2">
-                {data.dueDate}
-              </p>
-              <p className="text-base text-[#808080]">{data.status}</p>
+              <p className="text-base text-[#808080] col-span-2">{data.dueDate}</p>
+              {data.status === 'Graded' ? <p className="text-base text-green-500">{data.status}</p> : <p className="text-base text-red-500">{data.status}</p>}
               <p className="text-base text-[#808080]">{data.points}/100</p>
             </div>
           ))}

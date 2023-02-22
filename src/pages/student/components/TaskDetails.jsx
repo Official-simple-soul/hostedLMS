@@ -40,13 +40,11 @@ const TaskDetails = () => {
 
       {task && (
         <div>
-          <p className="text-sm text-blue-ribbon">
-            Tasks / <span className="text-[#808080]">{task.taskTitle}</span>
-          </p>
-          <div className="grid grid-cols-3 gap-4 mt-4">
-            <div className="col-span-2 text-2xl bg-white rounded-xl p-5">
+          <p className="text-sm text-blue-ribbon">Tasks / <span className="text-[#808080]">{task.taskTitle}</span></p>
+          <div className="grid md:grid-cols-3 gap-4 mt-4">
+            <div className="md:col-span-2 text-2xl bg-white rounded-xl p-5">
               <div className="w-[97%] mx-auto border-b border-grey-400 pb-3 flex flex-col gap-2">
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col gap-2 md:justify-between md:items-center">
                   <h2 className="text-lg">{task.taskTitle}</h2>
                   <p className="text-sm text-[#808080]">
                     {task.track} - Beginner
@@ -62,7 +60,7 @@ const TaskDetails = () => {
                     <p className="text-sm text-[#808080]">October 5</p>
                   </div>
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col gap-2 md:justify-between md:items-center">
                   <div className="flex gap-2 items-center">
                     <img src={DueDate} alt="" />
                     <p className="text-sm text-[#808080]">Due in 2 days</p>
