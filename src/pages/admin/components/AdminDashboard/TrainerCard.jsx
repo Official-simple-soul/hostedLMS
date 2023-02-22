@@ -81,7 +81,7 @@ function TrainerCard() {
         <Pie data={gender_data} options={options}></Pie>
       <div className="grid grid-cols-2 gap-3 mt-4">
       {
-        Data.slice(0,2).map(e=> <h1 className='text-[12px]'>Stage {e.stage} - {e.total}</h1>)
+        Data.slice(0,2).map((e, idx)=> <h1 className='text-[12px]'>{idx===0?'Male':'Female'} - {e.total}</h1>)
       }
       </div>
         </>

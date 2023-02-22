@@ -49,7 +49,7 @@ const NewPassword = () => {
     <div className='wrapper'>
         <ToastContainer />
 
-        <div className='conic-bg '>
+        <div className='conic-bg hidden md:block'>
             <div className='bg-trans flex flex-col items-center justify-center text-center text-white'>
                 <h1 className='text-4xl font-extrabold pb-4'>Kodecamp LMS</h1> 
                 <p>Learning has been made simple, interactive and fun.</p>

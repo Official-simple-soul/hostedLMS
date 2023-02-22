@@ -28,8 +28,8 @@ const VerifyEmail = () => {
   });
 
   return (
-    <div className="h-screen max-w-screen flex">
-      <div className="w-1/2 h-screen flex justify-center items-center bg-auth pl-10 py-4">
+    <div className="h-screen max-w-screen md:flex">
+      <div className="hidden md:block md:pt-[83px] md:w-1/2 h-screen flex justify-center items-center bg-auth pl-10 py-4">
         <div className="w-full xl:h-[581px] h-[635px] bg-transparent flex justify-center items-center rounded-l-3xl shadow-2xl">
           <div className="text-center text-white">
             <h2 className="text-5xl font-bold text-white mb-2">
@@ -41,9 +41,9 @@ const VerifyEmail = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/2 flex flex-col justify-center pr-10">
+      <div className="md:w-1/2 flex flex-col justify-center md:pr-10">
         <span className="w-2/3 h-[3px] bg-green-500 "></span>
-        <div className="w-full xl:h-[578px] h-[635px] flex flex-col rounded-r-3xl shadow-2xl px-6">
+        <div className="w-full xl:h-[578px] h-[635px] flex flex-col md:rounded-r-3xl md:shadow-2xl px-6">
           <div className="grid place-items-center mx-auto text-center my-6">
             <div className="w-20 h-20 rounded-lg bg-transparent shadow-md mb-4 grid place-items-center">
               <img src={Logo} alt="kodecamp-logo" />

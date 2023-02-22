@@ -17,7 +17,7 @@ export default function ForgotPasswordModal({showModal, emails, setShowModal, fo
                       <div className="img flex justify-center items-center text-6xl mt-5">
                         {font}
                       </div>
-                      <div className="flex items-start justify-center p-5">
+                      <div className="flex items-start justify-center py-5">
                         <h3 className="text-2xl">
                           {title}
                         </h3>
@@ -30,7 +30,7 @@ export default function ForgotPasswordModal({showModal, emails, setShowModal, fo
                       {/*footer*/}
                       <div className="flex items-center justify-center p-6">
                         <Link to={button==='Login'?'/':'/verify-email'}><button
-                          className="bg-blue-ribbon-500 text-white text-sm px-28 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                          className="bg-blue-ribbon-500 text-white text-sm w-64 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                           type="button"
                           onClick={() => setShowModal(false)}
                         >
