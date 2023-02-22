@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
-import { Notification, Avatar, ArrowDown } from '../../assets';
+import { Notification, Avatar, ArrowDown, Logo } from '../../assets';
 import Notifications from '../../components/global/Notification';
 import StudentProfileDropDown from '../../components/global/StudentProfileDropDown';
 import data from '../../data/data';
@@ -35,20 +35,23 @@ const StudentPageWrapper = ({ children }) => {
             <Sidebar showSide={showSide} setShowSide={setShowSide} />
           </div>
         </div>
-        <div className="main-content bg-[#F5F5F5] w-full h-full">
-          <nav className="h-[72px] bg-[#F5F5F5] shadow-md md:shadow-none flex items-center justify-between px-5 fixed w-full z-50 md:z-30 md:pl-60">
+        <div className="main-content w-full h-full">
+          <nav className="h-[72px] shadow-md md:shadow-none bg-white md:bg-[#F5F5F5] flex items-center justify-between px-5 fixed w-full z-50 md:z-30 md:pl-60">
             <div className="flex items-center space-x-4">
               {showSide ? (
                 <FaTimes
-                  className="md:hidden z-40 text-lg cursor-pointer"
+                  className="md:hidden z-40 text-3xl font-light cursor-pointer"
                   onClick={() => setShowSide(!showSide)}
                 />
               ) : (
                 <FaBars
-                  className="md:hidden z-40 text-lg cursor-pointer"
+                  className="md:hidden z-40 text-3xl font-light cursor-pointer"
                   onClick={() => setShowSide(!showSide)}
                 />
               )}
+
+              <img src={Logo} alt="" className='w-[40px] h-[40px] md:hidden' />
+
               <div className="hidden md:flex w-[400px] h-[48px] rounded-lg space-x-1 md:justify-start bg-white px-3 items-center rounded-md">
                 <FaSearch className="text-gray-100 text-[12px] md:text-lg" />
                 <input
@@ -60,12 +63,12 @@ const StudentPageWrapper = ({ children }) => {
               </div>
             </div>
             <div className="flex gap-4 items-center">
-              <div className="cursor-pointer relative bg-white h-[48px] w-[48px] rounded-lg flex items-center justify-center">
+              <div className="border border-gray-200 cursor-pointer relative bg-white h-[48px] w-[48px] md:hidden rounded-lg flex items-center justify-center">
                 <AiOutlineSearch className='text-3xl font-bold text-[#585858]' />
-              </div>
+              </div> 
 
               <div
-                className="cursor-pointer relative bg-white h-[48px] w-[48px] rounded-lg flex justify-center"
+                className="border border-gray-200 cursor-pointer relative bg-white h-[48px] w-[48px] rounded-lg flex justify-center"
                 onClick={handleNotification}
               >
                 <img src={Notification} alt="" className="w-[18px]" />

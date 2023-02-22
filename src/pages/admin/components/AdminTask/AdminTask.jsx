@@ -8,14 +8,14 @@ const AdminTask = () => {
   
     return (
       <div>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between mb-6">
           <div className="flex items-center gap-9">
             <NavLink to='/admin/task/tasks' className={( {isActive} ) => isActive ? 'text-xl font-medium text-[#303030] border-b border-[#303030]' : "text-blue-ribbon-500" }>Task</NavLink>
             <NavLink to='/admin/task/draft' className={( {isActive} ) => isActive ? 'text-xl font-medium text-[#303030] border-b border-[#303030]' : "text-blue-ribbon-500" }>Drafts</NavLink>
           </div>
           <Link 
             to={`/admin/task/create-new-task/${id}`}
-            className="flex items-center gap-2 bg-blue-ribbon-400 text-white px-4 py-2 rounded-xl text-base"
+            className="flex items-center gap-2 bg-blue-ribbon-400 w-[176px] text-white px-4 py-2 rounded-xl text-base"
           >
             <AiOutlinePlus className='text-lg' />
             <p>Add New Task</p>

@@ -71,7 +71,8 @@ import {
         TaskDetailsAdmin,
         TaskDetailsAdminTask,
         CreateNewTaskAdmin,
-        EditTaskAdmin
+        EditTaskAdmin,
+        TaskSubmissionAdmin
        } from '../pages/admin/components';
 
 
@@ -153,7 +154,7 @@ const AllRoutes = () => {
           <Route path="task/:id" element={<TaskDetailsAdmin />}>
             <Route path="" element={<Navigate replace to="tasks" />} />
             <Route path="tasks" element={<TaskDetailsAdminTask />} />
-            <Route path="submissions" element={<TaskSubmissionLink />} />
+            <Route path="submissions" element={<TaskSubmissionAdmin />} />
           </Route>
           <Route path="task/create-new-task/:id" element={<CreateNewTaskAdmin />} />
           <Route path="task/edit-task/:id" element={<EditTaskAdmin />} />
