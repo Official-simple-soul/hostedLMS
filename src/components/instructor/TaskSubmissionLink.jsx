@@ -19,7 +19,7 @@ const TaskSubmissionLink = () => {
         <p className="text-xl">Redesign KodeCamp Website</p>
         <p className='text-sm text-grey-500 mt-2'>UI/UX Design . Beginner</p>
 
-        <div className="flex flex-col md:flex-row mt-4 items-center gap-4 md:gap-[15rem]">
+        <div className="flex flex-col md:flex-row mt-4 md:items-center gap-4 md:gap-[15rem]">
             <div className='flex items-center gap-2 bg-white py-3 px-6'>
                 <input type="checkbox" name="" id="" />
                 <p className="text-grey-500 text-sm">Select all students</p> 

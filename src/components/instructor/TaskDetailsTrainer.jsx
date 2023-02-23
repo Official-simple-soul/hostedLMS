@@ -57,7 +57,7 @@ const TaskDetailsTrainer = () => {
           </p>
 
           <div className="flex flex-col gap-6 md:flex-row md:items-center justify-between">
-            <div className="flex items-center gap-3 md:gap-9 mt-3">
+            <div className="relative flex items-center gap-3 md:gap-9 mt-3">
               <NavLink
                 to={`/instructor/task/${task.id}/tasks`}
                 className={({ isActive }) =>
@@ -86,40 +86,43 @@ const TaskDetailsTrainer = () => {
                   </span>
                 </NavLink>
               </div>
+                
+              {location.pathname === "/instructor/task/" + id + "/submissions" ? (
+                <div className="absolute right-2">
+                  <div className="flex items-center gap-1 text-white text-base md:hidden">
+                      <div className='bg-blue-ribbon-500 px-4 py-2 rounded-lg text-base'>Submit</div>
 
-              <div className="flex items-center text-white text-base md:hidden">
-                    <div className='bg-blue-ribbon-500 px-4 py-2 rounded-l-lg text-base'>Submit Grade</div>
-
-                    <div 
-                        className='text-lg'
+                      <BsThreeDotsVertical 
+                        className="text-3xl text-gray-700"
                         onClick={() => setChangesDd(!changesDd)}
-                    >
-                        {<BsThreeDotsVertical />}
-                    </div>
+                      />
+                  </div>
                 </div>
 
-                { changesDd ? (
-                  <div className='md:hidden absolute right-0 top-11 bg-white px-3.5 py-4 rounded-lg text-base text-[#303030] flex flex-col gap-3 shadow'>
-                      <div className='flex flex-col gap-3'>
-                          <p className="cursor-pointer">Submit grade</p>
-                          <p className="cursor-pointer">Submit all graded tasks</p>
-                      </div>
-                  </div>
-              )
-              : null
-            }
+              ) : null }
+
+              { changesDd ? (
+                <div className='md:hidden z-10 absolute right-0 top-11 bg-white px-3.5 py-4 rounded-lg text-base text-[#303030] flex flex-col gap-3 shadow'>
+                    <div className='flex flex-col gap-3'>
+                        <p className="cursor-pointer">Submit grade</p>
+                        <p className="cursor-pointer">Submit all graded tasks</p>
+                    </div>
+                </div>
+                )
+                : null
+              }
 
             </div>
 
             {location.pathname === "/instructor/task/" + id + "/tasks" ? (
               <Link
-              to={`/instructor/task/edit-task/${task.id}`}
-              className="flex items-center w-[135px] gap-2 bg-white text-blue-ribbon border border-blue-ribbon px-4 py-2 rounded-xl text-base"
-              onClick={() => setData(task)}
-            >
-              <RiPencilFill className="text-lg" />
-              <p>Edit Task</p>
-            </Link>
+                to={`/instructor/task/edit-task/${task.id}`}
+                className="flex items-center w-[135px] gap-2 bg-white text-blue-ribbon border border-blue-ribbon px-4 py-2 rounded-xl text-base"
+                onClick={() => setData(task)}
+              >
+                <RiPencilFill className="text-lg" />
+                <p>Edit Task</p>
+              </Link>
             ) : (
               <div className=" relative flex flex-col-reverse md:flex-row md:items-center gap-6">
                 <div className="flex items-center justify-between">
@@ -130,7 +133,7 @@ const TaskDetailsTrainer = () => {
                     </div>
                   </div>
 
-                  <VscSettings className='text-2xl md:hidden' />
+                  <VscSettings className='text-3xl text-gray-700 md:hidden' />
                 </div>
 
                 <div className="flex items-center gap-3 hidden md:block">
