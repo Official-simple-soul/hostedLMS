@@ -4,6 +4,8 @@ import useFetch from "../../hooks/useFetch";
 // import { Avatar, DueDate, Calender } from '../../assets'
 import { NavLink, Link, Outlet, useLocation } from "react-router-dom";
 import { AiOutlinePlus  } from "react-icons/ai";
+import { BsThreeDotsVertical } from 'react-icons/bs'
+import { VscSettings  } from "react-icons/vsc";
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 import { RiPencilFill } from "react-icons/ri";
 // import fileIcon from '../../assets/icons/file2024.svg'
@@ -55,12 +57,12 @@ const TaskDetailsTrainer = () => {
           </p>
 
           <div className="flex flex-col gap-6 md:flex-row md:items-center justify-between">
-            <div className="flex items-center gap-9 mt-3">
+            <div className="flex items-center gap-3 md:gap-9 mt-3">
               <NavLink
                 to={`/instructor/task/${task.id}/tasks`}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-2xl font-medium text-[#303030] border-b border-[#303030]"
+                    ? "text-lg md:text-2xl font-medium text-[#303030] border-b border-[#303030]"
                     : "text-blue-ribbon-500 text-xl"
                 }
               >
@@ -72,7 +74,7 @@ const TaskDetailsTrainer = () => {
                   to={`/instructor/task/${task.id}/submissions`}
                   className={({ isActive }) =>
                     isActive
-                      ? "text-2xl font-medium text-[#303030] border-b border-[#303030] flex items-center gap-2"
+                      ? "text-xl md:text-2xl font-medium text-[#303030] border-b border-[#303030] flex items-center gap-2"
                       : "text-blue-ribbon-500 flex items-center gap-2 text-xl"
                   }
                 >
@@ -84,6 +86,28 @@ const TaskDetailsTrainer = () => {
                   </span>
                 </NavLink>
               </div>
+
+              <div className="flex items-center text-white text-base md:hidden">
+                    <div className='bg-blue-ribbon-500 px-4 py-2 rounded-l-lg text-base'>Submit Grade</div>
+
+                    <div 
+                        className='text-lg'
+                        onClick={() => setChangesDd(!changesDd)}
+                    >
+                        {<BsThreeDotsVertical />}
+                    </div>
+                </div>
+
+                { changesDd ? (
+                  <div className='md:hidden absolute right-0 top-11 bg-white px-3.5 py-4 rounded-lg text-base text-[#303030] flex flex-col gap-3 shadow'>
+                      <div className='flex flex-col gap-3'>
+                          <p className="cursor-pointer">Submit grade</p>
+                          <p className="cursor-pointer">Submit all graded tasks</p>
+                      </div>
+                  </div>
+              )
+              : null
+            }
 
             </div>
 
@@ -97,15 +121,19 @@ const TaskDetailsTrainer = () => {
               <p>Edit Task</p>
             </Link>
             ) : (
-              <div className=" relative flex items-center gap-6">
-                <div className="flex items-center gap-3">
-                  <p className="text-base font-light text-gray-500">Accepting submissions</p>
-                  <div className="relative w-[48px] h-[24px] bg-blue-ribbon-200 rounded-xl">
-                    <div className="absolute right-0 h-full w-6/12 bg-blue-ribbon-500 rounded-xl overflow-hidden"></div>
+              <div className=" relative flex flex-col-reverse md:flex-row md:items-center gap-6">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <p className="text-base font-light text-gray-500">Accepting submissions</p>
+                    <div className="relative w-[48px] h-[24px] bg-blue-ribbon-200 rounded-xl">
+                      <div className="absolute right-0 h-full w-6/12 bg-blue-ribbon-500 rounded-xl overflow-hidden"></div>
+                    </div>
                   </div>
+
+                  <VscSettings className='text-2xl md:hidden' />
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 hidden md:block">
                   <p className="text-base font-light text-gray-500">Filter</p>
                   <div className="border border-gray-400 bg-white px-4 py-1.5 flex items-center gap-4 justify-between rounded-lg">
                     <p className="font-light text-base text-gray-400">Not graded</p>
@@ -113,7 +141,7 @@ const TaskDetailsTrainer = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center text-white text-base">
+                <div className="hidden md:block flex items-center text-white text-base">
                     <div className='bg-blue-ribbon-500 px-4 py-2 rounded-l-lg text-base'>Submit Grade</div>
 
                     <div 
@@ -125,7 +153,7 @@ const TaskDetailsTrainer = () => {
                 </div>
 
                 { changesDd ? (
-                  <div className='absolute right-0 top-11 bg-white px-3.5 py-4 rounded-lg text-base text-[#303030] flex flex-col gap-3 shadow'>
+                  <div className='hidden md:block absolute right-0 top-11 bg-white px-3.5 py-4 rounded-lg text-base text-[#303030] flex flex-col gap-3 shadow'>
                       <div className='flex flex-col gap-3'>
                           <p className="cursor-pointer">Submit grade</p>
                           <p className="cursor-pointer">Submit all graded tasks</p>
@@ -133,7 +161,7 @@ const TaskDetailsTrainer = () => {
                   </div>
               )
               : null
-          }
+            }
 
               </div>
             )}

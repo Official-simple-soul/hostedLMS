@@ -31,7 +31,7 @@ const TaskSubmissionLink = () => {
         {isPending && <div className='text-sm'>Loading.....</div>}
         {error && <div className='text-sm bg-red-500 p-6 '>{ error }</div>}
 
-        <div className="w-full overflow-x-auto md:w-full md:overflow-x-hidden">
+        <div className="relative w-full overflow-x-auto md:w-full md:overflow-hidden">
             {currentPosts && currentPosts.map((data) => (
                     <div className="w-[1050px] flex flex-col gap-3 mt-8" key={data.id}>
                         <div className="grid grid-cols-7 gap-1 bg-white px-6 py-3 rounded-xl">
@@ -53,7 +53,7 @@ const TaskSubmissionLink = () => {
                                 </div>
                             </div>
 
-                            <div className='px-3 flex items-center justify-between col-span-2'>
+                            <div className='relative px-3 flex items-center justify-between col-span-2'>
                                 <div className="flex items-center gap-4">
                                     <div className="flex flex-col items-center">
                                         <p className="text-lg">Grade</p>
@@ -62,7 +62,7 @@ const TaskSubmissionLink = () => {
                                     <input type="number" className='h-[56px] w-[86px] rounded-lg border px-2' placeholder={data.grade} />
                                 </div>
                                 <BsThreeDotsVertical 
-                                    className='text-lg text-[#303030]' 
+                                    className='text-lg text-[#303030] cursor-pointer' 
                                     onClick={() => setShowModal(!showModal)}
                                 />
                             </div>
@@ -70,7 +70,15 @@ const TaskSubmissionLink = () => {
                     </div>
                 )
             )}
+
+            {showModal ? (
+                <div className='absolute right-4 top-[100px] bg-white border border-gray-300 flex flex-col gap-3 px-4 py-2 rounded-lg'>
+                    <p>Submit grade</p>
+                    <p>View profile</p>
+                </div>
+            ) : null}
         </div>
+
 
         <Pagination 
             totalPosts={tasks && tasks.length} 
@@ -79,12 +87,6 @@ const TaskSubmissionLink = () => {
             setCurrentPage={setCurrentPage}
             setPostsPerPage={setPostsPerPage}
         />
-
-
-
-
-
-        {showModal ? <div>Heloo</div> : null}
     </div>
   )
 }
