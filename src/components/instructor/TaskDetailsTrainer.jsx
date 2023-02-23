@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 // import { Avatar, DueDate, Calender } from '../../assets'
 import { NavLink, Link, Outlet, useLocation } from "react-router-dom";
-import { AiOutlinePlus  } from "react-icons/ai";
+// import { AiOutlinePlus  } from "react-icons/ai";
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import { VscSettings  } from "react-icons/vsc";
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
@@ -136,7 +136,7 @@ const TaskDetailsTrainer = () => {
                   <VscSettings className='text-3xl text-gray-700 md:hidden' />
                 </div>
 
-                <div className="flex items-center gap-3 hidden md:block">
+                <div className="flex items-center gap-3 hidden md:flex">
                   <p className="text-base font-light text-gray-500">Filter</p>
                   <div className="border border-gray-400 bg-white px-4 py-1.5 flex items-center gap-4 justify-between rounded-lg">
                     <p className="font-light text-base text-gray-400">Not graded</p>
@@ -144,7 +144,7 @@ const TaskDetailsTrainer = () => {
                   </div>
                 </div>
 
-                <div className="hidden md:block flex items-center text-white text-base">
+                <div className="hidden md:flex flex items-center text-white text-base">
                     <div className='bg-blue-ribbon-500 px-4 py-2 rounded-l-lg text-base'>Submit Grade</div>
 
                     <div 

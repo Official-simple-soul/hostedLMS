@@ -12,7 +12,7 @@ const TaskSubmissionAdmin = () => {
 
     const lastPostIndex = currentPage * postsPerPage
     const firstPostIndex = lastPostIndex - postsPerPage
-    const currentPosts = tasks && tasks.slice(firstPostIndex, lastPostIndex)
+    const currentPosts = tasks && tasks.slice(firstPostIndex, lastPostIndex) 
 
   return (
     <div className='mt-4'> 
