@@ -6,12 +6,14 @@ import { Notification, Avatar, ArrowDown, Logo } from '../../assets';
 import data from '../../data/data';
 import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { useLocation } from 'react-router-dom'
 
 
 const InstructorPageWrapper = ({ children }) => {
   const [showSide, setShowSide] = useState(false);
   const [notification, setNotification] = useState(false);
   const [profileDropDown, setProfileDropDown] = useState(false);
+  const location = useLocation();
 
   const handleNotification = () => {
     setNotification(!notification);
@@ -46,14 +48,18 @@ const InstructorPageWrapper = ({ children }) => {
               )}
               <img src={Logo} alt="" className='w-[40px] h-[40px] md:hidden' />
 
-              <div className="hidden md:flex w-[400px] h-[48px] rounded-lg space-x-1 md:justify-start bg-white px-3 items-center rounded-md">
-                <FaSearch className="text-gray-100 text-[12px] md:text-lg" />
-                <input
-                  type="text"
-                  placeholder='Search'
-                  className={`p-1 placeholder-gray-200 w-20 focus:outline-none text-[12px] md:text-md md:w-36 md:h-8`}
-                />
-              </div>
+              {location.pathname === '/instructor/student' || location.pathname === '/instructor/classroom' || location.pathname === '/instructor/task/tasks' || location.pathname === '/instructor/task/draft' || location.pathname === '/instructor/curriculum' ? (
+                <div className="hidden md:flex w-[400px] h-[48px] rounded-lg space-x-1 md:justify-start bg-white px-3 items-center">
+                  <FaSearch className="text-gray-100 text-[12px] md:text-lg" />
+                  <input
+                    type="text"
+                    placeholder='Search'
+                    className={`p-1 placeholder-gray-200 w-20 focus:outline-none text-[12px] md:text-md md:w-36 md:h-8`}
+                  />
+                </div>
+              ): 
+                null
+              }
             </div>
 
             <div className="flex gap-4 items-center">

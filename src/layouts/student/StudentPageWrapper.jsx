@@ -7,12 +7,14 @@ import data from '../../data/data';
 import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useGlobalContext } from '../../context/context';
+import { useLocation } from 'react-router-dom'
 
 const StudentPageWrapper = ({ children }) => {
   const [showSide, setShowSide] = useState(false);
   const [notification, setNotification] = useState(false);
   const [profileDropDown, setProfileDropDown] = useState(false);
-  const {setStudentSearchInput} = useGlobalContext()
+  const {setStudentSearchInput} = useGlobalContext();
+  const location = useLocation();
 
   const handleNotification = () => {
     setNotification(!notification);
@@ -51,16 +53,21 @@ const StudentPageWrapper = ({ children }) => {
               )}
 
               <img src={Logo} alt="" className='w-[40px] h-[40px] md:hidden' />
+              
+              {location.pathname === '/student/studentclassroom' || location.pathname === '/student/task' ? (
+                <div className="hidden md:flex w-[400px] h-[48px] rounded-lg space-x-1 md:justify-start bg-white px-3 items-center">
+                  <FaSearch className="text-gray-100 text-[12px] md:text-lg" />
+                  <input
+                    type="text"
+                    onChange={handleChange}
+                    placeholder='Search'
+                    className={`p-1 placeholder-gray-200 w-20 focus:outline-none text-[12px] md:text-md md:w-36 md:h-8`}
+                  />
+                </div>
+              ): 
+                null
+              }
 
-              <div className="hidden md:flex w-[400px] h-[48px] rounded-lg space-x-1 md:justify-start bg-white px-3 items-center rounded-md">
-                <FaSearch className="text-gray-100 text-[12px] md:text-lg" />
-                <input
-                  type="text"
-                  onChange={handleChange}
-                  placeholder='Search'
-                  className={`p-1 placeholder-gray-200 w-20 focus:outline-none text-[12px] md:text-md md:w-36 md:h-8`}
-                />
-              </div>
             </div>
             <div className="flex gap-4 items-center">
               <div className="border border-gray-200 cursor-pointer relative bg-white h-[48px] w-[48px] md:hidden rounded-lg flex items-center justify-center">
