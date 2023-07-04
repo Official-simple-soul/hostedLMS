@@ -19,9 +19,9 @@ const AdminProfile = () => {
 
  useEffect(()=> {
   setValue({
-    fullname: newD.map(e=>e.lastname + ' ' + e.firstname).toString() !== ' '? newD.map(e=>e.lastname + ' ' + e.firstname) : 'Default Name',
-    email: newD.map(e=>e.email).toString() ? newD.map(e=>e.email) : 'defaultmail@gmail.com',
-    username: newD.map(e=>e.username).toString() !=='' ? newD.map(e=>e.username) : 'DefaultUsername',
+    fullname: newD?.map(e=>e.lastname + ' ' + e.firstname).toString() !== ' '? newD.map(e=>e.lastname + ' ' + e.firstname) : 'Default Name',
+    email: newD?.map(e=>e.email).toString() ? newD.map(e=>e.email) : 'defaultmail@gmail.com',
+    username: newD?.map(e=>e.username).toString() !=='' ? newD.map(e=>e.username) : 'DefaultUsername',
   })
  }, [])
 

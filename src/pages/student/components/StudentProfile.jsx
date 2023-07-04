@@ -1,42 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import ProfilePic from '../../../assets/images/Male 01.png';
-import { ProfileEdit } from './ProfileEdit';
-import { ProfileEdittwo } from './ProfileEdit';
+import React, { useState, useEffect } from "react";
+import ProfilePic from "../../../assets/images/Male 01.png";
+import { ProfileEdit } from "./ProfileEdit";
+import { ProfileEdittwo } from "./ProfileEdit";
 
 const StudentProfile = () => {
   const [uploadOption, setUploadOption] = useState(false);
   const [profilePic, setProfilePic] = useState(ProfilePic);
-  const [profileOption, setProfileOption] = useState('Personal details');
-  const [editOption, setEditOption] = useState('');
-  const newD = JSON.parse(localStorage.getItem('userinfo'));
+  const [profileOption, setProfileOption] = useState("Personal details");
+  const [editOption, setEditOption] = useState("");
+  const newD = JSON.parse(localStorage.getItem("userinfo"));
 
   const [value, setValue] = useState({
-    fullname: '',
-    email: '',
-    username: '',
+    fullname: "",
+    email: "",
+    username: "",
   });
 
   useEffect(() => {
     setValue({
       fullname:
-        newD.map((e) => e.lastname + ' ' + e.firstname).toString() !== ' '
-          ? newD.map((e) => e.lastname + ' ' + e.firstname)
+        newD?.map((e) => e.lastname + ' ' + e.firstname).toString() !== ''
+          ? newD?.map((e) => e.lastname + ' ' + e.firstname)
           : 'Default Name',
-      email: newD.map((e) => e.email).toString()
-        ? newD.map((e) => e.email)
+      email: newD?.map((e) => e.email).toString() !== ''
+        ? newD?.map((e) => e.email)
         : 'defaultmail@gmail.com',
       username:
-        newD.map((e) => e.username).toString() !== ''
-          ? newD.map((e) => e.username)
+        newD?.map((e) => e.username).toString() !== ''
+          ? newD?.map((e) => e.username)
           : 'DefaultUsername',
     });
   }, [newD]);
 
   const { fullname, email, username } = value;
   const handleProfileEdit = () => {
-    profileOption === 'Personal details'
-      ? setEditOption('editPersonal')
-      : setEditOption('editProfessional');
+    profileOption === "Personal details"
+      ? setEditOption("editPersonal")
+      : setEditOption("editProfessional");
   };
   return (
     <>
