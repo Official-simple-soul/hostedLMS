@@ -17,7 +17,7 @@ const TaskList = ({ tasks }) => {
       <div className="flex flex-col gap-4">
         {tasks.map((data) => (
             <div
-              className="w-[970px] overflow-x-scroll md:w-full md:overflow-x-hidden grid grid-cols-8 items-center bg-white py-4 px-5 rounded-xl mt-4"
+              className="w-[970px] overflow-x-scroll md:w-full md:overflow-x-hidden grid grid-cols-8 items-center bg-white py-4 px-5 rounded-xl mt-4 cursor-pointer hover:bg-pri"
               onClick={() => navigate(`/student/task/${data.id}`)}
               key={data.id}
             >

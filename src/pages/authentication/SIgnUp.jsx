@@ -1,47 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Logo from '../../assets/icons/logo.svg';
-import Good from '../../assets/images/good2.png';
-import SignUpOne from './components/SignUpOne';
-import SignUpTwo from './components/SignUpTwo';
-import Signup2Modal from './components/SignUpModal';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Logo, Eye, Lock, Mail } from "../../assets";
+import Good from "../../assets/images/good2.png";
+import SignUpOne from "./components/SignUpOne";
+import SignUpTwo from "./components/SignUpTwo";
+import Signup2Modal from "./components/SignUpModal";
+import Style from "./Login.module.css";
 
 const SignUp = () => {
-  const userInput = [
-    {
-      firstname: '',
-      lastname: '',
-      username: '',
-      email: '',
-      password: '',
-      cpassword: '',
-      age: 0,
-      male: '',
-      female: '',
-      frontend: '',
-      backend: '',
-      mobile: '',
-      newbi: '',
-      beginner: '',
-      intermediate: '',
-      advanced: '',
-      how: '',
-      senior: '',
-      student: '',
-      unemployed: '',
-      selfemployed: '',
-      fulltime: '',
-      parttime: '',
-      primary: '',
-      secondary: '',
-      undergraduate: '',
-      graduate: '',
-      postgrad: '',
-      twitter: '',
-      facebook: '',
-      insta: '',
-    },
-  ];
+  const userInput = {
+    firstname: "",
+    lastname: "",
+    username: "",
+    email: "",
+    password: "",
+    cpassword: "",
+    age: 0,
+    gender: "",
+    track: "",
+    experience: "",
+    employment: "",
+    education: "",
+    how: "",
+  };
 
   const [page, setPage] = useState(0);
   const [eye, setEye] = useState(false);
@@ -54,15 +35,18 @@ const SignUp = () => {
     setFormData({ ...formData, [name]: value });
   };
   //  console.log(formData)
-  localStorage.setItem('userinfo', JSON.stringify(formData));
+  localStorage.setItem("userinfo", JSON.stringify(formData));
 
   //function to show modal
   const showModal = () => {
     setSuccess(true);
-  }; //function to show password
+  }; 
+  
+  //function to show password
   const showPassword = () => {
     setEye(!eye);
   };
+
   //function to display form
   const PageDisplay = () => {
     if (page === 0) {
@@ -83,159 +67,101 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(formData)
   };
 
   return (
-    <div className="flex w-[100%] ">
-      <div
-        className="
-                        pt-[70px]
-                        pl-[70px]
-                        pb-[70px]
-                        w-[50%]
-                        h-screen
-                        bg-[white]
-                        bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)]
-                        flex
-                        items-center
-                        justify-center
-                        hidden
-                        md:block
-                        "
-      >
+    <div className="">
+      <div className="flex items-center">
         <div
-          className="
-                        flex
-                        flex-col
-                        w-[100%]
-                        h-[80vh]
-                        bg-[conic-gradient(from_142.8deg_at_58.75%_50%,_#44BF93_-56.25deg,_#4BCA84_37.5deg,_#0D6EFD_191.25deg,_#44BF93_303.75deg,_#4BCA84_397.5deg)] 
-                        items-center
-                        shadow-[-15px_2px_24px_rgba(22,51,102,0.25)]
-                         rounded-t-[24px]
-                        rounded-r-[0px]
-                        rounded-b-[0px]
-                        rounded-l-[24px]
-                        text-[#fff]
-                            "
+          className={`${Style.col1_bg} h-screen w-[50%] hidden md:flex flex-col items-center justify-center pl-20`}
         >
-          <h1 className="mt-[315px] mb-[8px]  font-bold  text-[45px] text-[#F5F5F5] leading-[52px] ">
-            Kodecamp LMS
-          </h1>
-          <p className="text-[18px] font-[400] leading-[22px]">
-            Learning has been made simple, interactive and fun.
-          </p>
-        </div>
-      </div>
-
-      <div
-        className="
-                        md:pt-[60px]
-                        md:pr-[70px]
-                        md:pb-[70px]
-                        md:w-[50%]
-                        bg-[#ffffff] 
-                        md:flex
-                        md:justify-center
-                        md:items-center
-                        md:flex-col
-                        w-full
-                        "
-      >
-        <div
-          className="                        
-                        flex
-                        flex-col 
-                        w-full
-                        md:h-[80vh]
-                        overflow-auto
-                        bg-white
-                        px-2
-                        items-center
-                        shadow-[2px_15px_24px_rgba(22,51,102,0.25)]
-                        md:rounded-t-[0px]
-                        md:rounded-r-[24px]
-                        md:rounded-b-[24px]
-                        md:rounded-l-[0px]
-                        relative"
-        >
-          {/* progress bar */}
-          <div className="w-[395px] md:w-[595px] fixed md:top-[-2px] left-[0] z-20">
-            <div
-              className={
-                page === 0
-                  ? `w-[50%] h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
-                        rounded-l-[0px] bg-[#00BD56] text-left`
-                  : `transition-all duration-500 ease-in-out w-[99%]  h-[4px] rounded-t-[0px] rounded-r-[10px] rounded-b-[10px]
-                        rounded-l-[0px]  bg-[#00BD56] text-left`
-              }
-            ></div>
-          </div>
-
-          <div className="flex flex-col gap-7 justify-center items-center">
-            <div className="w-20 h-[80px] rounded-lg bg-transparent shadow-md mt-8  grid place-items-center">
-              <img src={Logo} alt="kodecamp-logo" />
-            </div>
-            {/* heading title */}
-            <h2 className="text-[#303030] text-[28px] font-[500] leading-[36px] tracking-[1px]">
-              Create account
-            </h2>
-
-            <div className="flex justify-center items-center w-[120px] text-[#ffffff] text-[18px] font-[500] leading-[22px]">
-              <span
-                className={
-                  page === 0
-                    ? `w-[30px] h-[30px] bg-[#0D6EFD] flex justify-center items-center  rounded-[50%]`
-                    : `w-[30px] h-[30px] bg-[#00BD56] flex justify-center items-center  rounded-[50%]`
-                }
-              >
-                {page === 0 ? <>1</> : <img src={Good} alt="mark good" />}
-              </span>
-              <span className="w-[60px] h-[1px] bg-[#D9D9D9]"></span>
-              <span
-                className={
-                  page === 0
-                    ? `w-[30px] h-[30px] bg-[#000000] flex justify-center items-center  rounded-[50%]`
-                    : `w-[30px] h-[30px] bg-[#808080] flex justify-center items-center  rounded-[50%]`
-                }
-              >
-                2
-              </span>
-            </div>
-          </div>
-
-          <form
-            onSubmit={handleSubmit}
-            className="flex w-full md:w-[80%] justify-center mt-[10px] items-center flex-col"
+          <div
+            className={`${Style.box_shadow} h-[90%] w-full rounded-l-3xl flex flex-col items-center justify-center`}
           >
-            <div className="w-full md:w-[100%]">
-              {!success ? PageDisplay() : <Signup2Modal />}
-            </div>
-            <div className="w-[100%]">
-              <button
-                type={page === 0 ? 'button' : 'submit'}
-                onClick={() => {
-                  setPage((currPage) => currPage + 1) && setEye(!eye);
-                }}
-                className="text-[18px] font-[500] leading-[22px] tracking-[0.1px] mt-[40px] w-[100%] outline-[0] border border-solid rounded-[8px] h-[56px] bg-[#0D6EFD] text-[#ffffff]"
-              >
-                {/* set onclick on create account */}
-                {page === 0 ? (
-                  <p>Next</p>
-                ) : (
-                  <p onClick={showModal}>Create Account</p>
-                )}
-              </button>
-              {/* show modal */}
-              {/* { success && <Signup2Modal/>} */}
-            </div>
-            <p className="mb-[40px] mt-[24px]">
-              Already have an account?{' '}
-              <Link to={'/'} className="text-[blue]" href="">
-                Log In
-              </Link>
+            <h2 className={`${Style.col1_heading} text-center`}>
+              Kodecamp LMS
+            </h2>
+            <p className={`${Style.col1_para}`}>
+              Learning has been made simple, interactive and fun.
             </p>
-          </form>
+          </div>
+        </div>
+        <div
+          className={`bg-white h-screen w-full md:w-[50%] flex flex-col items-center justify-center md:pr-20`}
+        >
+          <div
+            className={`${Style.box_shadow} h-full md:h-[90%]  w-full md:rounded-r-3xl flex flex-col items-center px-4 ${Style.overflow}`}
+          >
+            <div className="flex flex-col gap-7 justify-center items-center">
+              <div className="w-20 h-[80px] rounded-lg bg-transparent shadow-md mt-8 grid place-items-center">
+                <img
+                  src={Logo}
+                  alt=""
+                  className={`${Style.logo_shadow} bg-white rounded-lg p-3 m-auto`}
+                />
+              </div>
+              {/* heading title */}
+              <h2 className="text-[#303030] text-[28px] font-[500] leading-[36px] tracking-[1px]">
+                Create account
+              </h2>
+
+              <div className="flex justify-center items-center w-[120px] text-[#ffffff] text-[18px] font-[500] leading-[22px]">
+                <span
+                  className={
+                    page === 0
+                      ? `w-[30px] h-[30px] bg-[#0D6EFD] flex justify-center items-center  rounded-[50%]`
+                      : `w-[30px] h-[30px] bg-[#00BD56] flex justify-center items-center  rounded-[50%]`
+                  }
+                >
+                  {page === 0 ? <>1</> : <img src={Good} alt="mark good" />}
+                </span>
+                <span className="w-[60px] h-[1px] bg-[#D9D9D9]"></span>
+                <span
+                  className={
+                    page === 0
+                      ? `w-[30px] h-[30px] bg-[#000000] flex justify-center items-center  rounded-[50%]`
+                      : `w-[30px] h-[30px] bg-[#808080] flex justify-center items-center  rounded-[50%]`
+                  }
+                >
+                  2
+                </span>
+              </div>
+            </div>
+
+            <form
+              onSubmit={handleSubmit}
+              className="flex w-full md:w-[80%] justify-center mt-[10px] items-center flex-col"
+            >
+              <div className="w-full md:w-[100%]">
+                {!success ? PageDisplay() : <Signup2Modal />}
+              </div>
+              <div className="w-[100%]">
+                <button
+                  type={page === 0 ? "button" : "submit"}
+                  onClick={() => {
+                    setPage((currPage) => currPage + 1) && setEye(!eye);
+                  }}
+                  className="text-[18px] font-[500] leading-[22px] tracking-[0.1px] mt-[40px] w-[100%] outline-[0] border border-solid rounded-[8px] h-[56px] bg-[#0D6EFD] text-[#ffffff]"
+                >
+                  {/* set onclick on create account */}
+                  {page === 0 ? (
+                    <p>Next</p>
+                  ) : (
+                    <p onClick={showModal}>Create Account</p>
+                  )}
+                </button>
+                {/* show modal */}
+                {/* { success && <Signup2Modal/>} */}
+              </div>
+              <p className="mb-[40px] mt-[24px]">
+                Already have an account?{" "}
+                <Link to={"/"} className="text-[blue]" href="">
+                  Log In
+                </Link>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     </div>

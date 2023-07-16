@@ -183,7 +183,7 @@ const StudentList = () => {
       </div>
       <div className="overflow-x-hidden">
         <div className="lg:w-full lg:overflow-x-hidden overflow-x-scroll">
-          <div className="flex xl:w-4/6 lg:w-11/12 w-[900px] my-4 justify-between text-[#0D6EFD]">
+          <div className="flex w-full my-4 justify-between text-[#0D6EFD]">
             {tracks.map((data, index) => (
               <p
                 key={index}

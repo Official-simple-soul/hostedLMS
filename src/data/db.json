@@ -2,8 +2,26 @@
   "tasks": [
     {
       "taskTitle": "Testing movement",
-      "taskDesc": "<p>Design a new website for KodeCamp,<strong> taking into consideration</strong> the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture.</p><p>&nbsp;</p><p>&nbsp;</p><figure class=\"table\"><table><tbody><tr><td>&nbsp;</td></tr></tbody></table></figure><p>&nbsp;</p><p><strong>Note: </strong><i>User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.</i></p><p>&nbsp;</p><p>&nbsp;</p>",
+      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDeliverables": [
+        "User Research",
+        "Personas",
+        "User stories",
+        "User Flow",
+        "Information Architecture",
+        "Wireframes"
+      ],
       "stage": "3",
+      "resources": [
+        {
+          "url": "https://google.com",
+          "title": "https://google.com"
+        },
+        {
+          "url": "https://google.com",
+          "title": "https://google.com"
+        }
+      ],
       "dueDate": "2023-02-20T10:39",
       "track": "Backend",
       "points": "35",
@@ -13,8 +31,26 @@
     },
     {
       "taskTitle": "Information Architecture",
-      "taskDesc": "<p>Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.</p>",
+      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDeliverables": [
+        "User Research",
+        "Personas",
+        "User stories",
+        "User Flow",
+        "Information Architecture",
+        "Wireframes"
+      ],
       "stage": "2",
+      "resources": [
+        {
+          "url": "https://google.com",
+          "title": "https://google.com"
+        },
+        {
+          "url": "https://google.com",
+          "title": "https://google.com"
+        }
+      ],
       "dueDate": "2023-02-22T16:22",
       "track": "Frontend",
       "points": "49",
@@ -25,10 +61,23 @@
       "id": 3,
       "stage": 3,
       "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDeliverables": [
+        "User Research",
+        "Personas",
+        "User stories",
+        "User Flow",
+        "Information Architecture",
+        "Wireframes"
+      ],
       "resources": [
         {
-          "url": "https://google.com"
+          "url": "https://google.com",
+          "title": "https://google.com"
+        },
+        {
+          "url": "https://google.com",
+          "title": "https://google.com"
         }
       ],
       "track": "UI/UX",
@@ -40,10 +89,23 @@
       "id": 4,
       "stage": 4,
       "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDeliverables": [
+        "User Research",
+        "Personas",
+        "User stories",
+        "User Flow",
+        "Information Architecture",
+        "Wireframes"
+      ],
       "resources": [
         {
-          "url": "https://google.com"
+          "url": "https://google.com",
+          "title": "https://google.com"
+        },
+        {
+          "url": "https://google.com",
+          "title": "https://google.com"
         }
       ],
       "track": "UI/UX",
@@ -55,10 +117,23 @@
       "id": 5,
       "stage": 5,
       "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDeliverables": [
+        "User Research",
+        "Personas",
+        "User stories",
+        "User Flow",
+        "Information Architecture",
+        "Wireframes"
+      ],
       "resources": [
         {
-          "url": "https://google.com"
+          "url": "https://google.com",
+          "title": "https://google.com"
+        },
+        {
+          "url": "https://google.com",
+          "title": "https://google.com"
         }
       ],
       "track": "UI/UX",
@@ -70,10 +145,23 @@
       "id": 6,
       "stage": 6,
       "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDeliverables": [
+        "User Research",
+        "Personas",
+        "User stories",
+        "User Flow",
+        "Information Architecture",
+        "Wireframes"
+      ],
       "resources": [
         {
-          "url": "https://google.com"
+          "url": "https://google.com",
+          "title": "https://google.com"
+        },
+        {
+          "url": "https://google.com",
+          "title": "https://google.com"
         }
       ],
       "track": "UI/UX",
@@ -85,10 +173,23 @@
       "id": 7,
       "stage": 7,
       "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDeliverables": [
+        "User Research",
+        "Personas",
+        "User stories",
+        "User Flow",
+        "Information Architecture",
+        "Wireframes"
+      ],
       "resources": [
         {
-          "url": "https://google.com"
+          "url": "https://google.com",
+          "title": "https://google.com"
+        },
+        {
+          "url": "https://google.com",
+          "title": "https://google.com"
         }
       ],
       "track": "UI/UX",
@@ -100,10 +201,23 @@
       "id": 8,
       "stage": 8,
       "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDeliverables": [
+        "User Research",
+        "Personas",
+        "User stories",
+        "User Flow",
+        "Information Architecture",
+        "Wireframes"
+      ],
       "resources": [
         {
-          "url": "https://google.com"
+          "url": "https://google.com",
+          "title": "https://google.com"
+        },
+        {
+          "url": "https://google.com",
+          "title": "https://google.com"
         }
       ],
       "track": "UI/UX",
@@ -113,7 +227,15 @@
     },
     {
       "taskTitle": "Second test movement",
-      "taskDesc": "<p>Hello world&lt; what is this</p><p>&nbsp;</p><p><strong>Note: </strong>User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.</p>",
+      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDeliverables": [
+        "User Research",
+        "Personas",
+        "User stories",
+        "User Flow",
+        "Information Architecture",
+        "Wireframes"
+      ],
       "stage": "6",
       "dueDate": "2023-03-01T14:00",
       "track": "Frontend",
@@ -123,7 +245,15 @@
     },
     {
       "taskTitle": "Adding Task Admin",
-      "taskDesc": "<p>const handleResources =(<i>event</i>)=&gt;{</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setResources(event.target.value)</p><p>&nbsp; &nbsp; }</p><p><br>&nbsp;</p><p>&nbsp; &nbsp; const onFrormSubmit = (<i>event</i>)=&gt; {</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<i>event</i>.preventDefault()</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setAddResources([...addResources, {title: resources, id: <strong>new</strong> <i>Date</i>()}])</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setResources('')</p><p>&nbsp; &nbsp; }</p><p><br>&nbsp;</p><p>&nbsp; &nbsp; const removeResources =({<i>id</i>})=&gt;{</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setAddResources(addResources.filter(item=&gt;item.id!==id));</p><p>&nbsp; &nbsp; }</p><p><br>&nbsp;</p><p>&nbsp; &nbsp; const handleSubmit = (<i>e</i>) =&gt; {</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<i>e</i>.preventDefault();</p><p>&nbsp; &nbsp; &nbsp; &nbsp; const task = { taskTitle, taskDesc, stage, dueDate, track, points, level }</p><p><br>&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setIsPending(true)</p><p><br>&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; fetch(`http://localhost:8000/tasks/${id}`, {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; method: 'PUT',</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; headers: { 'content-Type': \"application/json\"},</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; body: JSON.stringify(task)</p><p>&nbsp; &nbsp; &nbsp; &nbsp; }).then ( () =&gt; {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<i>console</i>.log(\"Task Edited\");</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; setIsPending(false);</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; navigate('/instructor/task')</p><p>&nbsp; &nbsp; &nbsp; &nbsp; })</p><p>&nbsp; &nbsp; }</p><p><br>&nbsp;</p><p>&nbsp; &nbsp; const onDelete = () =&gt; {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; fetch(`http://localhost:8000/tasks/${task.id}`, {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; method: 'DELETE'</p><p>&nbsp; &nbsp; &nbsp; &nbsp; }).then(() =&gt; {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; navigate('/instructor/task')</p><p>&nbsp; &nbsp; &nbsp; &nbsp; })</p><p>&nbsp; &nbsp; }</p><p><br>&nbsp;</p><p>&nbsp; &nbsp; useEffect(() =&gt; {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setDataId(localStorage.getItem('id'))</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setTaskDesc(localStorage.getItem('taskDesc'));</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setTaskTitle(localStorage.getItem('taskTitle'));</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setStage(localStorage.getItem('stage'))</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setTrack(localStorage.getItem('track'))</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setLevel(localStorage.getItem('level'))</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setDueDate(localStorage.getItem('dueDate'))</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setPoints(localStorage.getItem('points'))</p><p>&nbsp; &nbsp; &nbsp; &nbsp; setSubmission(localStorage.getItem('submission'))</p><p>&nbsp; &nbsp; }, []);</p>",
+      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDeliverables": [
+        "User Research",
+        "Personas",
+        "User stories",
+        "User Flow",
+        "Information Architecture",
+        "Wireframes"
+      ],
       "stage": "8",
       "dueDate": "2023-02-19T11:00",
       "track": "Frontend",
@@ -133,7 +263,15 @@
     },
     {
       "taskTitle": "Testing status post",
-      "taskDesc": "<h2>Hello Status</h2><p>&nbsp;</p><p>Testing you has never been this much fun</p><p>Ok nh.</p>",
+      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDeliverables": [
+        "User Research",
+        "Personas",
+        "User stories",
+        "User Flow",
+        "Information Architecture",
+        "Wireframes"
+      ],
       "stage": "3",
       "dueDate": "2023-02-22T22:00",
       "track": "Graphics",
@@ -141,6 +279,17 @@
       "level": "intermediate",
       "status": "Not submitted",
       "id": 16
+    },
+    {
+      "taskTitle": "",
+      "taskDesc": "<p>thtajnd</p><p>&nbsp;</p><p>Del</p><p>&nbsp;</p><ul><li>Type</li></ul>",
+      "stage": "",
+      "dueDate": "",
+      "track": "",
+      "points": "",
+      "level": "",
+      "status": "Not submitted",
+      "id": 17
     }
   ],
   "drafts": [
@@ -148,7 +297,7 @@
       "id": 1,
       "stage": 1,
       "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "task": "DesiDesign a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
       "resources": [
         {
           "url": "https://google.com"
@@ -163,7 +312,7 @@
       "id": 2,
       "stage": 2,
       "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
       "resources": [
         {
           "url": "https://google.com"
@@ -178,7 +327,7 @@
       "id": 3,
       "stage": 3,
       "taskTitle": "Information Architecture",
-      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Deliverables: User research plan Personas User stories Information architecture User low Wireframes High-fidelity designs Clickable prototype Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
+      "taskDesc": "Design a new website for KodeCamp, taking into consideration the fact that it is an e-learning platform but should also be marketable to sponsors or partners. Note: You’re to design all pages, not just the home page. Use the websites below as source of inspiration.",
       "resources": [
         {
           "url": "https://google.com"

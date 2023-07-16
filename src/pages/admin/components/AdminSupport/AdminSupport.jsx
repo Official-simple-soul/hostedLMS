@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
-import AdminSupportRow from './AdminSupportRow';
-import { BsThreeDotsVertical } from 'react-icons/bs';
-import { useState } from 'react';
-import axios from 'axios';
-import { FaAngleDown, FaTimes } from 'react-icons/fa';
-import DropdownFilter from '../../../../components/admin/support/DropdownFilter';
-import { AiFillCheckCircle } from 'react-icons/ai';
+import React, { useEffect } from "react";
+import AdminSupportRow from "./AdminSupportRow";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { useState } from "react";
+import axios from "axios";
+import { FaAngleDown, FaTimes } from "react-icons/fa";
+import DropdownFilter from "../../../../components/admin/support/DropdownFilter";
+import { AiFillCheckCircle } from "react-icons/ai";
+import { support } from "../../../../data/data";
 
 const pages = (num) => {
   let pageNum = [];
@@ -23,19 +24,20 @@ function AdminSupport() {
   const [dropDownFilter, setDropDownFilter] = useState(false);
 
   const [filter, setFilter] = useState({
-    status: 'Both',
-    order: '',
-    see_first: '',
+    status: "Both",
+    order: "",
+    see_first: "",
   });
   const { status, order } = filter;
   useEffect(() => {
     const fetchData = async () => {
-      const data = await axios.get('http://localhost:8000/support');
-      status === 'resolved' || status === 'unresolved'
-        ? setTrainerData(data.data.filter((e) => e.status === status))
-        : order === 'Decreasing'
-        ? setTrainerData(data.data.reverse())
-        : setTrainerData(data.data);
+      // const data = await axios.get('http://localhost:8000/support');
+      const data = support;
+      status === "resolved" || status === "unresolved"
+        ? setTrainerData(data.filter((e) => e.status === status))
+        : order === "Decreasing"
+        ? setTrainerData(data.reverse())
+        : setTrainerData(data);
     };
     fetchData();
   }, [val, status, order]);
@@ -60,7 +62,7 @@ function AdminSupport() {
 
   const handleCheckClick = (e) => {
     const { name, checked } = e.target;
-    if (name === 'checkResolveAll') {
+    if (name === "checkResolveAll") {
       const tmUser = trainerData.map((e) => {
         return { ...e, isChecked: checked };
       });
@@ -82,9 +84,11 @@ function AdminSupport() {
   };
 
   const handleResolved = () => {
-    const tmUser = trainerData.map(e=>{return {...e, status: 'resolved', isChecked: false} })
-    setTrainerData(tmUser)
-  }
+    const tmUser = trainerData.map((e) => {
+      return { ...e, status: "resolved", isChecked: false };
+    });
+    setTrainerData(tmUser);
+  };
 
   useEffect(() => {
     setResolveArr(trainerData.filter((e) => e?.isChecked).length);
@@ -114,7 +118,7 @@ function AdminSupport() {
               )}
             </div>
           </div>
-          <h1 className={`${resolveArr > 0 ? 'block' : 'hidden'} text-[grey]`}>
+          <h1 className={`${resolveArr > 0 ? "block" : "hidden"} text-[grey]`}>
             <FaTimes
               className="inline mr-2 text-sm cursor-pointer"
               onClick={handleTimes}
@@ -135,7 +139,7 @@ function AdminSupport() {
       </h1>
       <ul className="overflow-auto">
         <li
-          key={'1'}
+          key={"1"}
           className={`flex space-x-20 md:space-x-0 items-center md:grid grid-cols-6 py-4 mb-6 px-4 bg-blue-ribbon-50`}
         >
           <div className="flex items-center space-x-10 md:col-span-2">
@@ -158,7 +162,7 @@ function AdminSupport() {
           <div className="flex items-center">Subject</div>
           <div className="flex justify-between items-center col-span-2">
             <div className="">Date</div>
-            <h1 className='ml-10'>Status</h1>
+            <h1 className="ml-10">Status</h1>
             <div className="menu relative">
               <BsThreeDotsVertical className="text-2xl" />
             </div>
@@ -190,7 +194,7 @@ function AdminSupport() {
             <>
               <h1
                 className={`${
-                  val / item === 7 ? 'bg-blue-ribbon-500 text-white' : ''
+                  val / item === 7 ? "bg-blue-ribbon-500 text-white" : ""
                 } py-2 px-4 rounded text-sm p-3`}
               >
                 {item}

@@ -18,7 +18,7 @@
 }
 
 .box_shadow{
-    box-shadow: 15px 15px 24px rgba(22, 51, 102, 0.25);
+    box-shadow: 15px 15px 24px 24px rgba(22, 51, 102, 0.25);
 }
 
 .b_radRight{
@@ -83,3 +83,18 @@
     color: #808080;
 }
 
+.overflow {
+  overflow: auto;
+}
+
+.overflow::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.overflow::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow::-webkit-scrollbar-thumb {
+  background: transparent;
+}

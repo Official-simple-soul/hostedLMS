@@ -18,7 +18,7 @@ const TaskTrainer = () => {
         </div>
 
         <Link 
-          to={`/instructor/task/create-new-task/${id}`}
+          to={`/instructor/task/create-new-task`}
           className="flex items-center gap-2 bg-blue-ribbon-400 text-white w-[176px] px-4 py-2 rounded-xl text-base"
         >
           <AiOutlinePlus className='text-lg' />

@@ -12,7 +12,7 @@ const FormInput = ({handleInput, eye,setEye,showPassword,formData}) => {
                         <input 
                         onChange={handleInput}       
                         className='outline-[0] border-[none] border-[#808080] border border-solid rounded-[8px] w-[100%] h-[56px] text-[#808080] pt-[16px] pb-[16px] pl-[17px] text-[18px] font-[400] leading-[24px]' 
-                        type='text' value={formData.firstname} name='fullname' placeholder={'Type your full name'} required/>
+                        type='text' value={formData.firstname} name='firstname' placeholder={'Type your full name'} required/>
                     </div>
             </label>
 
@@ -22,7 +22,7 @@ const FormInput = ({handleInput, eye,setEye,showPassword,formData}) => {
                         <input 
                         onChange={handleInput}       
                         className='outline-[0] border-[none] border-[#808080] border border-solid rounded-[8px] w-[100%] h-[56px] text-[#808080] pt-[16px] pb-[16px] pl-[17px] text-[18px] font-[400] leading-[24px]' 
-                        type='text' value={formData.lastname} name='fullname' placeholder={'Type your full name'} required/>
+                        type='text' value={formData.lastname} name='lastname' placeholder={'Type your full name'} required/>
                     </div>
             </label> 
             <label className='w-[100%]'>

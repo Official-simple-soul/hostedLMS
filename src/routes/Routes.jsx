@@ -125,7 +125,7 @@ const AllRoutes = () => {
             <Route path="tasks" element={<TaskDetailsTrainerTask />} />
             <Route path="submissions" element={<TaskSubmissionLink />} />
           </Route>
-          <Route path="task/create-new-task/:id" element={<CreateNewTask />} />
+          <Route path="task/create-new-task" element={<CreateNewTask />} />
           <Route path="task/edit-task/:id" element={<EditTask />} />
           <Route path='curriculum' element={<CurriculumTrainer />} />
           <Route path="settings" element={<Settings />} />

@@ -7,7 +7,8 @@ const StudentProfile = () => {
   const [uploadOption, setUploadOption] = useState(false);
   const [profilePic, setProfilePic] = useState(ProfilePic);
   const [profileOption, setProfileOption] = useState("Personal details");
-  const [editOption, setEditOption] = useState("");
+  const [editOption, setEditOption] = useState(false);
+  const [updateData, setUpdateData] = useState({});
   const newD = JSON.parse(localStorage.getItem("userinfo"));
 
   const [value, setValue] = useState({
@@ -18,26 +19,30 @@ const StudentProfile = () => {
 
   useEffect(() => {
     setValue({
-      fullname:
-        newD?.map((e) => e.lastname + ' ' + e.firstname).toString() !== ''
-          ? newD?.map((e) => e.lastname + ' ' + e.firstname)
-          : 'Default Name',
-      email: newD?.map((e) => e.email).toString() !== ''
-        ? newD?.map((e) => e.email)
-        : 'defaultmail@gmail.com',
-      username:
-        newD?.map((e) => e.username).toString() !== ''
-          ? newD?.map((e) => e.username)
-          : 'DefaultUsername',
+      fullname: newD?.lastname ? newD.lastname : "Default Name",
+      email: newD?.email ? newD.email : "defaultmail@gmail.com",
+      username: newD?.username ? newD.username : "DefaultUsername",
     });
   }, [newD]);
 
   const { fullname, email, username } = value;
+  
   const handleProfileEdit = () => {
-    profileOption === "Personal details"
-      ? setEditOption("editPersonal")
-      : setEditOption("editProfessional");
+    setEditOption(true);
   };
+
+  const handleInput = ({ target }) => {
+    setUpdateData((prev) => ({
+      ...prev,
+      [target.name]: target.value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(updateData);
+  };
+
   return (
     <>
       <div className="flex justify-between items-center">
@@ -53,30 +58,44 @@ const StudentProfile = () => {
         <div className="flex space-x-2 md:space-x-12">
           <h1
             className={`${
-              profileOption === 'Personal details'
-                ? 'border-b border-black'
-                : 'text-blue-ribbon-500'
+              profileOption === "Personal details"
+                ? "border-b border-black"
+                : "text-blue-ribbon-500"
             } cursor-pointer`}
-            onClick={(e) => setProfileOption(e.currentTarget.innerText)}
+            onClick={(e) => {
+              setProfileOption(e.currentTarget.innerText);
+            }}
           >
             Personal details
           </h1>
           <h1
             className={`${
-              profileOption === 'Professional details'
-                ? 'border-b border-black'
-                : 'text-blue-ribbon-500'
+              profileOption === "Professional details"
+                ? "border-b border-black"
+                : "text-blue-ribbon-500"
             } cursor-pointer`}
-            onClick={(e) => setProfileOption(e.currentTarget.innerText)}
+            onClick={(e) => {
+              setProfileOption(e.currentTarget.innerText);
+            }}
           >
             Professional details
           </h1>
         </div>
-        {editOption === 'editPersonal' ? (
-          <ProfileEdit />
-        ) : editOption === 'editProfessional' ? (
-          <ProfileEdittwo />
-        ) : profileOption === 'Personal details' ? (
+        {editOption && profileOption === "Personal details" ? (
+          <ProfileEdit
+            setEditOption={setEditOption}
+            handleInput={handleInput}
+            updateData={updateData}
+            handleSubmit={handleSubmit}
+          />
+        ) : editOption && profileOption === "Professional details" ? (
+          <ProfileEdittwo
+            setEditOption={setEditOption}
+            handleInput={handleInput}
+            updateData={updateData}
+            handleSubmit={handleSubmit}
+          />
+        ) : profileOption === "Personal details" ? (
           <>
             <div className="md:flex items-center md:space-x-12 mt-8">
               <div
@@ -89,7 +108,7 @@ const StudentProfile = () => {
                 <i class="fa-solid fa-camera absolute right-16 bottom-6 md:right-4 text-blue-ribbon-500 md:bottom-4 bg-white p-3 rounded-full"></i>
                 <div
                   className={`${
-                    uploadOption ? 'block' : 'hidden'
+                    uploadOption ? "block" : "hidden"
                   } upload absolute top-0 -right-10 shadow-lg bg-white p-4 rounded-lg`}
                 >
                   <div className="file cursor-pointer">
@@ -135,14 +154,19 @@ const StudentProfile = () => {
               <div className="right md:col-span-3">
                 <ul className="space-y-4">
                   <li className="border-b pb-1 pl-5">{username}</li>
-                  <li className="border-b pb-1 pl-5">
-                    {email}
-                  </li>
+                  <li className="border-b pb-1 pl-5">{email}</li>
                   <li className="border-b pb-1 pl-5">01/01/2001</li>
                   <li className="border-b pb-1 pl-5">Male</li>
                   <li className="border-b pb-1 pl-5">08057483726</li>
                 </ul>
               </div>
+              <button
+                className="text-sm text-white bg-blue-ribbon-100 px-4 py-2 rounded-lg mt-4"
+                type="button"
+                disabled
+              >
+                <i class="fa-solid fa-certificate mr-2"></i>View Certificate
+              </button>
             </div>
           </>
         ) : (
@@ -160,17 +184,16 @@ const StudentProfile = () => {
                   <li className="border-b pb-1 pl-5 font-bold">PhD</li>
                 </ul>
               </div>
+              <button
+                className="text-sm text-white bg-blue-ribbon-100 px-4 py-2 rounded-lg mt-4"
+                type="button"
+                disabled
+              >
+                <i class="fa-solid fa-certificate mr-2"></i>View Certificate
+              </button>
             </div>
           </>
         )}
-
-        <button
-          className="text-sm text-white bg-blue-ribbon-100 px-4 py-2 rounded-lg mt-4"
-          type="button"
-          disabled
-        >
-          <i class="fa-solid fa-certificate mr-2"></i>View Certificate
-        </button>
       </div>
     </>
   );
